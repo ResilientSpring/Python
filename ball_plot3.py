@@ -1,3 +1,4 @@
+# Example on page 22.
 
 from numpy.core.function_base import linspace
 
