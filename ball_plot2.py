@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt;  # Refer to <Programming for Computations - Pyt
 
 v0 = 5;
 g = 9.81;
+
+# linspace(a, b, n) shows when n evenly spaced floating point numbers are sought on an interval [a,b]
 t = linspace(0, 1, 1001);
 
 y = v0 * t - 0.5 * g * t ** 2;
