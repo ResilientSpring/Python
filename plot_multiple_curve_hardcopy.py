@@ -16,8 +16,14 @@ plt.legend(['t**2', 'e**t']);
 plt.title('Plotting of two functions (t**2 and e**t)');
 plt.grid('on');
 plt.axis([-3, 3, -1, 10]);
-plt.show();
 
 plt.savefig('plot_a.png'); # To save a figure to file of PNG format
 plt.savefig('plot_a.pdf'); # To save a figure to file of PDF format
 plt.savefig('plot_a.jpg'); # To save a figure to file of JPG format
+
+plt.show();
+
+# No effect if placed after plt.show();
+# plt.savefig('plot_a.png'); # To save a figure to file of PNG format
+# plt.savefig('plot_a.pdf'); # To save a figure to file of PDF format
+# plt.savefig('plot_a.jpg'); # To save a figure to file of JPG format
