@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from numpy import exp
 from numpy.core.function_base import linspace
 
-t = linspace(-2, 2, 100); # Choose 100 points in time interval.
+t = linspace(-2, 2, 100);  # Choose 100 points in time interval.
 
 f_values = t ** 2;
 g_values = exp(t);
