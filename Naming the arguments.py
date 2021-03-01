@@ -11,7 +11,9 @@ print("v1 is {:f}, \nv2 is {:.3f}".format(v1, v2));
 
 print("v1 is %g, \nv2 is %.1f.".format(v1, v2));
 
-print("v1 is %d, \nv2 is %.1f" %(v1, v2));  # old string formatting
+print("v1 is %d, \nv2 is %.1f" % (v1, v2));  # old string formatting
+
+print(f"v1 is {v1}, \nv2 is {v2}");  # page 31 of the textbook.
 
 print("v1 is {v1}, \nv2 is {v2}".format(v1=v1, v2=v2));
 
