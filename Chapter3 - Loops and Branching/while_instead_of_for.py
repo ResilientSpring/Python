@@ -16,3 +16,10 @@ while ( i < 5) :
 average = sum / n;
 
 print("Average is {:.2f} centimeter.".format(average));
+
+# Double precision floating values in Python? [closed]
+
+# Python's built-in float type has double precision
+# (it's a C double in CPython, a Java double in Jython).
+# If you need more precision, get NumPy and use its numpy.float128.
+# Reference: https://stackoverflow.com/a/6663292/14900011
