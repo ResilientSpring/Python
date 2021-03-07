@@ -22,4 +22,5 @@ print("The largest height achieved was {:g} m".format(largest_height));
 plt.plot(t, y);
 plt.xlabel("Time (s)");
 plt.ylabel("Height (m)");
+plt.grid('ON');
 plt.show();
