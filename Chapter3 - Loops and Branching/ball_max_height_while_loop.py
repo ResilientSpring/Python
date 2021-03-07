@@ -17,7 +17,7 @@ y = v0 * t - 0.5 * g * t**2;  # Generate 1000 heights.
 largest_height = y[0]; # Starting value for search
 
 i = 0;
-while y[i+1] > y[i]:
+while y[i+1] > y[i]:  # y[i+1] is definitely larger than y[i] before the ball reaches the top.
     i += 1;
     if y[i] > largest_height:
         largest_height = y[i];
