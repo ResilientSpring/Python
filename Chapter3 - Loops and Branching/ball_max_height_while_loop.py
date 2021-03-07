@@ -1,5 +1,8 @@
 # Exercise on page 71 of the textbook
 
+# We could alternatively have solved the maximum height problem here by utilizing that
+# y[i+1] > y[i] as the ball moves towards the top.
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -12,7 +15,10 @@ y = v0 * t - 0.5 * g * t**2;  # Generate 1000 heights.
 # and we need to find the largest value within y.
 
 largest_height = y[0]; # Starting value for search
-for i in range (1, len(y), 1):
+
+i = 0;
+while y[i+1] > y[i]:
+    i += 1;
     if y[i] > largest_height:
         largest_height = y[i];
 
