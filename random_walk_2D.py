@@ -27,6 +27,9 @@ for i in range(0, N, 1):
         y[1 + i] = y[i];
 
 # plot path (mark start and stop with blue o and *, respectively)
-plt.plot(x, y, 'r--', x[0], y[0], 'bo', x[-1], y[-1], 'b*');
+plt.plot(x, y, 'r--', x[0], y[0], 'bo', x[-1], y[-1], 'b*');  # [1]
 plt.xlabel("x"); plt.ylabel("y");
 plt.show();
+
+# References:
+# 1. Indexing an Array from the End. (Page 50 on the textbook.)
