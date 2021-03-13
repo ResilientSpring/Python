@@ -92,3 +92,8 @@ prefix = "Py";
 
 # If you want to concatenate variables or a variable and literals, use +
 print(prefix + "thon");
+
+# Strings can be indexed, with the first character having index 0.
+word = "Python";
+print(word[0]);
+print(word[5]);
