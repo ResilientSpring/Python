@@ -60,3 +60,22 @@ my_sum = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 
 
 print(my_sum);  # Example on page 36 of Programming for Computations - Python.
 print( (1 + 20) * 20 / 2 );
+
+my_sum2 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 \
+          + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20;
+
+my_sum3 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 +\
+          11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20;
+
+my_sum4 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + \
+          16 + 17 + 18 + 19 + 20;
+
+print(my_sum2 + my_sum3 + my_sum4);
+print("my_sum2 = {:d}, my_sum3 = {:d}, my_sum4 = {:d}".format(my_sum2, my_sum3, my_sum4));
+
+# Strings can be concatenated (glue together) with the + operator, and repeated with *
+print(3 * "un" + "ium");  # 3 times "un", followed by "ium".
+
+# Two or more string literals (i.e. the ones enclosed between quotes) next to each other
+# are automatically concatenated.
+print("Py" "thon");
