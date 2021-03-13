@@ -6,8 +6,17 @@ double_quote = "spam eggs";
 print(single_quote);
 print(double_quote);
 
-escape = "doesn't";
-Escape = 'doesn\'t';
+Escape = 'doesn\'t';  # Use \' to escape the single quote.
+escape = "doesn't";   # or use double quotes instead.
 
-print(escape);
 print(Escape);
+print(escape);
+
+single_quote2 = '"Yes", they said.';
+print(single_quote2);
+
+double_quote2 = "\"Yes\", they said. ";
+print(double_quote2);
+
+single_quote3 = '"Isn\'t", they said.';
+print(single_quote3);
