@@ -95,5 +95,14 @@ print(prefix + "thon");
 
 # Strings can be indexed, with the first character having index 0.
 word = "Python";
+print(word[0]);  # Character in position 0.
+print(word[5]);  # Character in position 5.
+
+# Indices may also be negative numbers, to start counting from the right.
+print(word[-1]); # Last characer
+print(word[-2]); # Second-last character.
+print(word[-6]);
+
+# Note that since -0 is the same as 0, negative indices start from -1.
+print(word[-0]);
 print(word[0]);
-print(word[5]);
