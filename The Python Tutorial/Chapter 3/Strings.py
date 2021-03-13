@@ -72,6 +72,7 @@ my_sum4 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + \
 
 print(my_sum2 + my_sum3 + my_sum4);
 print("my_sum2 = {:d}, my_sum3 = {:d}, my_sum4 = {:d}".format(my_sum2, my_sum3, my_sum4));
+# print(my_sum2 + ", " + my_sum3 + ", " + my_sum4);
 
 # Strings can be concatenated (glue together) with the + operator, and repeated with *
 print(3 * "un" + "ium");  # 3 times "un", followed by "ium".
@@ -79,3 +80,15 @@ print(3 * "un" + "ium");  # 3 times "un", followed by "ium".
 # Two or more string literals (i.e. the ones enclosed between quotes) next to each other
 # are automatically concatenated.
 print("Py" "thon");
+
+# This feature is particular useful when you want to break long strings.
+text = ("Put several strings within parentheses "
+        "to have them joined together.");
+print(text);
+
+# This only works with two literals though, not with variables or expressions.
+prefix = "Py";
+# print(prefix 'thon');   cannot concatenate a variable and a string literal.
+
+# If you want to concatenate variables or a variable and literals, use +
+print(prefix + "thon");
