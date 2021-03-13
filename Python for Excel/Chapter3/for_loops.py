@@ -4,7 +4,7 @@
 # assigns it to the variable currency, and prints it - one after another until there are
 # no more elements in the list.
 
-currencies = ["USD", "HKD", "AUD"];
+currencies = ["USD", "HKD", "AUD"];  # A list
 
 for currency in currencies:
     print(currency);
