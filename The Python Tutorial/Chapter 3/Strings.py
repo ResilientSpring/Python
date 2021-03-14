@@ -99,7 +99,7 @@ print(word[0]);  # Character in position 0.
 print(word[5]);  # Character in position 5.
 
 # Indices may also be negative numbers, to start counting from the right.
-print(word[-1]); # Last characer
+print(word[-1]); # Last character
 print(word[-2]); # Second-last character.
 print(word[-6]);
 
