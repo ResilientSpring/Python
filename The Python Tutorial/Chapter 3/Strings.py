@@ -106,3 +106,7 @@ print(word[-6]);
 # Note that since -0 is the same as 0, negative indices start from -1.
 print(word[-0]);
 print(word[0]);
+
+# Slicing
+print(word[0:2]); # characters from position 0 (included) to 2 (excluded)
+print(word[2:5]);
