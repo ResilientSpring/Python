@@ -9,3 +9,8 @@ cells = [[1, 2, 3],
 print(cells[1]);
 
 print(cells[1][1:]);
+
+users = ["Linda", "Brian"];
+users.append("Jennifer"); # Most commonly you add to the end.
+
+print(users);
