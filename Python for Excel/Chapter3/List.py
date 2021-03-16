@@ -34,3 +34,7 @@ print(users); # The original list is unchanged.
 
 users.sort(); # Sort the original list.
 print(users);
+
+# Note that you can use len and in with strings as well.
+print(len("Python"));
+print("free" in "Python is free and open source.");
