@@ -14,3 +14,6 @@ print(r);
 r = np.sort(r);
 print("After sorting: ");
 print(r);
+
+# Reference:
+# https://stackoverflow.com/questions/26984414/efficiently-sorting-a-numpy-array-in-descending-order
