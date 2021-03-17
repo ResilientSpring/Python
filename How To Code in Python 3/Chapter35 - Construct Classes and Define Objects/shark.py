@@ -8,7 +8,6 @@ class Shark:
     def be_awesome(self):
         print("This shark is being awesome.");
 
-def main():
-    sammy = Shark();
-    sammy.swim();
-    sammy.be_awesome();
+sammy = Shark();
+sammy.swim();
+sammy.be_awesome();
