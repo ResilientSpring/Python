@@ -117,3 +117,22 @@ print(word[2:5]);
 word[:2] ;  # character from the beginning to position 2 (excluded)
 word[4:] ;  # characters from position 4 (included) to the end
 word[-2:];  # characters from the second-last (included) to the end
+
+# For non-negative indices,
+# the length of a slice is the difference of the indices, if both are within bounds.
+print(len(word[1:3]));
+
+# Attempting to use an index that is too large will result in an error:
+# print( word[42] );  the word only has 6 characters.
+
+# However, out of range slice indexes are handled gracefully when used for slicing.
+print(word[4:42]);
+print(word[42:]);
+
+# Python strings cannot be changed - they are immutable.
+# Thus, assigning to an indexed position in the string results in an error:
+# word[0] = 'J';
+
+# If you need a different string, you should create a new one:
+new_word = 'J' + word[1:];
+print(new_word);
