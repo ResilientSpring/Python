@@ -3,6 +3,9 @@
 
 class Shark:
 
+    def __init__(self):
+        print("This is the constructor method.");
+
     def swim(self):
         print("The shark is swimming.");
 
