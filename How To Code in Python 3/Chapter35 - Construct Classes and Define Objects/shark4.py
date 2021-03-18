@@ -17,6 +17,7 @@ class Shark:
         print(self.name + " is being awesome.");
 
 # Set name of Shark object.
-sammy = Shark("Sammy");
+# sammy = Shark("Sammy");   All parameters of the constructor should be filled.
+sammy = Shark("Sammy", 5);
 sammy.swim();
 sammy.be_awesome();
