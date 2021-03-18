@@ -8,11 +8,14 @@ class Shark:
         self.name = name;
 
     def swim(self):
-        print("The shark is swimming.");
+        # Reference the name.
+        print(self.name + " is swimming.");
 
     def be_awesome(self):
-        print("This shark is being awesome.");
+        # Reference the name.
+        print(self.name + " is being awesome.");
 
-sammy = Shark();
+# Set name of Shark object.
+sammy = Shark("Sammy");
 sammy.swim();
 sammy.be_awesome();
