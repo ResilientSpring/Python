@@ -8,4 +8,8 @@ array1 = np.array([10, 100, 1000.]);
 array2 = np.array([[1., 2., 3.],
                    [4., 5., 6.]]);
 
+print(array1.dtype);
+
+print(float(array1[0]));
+
 print(array2 + 1);
