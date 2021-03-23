@@ -1,8 +1,6 @@
 import numpy as np
 
-row1 = [10, 12, 13];
-row2 = [45, 32, 16];
-row3 = [45, 32, 16];
+array = [ [10, 12, 13], [45, 35, 16], [45, 32, 16] ];
 
-num_2d = np.array([row1, row2, row3]);
+num_2d = np.array(array);
 print(num_2d[:, :2]);
