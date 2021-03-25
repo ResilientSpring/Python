@@ -21,4 +21,5 @@ print(Z);
 # array([[-4.49401501,  4.00950034, -1.81814867,  7.29718677],   # random
 #        [ 0.39924804,  4.68456316,  4.99394529,  4.84057254]])  # random
 
+# Reference:
 # https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html
