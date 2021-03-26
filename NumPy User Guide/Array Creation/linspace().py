@@ -15,3 +15,5 @@ f = np.sin(x);
 
 print(x, f);
 
+# Reference:
+# https://numpy.org/devdocs/user/quickstart.html#array-creation
