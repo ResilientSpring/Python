@@ -14,3 +14,6 @@ print(b.min(axis=1)); # min of each row.
 
 print(b.cumsum(axis=1)); # cumulative sum along each row.
 
+# Reference:
+# https://numpy.org/devdocs/user/quickstart.html#basic-operations
+
