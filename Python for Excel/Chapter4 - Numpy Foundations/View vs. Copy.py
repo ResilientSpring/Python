@@ -14,3 +14,15 @@ print(subset);
 
 print(array);
 
+#########################################
+
+array = np.array([row1, row2]);
+print(array);
+
+subset = array[ : , : 2].copy();
+print(subset);
+
+subset[0, 0] = 1000;
+print(subset);
+
+print(array);
