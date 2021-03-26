@@ -15,3 +15,7 @@ print(array2[1, 2]);
 
 print(array2[ : ][1 : ]);
 print(array2[ : , 1 : ]); # Returns a 2d array
+
+print(array2[ : , 1]); # Returns a 1d array.
+
+print(array2[1, : 2]); # Returns a 1d array.
