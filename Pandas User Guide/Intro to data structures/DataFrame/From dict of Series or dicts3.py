@@ -13,5 +13,10 @@ print(dictionary);
 
 # If no columns are passed, the columns will be the ordered list of dict keys.
 dataFrame = pd.DataFrame(data=dictionary, index=['d', 'b', 'a', 'c']);
-
 print(dataFrame);
+
+# When a particular set of columns is passed along with a dict of data,
+# the passed columns override the keys in the dict.
+dataFrame2 = pd.DataFrame(data=dictionary, index=['a', 'b', 'c', 'd'],
+                          columns=["Amazing", "out of hand"]);
+print(dataFrame2);
