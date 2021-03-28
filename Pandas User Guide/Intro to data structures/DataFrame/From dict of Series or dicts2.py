@@ -9,5 +9,7 @@ print(s2);
 
 dictionary = {"one": s1, "two": s2};
 
+# DataFrame is a 2-dimensional labeled data structure with columns of potentially different
+# types. You can think of it like a spreadsheet or SQL table, or a dict of Series objects.
 dataFrame = pd.DataFrame(data=dictionary, );
 print(dataFrame);

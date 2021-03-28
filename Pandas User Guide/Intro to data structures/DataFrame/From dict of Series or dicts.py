@@ -9,3 +9,6 @@ d = {
 df = pd.DataFrame(d);
 
 print(df);
+
+# Reference:
+# https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#dataframe
