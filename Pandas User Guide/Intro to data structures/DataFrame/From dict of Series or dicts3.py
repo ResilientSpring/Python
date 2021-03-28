@@ -20,3 +20,11 @@ print(dataFrame);
 dataFrame2 = pd.DataFrame(data=dictionary, index=['a', 'b', 'c', 'd'],
                           columns=["Amazing", "out of hand"]);
 print(dataFrame2);
+
+dataFrame3 = pd.DataFrame(data=dictionary, index=['a', 'b', 'c', 'd'],
+                          columns=["ambivalence", "repatriation"], dtype=float);
+print(dataFrame3);
+
+dataFrame4 = pd.DataFrame(data=dictionary, index=['a', 'b', 'c', 'd'],
+                          columns=["lifeblood", "livelihood"], dtype="float");
+print(dataFrame4);
