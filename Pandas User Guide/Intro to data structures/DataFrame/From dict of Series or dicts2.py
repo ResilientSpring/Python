@@ -20,11 +20,19 @@ print(dataFrame);
 dataFrame2 = pd.DataFrame(data=dictionary, index=['a', 'b', 'c', 'd'], columns=["One", "Two"], dtype=float);
 print(dataFrame2);
 
-# When the data is a dict, and columns is not specified,
-# the DataFrame columns will be ordered by the dict’s insertion order
-dataFrame3 = pd.DataFrame(data=dictionary, index=['d', 'b', 'a']);
+# a dict of Series plus a specific index will discard all
+# data not matching up to the passed index.
+dataFrame3 = pd.DataFrame(data=dictionary, index=['a', 'b', 'c'], columns=["one", "two"]);
 print(dataFrame3);
 
-# If axis labels are not passed, they will be constructed from the input data based on common sense rules.
-dataFrame4 = pd.DataFrame(data=dictionary, );
+# When the data is a dict, and columns is not specified,
+# the DataFrame columns will be ordered by the dict’s insertion order
+dataFrame4 = pd.DataFrame(data=dictionary, index=['a', 'b', 'd']);
 print(dataFrame4);
+
+dataFrame5 = pd.DataFrame(data=dictionary, index=['d', 'b', 'a']);
+print(dataFrame5);
+
+# If axis labels are not passed, they will be constructed from the input data based on common sense rules.
+dataFrame6 = pd.DataFrame(data=dictionary, );
+print(dataFrame6);
