@@ -117,7 +117,7 @@ for i in range(iterations):
     # Visualization
     ax.plot('A', color='r');
     fig.canvas.draw();
-    ax.set_xlim(lift=max(0, i - iterations), right=i + 3);
+    ax.set_xlim(left=max(0, i - iterations), right=i + 3);
 
 print("Optimal solution: ", global_best_particle_position);
 print("Objective function value: ", fitness_global_best_particle_position);
