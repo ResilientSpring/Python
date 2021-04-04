@@ -5,3 +5,5 @@ obj2 = pd.Series(data=[4, 7, -5, 3], index=['d', 'b', 'a', 'c']);
 print(obj2);
 
 print(obj2 * 2);
+print(obj2);
+print(np.exp(obj2));
