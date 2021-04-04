@@ -10,10 +10,13 @@ data = {"state": ["Ohio", "Ohio", "Ohio", "Nevada", "Nevada", "Nevada"],
 frame = pd.DataFrame(data);
 print(frame);
 
+frame2 = pd.DataFrame(data=data);
+print(frame2);
+
 # If you specify a sequence of columns, the DataFrame's columns will be arranged
 # in that order: [2]
-frame2 = pd.DataFrame(data=data, columns=["year", "state", "pop"]);
-print(frame2);
+frame3 = pd.DataFrame(data=data, columns=["year", "state", "pop"]);
+print(frame3);
 
 # Reference:
 # 1. https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#dataframe
