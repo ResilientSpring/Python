@@ -10,3 +10,9 @@ six = {"year": 2003, "state": "Nevada", "pop": 3.2, "debt": None};
 
 frame = pd.DataFrame(data=[one, two, three, four, five, six]);
 print(frame);
+print(frame.values);
+print(type(frame.values));
+
+frame2 = frame.values;
+print(frame2);
+print(type(frame2));
