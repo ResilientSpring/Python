@@ -20,3 +20,7 @@ print(check);
 
 frame["eastern"] = check;
 print(frame);
+
+del frame["eastern"];
+print(frame.columns);
+print(frame);
