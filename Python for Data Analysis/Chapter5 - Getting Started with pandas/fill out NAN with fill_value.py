@@ -13,3 +13,6 @@ print(df2);
 
 df3 = df1 + df2;
 print(df3);
+
+df4 = df1.add(df2, fill_value=0);
+print(df4);
