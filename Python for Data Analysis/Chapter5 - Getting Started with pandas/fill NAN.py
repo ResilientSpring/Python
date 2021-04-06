@@ -7,3 +7,9 @@ print(df1);
 df2 = pd.DataFrame(data=np.arange(20.).reshape((4, 5)), columns=list("abcde"));
 print(df2);
 
+df2.loc[1, 'b'] = np.nan;
+
+print(df2);
+
+df3 = df1 + df2;
+print(df3);
