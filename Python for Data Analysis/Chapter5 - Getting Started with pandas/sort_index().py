@@ -15,3 +15,6 @@ print(frame3);
 
 # frame4 = frame.sort_columns();
 # print(frame4);
+
+frame5 = frame.sort_index(axis=1, ascending=False);
+print(frame5);
