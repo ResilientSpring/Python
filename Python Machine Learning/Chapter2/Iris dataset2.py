@@ -16,9 +16,13 @@ print(y);
 y2 = df.iloc[0:100, 4].to_numpy();
 print(y2);
 
+# Convert the class labels into the two integer class labels,
+# 1 (versicolor) and -1 (setosa).
 y3 = np.where(y == "Iris-setosa", -1, 1);
 
-# extract sepal length and petal length
+# extract the first feature column (sepal length) and
+# the third feature column (petal length) of those 100 training examples and assign them
+# to a feature matrix, X.
 X = df.iloc[0:100, [0, 2]].to_numpy();
 
 # References:
