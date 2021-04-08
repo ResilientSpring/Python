@@ -10,7 +10,8 @@ df = pd.read_csv(filepath_or_buffer=url, header=None);
 print(df);
 
 # select setosa and versicolor
-
+y = df.iloc[0:100, 4];
+print(y);
 
 # References:
 # 1. https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#column-and-index-locations-and-names
