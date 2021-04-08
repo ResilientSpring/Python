@@ -13,5 +13,13 @@ print(df);
 y = df.iloc[0:100, 4];
 print(y);
 
+y2 = df.iloc[0:100, 4].to_numpy();
+print(y2);
+
+y3 = np.where(y == "Iris-setosa", -1, 1);
+
+# extract sepal length and petal length
+X = df.iloc[0:100, [0, 2]].to_numpy();
+
 # References:
 # 1. https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#column-and-index-locations-and-names
