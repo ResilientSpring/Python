@@ -25,7 +25,7 @@ print(y3)
 # extract the first feature column (sepal length) and
 # the third feature column (petal length) of those 100 training examples and assign them
 # to a feature matrix, X.
-X1 = df.iloc[0:100, [0, 2]].to_numpy();
+X1 = df.iloc[0:100, [0, 2]];
 print(X1);
 
 X = df.iloc[0:100, [0, 2]].to_numpy();
