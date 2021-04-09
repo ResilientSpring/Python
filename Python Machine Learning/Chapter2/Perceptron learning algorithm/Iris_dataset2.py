@@ -20,6 +20,7 @@ print(y2);
 # Convert the class labels into the two integer class labels,
 # 1 (versicolor) and -1 (setosa).
 y3 = np.where(y == "Iris-setosa", -1, 1);
+print(y3)
 
 # extract the first feature column (sepal length) and
 # the third feature column (petal length) of those 100 training examples and assign them
