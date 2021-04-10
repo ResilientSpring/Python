@@ -43,3 +43,6 @@ regressor = rf_reg.fit(X=data_ready.X_train, y=data_ready.y_train);
 sc = StandardScaler();
 
 single_record = sc.transform(X=data_ready.X1.values[100].reshape(1, -1));
+
+predicted_tip = rf_reg.predict(X=single_record);
+print(predicted_tip);
