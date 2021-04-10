@@ -38,22 +38,25 @@ print(categorical_numerical);
 X1 = pd.concat([numerical, categorical_numerical], axis=1);
 print(X1);
 
-# Divide Data into Training and Test sets
+# Divide Data into Training and Test Sets
 X_train, X_test, y_train, y_test = train_test_split(X1, y, test_size=0.20, random_state=0);
 
-sc = StandardScaler();
+# Training and testing the SVM
 
-# scaling the training set
-X_train = sc.fit_transform(X=X_train);
+from sklearn import svm
 
-# scaling the test set
-X_test = sc.transform(X=X_test);
+# Initialize our classifier
+svm_reg = svm.SVR();
 
-KNN_reg = KNeighborsRegressor(n_neighbors=5);
-regressor = KNN_reg.fit(X=X_train, y=y_train);
+# Train our classifier
+regressor = svm_reg.fit(X=X_train, y=y_train);
 
-y_prediction = regressor.predict(X_test);
+# Make predictions
+y_prediction = svm_reg.predict(X=X_test);
 
+from sklearn import metrics
+
+# Evaluate accuracy
 print("Mean Absolute Error:", metrics.mean_absolute_error(y_true=y_test, y_pred=y_prediction));
 print("Mean Squared Error:", metrics.mean_squared_error(y_true=y_test, y_pred=y_prediction));
 print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y_true=y_test, y_pred=y_prediction)));

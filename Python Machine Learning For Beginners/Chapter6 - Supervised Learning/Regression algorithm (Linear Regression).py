@@ -36,6 +36,7 @@ print(categorical_numerical);
 X1 = pd.concat([numerical, categorical_numerical], axis=1);
 print(X1);
 
+# Divide data into Training and Test sets.
 X_train, X_test, y_train, y_test = train_test_split(X1, y, test_size=0.20, random_state=0);
 
 sc = StandardScaler();
