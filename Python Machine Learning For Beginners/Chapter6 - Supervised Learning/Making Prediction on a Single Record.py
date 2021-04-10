@@ -36,11 +36,17 @@ print(the_100th_record);
 # Predict the value of the tip of the 100th record using the random forest regressor algorithm.
 from sklearn.ensemble import RandomForestRegressor
 
-rf_reg = RandomForestRegressor(n_estimators=500, random_state=42);
-regressor = rf_reg.fit(X=data_ready.X_train, y=data_ready.y_train);
-
 ## Data scaling/normalization
 sc = StandardScaler();
+
+### Scaling the training set
+X_train = sc.fit_transform(X=data_ready.y_train);
+
+### Scaling the test set
+X_test = sc.transform(X=data_ready.X_test);
+
+rf_reg = RandomForestRegressor(n_estimators=500, random_state=42);
+regressor = rf_reg.fit(X=X_train, y=data_ready.y_train);
 
 single_record = sc.transform(X=data_ready.X1.values[100].reshape(1, -1));
 
