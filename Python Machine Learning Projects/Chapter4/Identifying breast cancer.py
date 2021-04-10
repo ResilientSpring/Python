@@ -20,7 +20,7 @@ print(labels[0]);
 print(feature_name[0]);
 print(features[0]);
 
-# Split our data
+# Split our data (divide data into Training and Test sets)
 train, test, train_label, test_labels = train_test_split(features, labels, test_size=0.33, random_state=42);
 
 # Initialize our classifier
@@ -34,5 +34,5 @@ y_prediction = gnb.predict(X=test);
 
 print(y_prediction);
 
-# Evaludate accuracy
+# Evaluate accuracy
 print(accuracy_score(y_true=test_labels, y_pred=y_prediction));
