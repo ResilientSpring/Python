@@ -8,6 +8,7 @@ from sklearn import metrics
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score
+import Data_preprocessing as data_ready
 
 print(sns.get_dataset_names());
 
@@ -36,4 +37,9 @@ print(the_100th_record);
 from sklearn.ensemble import RandomForestRegressor
 
 rf_reg = RandomForestRegressor(n_estimators=500, random_state=42);
-regressor = rf_reg.fit(X=)
+regressor = rf_reg.fit(X=data_ready.X_train, y=data_ready.y_train);
+
+## Data scaling/normalization
+sc = StandardScaler();
+
+single_record = sc.transform(X=data_ready.X1.values[100].reshape(1, -1));
