@@ -46,9 +46,9 @@ class AdalineGD(object):
             self: object
         """
 
-        rgen = np.random.RandomState(self.randome_state);
+        rgen = np.random.RandomState(self.random_state);
 
-        self.w = rgen.normal(loc=0.0, scale=0.01, size=1 + X.shape[1]);
+        self.w_ = rgen.normal(loc=0.0, scale=0.01, size=1 + X.shape[1]);
 
         self.cost_ = [];
 
@@ -68,5 +68,9 @@ class AdalineGD(object):
         return np.dot(X, self.w_[1:]) + self.w_[0]
 
     def activation(self, X):
+        """Compute linear activation"""
+        return X;
+
+    def predict(self, X):
         """Return class label after unit step"""
         return np.where(self.activation(X=self.net_input(X=X)) >= 0.0, 1, -1);

@@ -30,18 +30,3 @@ print(X1);
 
 X = df.iloc[0:100, [0, 2]].to_numpy();
 print(X);
-
-# plot data
-plt.scatter(x=X[:50, 0], y=X[:50, 1], c="red", marker='o', label="setosa");
-plt.scatter(x=X[50:100, 0], y=X[50:100, 1], c="blue", marker='x', label="versicolor");
-
-plt.xlabel("sepal length [cm]");
-plt.ylabel("petal length [cm]");
-plt.legend(loc="upper left");
-
-plt.savefig('iris_dataset.jpg');
-
-plt.show();
-
-# References:
-# 1. https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#column-and-index-locations-and-names
