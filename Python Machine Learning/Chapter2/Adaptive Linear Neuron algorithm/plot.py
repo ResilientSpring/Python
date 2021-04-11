@@ -17,4 +17,7 @@ ax[1].plot(range(1, len(ada2.cost_) + 1), ada2.cost_, marker='o');
 ax[1].set_xlabel("Epochs");
 ax[1].set_ylabel("Sum-squared-error");
 ax[1].set_title("Adaline - Learning rate 0.0001");
+
+plt.savefig("Adaline.jpg")
+
 plt.show();

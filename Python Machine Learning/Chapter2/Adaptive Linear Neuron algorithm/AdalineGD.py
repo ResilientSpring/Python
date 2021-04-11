@@ -60,12 +60,12 @@ class AdalineGD(object):
             self.w_[0] += self.eta * errors.sum();
             cost = (errors ** 2).sum() / 2.0;
             self.cost_.append(cost);
-            return self;
+        return self;
 
     def net_input(self, X):
         """Calculate net input"""
 
-        return np.dot(X, self.w_[1:]) + self.w_[0]
+        return np.dot(X, self.w_[1:]) + self.w_[0];
 
     def activation(self, X):
         """Compute linear activation"""
