@@ -1,7 +1,7 @@
 class AdalineGD:
     """ADAptive LInear NEuron classifier
 
-    Parameters
+    :parameter
     ------------
     eta: float
         Learning rate (between 0.0 and 1.0)
@@ -26,3 +26,20 @@ class AdalineGD:
         self.eta = eta;
         self.n_iter = n_iter;
         self.random_state = random_state;
+
+    def fit(self, X, y):
+        """Fit training data.
+
+        :parameter
+        X: {array-like}, shape = [n_examples, n_features]
+
+            Training vectors, where n-examples is the number of examples
+            and n_features is the number of features.
+
+        y: array-like, shape = [n_examples]
+
+            Target values.
+
+         :return
+            self: object
+        """
