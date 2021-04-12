@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import Perceptron
 
 iris = datasets.load_iris();
 print(iris);
@@ -28,5 +29,10 @@ print("Labels counts in y_test:", np.bincount(y_test));
 sc = StandardScaler();
 sc.fit(X=X_train);
 X_train_std = sc.transform(X=X_train);
-
 X_test_std = sc.transform(X=X_test);
+
+ppn = Perceptron(eta0=0.1, random_state=1);
+ppn.fit(X=X_train_std, y=y_train);
+
+y_prediction = ppn.predict(X=X_test_std);
+print("Misclassified examples: %d" %(y_test != y_prediction).sum());
