@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.datasets._samples_generator import make_blobs
 from matplotlib import pyplot as plt
+from scipy.cluster.hierarchy import dendrogram, linkage
 
 # generating dummy data of 10 records with 2 clusters.
 features, labels = make_blobs(n_samples=10, centers=2, cluster_std=2.00, n_features=2,
@@ -22,5 +23,14 @@ for label, x, y in zipper:
                  va="bottom");
 
 plt.savefig("cluster.jpg");
+
+plt.show();
+
+dendos = linkage(y=features, method="single");
+
+annots = range(1, 11);
+dendrogram(Z=dendos, orientation="top", labels=annots, distance_sort="descending", show_leaf_counts=True);
+
+plt.savefig("dendrograms.jpg");
 
 plt.show();
