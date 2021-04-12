@@ -10,9 +10,13 @@ features, labels = make_blobs(n_samples=10, centers=2, cluster_std=2.00);
 plt.scatter(x=features[:, 0], y=features[:, 1], c="r");
 
 # adding numbers to data points
+
 annots = range(1, 11);
 
-for labels, x, y in zip(annots, features[:, 0], features[:, 1]):
+zipper = zip(annots, features[:, 0], features[:, 1]);
+print(tuple(zipper));
+
+for labels, x, y in zipper:
     plt.annotate(labels, xy=(x, y), xytext=(-3, 3), textcoords="offset points", ha="right",
                  va="bottom");
 
