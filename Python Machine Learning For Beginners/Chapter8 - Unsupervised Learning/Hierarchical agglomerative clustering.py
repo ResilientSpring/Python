@@ -24,4 +24,3 @@ for label, x, y in zipper:
 plt.savefig("cluster.jpg");
 
 plt.show();
-
