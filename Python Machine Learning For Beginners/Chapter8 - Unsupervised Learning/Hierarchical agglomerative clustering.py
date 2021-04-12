@@ -5,9 +5,12 @@ from matplotlib import pyplot as plt
 
 # generating dummy data of 10 records with 2 clusters.
 features, labels = make_blobs(n_samples=10, centers=2, cluster_std=2.00);
+print(labels);
+print(features);
 
 # plotting the dummy data
 plt.scatter(x=features[:, 0], y=features[:, 1], c="r");
+plt.show();
 
 # adding numbers to data points
 
