@@ -31,5 +31,5 @@ def plot_decision_regions(X, y, classifier, resolution=0.02, test_idx = None):
         # plot all examples
         X_test, y_test = X[test_idx, :], y[test_idx];
 
-        plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c='', edgecolors="black", alpha=1.0,
+        plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c=" ", edgecolors="black", alpha=1.0,
                     linewidth=1, marker='o', s=100, label="test_set");
