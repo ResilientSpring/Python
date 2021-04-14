@@ -35,4 +35,5 @@ ppn = Perceptron(eta0=0.1, random_state=1);
 ppn.fit(X=X_train_std, y=y_train);
 
 y_prediction = ppn.predict(X=X_test_std);
+print(y_prediction);
 print("Misclassified examples: %d" %(y_test != y_prediction).sum());
