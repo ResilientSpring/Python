@@ -47,4 +47,6 @@ plt.ylabel("petal width [standardized]");
 plt.legend(loc="upper left");
 plt.tight_layout();
 
+plt.savefig("Logistic_regression_model_with_scikit.jpg")
+
 plt.show();
