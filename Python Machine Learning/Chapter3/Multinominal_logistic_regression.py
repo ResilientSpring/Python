@@ -1,9 +1,15 @@
+from sklearn.linear_model import LogisticRegression
+import plot
+
 from sklearn import datasets
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Perceptron
+import Logistic_Regression
+import Decision_boundary_visualization as visualization
+import matplotlib.pyplot as plt
 
 iris = datasets.load_iris();
 print(iris);
@@ -31,9 +37,17 @@ sc.fit(X=X_train);
 X_train_std = sc.transform(X=X_train);
 X_test_std = sc.transform(X=X_test);
 
-ppn = Perceptron(eta0=0.1, random_state=1);
-ppn.fit(X=X_train_std, y=y_train);
+lr = LogisticRegression(C=100.0, random_state=1, solver="lbfgs", multi_class="multinomial");
 
-y_prediction = ppn.predict(X=X_test_std);
-print(y_prediction);
-print("Misclassified examples: %d" %(y_test != y_prediction).sum());
+lr.fit(X=X_train_std, y=y_train);
+visualization.plot_decision_regions(X=plot.X_combined_std, y=plot.y_combined, classifier=lr,
+                                    test_idx=range(105, 150));
+
+plt.xlabel("petal length [standardized]");
+plt.ylabel("petal width [standardized]");
+plt.legend(loc="upper left");
+plt.tight_layout();
+
+plt.savefig("Mutually_exclusive.jpg");
+
+plt.show();
