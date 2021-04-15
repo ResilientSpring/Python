@@ -1,4 +1,5 @@
 import numpy as np
+import loss_function
 
 np.random.seed(1);
 
@@ -25,3 +26,6 @@ z = X.dot(W) + b;
 A = sigmoid(z);
 
 print(A);
+
+loss = loss_function.bce_loss(y=y, y_hat=A);
+print(loss);
