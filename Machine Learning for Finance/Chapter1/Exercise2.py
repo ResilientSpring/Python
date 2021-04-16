@@ -5,5 +5,12 @@ url = "https://github.com/PacktPublishing/Machine-Learning-for-Finance/blob/mast
 df = pd.read_excel(io=url, sheet_name=0, header=1, index_col=None, usecols="A:N", nrows=180);
 print(df);
 
+print(df.columns);
+
+# Feature set
+X = df.drop(columns="Cultivar");
+print(X);
+
+# Class label
 y = df.iloc[:, 0];
 print(y);
