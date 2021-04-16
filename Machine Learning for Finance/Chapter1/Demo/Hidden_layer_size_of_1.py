@@ -11,11 +11,13 @@ plt.scatter(X[:, 0], X[:, 1], s=40, c=y.flatten(), cmap=plt.cm.Spectral)
 
 # Hyper parameters
 hiden_layer_size = 1
+
 # I picked this value because it showed good results in my experiments
 learning_rate = 0.01
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
+
 # This is what we return at the end
 model = h.initialize_parameters(nn_input_dim=2, nn_hdim=hiden_layer_size, nn_output_dim=1)
 model = h.train(model, X, y, learning_rate=learning_rate, num_passes=1000, print_loss=True)
