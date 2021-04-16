@@ -7,7 +7,6 @@ from tensorflow.keras.layers import Dense, Activation, Dropout
 model = Sequential();
 
 ## Then we can add layers to this model, just like stacking a layer cake, with model.add().
-model.add();
 
 ## For the first layer, we have to specify the input dimensions of the layer.
 ### Two features (the coordinates of the point)
