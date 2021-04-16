@@ -1,5 +1,12 @@
+import sklearn.datasets
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout
+import numpy as np
+
+# Generate a dataset and plot it.
+np.random.seed(0);
+X, y = sklearn.datasets.make_moons(200, noise=0.15);
+y = y.reshape(200, 1);
 
 # Building a neural network in the sequential API works as follows.
 
@@ -21,3 +28,9 @@ model.add(Activation("sigmoid"));
 
 ## Get an overview of all the layers:
 print(model.summary());
+
+model.compile(optimizer="sgd", loss="binary_crossentropy", metrics=["accuracy"]);
+
+# Now, we are ready to run the training process, which we can do with the following line:
+history = model.fit(x=X, y=y, epochs=900);
+print(history);
