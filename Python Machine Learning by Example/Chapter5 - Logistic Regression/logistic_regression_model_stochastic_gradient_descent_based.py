@@ -1,6 +1,7 @@
 import numpy as np
 import sigmoid as s
 
+
 # Defining the function that computes the prediction y_hat(x) with the current weights.
 def compute_prediction(X, weights):
     """Compute the prediction y_hat based on current weights"""
@@ -47,9 +48,9 @@ def compute_cost(X, y, weights):
 
 
 # Now, we connect all the functions above to the model training function:
-def train_logistic_regression(X_train, y_train, max_iter, learning_rate, fit_intercept=False):
+def train_logistic_regression_sgd(X_train, y_train, max_iter, learning_rate, fit_intercept=False):
     """
-    Train a logistic regression model
+    Train a logistic regression model via stochastic gradient descent
 
     :arg
     X_train, y_train: numpy.ndarray
@@ -76,11 +77,10 @@ def train_logistic_regression(X_train, y_train, max_iter, learning_rate, fit_int
     # Updating the "weights" vector in each iteration.
     for iteration in range(max_iter):
         weights = update_weights_sgd(X_train=X_train, y_train=y_train,
-                                    weights=weights, learning_rate=learning_rate);
+                                     weights=weights, learning_rate=learning_rate)
 
-        # Check the cost for every 100 iterations, for example.
-        if iteration % 100 == 0:
-
+        # Check the cost for every 2 iterations, for example.
+        if iteration % 2 == 0:
             # Printing out the current cost for every 1-- iterations to ensure cost is
             # decreasing and that things are on the right track.
             print(compute_cost(X=X_train, y=y_train, weights=weights))
