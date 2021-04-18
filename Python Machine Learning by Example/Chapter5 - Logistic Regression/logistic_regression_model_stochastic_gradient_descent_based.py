@@ -13,12 +13,26 @@ def compute_prediction(X, weights):
 
 # The function updating the weights by one step in a gradient descent manner.
 def update_weights_sgd(X_train, y_train, weights, learning_rate):
-    """Update weights by one step"""
+    """
+    One weight update iteration:
+        moving weights by one step based on each individual sample.
 
-    predictions = compute_prediction(X=X_train, weights=weights);
-    weights_delta = np.dot(X_train.T, y_train - predictions)
-    m = y_train.shape[0]
-    weights += learning_rate / float(m) * weights_delta
+    :arg
+    X_train, y_train: numpy.ndarray
+        training data sets
+
+    weights: numpy.ndarray
+    learning_rate : float
+
+    :returns
+    updated_weights: numpy.ndarray
+
+    """
+
+    for X_each, y_each in zip(X_train, y_train):
+        prediction = compute_prediction(X=X_each, weights=weights)
+        weights_delta = X_each.T * (y_each - prediction)
+        weights += learning_rate * weights_delta;
     return weights;
 
 
@@ -61,7 +75,7 @@ def train_logistic_regression(X_train, y_train, max_iter, learning_rate, fit_int
 
     # Updating the "weights" vector in each iteration.
     for iteration in range(max_iter):
-        weights = update_weights_gd(X_train=X_train, y_train=y_train,
+        weights = update_weights_sgd(X_train=X_train, y_train=y_train,
                                     weights=weights, learning_rate=learning_rate);
 
         # Check the cost for every 100 iterations, for example.
