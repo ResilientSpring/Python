@@ -38,3 +38,17 @@ sgd_lr = SGDClassifier(loss="log", penalty='l1', alpha=0.0001, fit_intercept=Tru
                        max_iter=100, learning_rate='constant', eta0=0.01);
 
 sgd_lr.fit(X=X_train, y=y_train);
+
+# The purpose of logistic regression model is to find the probability of the testing example
+# belonging to a certain class label.
+probability = sgd_lr.predict_proba(X=X_test);
+print(probability);
+
+# The probability of each training example belonging to the class1, class2, and class3
+# will sum up to 1.
+sum_up = sgd_lr.predict_proba(X=X_test).sum(axis=1);
+print(sum_up);
+
+# Identifying labels predicted by the model.
+class_predicted = sgd_lr.predict(X=X_test);
+print(class_predicted);
