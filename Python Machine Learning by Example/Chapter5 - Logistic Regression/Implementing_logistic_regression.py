@@ -1,5 +1,5 @@
 import numpy as np
-import logistic_regression
+import logistic_regression_model_with_gradient_descent
 import matplotlib.pyplot as plt
 
 X_train = np.array([[6, 7], [2, 4], [3, 6], [4, 7], [1, 6],
@@ -9,12 +9,12 @@ y_train = np.array([0, 0, 0, 0, 0, 1, 1, 1, 1, 1]);
 
 # We train a logistic regression model for 1000 iterations, at a learning rate of 0.1
 # based on intercept-included weights:
-weights = logistic_regression.train_logistic_regression(X_train=X_train, y_train=y_train,
-                                                        max_iter=1000, learning_rate=0.1,
-                                                        fit_intercept=True);
+weights = logistic_regression_model_with_gradient_descent.train_logistic_regression(X_train=X_train, y_train=y_train,
+                                                                                    max_iter=1000, learning_rate=0.1,
+                                                                                    fit_intercept=True);
 
 X_test = np.array([[6, 1], [1, 3], [3, 1], [4, 5]]);
-predictions = logistic_regression.predict(X=X_test, weights=weights);
+predictions = logistic_regression_model_with_gradient_descent.predict(X=X_test, weights=weights);
 print(predictions);
 
 # To visualize this:
