@@ -15,3 +15,5 @@ print(diamond_df);
 ## label set
 label = diamond_df["price"];
 print(label);
+
+## feature set
