@@ -11,3 +11,9 @@ print(diamond_df);
 # Perform all the preprocessing steps.
 
 # Dividing Data into Features and Labels
+
+## label set
+label = diamond_df["price"];
+print(label);
+
+## feature set
