@@ -40,7 +40,10 @@ model.compile(optimizer='adam', loss="sparse_categorical_crossentropy", metrics=
 # it automatically attains one-hot encoding.
 
 # Train the algorithm
-history = model.fit(x=X_train, y=y_train, batch_size=5, validation_split=0.1, epochs=100);
+history = model.fit(x=X_train, y=y_train,
+    #                batch_size=5,
+                    validation_split=0.1,
+                    epochs=100);
 ## validation_split refers to spliting the dataset for validation.
 
 plt.figure();
