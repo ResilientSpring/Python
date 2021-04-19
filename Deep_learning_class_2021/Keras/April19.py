@@ -9,12 +9,25 @@ iris_data=iris.data
 print(iris_data)
 X_train, X_test, y_train, y_test = train_test_split(iris_data, iris.target, test_size=0.2);
 
+# Lay the foundation of the model. / Get the model off the ground.
 model = Sequential()
+
+# Feed input's shape to the model.
 model.add(keras.Input(shape=(4, 1)));
+
+# Flatten() reshapes the input into one-dimension.
 model.add(Flatten());
+
+# Dense() means the fully-connected layers.
 model.add(Dense(units=64, activation="relu", name="layer1"))
+
+# Dropout means to drop out the specified percent of input data.
 model.add(Dropout(0.2))
+
+
 model.add(Dense(units=128, activation="relu", name="layer2"))
 model.add(Dropout(rate=0.2))
 model.add(Dense(units=3, activation="softmax", name="layers3"));
+
+# Printing out model information
 print(model.summary());
