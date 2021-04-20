@@ -16,3 +16,23 @@ print(iris_label)
 # split dataset into training set and test set.
 train_data, test_data, train_label, test_label = train_test_split(iris_data, iris_label,
                                                                   test_size=0.2);
+
+# Train the Bayesian algorithm
+
+## Initialization
+clf = GaussianNB();
+
+## Find the parameters
+clf.fit(X=train_data, y=train_label);
+
+## Make the predictions
+y_prediction = clf.predict(X=test_data)
+
+## Show the prediction
+print(y_prediction);
+
+# Print the prediction
+print("Predict: ", y_prediction)
+
+## Show the ground truth
+print("Answer:  ", test_label)
