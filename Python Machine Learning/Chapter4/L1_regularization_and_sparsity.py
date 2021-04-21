@@ -34,6 +34,10 @@ lr.fit(X=X_train_std, y=y_train)
 print("Training accuracy: ", lr.score(X=X_train_std, y=y_train))
 print("Test accuracy: ", lr.score(X=X_test_std, y=y_test))
 
+# We access the intercept terms via the lr.intercept_
 print(lr.intercept_)
 
+# We access the weight array via the lr.coef_ that contains one weight vector for each vector,
+# where each weight is multiplied by the respective feature in the feature set to calculate
+# the net input.
 print(lr.coef_)
