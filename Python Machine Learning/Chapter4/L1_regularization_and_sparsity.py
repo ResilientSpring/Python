@@ -41,3 +41,5 @@ print(lr.intercept_)
 # where each weight is multiplied by the respective feature in the feature set to calculate
 # the net input.
 print(lr.coef_)
+
+# In scikit-learn, the intercept_ corresponds to w0 and coef_ corresponds to Wj
