@@ -1,5 +1,7 @@
 import tensorflow as tf
 import keras
+import pandas as pd
+import matplotlib.pyplot as plt
 
 fashion_mnist = keras.datasets.fashion_mnist
 
@@ -75,3 +77,13 @@ history = model.fit(x=X_train, y=y_train, epochs=30, validation_data=(X_valid, y
 ## you want Keras to use for validation.  For example, validation_split-0.1 tells Keras
 ## to use the last 10% of the data (before shuffling) for validation.
 history2 = model.fit(x=X_train, y=y_train, validation_split=0.1, epochs=30)
+
+# Use the dictionary history.history returned by the fit(), to create a pandas DataFrame
+pd.DataFrame(data=history.history).plot(figsize=(8, 5))
+
+plt.grid(True)
+
+# Set the vertical range to [0-1]
+plt.gca().set_ylim(0, 1)
+
+plt.show()
