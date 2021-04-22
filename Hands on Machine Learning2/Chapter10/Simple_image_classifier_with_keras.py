@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow import keras
+import keras
 
 fashion_mnist = keras.datasets.fashion_mnist
 
@@ -22,3 +22,10 @@ class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat", "Scandal",
 
 ## The first image in the training set represents a coat:
 print(class_names[y_train[0]])
+
+# Creating the model using the Sequential API
+model = keras.models.Sequential()
+model.add(keras.layers.Flatten(input_shape=[28, 28]))
+model.add(keras.layers.Dense(300, activation="relu"))
+model.add(keras.layers.Dense(units=100, activation="relu"))
+model.add(keras.layers.Dense(units=10, activation="softmax"))
