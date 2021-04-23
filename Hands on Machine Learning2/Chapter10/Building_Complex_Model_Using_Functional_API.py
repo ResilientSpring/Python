@@ -3,6 +3,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from keras import Sequential
 import keras
+from sklearn import metrics
+import numpy as np
 
 housing = fetch_california_housing()
 
@@ -42,7 +44,7 @@ concat = keras.layers.Concatenate()([input_, hidden2])
 output = keras.layers.Dense(units=1)(concat)
 
 # Lastly, we create a Keras Model, and specify which inputs and outputs to use.
-model = keras.Model(inputs=[input_], output=[output])
+model = keras.models.Model(inputs=[input_], outputs=[output])
 
 # Once you have built the Keras model, everything is exactly like earlier: compile the model,
 # train it, evaluate it, and use it to make predictions.
@@ -53,4 +55,11 @@ model.compile(loss="mean_squared_error", optimizer=keras.optimizers.SGD(lr=1e-3)
 ## Train it
 model.fit(x=X_train_std, y=y_train, epochs=20, validation_split=0.2)
 
+y_prediction = model.predict(x=X_test_std)
+
 ## Evaluate it.
+print("Mean absolute error: ", metrics.mean_absolute_error(y_true=y_test, y_pred=y_prediction))
+print("Mean squared error: ", metrics.mean_squared_error(y_true=y_test, y_pred=y_prediction))
+print("Root mean squared error: ", np.sqrt(metrics.mean_squared_error(y_true=y_test,
+                                                                      y_pred=y_prediction)))
+
