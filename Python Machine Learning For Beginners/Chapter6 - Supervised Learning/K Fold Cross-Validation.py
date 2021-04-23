@@ -42,8 +42,18 @@ print(X1);
 # Divide Data into Training and Test Sets
 X_train, X_test, y_train, y_test = train_test_split(X1, y, test_size=0.20, random_state=0);
 
-# Training and testing the SVM
+# Data Scaling/Normalization
 
+## Initialize the StandardScaler object.
+sc = StandardScaler();
+
+## scaling the training set
+X_train = sc.fit_transform(X=X_train);
+
+## scaling the test set
+X_test = sc.transform(X=X_test);
+
+# Training and testing the SVM
 from sklearn import svm
 
 # Initialize our classifier

@@ -12,8 +12,13 @@ X_train, X_validation, y_train, y_validation = train_test_split(X_train_full, y_
 
 scaler = StandardScaler()
 
+# Scaling the training set
 X_train_std = scaler.fit_transform(X_train)
+
+# Scaling the validation set
 X_validation_std = scaler.fit_transform(X=X_validation)
+
+# Scaling the test set.
 X_test_std = scaler.fit_transform(X=X_test)
 
 print(X_train_std.shape[1:])
@@ -47,3 +52,5 @@ model.compile(loss="mean_squared_error", optimizer=keras.optimizers.SGD(lr=1e-3)
 
 ## Train it
 model.fit(x=X_train_std, y=y_train, epochs=20, validation_split=0.2)
+
+## Evaluate it.
