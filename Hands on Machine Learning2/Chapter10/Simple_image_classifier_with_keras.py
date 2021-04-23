@@ -25,6 +25,9 @@ class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat", "Scandal",
 ## The first image in the training set represents a coat:
 print(class_names[y_train[0]])
 
+# Create the test sets:
+X_new = X_test[ : 3]
+
 # Creating the model using the Sequential API
 model = keras.models.Sequential()
 
@@ -87,3 +90,25 @@ plt.grid(True)
 plt.gca().set_ylim(0, 1)
 
 plt.show()
+
+# Once you're satisfied with your model's validation accuracy, you should evaluate it on the
+# test set to estimate the generalization error before you deploy the model to production.
+# You can do this using the evaluate() method:
+evaluation = model.evaluate(x=X_test, y=y_test)
+
+print(evaluation)
+
+# Next, we can use the model's predict() to make predictions on new instances.
+y_probability = model.predict(x=X_new)
+
+print(y_probability)
+
+y_probability2 = y_probability.round(2)
+
+print(y_probability2)
+
+# If you only care about the class with the highest estimated probability (even if that
+# probability is quite low), then you can use the predict_classes() method:
+y_prediction3 = model.predict_classes(x=X_new)
+
+print(y_prediction3)
