@@ -8,18 +8,13 @@ import numpy as np
 
 housing = fetch_california_housing()
 
-X_train_full, X_test, y_train_full, y_test = train_test_split(housing.data, housing.target)
-
-# Validation set.
-X_train, X_validation, y_train, y_validation = train_test_split(X_train_full, y_train_full)
+X_train, X_test, y_train, y_test = train_test_split(housing.data, housing.target,
+                                                    test_size=0.20, random_state=0)
 
 scaler = StandardScaler()
 
 # Scaling the training set
 X_train_std = scaler.fit_transform(X_train)
-
-# Scaling the validation set
-X_validation_std = scaler.fit_transform(X=X_validation)
 
 # Scaling the test set.
 X_test_std = scaler.fit_transform(X=X_test)
@@ -63,4 +58,3 @@ print("Mean absolute error: ", metrics.mean_absolute_error(y_true=y_test, y_pred
 print("Mean squared error: ", metrics.mean_squared_error(y_true=y_test, y_pred=y_prediction))
 print("Root mean squared error: ", np.sqrt(metrics.mean_squared_error(y_true=y_test,
                                                                       y_pred=y_prediction)))
-
