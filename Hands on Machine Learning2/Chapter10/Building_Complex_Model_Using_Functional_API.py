@@ -54,7 +54,7 @@ model = keras.models.Model(inputs=[input_], outputs=[output])
 model.compile(loss="mean_squared_error", optimizer=keras.optimizers.SGD(lr=1e-3))
 
 ## Train it
-model.fit(x=X_train_std, y=y_train, epochs=20, validation_split=0.2)
+model.fit(x=X_train_std, y=y_train, epochs=20)
 
 y_prediction = model.predict(x=X_test_std)
 

@@ -5,6 +5,7 @@ from keras import Sequential
 import keras
 from sklearn import metrics
 import numpy as np
+from sklearn.model_selection import cross_val_score
 
 housing = fetch_california_housing()
 
@@ -49,7 +50,7 @@ model = keras.models.Model(inputs=[input_], outputs=[output])
 model.compile(loss="mean_squared_error", optimizer=keras.optimizers.SGD(lr=1e-3))
 
 ## Train it
-model.fit(x=X_train_std, y=y_train, epochs=20)
+trainee = model.fit(x=X_train_std, y=y_train, epochs=20)
 
 y_prediction = model.predict(x=X_test_std)
 
@@ -58,3 +59,5 @@ print("Mean absolute error: ", metrics.mean_absolute_error(y_true=y_test, y_pred
 print("Mean squared error: ", metrics.mean_squared_error(y_true=y_test, y_pred=y_prediction))
 print("Root mean squared error: ", np.sqrt(metrics.mean_squared_error(y_true=y_test,
                                                                       y_pred=y_prediction)))
+
+print(cross_val_score(estimator=trainee, X=))
