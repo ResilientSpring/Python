@@ -27,3 +27,23 @@ plt.tight_layout()
 plt.savefig("Visualization of MNIST examples of digits 0-9.jpg")
 
 plt.show()
+
+# let's also plot multiple examples of the same digit to see how different the handwriting
+# for each really is:
+fig, ax = plt.subplots(nrows=5, ncols=5, sharex=True, sharey=True)
+
+ax = ax.flatten()
+
+# Visualize 25 different versions of "7"
+for i in range(25):
+    img = X_train[y_train == 7][i].reshape(28, 28)
+    ax[i].imshow(img, cmap="Greys")
+
+
+ax[0].set_xticks([])
+ax[0].set_yticks([])
+plt.tight_layout()
+
+plt.savefig("Different versions of 7.jpg")
+
+plt.show()
