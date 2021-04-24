@@ -5,9 +5,9 @@ import numpy as np
 def load_mnist(path, kind='train'):
     """Load MNIST data from `path`"""
     labels_path = os.path.join(path,
-                               '%s-labels-idx1-ubyte' % kind)
+                               '%s_labels-idx1_ubyte' % kind)
     images_path = os.path.join(path,
-                               '%s-images-idx3-ubyte' % kind)
+                               '%s_images-idx3_ubyte' % kind)
 
     with open(labels_path, 'rb') as lbpath:
         magic, n = struct.unpack('>II',
