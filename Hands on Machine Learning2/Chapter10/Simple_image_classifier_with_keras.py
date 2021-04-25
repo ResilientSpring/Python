@@ -10,8 +10,8 @@ fashion_mnist = keras.datasets.fashion_mnist
 print(y_train_full)
 print(y_test)
 
-print(X_train_full.shape)
-print(X_train_full.dtype)
+print(X_train_full.shape) # Array[28][28]
+print(X_train_full.dtype) # each element of the 2D array is an integer
 
 # Create their validation sets and scale them down to 0-1 by dividing them by 255.0
 X_valid, X_train = X_train_full[:5000] / 255.0, X_train_full[5000:]
