@@ -7,6 +7,8 @@ from keras.optimizers import Adam
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+import create_model as modeler
+from keras.utils import plot_model
 
 url = "https://raw.githubusercontent.com/AbhiRoy96/Banknote-Authentication-UCI-Dataset/master/bank_notes.csv"
 
@@ -34,3 +36,6 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X=X_train)
 X_test = sc.transform(X=X_test)
 
+model = modeler.create_model()
+
+plot_model(model, to_file="model_plot1.png", show_shapes=True, show_layer_names=True)
