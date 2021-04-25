@@ -3,9 +3,10 @@ from keras.layers import Dense, Dropout, Activation
 import Densely_Connected_Neural_Network as DNN
 from keras.optimizers import Adam
 
-def create_model(learning_rate=0.001, dropout_rate=0.1):
 
+def create_model(learning_rate=0.001, dropout_rate=0.1):
     '''Create sequential model'''
+
     model = Sequential()
 
     # Adding dense layers
@@ -20,4 +21,3 @@ def create_model(learning_rate=0.001, dropout_rate=0.1):
     model.compile(optimizer=adam, metrics=["accuracy"], loss="binary_crossentropy")
 
     return model
-

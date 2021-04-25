@@ -38,4 +38,4 @@ X_test = sc.transform(X=X_test)
 
 model = modeler.create_model()
 
-plot_model(model, to_file="model_plot1.png", show_shapes=True, show_layer_names=True)
+plot_model(model, to_file="model_plot1.jpg", show_shapes=True, show_layer_names=True)
