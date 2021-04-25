@@ -39,6 +39,7 @@ X_test = sc.transform(X=X_test)
 learning_rate = 0.001
 dropout_rate = 0.1
 
+# Creating a neural network
 model = Sequential()
 
 # Adding dense layers
