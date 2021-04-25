@@ -7,8 +7,8 @@ from keras.optimizers import Adam
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-import create_model as modeler
 from keras.utils import plot_model
+import matplotlib.pyplot as plt
 
 url = "https://raw.githubusercontent.com/AbhiRoy96/Banknote-Authentication-UCI-Dataset/master/bank_notes.csv"
 
@@ -36,6 +36,21 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X=X_train)
 X_test = sc.transform(X=X_test)
 
-model = modeler.create_model()
+learning_rate = 0.001
+dropout_rate = 0.1
 
+model = Sequential()
+
+# Adding dense layers
+model.add(Dense(units=12, input_dim=X_train.shape[1], activation="relu"))
+model.add(Dropout(rate=dropout_rate))
+model.add(Dense(units=6, activation="relu"))
+model.add(Dropout(rate=dropout_rate))
+model.add(Dense(units=1, activation="sigmoid"))
+
+# Compiling the model
+adam = Adam(lr=learning_rate)
+model.compile(optimizer=adam, metrics=["accuracy"], loss="binary_crossentropy")
+
+# Plot the model's architecture via the plot_model() method from keras.utils module.
 plot_model(model, to_file="model_plot1.jpg", show_shapes=True, show_layer_names=True)
