@@ -41,3 +41,5 @@ model.add(keras.layers.Dense(units=4, activation="relu"))
 model.add(keras.layers.Dense(units=1, activation="sigmoid"))
 
 print(model.summary())
+
+plot_model(model=model, show_shapes=True, show_layer_names=True)
