@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
+import keras
+from keras.utils import plot_model
 
 tf.random.set_seed(1)
 np.random.seed(1)
@@ -29,3 +31,18 @@ x_valid = x[100:, :]
 
 ## the label set for validation (100 - 199)
 y_valid = y[100:]
+
+fig = plt.figure(figsize=(6, 6))
+plt.plot(x[y == 0, 0], x[y == 0, 1], 'o', alpha=0.75, markersize=10)
+plt.plot(x[y == 1, 0], x[y == 1, 1], '<', alpha=0.75, markersize=10)
+plt.xlabel(r'$x_1$', size=15)
+plt.ylabel(r'$x_2$', size=15)
+plt.show()
+
+model = keras.Sequential()
+
+model.add(keras.layers.Dense(units=1, input_shape=(2, ), activation="sigmoid"))
+
+print(model.summary())
+
+plot_model(model=model, show_shapes=True, show_layer_names=True)
