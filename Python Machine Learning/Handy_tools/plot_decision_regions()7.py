@@ -30,6 +30,10 @@ print(X)
 # Class set
 y = new_iris_df.filter(items=["target"])
 
+# Plot decision regions() only swallows numpy array, so X and y should be converted.
+X = X.to_numpy()
+y = y.to_numpy()
+
 # Initialized the classifier
 svm = SVC(C=0.5, kernel="linear")
 

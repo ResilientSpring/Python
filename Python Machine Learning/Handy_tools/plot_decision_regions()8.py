@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn import datasets
 from sklearn.svm import SVC
 import pandas as pd
+import numpy as np
 
 # Loading some example data
 iris = datasets.load_iris()
@@ -30,6 +31,13 @@ print(X)
 # Class set
 y = new_iris_df.filter(items=["target"])
 
+# Plot decision regions() only swallows numpy array, so X and y should be converted.
+X = X.to_numpy()
+y = y.to_numpy().T # Convert y from (150, 1) to (1, 150)
+print(y)
+
+y = np.squeeze(y) # Remove the redundant brackets.
+
 # Initialized the classifier
 svm = SVC(C=0.5, kernel="linear")
 
@@ -43,4 +51,10 @@ plot_decision_regions(X=X, y=y, clf=svm, legend=2)
 plt.xlabel("sepal length [cm]")
 plt.ylabel("petal length [cm]")
 plt.title("SVM on Iris")
+
+plt.savefig("plot_decision_regions().jpg")
+
 plt.show()
+
+# Source:
+# https://rasbt.github.io/mlxtend/user_guide/plotting/plot_decision_regions/
