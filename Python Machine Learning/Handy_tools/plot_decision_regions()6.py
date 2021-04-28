@@ -19,8 +19,12 @@ new_iris_df = iris_df.rename(columns={0: "sepal length ", 1:"sepal width", 2: "p
 
 print(new_iris_df)
 
-# Concatenate the target column to new_iris_df in order to see the full
+# Concatenate the target column to new_iris_df in order to see the full extent of the data.
 new_iris_df["target"] = datasets.load_iris().target
 print(new_iris_df)
 
-#
+# Pick "sepal length" and "petal length" as the features.
+X = new_iris_df.filter(items=["sepal length", "petal length"])
+print(X)
+
+print(new_iris_df.iloc[:, 0])
