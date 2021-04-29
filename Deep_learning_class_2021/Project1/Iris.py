@@ -11,15 +11,19 @@ from mlxtend.plotting import plot_decision_regions
 iris = load_iris()
 iris_data=iris.data
 print(iris_data)
-X_train, X_test, y_train, y_test = train_test_split(iris_data, iris.target, test_size=0.3);
+X_train, X_test, y_train, y_test = train_test_split(iris_data, iris.target, test_size=0.33);
 
 print(X_train.shape)
+
+print(X_train)
+print(X_test)
+print(y_train)
+print(y_test)
 
 model = Sequential()
 
 # Feed input's shape to the model.
 model.add(keras.Input(shape=(4, )))
-model.add(Flatten())
 model.add(Dense(units=128, activation="relu"))
 model.add(Dense(units=64, activation="relu"))
 model.add(Dense(units=3, activation="softmax"))
