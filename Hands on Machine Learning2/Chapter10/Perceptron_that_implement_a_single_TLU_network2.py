@@ -15,3 +15,4 @@ per_clf = Perceptron()
 per_clf.fit(X=X, y=y)
 
 y_prediction = per_clf.predict(X=[[2, 0.5]])
+print(y_prediction)
