@@ -14,3 +14,7 @@ print(X_test)
 print(y_train)
 print(y_test)
 
+svm_reg = svm.SVR()
+regressor = svm_reg.fit(X=X_train, y=y_train)
+
+y_prediction = svm_reg.predict(X=X_test)
