@@ -27,10 +27,12 @@ y[x[:, 0] * x[:, 1] < 0] = 0
 ## feature set (0 - 99)
 x_train = x[:100, :]
 print(x_train)
+print(x_train.shape)
 
 ## label set (0- 99)
 y_train = y[:100]
 print(y_train)
+print(y_train.shape)
 
 ## the feature set for validation (100 - 199)
 x_valid = x[100:, :]
