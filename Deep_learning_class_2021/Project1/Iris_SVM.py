@@ -1,6 +1,9 @@
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn import svm
+from sklearn import metrics
+import numpy as np
+from sklearn.model_selection import cross_val_score
 
 iris = load_iris()
 iris_data=iris.data
@@ -18,3 +21,9 @@ svm_reg = svm.SVR()
 regressor = svm_reg.fit(X=X_train, y=y_train)
 
 y_prediction = svm_reg.predict(X=X_test)
+
+print("Mean Absolute Error:", metrics.mean_absolute_error(y_test, y_prediction));
+print("Mean Squared Error:", metrics.mean_squared_error(y_test, y_prediction));
+print("Root Mean Squared Error:", np.sqrt(metrics.mean_squared_error(y_test, y_prediction)));
+
+score = cross_val_score(estimator=svm.SVC(random_state=1))
