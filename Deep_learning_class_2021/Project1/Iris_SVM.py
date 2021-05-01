@@ -38,4 +38,5 @@ print("Mean Squared Error (after scaling input data):", metrics.mean_squared_err
 print("Root Mean Squared Error (after scaling input data):", np.sqrt(metrics.mean_squared_error(y_test, y_prediction_Scaled)));
 
 
+
 score = cross_val_score(estimator=svm.SVC(random_state=1), X=)
