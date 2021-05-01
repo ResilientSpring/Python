@@ -40,8 +40,10 @@ print("Root Mean Squared Error (after scaling input data):", np.sqrt(metrics.mea
 Scaler = StandardScaler()
 X_train2 = Scaler.fit_transform(X=iris_data)
 
-score = cross_val_score(estimator=svm.SVC(random_state=1), X=X_train2, y=iris.target, cv=10)
-print("Array of scores of the estimator for each run of the cross validation: ", score) # [1]
+score = cross_val_score(estimator=svm.SVC(random_state=1), X=X_train2, y=iris.target, cv=10,
+                        scoring="accuracy")
+print("Array of accuracy of the estimator for each run of the cross validation: ", score) # [1]
+print("Mean accuracy: ", score.mean())
 
 # References:
 # 1. https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html
