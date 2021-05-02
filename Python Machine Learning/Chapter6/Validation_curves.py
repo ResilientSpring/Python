@@ -32,7 +32,8 @@ plt.fill_between(x=param_range, y1=train_mean + train_std, y2=train_mean - train
 plt.plot(param_range, test_mean, color='green', linestyle='--', marker='s', markersize=5,
          label='Validation accuracy')
 
-plt.fill_between(x=param_range, y1=test_mean + test_std, y2=test_mean - test_std, alpha=0.15, color='green')
+plt.fill_between(x=param_range, y1=test_mean + test_std, y2=test_mean - test_std, alpha=0.15,
+                 color='green')
 
 plt.grid()
 plt.xscale('log')
