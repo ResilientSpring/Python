@@ -8,14 +8,13 @@ pipe_svc = make_pipeline(StandardScaler(), SVC(random_state=1))
 
 param_range = [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
 
-# Note that 'k' should be lowercase.
-param_grid = [{"svc__C": param_range, "svc__kernel": ["linear"]},
-              {"svc__C": param_range, "svc__gamma": param_range, "svc__kernel": ["rbf"]}]
+param_grid = [{'svc__C': param_range, 'svc__kernel': ['linear']},
+              {'svc__C': param_range, 'svc__gamma': param_range, 'svc__kernel': ['rbf']}]
 
 gs = GridSearchCV(estimator=pipe_svc, param_grid=param_grid, scoring="accuracy",
                   cv=10, refit=True)
 
-gs = gs.fit(X=dataset.X_train, y=dataset.y_train)
+gs = gs.fit(X=dataset.X, y=dataset.y)
 
 print("GS.best_score", gs.best_score_)
 
