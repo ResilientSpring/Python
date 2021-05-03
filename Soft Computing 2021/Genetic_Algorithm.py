@@ -66,10 +66,10 @@ ax.set_ylabel(r'$x_2$', size=15)
 
 ax.yaxis.set_label_coords(-0.025, 1)
 
-plt.savefig("PSO_1st_half2.jpg")
+plt.savefig("GA.jpg")
 
 plt.show()
 
 # Future work
 
-## follow https://pyswarms.readthedocs.io/en/latest/examples/tutorials/basic_optimization.html#Optimizing-a-function to optimize the weights.
+## follow https://pypi.org/project/geneticalgorithm/ to optimize the weights.
