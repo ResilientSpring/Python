@@ -11,7 +11,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 log_clf = LogisticRegression(solver='lbfgs', random_state=42)
 rnd_clf = RandomForestClassifier(n_estimators=100, random_state=42)
-svm_clf = SVC(gamma="scale", random_state=42)
+svm_clf = SVC(gamma="scale", random_state=42, probability=True)
 
 voting_clf = VotingClassifier(estimators=[('lr', log_clf), ('rf', rnd_clf), ('svc', svm_clf)],
                               voting='soft')
