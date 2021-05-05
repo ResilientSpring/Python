@@ -11,3 +11,9 @@ tree_clf.fit(X=X, y=y)
 
 tree.plot_tree(decision_tree=tree_clf, feature_names=iris.feature_names[2:],
                class_names=iris.target_names, rounded=True, filled=True)
+
+probability = tree_clf.predict_proba([[5, 1.5]])
+print(probability)
+
+prediction = tree_clf.predict([[5, 1.5]])
+print(prediction)
