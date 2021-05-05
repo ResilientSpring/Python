@@ -35,10 +35,10 @@ ada.fit(X=X_train, y=y_train)
 
 y_train_prediction = ada.predict(X=X_train)
 
-y_test_prediction = tree.predict(X=X_test)
+y_test_prediction = ada.predict(X=X_test)
 
-tree_train = accuracy_score(y_true=y_train, y_pred=y_train_prediction)
+ada_train = accuracy_score(y_true=y_train, y_pred=y_train_prediction)
 
-tree_test = accuracy_score(y_true=y_test, y_pred=y_test_prediction)
+ada_test = accuracy_score(y_true=y_test, y_pred=y_test_prediction)
 
-print("Decision tree train & test accuracies: ", tree_train, " & ", tree_test)
+print("Decision tree train & test accuracies: ", ada_train, " & ", ada_test)
