@@ -15,9 +15,9 @@ y = y + np.random.randn(m, 1) / 10
 
 # Training a DecisionTree Regressor
 
-tree_reg = DecisionTreeRegressor(max_depth=2)
+tree_reg = DecisionTreeRegressor(max_depth=2, random_state=42)
 tree_reg.fit(X=X, y=y)
 
-tree.plot_tree(decision_tree=tree_reg)
+tree.plot_tree(decision_tree=tree_reg, feature_names=["x1"], rounded=True, filled=True)
 
 plt.savefig("Decision_Tree_Regressor.jpg")
