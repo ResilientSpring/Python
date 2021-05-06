@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.model_selection import cross_val_score
 
 iris = load_iris()
 
@@ -19,6 +21,21 @@ train_data, test_data, train_label, test_label = train_test_split(iris_data, iri
 tree_classifier = DecisionTreeClassifier(max_depth=2)
 tree_classifier.fit(X=train_data, y=train_label)
 
+y_prediction = tree_classifier.predict(X=test_data)
+
 tree.plot_tree(tree_classifier, rounded=True, filled=True)
 
 plt.savefig("Decision_Tree_for_Iris.jpg")
+
+print("Accuracy score: ", accuracy_score(y_true=test_label, y_pred=y_prediction))
+
+target_name = ['setosa', 'versicolor', 'virginica']
+
+print("Report:", classification_report(y_true=test_label, y_pred=y_prediction,
+                                       target_names=target_name))
+
+scores = cross_val_score(estimator=tree_classifier, X=train_data, y=train_label, cv=10,
+                         scoring='accuracy')
+
+print("Scores: ", scores)
+print("Mean: ", scores.mean())
