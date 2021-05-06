@@ -6,6 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 from sklearn.model_selection import cross_val_score
 import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
 
 # Load dataset
 data = load_breast_cancer()
@@ -29,4 +30,26 @@ print(features[0]);
 # Split our data (divide data into Training and Test sets)
 train, test, train_label, test_labels = train_test_split(features, labels, test_size=0.33,
                                                          random_state=42);
+
+knn_clf = KNeighborsClassifier(n_neighbors=3)
+knn_clf.fit(X=train, y=train_label)
+
+y_prediction = knn_clf.predict(X=test)
+
+print("Accuracy Score: ", accuracy_score(y_true=test_labels, y_pred=y_prediction))
+
+print("Classification report: ", '\n', classification_report(y_true=test_labels,
+                                                             y_pred=y_prediction,
+                                                             target_names=target_names))
+
+scores = cross_val_score(estimator=knn_clf, X=train, y=train_label, cv=10,
+                         scoring='accuracy')
+
+print("Scores: ", scores)
+print("Mean Scores: ", scores.mean())
+
+print("Classification report: ", '\n', classification_report(y_true=test_labels,
+                                                             y_pred=y_prediction,
+                                                             target_names=target_names))
+
 
