@@ -51,5 +51,3 @@ print("Mean Scores: ", scores.mean())
 print("Classification report: ", '\n', classification_report(y_true=test_labels,
                                                              y_pred=y_prediction,
                                                              target_names=target_names))
-
-
