@@ -30,3 +30,6 @@ tree_classifier.fit(X=train, y=train_label)
 
 y_prediction = tree_classifier.predict(X=test)
 
+tree.plot_tree(decision_tree=tree_classifier, rounded=True, filled=True)
+
+plt.savefig("Breast_Cancer_Diagnosis.jpg")
