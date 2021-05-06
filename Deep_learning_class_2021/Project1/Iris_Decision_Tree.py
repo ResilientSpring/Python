@@ -11,3 +11,7 @@ iris_label = iris.target
 
 print(iris_data)
 print(iris_label)
+
+train_data, test_data, train_label, test_label = train_test_split(iris_data, iris_label,
+                                                                  test_size=0.33)
+
