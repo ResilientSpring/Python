@@ -20,3 +20,5 @@ tree_classifier = DecisionTreeClassifier(max_depth=2)
 tree_classifier.fit(X=train_data, y=train_label)
 
 tree.plot_tree(tree_classifier, rounded=True, filled=True)
+
+plt.savefig("Decision_Tree_for_Iris.jpg")
