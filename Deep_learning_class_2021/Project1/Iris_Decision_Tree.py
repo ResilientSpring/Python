@@ -19,4 +19,4 @@ train_data, test_data, train_label, test_label = train_test_split(iris_data, iri
 tree_classifier = DecisionTreeClassifier(max_depth=2)
 tree_classifier.fit(X=train_data, y=train_label)
 
-tree.plot_tree(tree_classifier)
+tree.plot_tree(tree_classifier, rounded=True, filled=True)
