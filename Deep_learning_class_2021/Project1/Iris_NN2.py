@@ -31,9 +31,9 @@ model = Sequential()
 
 # Feed input's shape to the model.
 model.add(keras.Input(shape=(4, )))
-model.add(Dense(units=128, activation="relu"))
-model.add(Dense(units=64, activation="relu"))
-model.add(Dense(units=3, activation="softmax"))
+model.add(Dense(units=128, activation="relu", name="layer1"))
+model.add(Dense(units=64, activation="relu", name="layer2"))
+model.add(Dense(units=3, activation="softmax", name="layer3"))
 
 print(model.summary())
 
