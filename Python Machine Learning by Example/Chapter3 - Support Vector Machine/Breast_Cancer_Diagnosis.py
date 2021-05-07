@@ -20,3 +20,10 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, random_state=42)
 classifier = SVC(C=1.0, kernel='linear', random_state=42)
 
 classifier.fit(X=X_train, y=Y_train)
+
+y_prediction = classifier.predict(X=X_test)
+
+accuracy = classifier.score(X=X_test, y=Y_test)
+
+print(f'The accuracy is: {accuracy*100:.1f}%')
+
