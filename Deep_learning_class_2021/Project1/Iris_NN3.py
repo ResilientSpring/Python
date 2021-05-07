@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from keras.utils import plot_model
 import matplotlib.pyplot as plt
 from mlxtend.plotting import plot_decision_regions
+import numpy as np
+from sklearn.metrics import classification_report
 
 iris = load_iris()
 
@@ -44,6 +46,10 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 
 # Train
 history = model.fit(x=X_train, y=y_train, epochs=200, batch_size=10, validation_split=0.33)
+
+y_prediction = model.predict(x=X_test)
+
+print(classification_report(y_true=y_test, y_pred=y_prediction))
 
 # plot
 plt.figure()
