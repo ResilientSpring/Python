@@ -39,3 +39,8 @@ scores = cross_val_score(estimator=tree_classifier, X=train_data, y=train_label,
 
 print("Scores: ", scores)
 print("Mean: ", scores.mean())
+
+y_prediction2 = tree_classifier.predict(X=train_data)
+
+print("Report:", '\n', classification_report(y_true=train_label, y_pred=y_prediction2,
+                                       target_names=target_name))
