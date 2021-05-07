@@ -50,4 +50,6 @@ plt.ylabel("loss")
 plt.xlabel("epoch")
 plt.title("model loss")
 
+plt.savefig("April19,jpg")
+
 plt.show();
