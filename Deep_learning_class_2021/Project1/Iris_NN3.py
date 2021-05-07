@@ -53,7 +53,7 @@ plt.title("model loss")
 plt.ylabel("loss")
 plt.xlabel("epoch")
 
-plt.legend
+plt.legend(["Train", "Validation"])
 
 plt.savefig("Iris.NNs.jpg")
 
