@@ -68,3 +68,7 @@ print(y_Train_OneHot[:5])
 
 # Reference:
 # https://web.archive.org/web/20210508130921/https://waternotetw.blogspot.com/2018/03/keras-mnist.html
+# https://archive.ph/u71f7
+
+# Further reading:
+# https://keras.io/api/datasets/mnist/
