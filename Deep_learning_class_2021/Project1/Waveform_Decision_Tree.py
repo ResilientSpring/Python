@@ -24,7 +24,7 @@ tree_classifier.fit(X=X_train, y=y_train)
 
 y_prediction = tree_classifier.predict(X=X_test)
 
-plt.figure(figsize=(40, 7.2), dpi=200)
+plt.figure(figsize=(75, 10), dpi=200)
 tree.plot_tree(decision_tree=tree_classifier, rounded=True, filled=True, fontsize=12)
 
 plt.savefig("Waveform_Decision_Tree")
