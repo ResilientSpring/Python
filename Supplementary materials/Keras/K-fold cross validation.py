@@ -54,4 +54,6 @@ for train, test in kfold.split(inputs, targets):
     fold_no = fold_no + 1
 
 
-# Source: https://blog.csdn.net/weixin_39653948/article/details/110290221
+# Source:
+# https://web.archive.org/web/20210509051441/https://www.machinecurve.com/index.php/2020/02/18/how-to-use-k-fold-cross-validation-with-keras/#code-example-k-fold-cross-validation-with-tensorflow-and-keras
+# https://blog.csdn.net/weixin_39653948/article/details/110290221
