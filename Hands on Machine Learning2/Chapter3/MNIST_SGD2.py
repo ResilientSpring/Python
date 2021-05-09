@@ -28,8 +28,11 @@ print(features_test)
 labels_test = MNIST_test_set.iloc[1:, 0]
 print(labels_test)
 
+y_train_5 = (labels_train == 5)
+y_test_5 = (labels_test == 5)
+
 sgd_clf = SGDClassifier(random_state=42)
-sgd_clf.fit(X=features_train, y=labels_train)
+sgd_clf.fit(X=features_train, y=y_train_5)
 
-
-
+y_prediction = sgd_clf.predict(X=features_test)
+print(y_prediction)
