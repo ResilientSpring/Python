@@ -54,3 +54,4 @@ print("Classification report after 10-fold cross validation: ", '\n',
       classification_report(y_true=train_label,
                             y_pred=y_prediction2,
                             target_names=target_names))
+print("Accuracy: ", accuracy_score(y_true=train_label, y_pred=y_prediction2))
