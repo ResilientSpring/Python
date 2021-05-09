@@ -23,8 +23,8 @@ print(f'{n_positive} positive samples and {n_negative} negative samples.')
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.33)
 
-classifier = SVC(C=5.0, kernel='linear', random_state=42) # linear is chosen for binary classification.
-
+# linear is chosen for binary classification.
+classifier = SVC(C=5.0, kernel='linear', random_state=42)
 classifier.fit(X=X_train, y=y_train)
 
 y_prediction = classifier.predict(X=X_test)
@@ -38,11 +38,15 @@ print("Classification report: ", '\n', classification_report(y_true=y_test,
                                                              target_names=['malignant', 'benign']))
 
 scores = cross_val_score(estimator=classifier, cv=10, X=X_train, y=y_train, scoring='accuracy')
-print("Scores: ", scores)
+print("10-fold cross validation Scores: ", scores)
 print("Mean Scores: ", scores.mean())
 
 y_prediction2 = classifier.predict(X=X_train)
 
-print("Classification report: ", '\n', classification_report(y_true=y_train,
-                                                             y_pred=y_prediction2,
-                                                             target_names=['malignant', 'benign']))
+print("Classification report after 10-fold cross validation: ", '\n',
+      classification_report(y_true=y_train,
+                            y_pred=y_prediction2,
+                            target_names=['malignant', 'benign']))
+
+accuracy2 = classifier.score(X=X_train, y=y_train)
+print("The accuracy is: {:.2f}".format(accuracy2 * 100))
