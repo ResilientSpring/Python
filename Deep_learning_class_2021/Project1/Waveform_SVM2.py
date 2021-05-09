@@ -27,7 +27,9 @@ support_vector_machine.fit(X=X_train, y=y_train)
 
 y_prediction = support_vector_machine.predict(X=X_test)
 
-print(classification_report(y_true=y_test, y_pred=y_prediction))
+print("Accuracy: ", accuracy_score(y_true=y_test, y_pred=y_prediction))
+
+print("Classification report: ", '\n', classification_report(y_true=y_test, y_pred=y_prediction))
 
 scores = cross_val_score(estimator=support_vector_machine, X=X_train, y=y_train,
                          scoring='accuracy', cv=10)
