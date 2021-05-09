@@ -48,6 +48,6 @@ numeric_labels_test = labels_test.to_numpy()
 sgd_clf = SGDClassifier(random_state=42)
 sgd_clf.fit(X=numeric_features_train, y=numeric_labels_train)
 
-y_prediction = sgd_clf.predict(X=features_test)
+y_prediction = sgd_clf.predict(X=numeric_features_test)
 
-print(classification_report(y_true=labels_test, y_pred=y_prediction))
+print(classification_report(y_true=numeric_labels_test, y_pred=y_prediction))
