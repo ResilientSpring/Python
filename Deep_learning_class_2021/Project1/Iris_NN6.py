@@ -2,13 +2,13 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 import matplotlib.pyplot as plt
 from keras.utils import plot_model
 import matplotlib.pyplot as plt
 from mlxtend.plotting import plot_decision_regions
 import numpy as np
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, accuracy_score
 
 iris = load_iris()
 
@@ -53,3 +53,13 @@ y_prediction_bool = np.argmax(y_prediction, axis=1)
 
 print(classification_report(y_true=y_test, y_pred=y_prediction_bool, target_names=iris.target_names))
 
+scores = cross_val_score(estimator=model, X=X_train, y=y_train, scoring='accuracy', cv=10)
+
+print("Scores: ", scores)
+print("Mean Scores: ", scores.mean())
+
+y_prediction2 = model.predict(x=X_train)
+
+y_prediction2_bool = np.argmax(y_prediction2, axis=1)
+
+print(classification_report(y_true=y_train, y_pred=y_prediction2_bool, target_names=iris.target_names))
