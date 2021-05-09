@@ -34,6 +34,12 @@ print("Classification report: ", '\n', classification_report(y_true=y_test, y_pr
 scores = cross_val_score(estimator=support_vector_machine, X=X_train, y=y_train,
                          scoring='accuracy', cv=10)
 
+print("10-fold cross validation scores: ", scores)
+print("Mean sores: ", scores.mean())
+
 y_prediction2 = support_vector_machine.predict(X=X_train)
 
-print(classification_report(y_true=y_train, y_pred=y_prediction2))
+print("Classification report after 10-fold cross validation: ", '\n',
+      classification_report(y_true=y_train, y_pred=y_prediction2))
+
+print("Accuracy: ", accuracy_score(y_true=y_train, y_pred=y_prediction2))
