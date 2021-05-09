@@ -29,6 +29,8 @@ tree.plot_tree(decision_tree=tree_classifier, rounded=True, filled=True, fontsiz
 
 plt.savefig("Waveform_Decision_Tree")
 
+print(classification_report(y_true=y_test, y_pred=y_prediction))
+
 scores = cross_val_score(estimator=tree_classifier, X=X_train, y=y_train, scoring='accuracy',
                          cv=10)
 
