@@ -44,7 +44,7 @@ plot_model(model=model, show_shapes=True, show_layer_names=True)
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics='accuracy')
 
 # Train
-history = model.fit(x=X_train, y=y_train, epochs=200, batch_size=10, validation_split=0.33)
+history = model.fit(x=X_train, y=y_train, epochs=100, batch_size=10, validation_split=0.33)
 
 pd.DataFrame(data=history.history).plot(figsize=(8, 5))
 plt.grid(True)
@@ -59,3 +59,5 @@ plt.show()
 
 y_prediction = model.predict(x=X_test)
 print(y_prediction)
+print(np.mean(y_prediction))
+
