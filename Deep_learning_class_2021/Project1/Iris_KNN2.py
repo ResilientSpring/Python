@@ -18,9 +18,8 @@ print("Classification Report: ", '\n', classification_report(y_true=y_test, y_pr
 print("Accuracy: ", accuracy_score(y_true=y_test, y_pred=y_prediction))
 
 scores = cross_val_score(estimator=knn_clf, X=X_train, y=y_train, scoring='accuracy', cv=10)
-print("The accuracy is: ", scores)
 
-print("Scores: ", scores)
+print("Cross validation scores: ", scores)
 print("Mean Scores: ", scores.mean())
 
 y_prediction2 = knn_clf.predict(X=X_train)
