@@ -61,3 +61,6 @@ y_prediction = model.predict(x=X_test)
 print(y_prediction)
 print(np.mean(y_prediction))
 
+y_prediction_bool = np.argmax(y_prediction, axis=1)
+
+print(classification_report(y_true=y_test, y_pred=y_prediction_bool))
