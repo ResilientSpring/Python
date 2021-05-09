@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
 
 url = "https://raw.githubusercontent.com/ResilientSpring/Python/master/Deep_learning_class_2021/Project1/waveform.data"
 
@@ -22,21 +22,16 @@ print(waveform_label)
 X_train, X_test, y_train, y_test = train_test_split(waveform_feature, waveform_label,
                                                     test_size=0.33, random_state=42)
 
-knn_classifier = KNeighborsClassifier(n_neighbors=3)
-knn_classifier.fit(X=X_train, y=y_train)
+support_vector_machine = SVC(C=5.0)
+support_vector_machine.fit(X=X_train, y=y_train)
 
-y_prediction = knn_classifier.predict(X=X_test)
+y_prediction = support_vector_machine.predict(X=X_test)
 
-print("Accuracy score: ", accuracy_score(y_true=y_test, y_pred=y_prediction))
+print(classification_report(y_true=y_test, y_pred=y_prediction))
 
-print("Classification report: ", '\n', classification_report(y_true=y_test, y_pred=y_prediction))
+scores = cross_val_score(estimator=support_vector_machine, X=X_train, y=y_train,
+                         scoring='accuracy', cv=10)
 
-scores = cross_val_score(estimator=knn_classifier, X=X_train, y=y_train, cv=10,
-                         scoring='accuracy')
+y_prediction2 = support_vector_machine.predict(X=X_train)
 
-print("Scores: ", scores)
-print("Mean sores: ", scores.mean())
-
-y_prediction2 = knn_classifier.predict(X=X_train)
-
-print("Classification report: ", '\n', classification_report(y_true=y_train, y_pred=y_prediction2))
+print(classification_report(y_true=y_train, y_pred=y_prediction2))
