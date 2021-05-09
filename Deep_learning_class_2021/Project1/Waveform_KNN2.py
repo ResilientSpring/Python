@@ -41,3 +41,5 @@ y_prediction2 = knn_classifier.predict(X=X_train)
 
 print("Classification report after 10-fold cross validation: ", '\n',
       classification_report(y_true=y_train, y_pred=y_prediction2))
+
+print("Accuracy: ", accuracy_score(y_true=y_train, y_pred=y_prediction2))
