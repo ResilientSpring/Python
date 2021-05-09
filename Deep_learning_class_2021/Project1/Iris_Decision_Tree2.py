@@ -29,6 +29,8 @@ print("Classification Report:", '\n',
       classification_report(y_true=test_label, y_pred=y_prediction,
                             target_names=target_name))
 
+print("Accuracy: ", accuracy_score(y_true=test_label, y_pred=y_prediction))
+
 scores = cross_val_score(estimator=tree_classifier, X=train_data, y=train_label, cv=10,
                          scoring='accuracy')
 
@@ -40,3 +42,4 @@ y_prediction2 = tree_classifier.predict(X=train_data)
 print("Classification Report with K-fold cross validation:", '\n',
       classification_report(y_true=train_label, y_pred=y_prediction2,
                             target_names=target_name))
+print("Accuracy: ", accuracy_score(y_true=train_label, y_pred=y_prediction2))
