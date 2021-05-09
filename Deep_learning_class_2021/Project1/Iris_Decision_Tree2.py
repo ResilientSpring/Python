@@ -23,12 +23,6 @@ tree_classifier.fit(X=train_data, y=train_label)
 
 y_prediction = tree_classifier.predict(X=test_data)
 
-tree.plot_tree(tree_classifier, rounded=True, filled=True)
-
-plt.savefig("Decision_Tree_for_Iris.jpg")
-
-print("Accuracy score: ", accuracy_score(y_true=test_label, y_pred=y_prediction))
-
 target_name = ['setosa', 'versicolor', 'virginica']
 
 print("Classification Report:", '\n',
