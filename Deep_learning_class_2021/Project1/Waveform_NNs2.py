@@ -38,15 +38,16 @@ model.add(Dense(units=3, activation="softmax", name="layer3"))
 
 print(model.summary())
 
-plot_model(model=model, show_shapes=True, show_layer_names=True)
-
 # Compile
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics='accuracy')
 
+history = model.fit(x=X_train, y=y_train, epochs=100, batch_size=10, validation_split=0.33)
+
 y_prediction = model.predict(x=X_test)
-print(y_prediction)
-print(np.mean(y_prediction))
 
 y_prediction_bool = np.argmax(y_prediction, axis=1)
 
 print(classification_report(y_true=y_test, y_pred=y_prediction_bool))
+
+print("Accuracy: ", accuracy_score(y_true=y_test, y_pred=y_prediction_bool))
+
