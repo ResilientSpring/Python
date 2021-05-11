@@ -188,4 +188,4 @@ print(df3)
 
 print(df3.plot())
 
-sns.barplot(x=df3.loc["Northern Taiwan"], y=df3.loc["Southern Taiwan"])
+sns.barplot(x="Region", y="Budget", data=df3, orient=h)
