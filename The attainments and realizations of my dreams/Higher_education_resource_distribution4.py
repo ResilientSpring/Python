@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
+# Convert wiki-table in the article 高等教育深耕計畫[4] to csv.[2][3]
+
 df = pd.DataFrame(data=[
     [1, "國立臺灣大學", 237370, "North"],
     [2, "國立成功大學", 141139, "South"],
@@ -63,3 +65,6 @@ print(df3)
 
 # References:
 # 1. https://stackoverflow.com/questions/28236305/how-do-i-sum-values-in-a-column-that-match-a-given-condition-using-pandas
+# 2. https://en.wikipedia.org/wiki/Wikipedia:Tools#Export:_Conversion_to_other_formats
+# 3. https://wikitable2csv.ggor.de/
+# 4. https://zh.wikipedia.org/zh-tw/高等教育深耕計畫#公立一般大學
