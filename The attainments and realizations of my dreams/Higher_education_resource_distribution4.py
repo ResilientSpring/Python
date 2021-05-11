@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
 df = pd.DataFrame(data=[
     [1, "國立臺灣大學", 237370, "North"],
@@ -43,6 +44,22 @@ print(df)
 df2 = df.copy()
 print(df2)
 
-df2.columns = ["Number", "name", "budget", "Region"] # Rename the columns [1]
+df2.columns = ["Number", "Name", "Budget", "Region"]  # Rename the columns [1]
 print(df2)
 
+class_le = LabelEncoder()
+
+y = class_le.fit_transform(y=df2["Region"].values)
+print(y)
+
+df2["Region_encoding"] = y
+
+print(df2)
+
+df3 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budget"],
+                   data=[df2.query("Region_encoding == 0")["Budget"].sum(), # [1]
+                         df2.query("Region_encoding == 1")["Budget"].sum()])
+print(df3)
+
+# References:
+# 1. https://stackoverflow.com/questions/28236305/how-do-i-sum-values-in-a-column-that-match-a-given-condition-using-pandas
