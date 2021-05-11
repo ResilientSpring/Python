@@ -40,16 +40,8 @@ df = pd.DataFrame(data=[
 
 print(df)
 
-df2 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budget"],
-                   data=[df.iloc[df.iloc[:, 3] == "North", df.iloc[:, 2]].sum(axis=0),
-                         df.iloc[df.iloc[:, 3] == "South", df.iloc[:, 2]].sum(axis=0)])
-
+df2 = df.copy()
 print(df2)
 
-df3 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budget"],
-                   data=[df.iloc[df.iloc[:, 3] == "North", df.iloc[:, 2]].sum(),
-                         df.iloc[df.iloc[:, 3] == "South", df.iloc[:, 2]].sum()])
-
-# Reference:
-# https://stackoverflow.com/questions/37947641/pandas-how-to-sum-columns-based-on-conditional-of-other-column-values
-# https://stackoverflow.com/questions/28236305/how-do-i-sum-values-in-a-column-that-match-a-given-condition-using-pandas
+df2.columns = ["Number", "name", "budget", "region"]
+print(df2)
