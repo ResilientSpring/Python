@@ -48,6 +48,8 @@ scores = cross_val_score(estimator=knn_clf, X=train, y=train_label, cv=10,
 print("Scores: ", scores)
 print("Mean Scores: ", scores.mean())
 
-print("Classification report: ", '\n', classification_report(y_true=test_labels,
-                                                             y_pred=y_prediction,
+y_prediction2 = knn_clf.predict(X=train)
+
+print("Classification report: ", '\n', classification_report(y_true=train_label,
+                                                             y_pred=y_prediction2,
                                                              target_names=target_names))
