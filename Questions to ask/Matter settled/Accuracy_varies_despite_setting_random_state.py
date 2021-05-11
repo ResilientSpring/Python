@@ -18,7 +18,7 @@ parameters = {"penalty": ["l2", None], "alpha": [1e-07, 1e-06, 1e-05, 1e-04],
               "eta0": [0.01, 0.1, 1, 10]}
 
 sgd_lr = SGDClassifier(loss="log", learning_rate="constant", eta0=0.01, fit_intercept=True,
-                       max_iter=10)
+                       max_iter=100, random_state=42)
 
 grid_search = GridSearchCV(sgd_lr, parameters, n_jobs=1, cv=3)
 grid_search.fit(X_train, Y_train)
