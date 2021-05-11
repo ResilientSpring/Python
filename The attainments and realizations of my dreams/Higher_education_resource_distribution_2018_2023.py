@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 # Convert wiki-table in the article 高等教育深耕計畫[4] to csv.[2][3]
@@ -186,3 +187,5 @@ df3 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budge
 print(df3)
 
 print(df3.plot())
+
+sns.barplot(x=df3.loc["Northern Taiwan"], y=df3.loc["Southern Taiwan"])
