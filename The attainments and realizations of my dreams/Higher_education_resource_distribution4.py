@@ -46,16 +46,3 @@ print(df2)
 df2.columns = ["Number", "name", "budget", "Region"] # Rename the columns [1]
 print(df2)
 
-df3 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budget"],
-                   data=[df2.loc[df.loc["Region"] == "North", "budget"].sum(),
-                         df2.loc[df.loc["Region"] == "South", "budget"].sum()])
-print(df3)
-
-df4 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budget"],
-                   data=[df2.query("Region == ").sum(),
-                         df2.loc[df.loc["Region"] == "South", "budget"].sum()])
-
-print(df4)
-
-# References:
-# 1. https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas
