@@ -186,6 +186,4 @@ df3 = pd.DataFrame(index=["Northern Taiwan", "Southern Taiwan"], columns=["Budge
                          df2.query("Region_encoding == 1")["Budget"].sum()])
 print(df3)
 
-print(df3.plot())
-
-sns.barplot(x="Region", y="Budget", data=df3, orient=h)
+print(df3.hist())
