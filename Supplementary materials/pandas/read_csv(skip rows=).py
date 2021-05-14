@@ -8,3 +8,8 @@
 
 import pandas as pd
 
+usersDf = pd.read_csv(filepath_or_buffer="Realm.csv")
+print(usersDf)
+
+usersDf_skip_row = pd.read_csv(filepath_or_buffer="Realm.csv", skiprows=1)
+print(usersDf_skip_row)
