@@ -7,3 +7,8 @@ y = face_data.target
 print('Input data size: ', X.shape)
 print('Output data size: ', y.shape)
 print('Label names: ', face_data.target_names)
+
+# Analyze the label distribution
+for i in range(5):
+    print(f'Class {i} has {(y == i).sum()} samples.')
+
