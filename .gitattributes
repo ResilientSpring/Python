@@ -1,5 +1,4 @@
-*.csv above=100mb filter=lfs diff=lfs merge=lfs -text
---above=100mb filter=lfs diff=lfs merge=lfs -text
+above=100mb filter=lfs diff=lfs merge=lfs -text
 *.csv !text !filter !merge !diff
 train.csv filter=lfs diff=lfs merge=lfs -text
 train_1.csv filter=lfs diff=lfs merge=lfs -text
