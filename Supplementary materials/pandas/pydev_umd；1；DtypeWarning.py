@@ -16,3 +16,10 @@
 # References
 # 1. https://www.google.com/search?q=pydev_umd%3A1%3A+DtypeWarning&oq=pydev_umd%3A1%3A+DtypeWarning&aqs=chrome..69i57.1588j0j7&sourceid=chrome&ie=UTF-8
 # 2. https://stackoverflow.com/a/27232309/14900011
+
+# pandas dataframe data types [3]
+# How to Check the Data Type in Pandas DataFrame? [4]
+
+# References
+# 3. https://www.google.com/search?q=pandas+dataframe+data+types&oq=pandas+dataframe+data&aqs=chrome.0.0j69i57j0l5j69i60.8721j0j7&sourceid=chrome&ie=UTF-8
+# 4. https://web.archive.org/web/20210226184042/https://datatofish.com/data-type-pandas-dataframe/
