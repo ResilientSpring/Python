@@ -1,2 +1,2 @@
-*.csv filter=lfs diff=lfs merge=lfs -text
+*.csv above=100mb filter=lfs diff=lfs merge=lfs -text
 --above=100mb filter=lfs diff=lfs merge=lfs -text
