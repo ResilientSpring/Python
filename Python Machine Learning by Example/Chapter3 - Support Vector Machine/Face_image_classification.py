@@ -8,7 +8,7 @@ print('Input data size: ', X.shape)
 print('Output data size: ', y.shape)
 print('Label names: ', face_data.target_names)
 
-# Analyze the label distribution
+# Analyze the label distribution (Determine if the data distribution among the dataset is balanced.)
 for i in range(5):
     print(f'Class {i} has {(y == i).sum()} samples.')
 
