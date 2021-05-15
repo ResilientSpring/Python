@@ -11,3 +11,12 @@ print(coral, coral_empty, coral_one)
 
 coral_one2 = ('blue coral')
 print(coral_one2)
+
+print(coral[0])
+print(coral[1])
+print(coral[3])
+print(coral[-1])
+print(coral[-4])
+
+# Concatenate string items in a tuple with other strings using the + operator.
+print('This reef is made up of ' + coral[1])
