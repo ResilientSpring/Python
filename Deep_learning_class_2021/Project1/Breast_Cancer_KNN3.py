@@ -9,27 +9,27 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 
 # Load dataset
-data = load_breast_cancer()
-print(data)
+dataset = load_breast_cancer()
+print(dataset) # Check the dataset to see its content arrangement.
 
-target_names = data.target_names
+target_names = dataset.target_names
 print(target_names)
 
 # Organize our data
-label_names = data["target_names"]
+label_names = dataset["target_names"]
 
 # Check to see if it's a binary or multi-class classification.
 ## Print the size of the label set first since it could be several thousands in length; it would be
 ## inefficient to manually see through a long set to determine the number of distinct classes
 ## within a single label set.
-labels = data["target"]
+labels = dataset["target"]
 print(labels.shape)
 
 # What the features are?
-feature_name = data["feature_names"];
+feature_name = dataset["feature_names"];
 
 # How many features does one instance have?
-features = data["data"];
+features = dataset["data"];
 print(features.shape)
 
 # Look at our data
