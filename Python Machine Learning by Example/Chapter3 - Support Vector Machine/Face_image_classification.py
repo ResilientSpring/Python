@@ -43,3 +43,6 @@ best_classifier = grid_search.best_estimator_
 y_prediction = best_classifier.predict(X=X_test)
 
 print(f'The accuracy is: {best_classifier.score(X_test, y_test)*100:.1f}%')
+
+print(classification_report(y_true=y_test, y_pred=y_prediction,
+                            target_names=face_data.target_names))
