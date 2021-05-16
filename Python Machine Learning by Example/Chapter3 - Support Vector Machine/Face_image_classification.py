@@ -24,3 +24,4 @@ for i, axi in enumerate(ax.flat):
 plt.show()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+
