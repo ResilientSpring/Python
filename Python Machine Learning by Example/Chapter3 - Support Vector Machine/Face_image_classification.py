@@ -1,6 +1,7 @@
 from sklearn.datasets import fetch_lfw_people
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.svm import SVC
 
 face_data = fetch_lfw_people(min_faces_per_person=80)
 
@@ -25,3 +26,13 @@ plt.show()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
+SVM_classifier = SVC(class_weight='balanced', random_state=42)
+
+parameters = {'C': [0.1, 1, 10], 'gamma': [1e-07, 1e-08, 1e-06], 'kernel': ['rbf', 'linear']}
+
+grid_search = GridSearchCV(estimator=SVM_classifier, param_grid=parameters, cv=5)
+grid_search.fit(X=X_train, y=y_train)
+
+print('The best model: \n', grid_search.best_params_)
+
+print('The best averaged performance: ', grid_search.best_score_)
