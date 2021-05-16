@@ -23,3 +23,12 @@ print(jesse)
 
 for common_key in sammy.keys() & jesse.keys():
     print(sammy[common_key], jesse[common_key])
+
+
+# We can iterate over the returned list format with a for loop.
+# We can point out each of the keys and values of a given dictionary and then make it more
+# human-readable by adding a string:
+for key, value in sammy.items():
+    print(key, 'is the key for the value', value)
+
+    print(key, ' is the key for the value ', value)
