@@ -6,3 +6,9 @@ print(sammy)
 
 # To isolate Sammy's username:
 print(sammy['username'])
+
+unlock = sammy['online']
+print(unlock)
+
+key = sammy['followers']
+print(key)
