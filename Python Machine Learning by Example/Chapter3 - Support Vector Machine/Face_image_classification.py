@@ -2,6 +2,7 @@ from sklearn.datasets import fetch_lfw_people
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.svm import SVC
+from sklearn.metrics import classification_report
 
 face_data = fetch_lfw_people(min_faces_per_person=80)
 
@@ -36,3 +37,9 @@ grid_search.fit(X=X_train, y=y_train)
 print('The best model: \n', grid_search.best_params_)
 
 print('The best averaged performance: ', grid_search.best_score_)
+
+best_classifier = grid_search.best_estimator_
+
+y_prediction = best_classifier.predict(X=X_test)
+
+print(f'The accuracy is: {best_classifier.score(X_test, y_test)*100:.1f}%')
