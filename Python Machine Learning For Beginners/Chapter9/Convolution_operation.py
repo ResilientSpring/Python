@@ -11,3 +11,7 @@ feature_detector = np.array([
     [1, 0, 0],
     [0, 1, 1]
 ])
+
+feature_map = input_image.dot(feature_detector)
+
+print(feature_map)
