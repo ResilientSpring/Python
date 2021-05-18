@@ -15,3 +15,15 @@ feature_detector = np.array([
 feature_map = input_image.dot(feature_detector)
 
 print(feature_map)
+
+feature_map = feature_detector.dot(input_image)
+
+print(feature_map)
+
+feature_map = np.dot(input_image, feature_detector)
+
+print(feature_map)
+
+feature_map = np.multiply(input_image, feature_detector)
+
+print(feature_map)
