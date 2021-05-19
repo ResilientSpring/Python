@@ -22,6 +22,8 @@ def train(X, y, n_hidden, learning_rate, n_iter):
 
     Bias2 = np.zeros((1, 1))
 
+    # In each iteration, we feed all layers of the network with the latest weights and biases.
+
     for i in range(1, n_iter + 1):
 
         Z2 = np.matmul(X, Weight1) + Bias1
