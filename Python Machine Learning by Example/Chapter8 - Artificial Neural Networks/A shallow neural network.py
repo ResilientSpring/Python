@@ -1,6 +1,6 @@
 import numpy as np
 
-
+# We will use sigmoid as the activation function in this example.
 def sigmoid(z):
     return 1.0 / (1 + np.exp(-z))
 
@@ -9,7 +9,7 @@ def sigmoid_derivative(z):
     return sigmoid(z) * (1.0 - sigmoid(z))
 
 
-def train(X, y, n_hidden, learning_rate, n_iter):
+def train(X, y, learning_rate, n_iter, n_hidden=1):
     m, n_input = X.shape
 
     # Before training, we first randomly initialize weights and biases.
