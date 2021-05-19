@@ -24,3 +24,13 @@ model.compile(loss='mean_squared_error', optimizer=keras.optimizers.Adam(learnin
 import dataset
 
 model.fit(x=dataset.X_train, y=dataset.y_train, epochs=300)
+
+# Finally, we use the trained model to predict the testing cases and print out the predictions
+# and their mean squared error.
+y_prediction = model.predict(x=dataset.X_test)
+
+print(y_prediction)
+
+mean_squared_error = np.mean((dataset.y_test - y_prediction) ** 2)
+
+print(mean_squared_error)
