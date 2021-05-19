@@ -25,4 +25,13 @@ y_test = boston.target[-number_of_test:]
 
 # With the scaled dataset, we can now train a one-layer neural network with 20 hidden units,
 # a 0.1 learning rate, and 2000 iterations.
-model = artificial_neural_network.train(X=X_train, y=y_train, learning_rate=0.1, n_hidden=20)
+model = artificial_neural_network.train(X=X_train, y=y_train, learning_rate=0.1, n_hidden=20,
+                                        n_iter=2000)
+
+# Finally, we apply the trained model on the testing set.
+predictions = artificial_neural_network.predict(x=X_test, model=model)
+
+# Print out the predictions and their ground truths to compare them.
+print(predictions)
+
+print(y_test)
