@@ -16,3 +16,7 @@ X_train = scaler.fit_transform(X=X_train)
 y_train = boston.target[:- number_of_test].reshape(-1, 1)
 
 print(y_train)
+
+X_test = boston.data[-number_of_test: , : ]
+
+X_test = scaler.fit_transform(X=X_test)
