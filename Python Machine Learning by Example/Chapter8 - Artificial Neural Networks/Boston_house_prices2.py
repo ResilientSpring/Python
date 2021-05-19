@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.datasets import load_boston
@@ -38,3 +39,8 @@ y_prediction = nn_scikit.predict(X=X_test)
 print(y_prediction)
 
 print(y_test)
+
+# Calculate the mean squared error on the prediction.
+print(np.mean((y_test - y_prediction) ** 2))
+
+print(np.mean((y_test.mean() - y_prediction.mean()) ** 2))
