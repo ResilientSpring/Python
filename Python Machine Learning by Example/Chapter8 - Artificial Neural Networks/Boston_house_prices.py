@@ -20,3 +20,9 @@ print(y_train)
 X_test = boston.data[-number_of_test: , : ]
 
 X_test = scaler.fit_transform(X=X_test)
+
+y_test = boston.target[-number_of_test:]
+
+# With the scaled dataset, we can now train a one-layer neural network with 20 hidden units,
+# a 0.1 learning rate, and 2000 iterations.
+model = artificial_neural_network.train(X=X_train, y=y_train, learning_rate=0.1, n_hidden=20)
