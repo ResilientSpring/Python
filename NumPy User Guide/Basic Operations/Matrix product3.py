@@ -16,4 +16,8 @@ d = a @ b
 
 print(d)
 
+e = np.dot(a, b)
+
+print(e)
+
 # Source: https://numpy.org/doc/stable/reference/generated/numpy.matmul.html
