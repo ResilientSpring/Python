@@ -71,4 +71,13 @@ def train(X, y, learning_rate, n_iter, n_hidden=1):
 
         return model
 
+# Take in a model and produce the regression results.
+def predict(x, model):
+    Weight1 = model['Weight1']
+    bias1 = model['Bias1']
+    Weight2 = model['Weight2']
+    bias2 = model['Bias2']
+    A2 = sigmoid(np.matmul(x, Weight1) + bias1)
+    A3 = np.matmul(A2, Weight2) + bias2
 
+    return A3
