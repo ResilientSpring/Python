@@ -34,4 +34,8 @@ predictions = artificial_neural_network.predict(x=X_test, model=model)
 # Print out the predictions and their ground truths to compare them.
 print(predictions)
 
+print(predictions.mean())
+
 print(y_test)
+
+print(y_test.mean())
