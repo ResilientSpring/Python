@@ -10,6 +10,7 @@ def sigmoid_derivative(z):
 
 
 def train(X, y, learning_rate, n_iter, n_hidden=1):
+    # m is the number of samples.
     m, n_input = X.shape
 
     # Before training, we first randomly initialize weights and biases.
@@ -28,11 +29,15 @@ def train(X, y, learning_rate, n_iter, n_hidden=1):
 
         Z2 = np.matmul(X, Weight1) + Bias1
 
+        # The output values of the hidden layer.
         A2 = sigmoid(Z2)
 
         Z3 = np.matmul(A2, Weight2) + Bias2
 
+        # The output values of the output layer.
         A3 = Z3
+
+        # Calculate the gradients using the backpropagation algorithm.
 
         dZ3 = A3 - y
 
@@ -46,6 +51,8 @@ def train(X, y, learning_rate, n_iter, n_hidden=1):
 
         dBias1 = np.sum(dZ2, axis=0)
 
+        # Update the weights and biases with the resulting gradients.
+
         Weight2 = Weight2 - learning_rate * dWeight2 / m
 
         Bias2 = Bias2 - learning_rate * dBias2 / m
@@ -54,6 +61,7 @@ def train(X, y, learning_rate, n_iter, n_hidden=1):
 
         Bias1 = Bias1 - learning_rate * dBias1 / m
 
+        # Print out the loss and the mean squared error for every 100 iterations.
         if i % 100 == 0:
             cost = np.mean((y - A3) ** 2)
 
