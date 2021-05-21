@@ -48,3 +48,11 @@ def add_std_price(df, df_new):
 def add_std_volume(df, df_new):
     df_new['std_volume_5'] = df['Volume'].rolling(5).std().shift(1)
     df_new['std_volume_30'] = df['Volume'].rolling(21).std().shift(1)
+    df_new['std_volume_365'] = df['Volume'].rolling(252).std().shift(1)
+    df_new['ratio_std_volume_5_30'] = df['std_volume_5'] / df_new['std_volume_30']
+    df_new['ratio_std_volume_30_365'] = df_new['std_volume_30'] / df_new['std_volume_365']
+
+
+# 7 return-based features are generated using the following sub-function.
+def add_return_feature(df, df_new):
+    df_new['return_1'] = ((df['Close'] - df['Close'].shift(1)))
