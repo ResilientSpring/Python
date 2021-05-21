@@ -46,3 +46,5 @@ def add_std_price(df, df_new):
 
 # A sub-function that generates six volume-based standard deviation features is as follows:
 def add_std_volume(df, df_new):
+    df_new['std_volume_5'] = df['Volume'].rolling(5).std().shift(1)
+    df_new['std_volume_30'] = df['Volume'].rolling(21).std().shift(1)
