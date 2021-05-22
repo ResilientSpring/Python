@@ -27,10 +27,19 @@ print(data_train)
 X_train = data_train.drop('close', axis=1)
 print(X_train)
 
+y_train = data_train['close']
+print(y_train)
+
 data_raw = data_raw.sort_index()
 
-X_test = data_raw.loc[start_test:end_test]
+data_test = data_raw.loc[start_test:end_test]
+print(data_test)
 
+X_test = data_test.drop('Close', axis=1)
+print(X_test)
+
+y_test = data_test['Close']
+print(y_test)
 
 # References:
 # 1. https://stackoverflow.com/a/22137890/14900011
