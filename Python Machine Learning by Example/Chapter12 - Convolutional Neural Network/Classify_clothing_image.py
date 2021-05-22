@@ -82,3 +82,6 @@ model.add(layers.Dense(units=10, activation='softmax'))
 model.compile(optimizer='adam', loss=losses.sparse_categorical_crossentropy, metrics=['accuracy'])
 
 print(model.summary())
+
+# Fitting/training the CNN model we just built.
+model.fit(x=X_train, y=train_labels, epochs=10, validation_data=(X_test, test_labels))
