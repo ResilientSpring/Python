@@ -16,12 +16,12 @@ print(data_raw.info())
 data = feature_generation.generate_features(df=data_raw)
 print(data)
 print(data.info())
-data.to_csv("Data_with_generated_features_.csv")
+data.to_csv("Data_with_generated_features__.csv")
 
 start_train = '1992-01-03'
-end_train = '2017-12-30'
-start_test = '2018-01-03'
-end_test = '2018-12-27'
+end_train = '2018-12-27'
+start_test = '2019-01-01'
+end_test = '2019-12-31'
 
 data = data.sort_index() # [2] Empty Dataframe after slice
 
@@ -34,13 +34,15 @@ print(X_train.info())
 y_train = data_train['close']
 print(y_train)
 
-data_test = data.loc[start_test:end_test]
+data_raw = data_raw.sort_index()
+
+data_test = data_raw.loc[start_test:end_test]
 print(data_test)
 
-X_test = data_test.drop('close', axis=1)
+X_test = data_test.drop('Close', axis=1)
 print(X_test)
 
-y_test = data_test['close']
+y_test = data_test['Close']
 print(y_test)
 
 scaler = StandardScaler()
@@ -50,10 +52,8 @@ X_scaled_test = scaler.fit_transform(X=X_test)
 
 tf.random.set_seed(42)
 
-model = Sequential([Flatten(input_shape=(31, )), Dense(units=32, activation='relu'),
+model = Sequential([Dense(units=32, activation='relu'),
                     Dense(units=1)])
-
-print(model.summary())
 
 model.compile(loss='mean_squared_error', optimizer=Adam(0.1))
 
@@ -70,10 +70,6 @@ print(y_prediction_bool == y_prediction_bool2)
 print(f'Mean Squared Error: {mean_squared_error(y_true=y_test, y_pred=y_prediction_bool):.3f}')
 print(f'Mean Absolute Error: {mean_absolute_error(y_true=y_test, y_pred=y_prediction_bool):.3f}')
 print(f'R^2: {r2_score(y_test, y_prediction_bool):.3f}')
-
-print(f'Mean Squared Error: {mean_squared_error(y_true=y_test, y_pred=y_prediction_bool2):.3f}')
-print(f'Mean Absolute Error: {mean_absolute_error(y_true=y_test, y_pred=y_prediction_bool2):.3f}')
-print(f'R^2: {r2_score(y_test, y_prediction_bool2):.3f}')
 
 # References:
 # 1. https://stackoverflow.com/a/22137890/14900011
