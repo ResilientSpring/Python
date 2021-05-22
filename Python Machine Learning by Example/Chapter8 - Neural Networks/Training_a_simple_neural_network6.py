@@ -16,12 +16,12 @@ print(data_raw.info())
 data = feature_generation.generate_features(df=data_raw)
 print(data)
 print(data.info())
-data.to_csv("Data_with_generated_features.csv")
+data.to_csv("Data_with_generated_features_.csv")
 
 start_train = '1992-01-03'
-end_train = '2018-12-27'
-start_test = '2019-01-01'
-end_test = '2019-12-31'
+end_train = '2017-12-30'
+start_test = '2018-01-03'
+end_test = '2018-12-27'
 
 data = data.sort_index() # [2] Empty Dataframe after slice
 
