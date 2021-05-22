@@ -51,6 +51,13 @@ for i in range(16):
 plt.savefig('Fashion_MINIST_.jpg')
 plt.show()
 
+# As the convolutional layer in Keras only takes in individual samples in three dimensions,
+# we need to first reshape the data into four dimensions:
+X_train = train_images.reshape((train_images.shape[0], 28, 28, 1))
+
+X_test = test_images.reshape((test_imanges.shape[0], 28, 28, 1))
+
+print(X_train.shape)
 
 # References:
 # 1. https://stackoverflow.com/q/57383760/14900011
