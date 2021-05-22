@@ -114,9 +114,12 @@ y_predictions = model.predict(x=X_test)
 
 print(y_predictions[0])
 
+# model.predict_classes(X_new) is deprecated.
+# It is replaced with np.argmax(model.predict(X_new), axis=-1).[2]
 print('Predicted label for the first test sample: ', np.argmax(y_predictions[0]))
 
 print('True label for the first test sample: ', test_labels[0])
 
 # References:
 # 1. https://stackoverflow.com/q/57383760/14900011
+# 2. https://github.com/ageron/handson-ml2/blob/master/10_neural_nets_with_keras.ipynb
