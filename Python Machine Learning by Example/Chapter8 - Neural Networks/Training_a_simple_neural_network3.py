@@ -12,6 +12,7 @@ print(data_raw)
 print(data_raw.info())
 
 data = feature_generation.generate_features(df=data_raw)
+print(data)
 
 start_train = '1992-01-03'
 end_train = '2018-12-29'
