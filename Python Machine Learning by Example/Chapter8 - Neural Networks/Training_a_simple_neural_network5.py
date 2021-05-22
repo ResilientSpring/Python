@@ -24,7 +24,12 @@ data = data.sort_index() # [2] Empty Dataframe after slice
 data_train = data.loc[start_train:end_train, 'open':]
 print(data_train)
 
+X_train = data_train.drop('close', axis=1)
+print(X_train)
 
+data_raw = data_raw.sort_index()
+
+X_test = data_raw.loc[start_test:end_test]
 
 
 # References:
