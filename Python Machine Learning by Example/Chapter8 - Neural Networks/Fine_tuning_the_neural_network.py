@@ -17,7 +17,7 @@ print(data_raw.info())
 data = feature_generation.generate_features(df=data_raw)
 print(data)
 print(data.info())
-data.to_csv("Data_with_generated_features_.csv")
+data.to_csv("Data_with_generated_features_2.csv")
 
 start_train = '1992-01-03'
 end_train = '2017-12-30'
