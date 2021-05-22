@@ -29,3 +29,28 @@ plt.title(class_names[train_labels[42]])
 plt.savefig('Fashion_MNIST.jpg')
 
 plt.show()
+
+# In the ankle boot sample, the pixel values are in the range of 0 to 255.
+# Hence, we need to rescale the data to a range of 0 to 1 before feeding it to the neural network.
+train_images = train_images / 255.0
+test_images = test_imanges / 255.0
+
+# Now we display the first 16  training samples after the pre-processing
+for i in range(16):
+    plt.subplot(4, 4, i + 1) # Do not mistake subplot as subplots [1]
+    plt.subplots_adjust(hspace=.3)
+    plt.xticks([])
+    plt.yticks([])
+    plt.grid(False)
+
+    plt.imshow(train_images[i], cmap=plt.cm.binary)
+
+    plt.title(class_names[train_labels[i]])
+
+
+plt.savefig('Fashion_MINIST_.jpg')
+plt.show()
+
+
+# References:
+# 1. https://stackoverflow.com/q/57383760/14900011
