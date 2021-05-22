@@ -99,5 +99,14 @@ model.compile(optimizer='adam', loss=losses.sparse_categorical_crossentropy, met
 
 print(model.summary())
 
+# Fitting/training the CNN model we just built.
+model.fit(x=X_train, y=train_labels, epochs=10,
+          validation_data=(X_test, test_labels)) # Evaluate it using the testing samples
+
+# If you want to double check the performance on the test set, you can do the following:
+test_loss, test_accuracy = model.evaluate(x=X_test, y=test_labels, verbose=2)
+
+print('Accuracy on test set: ', test_accuracy)
+
 # References:
 # 1. https://stackoverflow.com/q/57383760/14900011
