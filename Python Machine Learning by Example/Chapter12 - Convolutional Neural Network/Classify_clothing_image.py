@@ -70,34 +70,15 @@ model = models.Sequential()
 
 ## We start with the first convolutional layer with 32 small-sized 3 * 3 filters.
 model.add(layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))
-
-## The first convolutional layer is followed by a max-pooling layer with a 2 * 2 filter
 model.add(layers.MaxPooling2D(pool_size=(2, 2)))
-
-## The second convolutional layer with 64 3 * 3 filters.
 model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
-
-## The max-pooling layer paired with the second convolutional layer.
 model.add(layers.MaxPooling2D(pool_size=(2, 2)))
-
-## The third convolutional layer with 128 3 * 3 filters.
 model.add(layers.Conv2D(filters=128, kernel_size=(3, 3), activation='relu'))
-
-# The resulting filter maps are then flattened to provide features to the downstream
-# classifier backend:
 model.add(layers.Flatten())
-
-# For the classifier backend, we just use one hidden layer with 64 nodes:
 model.add(layers.Dense(units=64, activation='relu'))
-
-# And finally, the output layer has 10 nodes representing 10 different classes in our case,
-# along with a softmax activation:
 model.add(layers.Dense(units=10, activation='softmax'))
 
 # Compile the model
 model.compile(optimizer='adam', loss=losses.sparse_categorical_crossentropy, metrics=['accuracy'])
 
 print(model.summary())
-
-# References:
-# 1. https://stackoverflow.com/q/57383760/14900011
