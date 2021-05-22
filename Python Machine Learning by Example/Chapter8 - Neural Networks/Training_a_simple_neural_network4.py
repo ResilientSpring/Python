@@ -36,6 +36,17 @@ print(X_test)
 y_test = data_test['close'].values
 print(y_test)
 
+scaler = StandardScaler()
+X_scaled_train = scaler.fit_transform(X=X_train)
+x_scaled_test = scaler.fit_transform(X=X_test)
+
+# The network we begin with has one hidden layer with 32 nodes followed by a ReLU function.
+model = Sequential([Dense(units=32, activation='relu'),
+                    Dense(units=1)])
+
+print(model.summary())
+
+plot_model(model=model, show_shapes=True, show_layer_names=True)
 
 # References:
 # 1. https://stackoverflow.com/a/22137890/14900011
