@@ -59,7 +59,7 @@ plt.show()
 
 # As the convolutional layer in Keras only takes in individual samples in three dimensions,
 # we need to first reshape the data into four dimensions:
-X_train = X_train_full.reshape((X_train_full.shape[0], 28, 28, 1))
+X_train = X_train.reshape((X_train.shape[0], 28, 28, 1))
 
 X_test = X_test_.reshape((X_test_.shape[0], 28, 28, 1))
 
@@ -88,7 +88,7 @@ model.compile(optimizer='adam', loss=losses.sparse_categorical_crossentropy, met
 print(model.summary())
 
 # Fitting/training the CNN model we just built.
-model.fit(x=X_train, y=y_train_full, epochs=10, validation_data=(X_test, y_test))
+model.fit(x=X_train, y=y_train_full, epochs=10, validation_data=(X_valid, y_valid))
 
 # References:
 # 1. https://github.com/ageron/handson-ml2/blob/master/10_neural_nets_with_keras.ipynb
