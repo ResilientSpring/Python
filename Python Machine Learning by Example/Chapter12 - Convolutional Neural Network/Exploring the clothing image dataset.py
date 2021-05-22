@@ -1,5 +1,7 @@
 from keras.datasets import fashion_mnist
 import matplotlib.pyplot as plt
+import tensorflow as tf
+from keras import datasets, layers, models, losses
 
 fashion_mnist = fashion_mnist
 
@@ -58,6 +60,30 @@ X_train = train_images.reshape((train_images.shape[0], 28, 28, 1))
 X_test = test_images.reshape((test_imanges.shape[0], 28, 28, 1))
 
 print(X_train.shape)
+
+# Before we develop the CNN model, let's specify the random speed in TensorFlow for reproducibility
+tf.random.set_seed(42)
+
+model = models.Sequential()
+
+# For the convolutional extractor, we are going to use three convolutional layers.
+
+## We start with the first convolutional layer with 32 small-sized 3 * 3 filters.
+model.add(layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))
+
+## The first convolutional layer is followed by a max-pooling layer with a 2 * 2 filter
+model.add(layers.MaxPooling2D(pool_size=(2, 2)))
+
+## The second convolutional layer with 64 3 * 3 filters.
+model.add(layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'))
+
+## The max-pooling layer paired with the second convolutional layer.
+model.add(layers.MaxPooling2D(pool_size=(2, 2)))
+
+## The third convolutional layer with 128 3 * 3 filters.
+model.add(layers.Conv2D(filters=128, kernel_size=(3, 3), activation='relu'))
+
+
 
 # References:
 # 1. https://stackoverflow.com/q/57383760/14900011
