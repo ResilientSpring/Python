@@ -5,7 +5,14 @@ from keras import datasets, layers, models, losses
 
 fashion_mnist = fashion_mnist
 
-(X_train_full, y_train_full), (test_imanges, test_labels) = fashion_mnist.load_data()
+(X_train_full, y_train_full), (X_test_, y_test) = fashion_mnist.load_data()
+
+# Split the full training set into a validation set and a (smaller) training set.
+# We also scale the pixel intensities down to the 0-1 range and convert them to floats,
+# by dividing by 255.[1]
+X_valid, X_train = X_train_full[:5000] / 255.0, X_train_full[5000:] / 255.0
+y_valid, y_train = y_train_full[:5000], y_train_full[5000:]
+X_test_ = X_test_ / 255.0
 
 # Print a few samples from these four arrays, for example, the training labels as follows:
 print(y_train_full)
@@ -19,7 +26,7 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 
 print(X_train_full.shape)
 
 # Similarly for the 10000 testing samples, we check the format as follows:
-print(test_imanges.shape)
+print(X_test_.shape)
 
 # Let's now inspect a random training sample
 plt.figure()
@@ -28,14 +35,11 @@ plt.colorbar()
 plt.grid(False)
 plt.title(class_names[y_train_full[42]])
 
-plt.savefig('Fashion_MNIST.jpg')
+plt.savefig('Fashion_MNIST__.jpg')
 
 plt.show()
 
-# In the ankle boot sample, the pixel values are in the range of 0 to 255.
-# Hence, we need to rescale the data to a range of 0 to 1 before feeding it to the neural network.
-X_train_full = X_train_full / 255.0
-test_images = test_imanges / 255.0
+# test_images = X_test_ / 255.0
 
 # Now we display the first 16  training samples after the pre-processing
 for i in range(16):
@@ -50,14 +54,14 @@ for i in range(16):
     plt.title(class_names[y_train_full[i]])
 
 
-plt.savefig('Fashion_MINIST_.jpg')
+plt.savefig('Fashion_MINIST___.jpg')
 plt.show()
 
 # As the convolutional layer in Keras only takes in individual samples in three dimensions,
 # we need to first reshape the data into four dimensions:
 X_train = X_train_full.reshape((X_train_full.shape[0], 28, 28, 1))
 
-X_test = test_images.reshape((test_imanges.shape[0], 28, 28, 1))
+X_test = X_test_.reshape((X_test_.shape[0], 28, 28, 1))
 
 print(X_train.shape)
 
@@ -84,4 +88,7 @@ model.compile(optimizer='adam', loss=losses.sparse_categorical_crossentropy, met
 print(model.summary())
 
 # Fitting/training the CNN model we just built.
-model.fit(x=X_train, y=y_train_full, epochs=10, validation_data=(X_test, test_labels))
+model.fit(x=X_train, y=y_train_full, epochs=10, validation_data=(X_test, y_test))
+
+# References:
+# 1. https://github.com/ageron/handson-ml2/blob/master/10_neural_nets_with_keras.ipynb
