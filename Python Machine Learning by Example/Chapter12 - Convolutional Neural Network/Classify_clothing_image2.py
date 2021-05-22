@@ -88,7 +88,12 @@ model.compile(optimizer='adam', loss=losses.sparse_categorical_crossentropy, met
 print(model.summary())
 
 # Fitting/training the CNN model we just built.
-model.fit(x=X_train, y=y_train_full, epochs=10, validation_data=(X_valid, y_valid))
+model.fit(x=X_train, y=y_train, epochs=10, validation_data=(X_valid, y_valid))
+
+# If you want to double check the performance on the test set, you can do the following:
+test_loss, test_accuracy = model.evaluate(x=X_test, y=y_test, verbose=2)
+
+print('Accuracy on test set: ', test_accuracy)
 
 # References:
 # 1. https://github.com/ageron/handson-ml2/blob/master/10_neural_nets_with_keras.ipynb
