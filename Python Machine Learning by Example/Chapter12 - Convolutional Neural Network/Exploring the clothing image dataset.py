@@ -2,6 +2,7 @@ from keras.datasets import fashion_mnist
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from keras import datasets, layers, models, losses
+import numpy as np
 
 fashion_mnist = fashion_mnist
 
@@ -107,6 +108,15 @@ model.fit(x=X_train, y=train_labels, epochs=10,
 test_loss, test_accuracy = model.evaluate(x=X_test, y=test_labels, verbose=2)
 
 print('Accuracy on test set: ', test_accuracy)
+
+# Make predictions on test set with our well-trained model.
+y_predictions = model.predict(x=X_test)
+
+print(y_predictions[0])
+
+print('Predicted label for the first test sample: ', np.argmax(y_predictions[0]))
+
+print('True label for the first test sample: ', test_labels[0])
 
 # References:
 # 1. https://stackoverflow.com/q/57383760/14900011
