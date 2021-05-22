@@ -2,7 +2,7 @@ import pandas as pd
 import feature_generation
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from keras.layers import Dense
+from keras.layers import Dense, Flatten
 from keras.models import Sequential
 from keras.utils import plot_model
 
@@ -25,7 +25,7 @@ data_train = data.loc[start_train:end_train, 'open':]
 print(data_train)
 
 X_train = data_train.drop('close', axis=1)
-print(X_train)
+print(X_train.info())
 
 y_train = data_train['close']
 print(y_train)
@@ -40,6 +40,16 @@ print(X_test)
 
 y_test = data_test['Close']
 print(y_test)
+
+scaler = StandardScaler()
+
+X_scaled_train = scaler.fit_transform(X=X_train)
+X_scaled_test = scaler.fit_transform(X=X_test)
+
+model = Sequential([Flatten(input_shape=(31, )), Dense(units=32, activation='relu'),
+                    Dense(units=1)])
+
+print(model.summary())
 
 # References:
 # 1. https://stackoverflow.com/a/22137890/14900011
