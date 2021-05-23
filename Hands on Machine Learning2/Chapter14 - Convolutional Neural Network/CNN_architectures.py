@@ -2,6 +2,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from keras.datasets import fashion_mnist
 import numpy as np
+from keras import losses
 
 (X_train_full, y_train_full), (X_test, y_test) = fashion_mnist.load_data()
 X_train, X_valid = X_train_full[:-5000], X_train_full[-5000:]
@@ -32,3 +33,12 @@ model = Sequential(
      Dense(units=10, activation='softmax')])
 
 
+model.compile(loss=losses.sparse_categorical_crossentropy, optimizer='nadam', metrics=['accuracy'])
+
+history = model.fit(x=X_train, y=y_train, epochs=10, validation_data=(X_valid, y_valid))
+
+score = model.evaluate(x=X_test, y=y_test)
+
+X_new = X_test[:10] # pretend we have new images
+
+y_prediction = model.predict(x=X_new)
