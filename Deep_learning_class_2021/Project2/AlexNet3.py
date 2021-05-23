@@ -7,6 +7,7 @@ import time
 from sklearn.metrics import classification_report
 import numpy as np
 import cv2
+from keras.utils import to_categorical
 
 (x_train, train_label), (x_test, test_label) = cifar10.load_data()
 
@@ -29,8 +30,10 @@ axarr[1].imshow(train_data[0])
 
 train_data = np.array(train_data)
 test_data = np.array(test_data)
-train_data = train_data.reshape(train_data.shape[0], 227, 227, 1)
-test_data = test_data.reshape(test_data.shape[0], 227, 227, 1)
+train_data = train_data.reshape((train_data.shape[0], 227, 227, 1))
+test_data = test_data.reshape((test_data.shape[0], 227, 227, 1))
+train_label = to_categorical(train_label, num_classes=10)
+test_label = to_categorical(test_label, num_classes=10)
 
 model = keras.models.Sequential([
     keras.layers.Conv2D(filters=96, kernel_size=(11, 11), strides=(4, 4), activation='relu', input_shape=(227, 227, 3)),
@@ -54,3 +57,12 @@ model = keras.models.Sequential([
     keras.layers.Dense(10, activation='softmax')
 ])
 
+model.fit(x=train_data, y=train_label)
+
+model.evaluate(x=test_data)
+
+y_prediction = model.predict(x=test_data)
+
+test_label = np.argmax(test_label, axis=1)
+
+print(classification_report(y_true=test_label, y_pred=np.argmax(y_prediction, axis=1)))
