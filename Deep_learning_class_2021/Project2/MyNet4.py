@@ -14,8 +14,8 @@ from keras.losses import sparse_categorical_crossentropy
 
 CLASS_NAMES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
-x_train /= 255.0
-x_test /= 255.0
+x_train = x_train / 255.0
+x_test = x_test / 255.0
 
 x_train_ = x_train.reshape((x_train.shape[0], 227, 227, 1))
 x_test_ = x_test.reshape((x_test.shape[0], 227, 227, 1))
