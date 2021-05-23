@@ -21,11 +21,13 @@ X_test = X_test[..., np.newaxis]
 model = Sequential(
     # kernel_size = 7 equates to kernel_size = (7, 7); input_shape=[28, 28, 1] as the images are 28 x 28 pixels, with a single color channel, i.e., grayscale.
     [Conv2D(filters=64, kernel_size=7, activation='relu', padding='same', input_shape=[28, 28, 1]),
-     MaxPooling2D(pool_size=2),
+     MaxPooling2D(pool_size=2), # pool_size = 2 equates to pool_size = (2, 2) and that is divides each spatial dimension by a factor of 2.
      Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
      MaxPooling2D(pool_size=2),
+     # It's a common practice to double the number of filters after each pooling layer.
      Conv2D(filters=256, kernel_size=3, activation='relu', padding='same'),
      MaxPooling2D(pool_size=2),
+     # We must flatten its inputs, since a dense network expects a 1D array of features for each instance.
      Flatten(),
      Dense(units=128, activation='relu'),
      Dropout(rate=0.5),
