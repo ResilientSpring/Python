@@ -4,6 +4,8 @@ from keras.datasets import cifar10
 import matplotlib.pyplot as plt
 import os
 import time
+from sklearn.metrics import classification_report
+import numpy as np
 
 (train_images, train_labels), (test_images, test_labels) = cifar10.load_data()
 
@@ -108,7 +110,9 @@ model.fit(train_ds,
 # The evaluation phase will provide a performance score of the trained model on unseen data.
 y_prediction = model.evaluate(test_ds)
 
+y_prediction_bool = np.argmax(y_prediction, axis=1)
 
+print(classification_report(y_true=test_labels, y_pred=y_prediction_bool))
 
 # References:
 # 1. https://megalodon.jp/2021-0523-1837-57/https://towardsdatascience.com:443/implementing-alexnet-cnn-architecture-using-tensorflow-2-0-and-keras-2113e090ad98
