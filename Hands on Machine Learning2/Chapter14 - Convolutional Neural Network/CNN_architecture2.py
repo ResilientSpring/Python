@@ -40,8 +40,14 @@ model.compile(loss=losses.sparse_categorical_crossentropy, optimizer='nadam', me
 
 history = model.fit(x=X_train, y=y_train, epochs=10, validation_data=(X_valid, y_valid))
 
+# Once you are satisfied with your model's validation accuracy, you should evaluate it on the
+# test set to estimate the generalization error before you deploy the model to production.
+## You can easily do this using the evaluate() method.
 score = model.evaluate(x=X_test, y=y_test)
 
-X_new = X_test[:10] # pretend we have new images
+# Since we don't have actual new instances to pass to model.predict(),
+# we will just use the first 10 instances of the test set.
+X_new = X_test[:10]
 
+# Next, we can use the model's predict() method to make predictions on new instances.
 y_prediction = model.predict(x=X_new)
