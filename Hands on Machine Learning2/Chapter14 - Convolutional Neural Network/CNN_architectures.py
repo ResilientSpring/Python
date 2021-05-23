@@ -1,6 +1,7 @@
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from keras.datasets import fashion_mnist
+import numpy as np
 
 (X_train_full, y_train_full), (X_test, y_test) = fashion_mnist.load_data()
 X_train, X_valid = X_train_full[:-5000], X_train_full[-5000:]
@@ -29,3 +30,5 @@ model = Sequential(
      Dense(units=64, activation='relu'),
      Dropout(rate=0.5),
      Dense(units=10, activation='softmax')])
+
+
