@@ -34,7 +34,7 @@ df = pd.DataFrame(data=[
     [25, "國立臺中教育大學", "National Taichung University of Education", 5447, "North", ],
     [26, "國立臺南大學", "National University of Tainan", 5100, "South", ],
     [27, "臺北市立大學", "University of Taipei", 5054, "North", ],
-    [28, "國立體育大學", "National P.E University", 4795, "North", ],
+    [28, "國立體育大學", "National Taiwan Sport University", 4795, "North", ],
     [29, "國立聯合大學", 4561, "North"],
     [30, "國立高雄師範大學", 4408, "South"],
     [31, "國立臺灣體育運動大學", 3226, "North"],
