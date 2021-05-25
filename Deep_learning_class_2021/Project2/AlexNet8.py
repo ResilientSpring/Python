@@ -33,6 +33,7 @@ test_data = test_data.reshape(test_data.shape[0], 227, 227, 3)
 train_label = to_categorical(train_label, num_classes=10)
 test_label = to_categorical(test_label, num_classes=10)
 
+# In response to the prior error of InvalidArgumentError:  logits and labels must have the same first dimension, got logits shape [32,10] and labels shape [320]
 train_label_ = train_label.reshape(-1, 32)
 test_label_ = test_label.reshape(-1, 32)
 
