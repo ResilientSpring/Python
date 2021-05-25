@@ -30,8 +30,8 @@ train_data = np.array(train_data)
 test_data = np.array(test_data)
 train_data = train_data.reshape(train_data.shape[0], 227, 227, 3)
 test_data = test_data.reshape(test_data.shape[0], 227, 227, 3)
-train_label = to_categorical(train_label, num_classes=10) # One-hot encoding
-test_label = to_categorical(test_label, num_classes=10)  # Need not to use SparseCategoricalCrossentropy hereafter.
+train_label = to_categorical(train_label, num_classes=10)
+test_label = to_categorical(test_label, num_classes=10)
 
 print(train_data.shape)
 print(test_data.shape)
@@ -60,11 +60,6 @@ model = keras.models.Sequential([
     keras.layers.Dense(10, activation='softmax')
 ])
 
-# In response to prior error of logits and labels must have the same first dimension,
-# got logits shape [32,10] and labels shape [320].[1]
-model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy']) # data were already one-hot encoded.
+model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
 
-history = model.fit(x=train_data, y=train_label, epochs=10)
-
-# References:
-# 1. https://stackoverflow.com/a/62286888/14900011
+history = model.fit(x=train_data, y=train_label, epochs=20)
