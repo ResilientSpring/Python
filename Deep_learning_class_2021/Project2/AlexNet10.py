@@ -57,3 +57,4 @@ model = keras.models.Sequential([
     keras.layers.Dropout(0.5),
     keras.layers.Dense(10, activation='softmax')
 ])
+
