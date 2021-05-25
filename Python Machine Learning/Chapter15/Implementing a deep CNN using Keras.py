@@ -9,7 +9,7 @@ from keras.losses import SparseCategoricalCrossentropy
 
 model = Sequential(
     [Conv2D(filters=32, kernel_size=5, strides=1, padding='same', data_format='channels_last',
-            name='Conv_1', activation='relu'),
+            name='Conv_1', activation='relu', input_shape=(x_train.shape[0], 28, 28, 1)),
      MaxPool2D(pool_size=2, name='Pool_1'),
      Conv2D(filters=64, kernel_size=5, strides=1, padding='same', name='Conv_2', activation='relu'),
      MaxPool2D(pool_size=2, name='Pool_2'),
@@ -18,10 +18,8 @@ model = Sequential(
      Dropout(rate=0.5),
      Dense(units=10, name='fully_connected_layer2', activation='softmax')])
 
-model.build(input_shape=(None, 28, 28, 1))
+# model.build(input_shape=(None, 28, 28, 1))
 
 model.compile(optimizer=Adam(), loss=SparseCategoricalCrossentropy(), metrics=['accuracy'])
 
-history = model.fit(x=x_train, y=train_label, shuffle=True, epochs=10, validation_split=0.3)
-
-
+history = model.fit(x=x_train, y=train_label)
