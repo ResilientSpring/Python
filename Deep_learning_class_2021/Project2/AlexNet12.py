@@ -60,6 +60,11 @@ model = keras.models.Sequential([
     keras.layers.Dense(10, activation='softmax')
 ])
 
+# In response to prior error of logits and labels must have the same first dimension,
+# got logits shape [32,10] and labels shape [320].[1]
 model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
 
 history = model.fit(x=train_data, y=train_label, epochs=10)
+
+# References:
+# 1. https://stackoverflow.com/a/62286888/14900011
