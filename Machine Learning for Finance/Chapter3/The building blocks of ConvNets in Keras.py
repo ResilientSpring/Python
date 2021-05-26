@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # MNIST characters are black and white, so the data shape usually doesn't include color channels:
 print(X_train.shape)
 
-# Expand data dimensionas to show that it has only one-color channel.
+# Expand data dimensions to show that it has only one-color channel.
 X_train = np.expand_dims(X_train, axis=-1)
 
 X_test = np.expand_dims(X_test, axis=-1)
