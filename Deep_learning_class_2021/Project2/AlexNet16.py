@@ -63,7 +63,8 @@ model = keras.models.Sequential([
 
 model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
 
-history = model.fit(x=train_data, y=train_label, epochs=20)
+history = model.fit(x=train_data, y=train_label, epochs=20, batch_size=8,
+                    use_multiprocessing=True, workers=8, max_queue_size=5) # To speed up training. [1]
 
 model.evaluate(x=test_data, y=test_label)
 
@@ -72,3 +73,6 @@ y_prediction = model.predict(x=test_data)
 y_prediction_bool = np.argmax(y_prediction, axis=1)
 
 print(classification_report(y_true=test_label, y_pred=y_prediction_bool, target_names=CLASS_NAMES))
+
+# References:
+# 1. https://keras.io/api/models/model_training_apis/
