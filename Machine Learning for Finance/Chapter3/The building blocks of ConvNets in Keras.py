@@ -2,6 +2,7 @@ from keras.datasets import mnist
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Conv2D, Activation, MaxPool2D, Flatten, Dense
+import matplotlib.pyplot as plt
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -28,3 +29,17 @@ print(model.summary())
 
 model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+history = model.fit(x=X_train, y=y_train, batch_size=32, epochs=5,
+                    validation_data=(X_test, y_test))
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+gen = ax.plot(history.history['val_accuracy'], label='Validation_Accuracy')
+
+fr = ax.plot(history.history['accuracy'], dashes=[5, 2], label='Training Accuracy')
+
+legend = ax.legend(loc='lower center', shadow=True)
+
+plt.savefig('learning_curves.jpg')
+
+plt.show()
