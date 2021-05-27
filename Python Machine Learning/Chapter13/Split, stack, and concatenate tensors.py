@@ -18,3 +18,17 @@ print(t2)
 t2_splits = tf.split(t2, num_or_size_splits=[3, 2])
 
 print(t2_splits)
+
+# Concatenate tensors: 1 dimension + 1 dimension = 1 dimension
+A = tf.ones((3, ))
+B = tf.zeros((2, ))
+C = tf.concat([A, B], axis=0)
+
+print(C)
+
+# Stack tensors: 1 dimension + 1 dimension = 2 dimensions
+A = tf.ones((3, ))
+B = tf.zeros((3, ))
+Stack = tf.stack([A, B], axis=1)
+
+print(Stack)
