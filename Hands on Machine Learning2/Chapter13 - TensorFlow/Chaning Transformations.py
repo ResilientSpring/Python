@@ -10,7 +10,7 @@ dataset2 = tf.data.Dataset.range(10)
 
 print(dataset2)
 
-dataset_pipeline = dataset.repeat(3).batch(batch_size=3)
+dataset_pipeline = dataset.repeat(3).batch(batch_size=7)
 
 for item in dataset_pipeline:
     print(item)
