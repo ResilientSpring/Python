@@ -1,4 +1,5 @@
 import tensorflow as tf
+import numpy as np
 
 tf.random.set_seed(1)
 
@@ -28,3 +29,14 @@ t6 = tf.linalg.matmul(t1, t2, transpose_a=True)
 
 print(t5)
 print(t6)
+
+# To compute L1 or L2 norm:
+norm_t1 = tf.norm(t1, ord=2, axis=1)  # Calculate the L2 norm of t1
+
+print(norm_t1)
+
+# To verify that the code snippet above does correctly compute the L2 norm of t1,
+# you can compare the results with the following with numpy:
+norm_t1_verification = np.sqrt(np.sum(np.square(t1), axis=1))
+
+print(norm_t1_verification)
