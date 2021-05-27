@@ -20,7 +20,7 @@ print(dataset_pipeline)
 
 # You can also transform the items by calling the map() method.
 # For example, this creates a new dataset with all items doubled:
-dataset3 = dataset.map(lambda x: X * 2, num_parallel_calls=2)
+dataset3 = dataset.map(lambda x: x * 2, num_parallel_calls=2)
 
 print(dataset3)
 
@@ -39,7 +39,7 @@ for item in dataset4:
 
 
 # Simply filter the dataset using filter()
-dataset5 = dataset4.filter(lambda x: X < 10)  # keep only items < 10
+dataset5 = dataset3.filter(lambda x: x < 10)  # keep only items < 10
 
 # To lok at at just a few items from a dataset, use take()
 for item in dataset5.take(3):
