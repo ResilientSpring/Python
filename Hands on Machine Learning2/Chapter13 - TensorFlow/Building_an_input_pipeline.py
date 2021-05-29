@@ -23,3 +23,8 @@ record_defaults = [0, np.nan, tf.constant(np.nan, dtype=tf.float64), "Hello", tf
 parsed_fields = tf.io.decode_csv(records='1, 2, 3, 4, 5', record_defaults=record_defaults)
 
 print(parsed_fields)
+
+# Notice that all missing fields in ',?,?,?,5' are replaced with their default value, when provided.
+parsed_fields = tf.io.decode_csv(records=',,,,5', record_defaults=record_defaults)
+
+print(parsed_fields)
