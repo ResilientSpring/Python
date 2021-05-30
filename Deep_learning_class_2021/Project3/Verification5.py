@@ -15,3 +15,9 @@ def file_as_blockiter(afile, blocksize=65536):
             block = afile.read(blocksize)
 
 
+file_name_list = ["data_batch_1", "data_batch_2", "data_batch_3", "data_batch_4", "data_batch_5", "test_batch",
+                  "batches.meta"]
+
+print([(file_name, hash_bytestr_iter(file_as_blockiter(open(file_name, 'rb')), hashlib.md5()))
+       for file_name in file_name_list])
+
