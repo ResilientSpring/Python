@@ -7,3 +7,5 @@ dataset = pd.read_csv(filepath_or_buffer=url, header=0)
 print(dataset.head())
 
 print(dataset["ocean_proximity"].unique())
+
+print(dataset["ocean_proximity"].value_counts())
