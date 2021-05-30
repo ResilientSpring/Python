@@ -2,7 +2,7 @@
 import hashlib
 
 # The file to check
-file_name = 'data_batch_1'
+file_name = "data_batch_1"
 
 # Correct original md5 goes here
 original_md5 = 'c58f30108f718f92721af3b95e74349a'
