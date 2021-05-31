@@ -1,6 +1,9 @@
 import tensorflow as tf
 from tensorflow.keras.datasets import fashion_mnist
 import matplotlib.pyplot as plt
+from tensorflow.keras.layers import Flatten, Dense
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
 
 # Train a neural network to recognize items of clothing from a common dataset called Fashion MNIST.
 # It contains 70000 items of clothing in 10 different categories.
@@ -26,3 +29,24 @@ print(training_images[0])
 # When training a neural network, it's easier to treat all values as between 0 and 1,
 # a process called normalization.
 # Fortunately, Python provides an easy way to normalize a list like that without looping.
+training_images = training_images / 255.0
+test_images = test_images / 255.0
+
+# Design the model
+model = Sequential([Flatten(),
+                    Dense(units=128, activation=tf.nn.relu),
+                    Dense(units=10, activation=tf.nn.softmax)])
+
+
+model.compile(optimizer=tf.keras.optimizers.Adam(),
+              loss=SparseCategoricalCrossentropy(),
+              metrics=['accuracy'])
+
+
+history = model.fit(x=training_images, y=training_labels, epochs=5)
+
+# How would the model perform on data it hasn't seen? That's why you have the test set.
+# You call model.evaluate and pass in the two sets, and it reports the loss for each.
+accuracy = model.evaluate(x=test_images, y=test_labels)
+
+print(accuracy)
