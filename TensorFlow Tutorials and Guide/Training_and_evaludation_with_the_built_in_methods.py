@@ -28,3 +28,9 @@ model.compile(optimizer=RMSprop(), loss=SparseCategoricalCrossentropy(),
 history = model.fit(x=X_train, y=y_train, batch_size=64, epochs=2, validation_split=0.1)
 
 print(history.history)
+
+results = model.evaluate(x=X_test, y=y_test, batch_size=128)
+print("Test loss, test acc:", results)
+
+y_predictions = model.predict(x=X_test[:3]) # Generate predictions for 3 samples
+print('Predictions shape:', y_predictions.shape)
