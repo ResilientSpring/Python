@@ -35,7 +35,7 @@ test_images = test_images / 255.0
 # Design the model
 model = Sequential([Flatten(),
                     Dense(units=128, activation=tf.nn.relu),
-                    Dense(units=10, activation=tf.nn.softmax)])
+                    Dense(units=10, activation=tf.nn.softmax)]) # The number of neurons in the last layer should match the number of classes you are classifiying for.
 
 
 model.compile(optimizer=tf.keras.optimizers.Adam(),
