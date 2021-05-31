@@ -104,10 +104,10 @@ model.compile(
     loss=tf.losses.SparseCategoricalCrossentropy(from_logits=True),
     metrics=['accuracy'])
 
-model.fit(
+history = model.fit(
     train_ds,
     validation_data=val_ds,
-    epochs=3
+    epochs=10
 )
 
 # Source: https://www.tensorflow.org/tutorials/load_data/images
