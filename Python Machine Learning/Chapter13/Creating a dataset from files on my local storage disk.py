@@ -6,7 +6,7 @@ import tensorflow as tf
 # Use the pathlib library to generate a list of image files:
 image_directory_path = pathlib.Path('cat_dog_images')
 
-# The glob module finds all the pathnames matching a specified pattern according to the rules used
+# The glob module finds all the pathnames matching a specified pattern according to the rules used.[2]
 for path in image_directory_path.glob('*.jpg'):
     print(path)
 
@@ -41,3 +41,4 @@ plt.show()
 
 # References:
 # 1. https://www.w3schools.com/python/ref_func_sorted.asp
+# 2. https://docs.python.org/3/library/glob.html
