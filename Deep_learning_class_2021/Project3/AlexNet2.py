@@ -17,10 +17,10 @@ plt.show()
 print(training_labels[0])
 print(training_images[0])
 
-training_images = training_images.reshape(50000, 227, 227, 3)
+training_images = training_images.reshape(50000, 32, 32, 3)
 training_images = training_images / 255.0
 
-test_images = test_images.reshape(10000, 227, 227, 3)
+test_images = test_images.reshape(10000, 32, 32, 3)
 test_images = test_images / 255.0
 
 model = Sequential([
@@ -46,7 +46,7 @@ model = Sequential([
     Dense(10, activation=tf.nn.softmax)
 ])
 
-model.compile(optimizer=Adam(), loss=sparse_categorical_crossentropy(), metrics=['accuracy'])
+model.compile(optimizer=Adam(), loss=sparse_categorical_crossentropy, metrics=['accuracy'])
 
 history = model.fit(x=training_images, y=training_labels, epochs=20, batch_size=32)
 
