@@ -26,7 +26,7 @@ for individual_dataset in dataset_of_files_and_labels:
     print('X:', individual_dataset[1].numpy(), 'y:', individual_dataset[0].numpy())
 
 
-def preprocessing(path, label):
+def preprocessing(label, path):
 
     image_loaded_for_preprocessing = tf.io.read_file(filename=path)
 

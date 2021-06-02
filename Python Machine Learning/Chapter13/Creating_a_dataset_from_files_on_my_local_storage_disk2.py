@@ -19,11 +19,10 @@ numeric_list_of_labels = [1 if 'dog' in os.path.basename(file) else 0 for file i
 print(numeric_list_of_labels)  # Now we have a list of their labels.
 
 # Creating a joint dataset from two lists.
-dataset_of_files_and_labels = tf.data.Dataset.from_tensor_slices((numeric_list_of_labels,
-                                                                  file_path_list))
+dataset_of_files_and_labels = tf.data.Dataset.from_tensor_slices((file_path_list, numeric_list_of_labels))
 
 for individual_dataset in dataset_of_files_and_labels:
-    print('X:', individual_dataset[1].numpy(), 'y:', individual_dataset[0].numpy())
+    print('X:', individual_dataset[0].numpy(), 'y:', individual_dataset[1].numpy())
 
 
 def preprocessing(path, label):
@@ -41,3 +40,22 @@ def preprocessing(path, label):
 image_height, image_width = 80, 120
 
 dataset_of_images_labels_bond = dataset_of_files_and_labels.map(preprocessing)
+
+figure = plt.figure(figsize=(10, 6))
+
+for i, example in enumerate(dataset_of_images_labels_bond):
+
+    print(example[0].shape, example[1].numpy())
+
+    ax = figure.add_subplot(2, 3, i + 1)
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    ax.imshow(example[0])
+
+    ax.set_title('{}'.format(example[1].numpy()), size=15)
+
+plt.tight_layout()
+
+plt.savefig('Preprocessed_ch3-catdog_example.jpg')
+plt.show()
