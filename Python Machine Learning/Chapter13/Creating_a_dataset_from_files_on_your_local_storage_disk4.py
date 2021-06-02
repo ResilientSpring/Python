@@ -26,7 +26,7 @@ for individual_dataset in dataset_of_files_and_labels:
     print('X:', individual_dataset[1].numpy(), 'y:', individual_dataset[0].numpy())
 
 
-def preprocessing(path, label):
+def preprocessing(label, path):
 
     image_loaded_for_preprocessing = tf.io.read_file(filename=path)
 
@@ -42,17 +42,18 @@ image_height, image_width = 80, 120
 
 dataset_of_images_labels_bond = dataset_of_files_and_labels.map(preprocessing)
 
-figure = plt.figure(figsize=(10, 6))
+figure = plt.figure(figsize=(10, 5))
 
 for i, example in enumerate(dataset_of_images_labels_bond):
 
+    print(example[0].numpy(), example[1].shape)
     ax = figure.add_subplot(2, 3, i + 1)
     ax.set_xticks([])
     ax.set_yticks([])
 
-    ax.imshow(example[0])
+    ax.imshow(example[1])
 
-    ax.set_title('{}'.format(example[1].numpy()), size=15)
+    ax.set_title('{}'.format(example[0].numpy()), size=15)
 
 plt.tight_layout()
 

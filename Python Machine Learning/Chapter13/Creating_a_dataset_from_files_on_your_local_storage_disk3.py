@@ -26,7 +26,7 @@ for individual_dataset in dataset_of_files_and_labels:
     print('X:', individual_dataset[1].numpy(), 'y:', individual_dataset[0].numpy())
 
 
-def preprocessing(path, label):
+def preprocessing(label, path):
 
     image_loaded_for_preprocessing = tf.io.read_file(filename=path)
 
@@ -41,20 +41,3 @@ def preprocessing(path, label):
 image_height, image_width = 80, 120
 
 dataset_of_images_labels_bond = dataset_of_files_and_labels.map(preprocessing)
-
-figure = plt.figure(figsize=(10, 6))
-
-for i, example in enumerate(dataset_of_images_labels_bond):
-
-    ax = figure.add_subplot(2, 3, i + 1)
-    ax.set_xticks([])
-    ax.set_yticks([])
-
-    ax.imshow(example[0])
-
-    ax.set_title('{}'.format(example[1].numpy()), size=15)
-
-plt.tight_layout()
-
-plt.savefig('Preprocessed_ch3-catdog_example.jpg')
-plt.show()
