@@ -20,3 +20,6 @@ print(numeric_list_of_labels)  # Now we have a list of their labels.
 # Creating a joint dataset from two lists.
 dataset_of_files_and_labels = tf.data.Dataset.from_tensor_slices((numeric_list_of_labels,
                                                                   file_path_list))
+
+for individual_dataset in dataset_of_files_and_labels:
+    print('X:', individual_dataset[1].numpy(), 'y:', individual_dataset[0].numpy())
