@@ -1,6 +1,7 @@
 import os.path
 import pathlib
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 # Use the pathlib library to generate a list of image files:
 image_directory_path = pathlib.Path('cat_dog_images')
@@ -39,5 +40,21 @@ def preprocessing(path, label):
 
 image_height, image_width = 120, 80
 
+dataset_of_images_labels_bond = dataset_of_files_and_labels.map(preprocessing)
+
+figure = plt.figure(figsize=(10, 6))
+
+for i, example in enumerate(dataset_of_images_labels_bond):
+    ax = figure.add_subplot(2, 3, i + 1)
+    ax.set_xticks([]); ax.set_yticks([])
+
+    ax.imshow(example[0])
+
+    ax.set_title('{}'.format(example[1].numpy()), size=15)
+
+plt.tight_layout()
+
+plt.savefig('Preprocessed images.jpg')
+plt.show()
 
 
