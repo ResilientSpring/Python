@@ -12,3 +12,4 @@ for path in image_directory_path.glob('*.jpg'):
 
 list_of_image_paths = [str(path) for path in image_directory_path.glob('*.jpg')]
 print(list_of_image_paths)
+
