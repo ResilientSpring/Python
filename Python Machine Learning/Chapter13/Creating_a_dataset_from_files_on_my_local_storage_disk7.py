@@ -36,7 +36,7 @@ def preprocessing(image, label):
     return postprocessed_image, label
 
 
-image_height, image_width = 80, 120
+image_width, image_height = 120, 80
 
 dataset_of_processed_image_and_label = dataset_of_image_and_label.map(preprocessing)
 

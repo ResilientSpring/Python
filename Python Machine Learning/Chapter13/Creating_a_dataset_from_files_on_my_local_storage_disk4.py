@@ -23,17 +23,17 @@ dataset_of_image_and_label = tf.data.Dataset.from_tensor_slices((list_of_image_p
 for item in dataset_of_image_and_label:
     print('X:', item[0].numpy(), 'y:', item[1].numpy())
 
-def preprocessing(image, label):
+def preprocessing(path, label):
 
-    loaded_image = tf.io.read_file(image)
+    image = tf.io.read_file(path)
 
-    decoded_image = tf.image.decode_image(contents=loaded_image, channels=3)
+    image = tf.image.decode_image(contents=image, channels=3)
 
-    resized_image = tf.image.resize(images=decoded_image, size=[image_height, image_width])
+    image = tf.image.resize(images=image, size=[image_height, image_width])
 
-    postprocessed_image = resized_image / 255.0
+    image = image / 255.0
 
-    return postprocessed_image, label
+    return image, label
 
 
 image_height, image_width = 80, 120
