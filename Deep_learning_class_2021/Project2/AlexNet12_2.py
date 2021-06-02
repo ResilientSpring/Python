@@ -9,7 +9,7 @@ import cv2
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, Flatten, Dense, Dropout, MaxPool2D, BatchNormalization
+from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout, BatchNormalization
 from tensorflow.keras.losses import SparseCategoricalCrossentropy
 
 (x_train, train_label), (x_test, test_label) = cifar10.load_data()
@@ -27,17 +27,18 @@ for img in x_test:
     test_data.append(resized_img)
 
 
-train_data = np.array(train_data, dtype=np.uint8)
-test_data = np.array(test_data, dtype=np.uint8)
+train_data = np.array(train_data)
+test_data = np.array(test_data)
 
 train_data = train_data.reshape(train_data.shape[0], 227, 227, 3)
 test_data = test_data.reshape(test_data.shape[0], 227, 227, 3)
 
-train_label = to_categorical(train_label, num_classes=10)
-test_label = to_categorical(test_label, num_classes=10)
+train_label = to_categorical(train_label, num_classes=10) # One-hot encoding
+test_label = to_categorical(test_label, num_classes=10)  # Need not to use SparseCategoricalCrossentropy hereafter.
 
 print(train_data.shape)
 print(test_data.shape)
+
 print(train_label.shape)
 print(test_label.shape)
 
@@ -63,17 +64,11 @@ model = Sequential([
     Dense(10, activation='softmax')
 ])
 
-model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
+# In response to prior error of logits and labels must have the same first dimension,
+# got logits shape [32,10] and labels shape [320].[1]
+model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy']) # data were already one-hot encoded.
 
-history = model.fit(x=train_data, y=train_label, epochs=20, batch_size=128) # To speed up training. [1]
-
-model.evaluate(x=test_data, y=test_label)
-
-y_prediction = model.predict(x=test_data)
-
-y_prediction_bool = np.argmax(y_prediction, axis=1)
-
-print(classification_report(y_true=test_label, y_pred=y_prediction_bool, target_names=CLASS_NAMES))
+history = model.fit(x=train_data, y=train_label, epochs=10)
 
 # References:
-# 1. https://keras.io/api/models/model_training_apis/
+# 1. https://stackoverflow.com/a/62286888/14900011
