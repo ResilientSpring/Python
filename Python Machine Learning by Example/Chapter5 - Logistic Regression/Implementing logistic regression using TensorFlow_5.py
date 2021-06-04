@@ -48,6 +48,8 @@ train_data = train_data.repeat().shuffle(len(X_train_enc)).batch(batch_size=1000
 
 # Define the weights and bias of the logistic regression model:
 number_of_features = int(X_train_enc.shape[1])
+print(number_of_features)
+
 weight = tf.Variable(tf.zeros([number_of_features, 1]))
 bias = tf.Variable(tf.zeros([1]))
 
@@ -72,7 +74,7 @@ for step, (batch_x, batch_y) in enumerate(train_data.take(training_steps), 1):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=batch_y, logits=logits))
         print("step: %i, loss: %f" % (step, loss))
 
-X_test_enc = np.array(X_test_enc, dtype=object)  # [1][2][3]
+tensor_X_test_enc = tf.constant(X_test_enc) # [1][2][3]
 
 logits = tf.add(tf.matmul(X_test_enc, weight), bias)[:, 0]
 prediction = tf.nn.sigmoid(logits)
