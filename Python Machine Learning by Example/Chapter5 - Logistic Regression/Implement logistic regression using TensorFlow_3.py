@@ -71,6 +71,8 @@ for step, (batch_x, batch_y) in enumerate(train_data.take(training_steps), 1):
         print("step: %i, loss: %f" % (step, loss))
 
 
+X_test_enc = np.array(X_test_enc)
+
 logits = tf.add(tf.matmul(X_test_enc, weight), bias)[:, 0]
 prediction = tf.nn.sigmoid(logits)
 auc_metric = tf.keras.metrics.AUC()

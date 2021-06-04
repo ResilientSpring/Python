@@ -43,7 +43,7 @@ X_test_enc = enc.transform(X=X_test)
 print(len(X_train_enc))
 
 train_data = tf.data.Dataset.from_tensor_slices((X_train_enc, y_train))
-train_data = train_data.repeat().shuffle(len(X_train_enc)).batch(batch_size=1000).prefetch(buffer_size=1)
+train_data = train_data.repeat().shuffle(5400).batch(batch_size=1000).prefetch(buffer_size=1)
 
 # Define the weights and bias of the logistic regression model:
 number_of_features = int(X_train_enc.shape[1])
