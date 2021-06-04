@@ -19,15 +19,6 @@ y_train = y[: int(6000 * 0.9)]
 X_test = X[int(6000 * 0.9) :]
 y_test = y[int(6000 * 0.9) :]
 
-# Because Pandas Dataframe can't recognize 6000 * 0.9 in [:], we need to break down the steps.
-# number_of_rows = 6000 * 0.9
-
-# X_train = X[:number_of_rows]
-# y_train = y[:number_of_rows]
-
-# X_test = X[number_of_rows:]
-# y_test = y[number_of_rows:]
-
 # Convert Pandas.Dataframe to NumPy array because Tensor is only compatible with NumPy array.
 X_train = X_train.to_numpy()
 y_train = y_train.to_numpy().astype('float32')
