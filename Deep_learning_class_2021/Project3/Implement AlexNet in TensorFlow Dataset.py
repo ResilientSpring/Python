@@ -1,1 +1,1 @@
-# Remember to save the model for resumption.
+# Remember to save the training model for later resumption.

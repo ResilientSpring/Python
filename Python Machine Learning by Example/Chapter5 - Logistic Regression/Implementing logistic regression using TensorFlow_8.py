@@ -14,11 +14,11 @@ print(X)
 y = df['click']
 print(y)
 
-X_train = X[: int(6000 * 0.9)]  # Use 90% of the read-in rows for training.
+X_train = X[: int(6000 * 0.9)] # Use 90% of the read-in rows for training.
 y_train = y[: int(6000 * 0.9)]
 
-X_test = X[int(6000 * 0.9):]
-y_test = y[int(6000 * 0.9):]
+X_test = X[int(6000 * 0.9) :]
+y_test = y[int(6000 * 0.9) :]
 
 # Convert Pandas.Dataframe to NumPy array because Tensor is only compatible with NumPy array.
 X_train = X_train.to_numpy()
@@ -34,8 +34,7 @@ enc = OneHotEncoder(handle_unknown='ignore')
 X_train_enc = enc.fit_transform(X=X_train)
 print(X_train_enc)  # It hasn't been enclosed in an array.
 
-X_train_enc = enc.fit_transform(X=X_train).toarray().astype(
-    'float32')  # Enclosing it within an array and convert the encoded words to float32.
+X_train_enc = enc.fit_transform(X=X_train).toarray().astype('float32') # Enclosing it within an array and convert the encoded words to float32.
 print(X_train_enc)
 
 # Scaling the data
@@ -52,7 +51,6 @@ weight = tf.Variable(tf.zeros([number_of_features, 1]))
 bias = tf.Variable(tf.zeros([1]))
 
 optimizer = Adam(learning_rate=0.0008)
-
 
 # Define the optimization process where we compute the current prediction and cost and
 # update the model following the computed gradients.
@@ -72,16 +70,11 @@ for step, (batch_x, batch_y) in enumerate(train_data.take(training_steps), 1):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=batch_y, logits=logits))
         print("step: %i, loss: %f" % (step, loss))
 
-X_test_enc = np.array(X_test_enc, dtype=object)  # [1][2][3]
+tensor_X_test_enc = tf.constant(X_test_enc, dtype=tf.float32)
 
-logits = tf.add(tf.matmul(X_test_enc, weight), bias)[:, 0]
+logits = tf.add(tf.matmul(tensor_X_test_enc, weight), bias)[:, 0]
 prediction = tf.nn.sigmoid(logits)
 auc_metric = tf.keras.metrics.AUC()
 auc_metric.update_state(y_test, prediction)
 
 print(f'AUC on testing set: {auc_metric.result().numpy():.3f}')
-
-# References:
-# 1. https://stackoverflow.com/a/55105592/14900011
-# 2. https://stackoverflow.com/a/63506822/14900011
-# 3. https://stackoverflow.com/a/4675383/14900011
