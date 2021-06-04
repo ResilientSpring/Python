@@ -70,7 +70,7 @@ for step, (batch_x, batch_y) in enumerate(train_data.take(training_steps), 1):
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=batch_y, logits=logits))
         print("step: %i, loss: %f" % (step, loss))
 
-X_test_enc = X_test_enc.toarray().astype('float32')
+X_test_enc = X_test_enc.toarray().astype('int32')
 
 logits = tf.add(tf.matmul(X_test_enc.shape[0], weight), bias)[:, 0]
 prediction = tf.nn.sigmoid(logits)
