@@ -13,24 +13,26 @@ print(X)
 y = df['click']
 print(y)
 
-# X_train = X[: 6000 * 0.9] # Use 90% of the read-in rows for training.
-# y_train = y[: 6000 * 0.9]
+X_train = X[: int(6000 * 0.9)] # Use 90% of the read-in rows for training.
+y_train = y[: int(6000 * 0.9)]
 
-# X_test = X[6000 * 0.9 :]
-# y_test = y[6000 * 0.9 :]
+X_test = X[int(6000 * 0.9) :]
+y_test = y[int(6000 * 0.9) :]
 
 # Because Pandas Dataframe can't recognize 6000 * 0.9 in [:], we need to break down the steps.
-number_of_rows = 6000 * 0.9
+# number_of_rows = 6000 * 0.9
 
-X_train = X[:number_of_rows]
-y_train = y[:number_of_rows]
+# X_train = X[:number_of_rows]
+# y_train = y[:number_of_rows]
 
-X_test = X[number_of_rows:]
-y_test = y[number_of_rows:]
+# X_test = X[number_of_rows:]
+# y_test = y[number_of_rows:]
 
 # Convert Pandas.Dataframe to NumPy array because Tensor is only compatible with NumPy array.
 X_train = X_train.to_numpy()
 y_train = y_train.to_numpy().astype('float32')
+
+print(X_train)
 
 X_test = X_test.to_numpy()
 y_test = y_test.to_numpy().astype('float32')
