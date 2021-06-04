@@ -35,3 +35,4 @@ X_test_enc = enc.transform(X=X_test)
 
 # train_data = tf.data.Dataset.from_tensor_slices((X_train_enc, y_train))
 # train_data = train_data.repeat().shuffle(len(X_train_enc))
+
