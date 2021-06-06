@@ -64,7 +64,10 @@ model = Sequential([Conv2D(filters=32, kernel_size=3, strides=2, activation=tf.n
 
 model.compile(optimizer='adam', loss=sparse_categorical_crossentropy, metrics=['accuracy'])
 
-history = model.fit(ds_train, epochs=200, validation_data=ds_test)
+early_stopping_callback = EarlyStopping(patience=100, monitor='val_loss')
+
+history = model.fit(ds_train, epochs=200, validation_data=ds_test,
+                    callbacks=[early_stopping_callback])
 
 y_prediction = model.predict(ds_test)
 
