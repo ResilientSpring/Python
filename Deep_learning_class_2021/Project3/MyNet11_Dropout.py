@@ -58,7 +58,9 @@ model = Sequential([Conv2D(filters=32, kernel_size=3, strides=2, activation=tf.n
                            name='Conv3'),
                     BatchNormalization(),
                     Flatten(),
+                    Dropout(rate=0.2),
                     Dense(units=512, activation=tf.nn.relu),
+                    Dropout(rate=0.2),
                     Dense(units=10, activation=tf.nn.softmax)])
 
 model.compile(optimizer='adam', loss=sparse_categorical_crossentropy, metrics=['accuracy'])
