@@ -52,6 +52,14 @@ for i, item in enumerate(ds_test):
 print(label_train)
 print(label_test)
 
+# flatten is NumPy's method, not Python's list
+# label_train, label_test = label_train.flatten(), label_test.flatten()
+
+label_train = np.array(label_train)
+label_test = np.array(label_test)
+
+label_train, label_test = label_train.flatten(), label_test.flatten()
+
 # Plug the input pipeline into Keras.
 model = Sequential([
     Conv2D(filters=96, kernel_size=(11, 11), strides=(4, 4), activation=tf.nn.relu,
@@ -99,7 +107,7 @@ y_prediction_bool = np.argmax(y_prediction, axis=1)
 
 print(y_prediction_bool)
 
-# print(classification_report(y_true=label_test, y_pred=y_prediction_bool, target_names=CLASS_NAMES))
+print(classification_report(y_true=label_test, y_pred=y_prediction_bool, target_names=CLASS_NAMES))
 
 # Reference:
 # 1. https://github.com/keras-team/keras/issues/2607#issuecomment-302365916
