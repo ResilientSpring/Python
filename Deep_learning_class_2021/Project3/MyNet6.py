@@ -15,6 +15,26 @@ import numpy as np
     with_info=True,
 )
 
+label_train = []  # [1]
+for image, label in tfds.as_numpy(ds_train):
+    label_train.append(label)
+
+label_test = []
+for i, item in enumerate(ds_test):
+    label_test.append(item[1].numpy())
+
+
+print(label_train)
+print(label_test)
+
+# flatten is NumPy's method, not Python's list. [2]
+# label_train, label_test = label_train.flatten(), label_test.flatten()
+
+label_train = np.array(label_train)
+label_test = np.array(label_test)
+
+label_train, label_test = label_train.flatten(), label_test.flatten()
+
 CLASS_NAMES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
 # TFDS provide the images as tf.uint8, while the model expect tf.float32, so normalize images
@@ -39,26 +59,6 @@ ds_test = ds_test.cache()
 ds_test = ds_test.prefetch(AUTO)
 
 print(ds_test)
-
-label_train = []  # [1]
-for i, item in enumerate(ds_train):
-    label_train.append(item[1].numpy())
-
-label_test = []
-for i, item in enumerate(ds_test):
-    label_test.append(item[1].numpy())
-
-
-print(label_train)
-print(label_test)
-
-# flatten is NumPy's method, not Python's list
-# label_train, label_test = label_train.flatten(), label_test.flatten()
-
-label_train = np.array(label_train)
-label_test = np.array(label_test)
-
-label_train, label_test = label_train.flatten(), label_test.flatten()
 
 # Plug the input pipeline into Keras.
 model = Sequential([
@@ -111,3 +111,4 @@ print(classification_report(y_true=label_test, y_pred=y_prediction_bool, target_
 
 # Reference:
 # 1. https://github.com/keras-team/keras/issues/2607#issuecomment-302365916
+# 2. https://stackoverflow.com/a/65874930/14900011
