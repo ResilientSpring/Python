@@ -4,7 +4,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import categorical_crossentropy, sparse_categorical_crossentropy
 from tensorflow.keras.layers import Conv2D, BatchNormalization, MaxPool2D, Flatten, Dense, Dropout
-from tensorflow.keras.metrics import sparse_categorical_accuracy
+from sklearn.metrics import classification_report
 
 (ds_train, ds_test), ds_info = tfds.load(
     name='cifar10',
@@ -63,8 +63,14 @@ model.compile(optimizer=Adam(0.001),
               loss=sparse_categorical_crossentropy,
               metrics=['accuracy'])
 
-model.fit(
+history = \
+    model.fit(
     ds_train,
-    epochs=6,
-    validation_data=ds_test,
+    epochs=20,
+    validation_split=0.3,
+    use_multiprocessing=True
 )
+
+evaluation = model.evaluate(ds_test)
+
+y_prediction = model.predict(ds_test)
