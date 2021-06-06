@@ -28,8 +28,8 @@ print(label_train)
 print(label_test)
 
 def preprocessing(image, label):
+    image = tf.image.resize(image, [227, 227], preserve_aspect_ratio=True)
     image = tf.cast(image, tf.float32) / 255.0  # convert image to floats in [0, 1] range
-    image = tf.reshape(image, [227, 227, 3]) # explicit size will be needed for TPU
 
     return image, label
 
