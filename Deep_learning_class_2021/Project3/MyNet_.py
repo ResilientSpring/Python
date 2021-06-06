@@ -37,3 +37,18 @@ ds_test = ds_test.cache()
 ds_test = ds_test.prefetch(AUTO)
 
 print(ds_test)
+
+label_train = []  # [1]
+for i, item in enumerate(ds_train):
+    label_train.append(item[1].numpy())
+
+label_test = []
+for i, item in enumerate(ds_test):
+    label_test.append(item[1].numpy())
+
+
+print(label_train)
+print(label_test)
+
+# Reference:
+# 1. https://github.com/rasbt/python-machine-learning-book-3rd-edition/blob/master/ch13/ch13_part2.py
