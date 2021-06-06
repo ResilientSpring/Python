@@ -5,6 +5,7 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import categorical_crossentropy, sparse_categorical_crossentropy
 from tensorflow.keras.layers import Conv2D, BatchNormalization, MaxPool2D, Flatten, Dense, Dropout
 from sklearn.metrics import classification_report
+import numpy as np
 
 (ds_train, ds_test), ds_info = tfds.load(
     name='cifar10',
@@ -74,3 +75,7 @@ history = \
 evaluation = model.evaluate(ds_test)
 
 y_prediction = model.predict(ds_test)
+
+y_prediction_bool = np.argmax(y_prediction, axis=1)
+
+print(classification_report(y_true=))
