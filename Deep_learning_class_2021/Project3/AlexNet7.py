@@ -28,7 +28,7 @@ print(label_train)
 print(label_test)
 
 def preprocessing(image, label):
-    image = tf.image.resize(image, [227, 227], preserve_aspect_ratio=True) # [1]
+    image = tf.image.resize(image, [227, 227], preserve_aspect_ratio=True)
     image = tf.cast(image, tf.float32) / 255.0  # convert image to floats in [0, 1] range
 
     return image, label
@@ -40,12 +40,12 @@ AUTO = tf.data.experimental.AUTOTUNE
 ds_train = ds_train.map(preprocessing, num_parallel_calls=AUTO)
 ds_train = ds_train.cache()
 ds_train = ds_train.shuffle(ds_info.splits['train'].num_examples)
-ds_train = ds_train.batch(128)
+ds_train = ds_train.batch(64)
 ds_train = ds_train.prefetch(AUTO)
 
 # Build evaluation pipeline
 ds_test = ds_test.map(preprocessing, num_parallel_calls=AUTO)
-ds_test = ds_test.batch(128)
+ds_test = ds_test.batch(64) # 128 works on GPU too but comes very close to the memory limit of the Colab GPU. [1]
 ds_test = ds_test.cache()
 ds_test = ds_test.prefetch(AUTO)
 
@@ -54,7 +54,7 @@ print(ds_test)
 # Plug the input pipeline into Keras.
 model = Sequential([
     Conv2D(filters=96, kernel_size=(11, 11), strides=(4, 4), activation=tf.nn.relu,
-           data_format='channels_last', input_shape=(32, 32, 3)),
+           data_format='channels_last', input_shape=(227, 227, 3)),
     BatchNormalization(),
     MaxPool2D(pool_size=(3, 3), strides=(2, 2), padding='same'),
     Conv2D(filters=256, kernel_size=(5, 5), strides=(1, 1), activation=tf.nn.relu, padding="same"),
@@ -104,5 +104,5 @@ CLASS_NAMES = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', '
 print(classification_report(y_true=label_test, y_pred=y_prediction_bool,
                             target_names=CLASS_NAMES))
 
-# Reference:
-# 1. https://www.tensorflow.org/api_docs/python/tf/image/resize
+# References:
+# 1. https://colab.research.google.com/github/GoogleCloudPlatform/training-data-analyst/blob/master/courses/fast-and-lean-data-science/04_Keras_Flowers_transfer_learning_solution.ipynb#scrollTo=M3G-2aUBQJ-H&line=4&uniqifier=1
