@@ -9,4 +9,6 @@ model = Sequential([Conv2D(filters=32, kernel_size=3, strides=2, activation=tf.n
                     Conv2D(filters=64, kernel_size=3, strides=2, activation=tf.nn.relu,
                            name='Conv2'),
                     Conv2D(filters=128, kernel_size=3, strides=2, activation=tf.nn.relu,
-                           name='Conv3')])
+                           name='Conv3'),
+                    Flatten(),
+                    Dense()])
