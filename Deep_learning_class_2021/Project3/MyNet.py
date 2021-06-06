@@ -68,14 +68,24 @@ history = \
     model.fit(
     ds_train,
     epochs=20,
-    validation_split=0.3,
-    use_multiprocessing=True
+#   validation_split=0.3, [1] You will have to understand how the functioninig of
+        #   dataset generator happens. The model.fit API does not know how many records or batch
+        #   your dataset has in its first epoch. As the data is generated or supplied for each
+        #   batch one at a time to the model for training. So there is no way to for the API to
+        #   know how many records are initially there and then making a validation set out of it.
+        #   Due to this reason you cannot use the validation_split when using dataset generator.
+   # use_multiprocessing=True  Colab ran faster when not using this parameter.
 )
 
 evaluation = model.evaluate(ds_test)
 
-y_prediction = model.predict(ds_test)
+print(evaluation)
 
-y_prediction_bool = np.argmax(y_prediction, axis=1)
+# y_prediction = model.predict(ds_test)
 
-print(classification_report(y_true=))
+# y_prediction_bool = np.argmax(y_prediction, axis=1)
+
+# print(classification_report(y_true=))
+
+# Reference:
+# 1. https://stackoverflow.com/questions/63166479/valueerror-validation-split-is-only-supported-for-tensors-or-numpy-arrays-fo
