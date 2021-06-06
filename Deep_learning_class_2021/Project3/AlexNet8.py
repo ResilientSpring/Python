@@ -40,12 +40,12 @@ AUTO = tf.data.experimental.AUTOTUNE
 ds_train = ds_train.map(preprocessing, num_parallel_calls=AUTO)
 ds_train = ds_train.cache()
 ds_train = ds_train.shuffle(ds_info.splits['train'].num_examples)
-ds_train = ds_train.batch(64)# 128 works on GPU too but comes very close to the memory limit of the Colab GPU. [1]
+ds_train = ds_train.batch(32)# 128 works on GPU too but comes very close to the memory limit of the Colab GPU. [1]
 ds_train = ds_train.prefetch(AUTO)
 
 # Build evaluation pipeline
 ds_test = ds_test.map(preprocessing, num_parallel_calls=AUTO)
-ds_test = ds_test.batch(64) # On Colab/GPU, a higher batch size does not help and sometimes does not fit on the GPU (OOM).[2]
+ds_test = ds_test.batch(32) # On Colab/GPU, a higher batch size does not help and sometimes does not fit on the GPU (OOM).[2]
 ds_test = ds_test.cache()
 ds_test = ds_test.prefetch(AUTO)
 
