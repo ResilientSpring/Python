@@ -6,6 +6,7 @@ from tensorflow.keras.losses import categorical_crossentropy, sparse_categorical
 from tensorflow.keras.layers import Conv2D, BatchNormalization, MaxPool2D, Flatten, Dense, Dropout
 from sklearn.metrics import classification_report
 import numpy as np
+from tensorflow.keras.callbacks import EarlyStopping
 
 (ds_train, ds_test), ds_info = tfds.load(
     name='cifar10',
@@ -80,7 +81,10 @@ model.compile(optimizer=Adam(),
               loss=sparse_categorical_crossentropy,
               metrics=['accuracy'])
 
-history = model.fit(ds_train, epochs=20, validation_data=ds_test)
+early_stopping_callback = EarlyStopping(monitor='val_loss', patience=10)
+
+history = model.fit(ds_train, epochs=20, validation_data=ds_test,
+                    callbacks=[early_stopping_callback])
 
 y_prediction = model.predict(ds_test)
 
