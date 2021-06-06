@@ -48,11 +48,15 @@ ds_test = ds_test.prefetch(AUTO)
 
 model = Sequential([Conv2D(filters=32, kernel_size=3, strides=2, activation=tf.nn.relu,
                            input_shape=[32, 32, 3], data_format='channels_last', name='Conv1'),
+                    BatchNormalization(),
                     MaxPool2D(2, 2, name='MaxPool1'),
+                    BatchNormalization(),
                     Conv2D(filters=64, kernel_size=3, strides=2, activation=tf.nn.relu,
                            name='Conv2'),
+                    BatchNormalization(),
                     Conv2D(filters=128, kernel_size=3, strides=2, activation=tf.nn.relu,
                            name='Conv3'),
+                    BatchNormalization(),
                     Flatten(),
                     Dense(units=512, activation=tf.nn.relu),
                     Dense(units=10, activation=tf.nn.softmax)])
@@ -76,4 +80,3 @@ print(classification_report(y_true=label_test, y_pred=y_prediction_bool, target_
 
 # Reference:
 # 1. https://github.com/keras-team/keras/issues/2607#issuecomment-302365916
-# 2. https://stackoverflow.com/a/65874930/14900011
