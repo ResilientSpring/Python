@@ -6,7 +6,7 @@ from tensorflow.keras.losses import categorical_crossentropy, sparse_categorical
 from tensorflow.keras.layers import Conv2D, BatchNormalization, MaxPool2D, Flatten, Dense, Dropout
 from sklearn.metrics import classification_report
 import numpy as np
-from tensorflow.keras.regularizers import l1
+from tensorflow.keras.regularizers import l2
 
 (ds_train, ds_test), ds_info = tfds.load(
     name='cifar10',
@@ -63,7 +63,7 @@ model = Sequential([
     BatchNormalization(),
     MaxPool2D(pool_size=(3, 3), strides=(2, 2), padding='same'),
     Conv2D(filters=384, kernel_size=(3, 3), strides=(1, 1), activation=tf.nn.relu, padding="same",
-           kernel_regularizer=l1(0.02)),
+           kernel_regularizer=l2(0.02)),
     BatchNormalization(),
     Conv2D(filters=384, kernel_size=(3, 3), strides=(1, 1), activation=tf.nn.relu, padding="same"),
     BatchNormalization(),
@@ -73,7 +73,7 @@ model = Sequential([
     Flatten(),
     Dense(4096, activation=tf.nn.relu),
     Dropout(0.5),
-    Dense(4096, activation=tf.nn.relu, kernel_regularizer=l1(0.02)),
+    Dense(4096, activation=tf.nn.relu, kernel_regularizer=l2(0.02)),
     Dropout(0.5),
     Dense(10, activation=tf.nn.softmax)
 ])
