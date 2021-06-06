@@ -17,7 +17,7 @@ import numpy as np
 
 
 def preprocessing(image, label):
-    image = tf.image.resize(image, [168, 168])
+    image = tf.image.resize(image, [168, 168]) # 28 x 6 = 168; 28 x 8 = 224
     image = tf.image.rgb_to_grayscale(image)
     image = tf.cast(image, tf.float32) / 255.  # convert image to floats in [0, 1] range
 
