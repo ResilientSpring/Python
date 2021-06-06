@@ -40,12 +40,12 @@ AUTO = tf.data.experimental.AUTOTUNE
 ds_train = ds_train.map(preprocessing, num_parallel_calls=AUTO)
 ds_train = ds_train.cache()
 ds_train = ds_train.shuffle(ds_info.splits['train'].num_examples)
-ds_train = ds_train.batch(64)
+ds_train = ds_train.batch(64)# 128 works on GPU too but comes very close to the memory limit of the Colab GPU. [1]
 ds_train = ds_train.prefetch(AUTO)
 
 # Build evaluation pipeline
 ds_test = ds_test.map(preprocessing, num_parallel_calls=AUTO)
-ds_test = ds_test.batch(64) # 128 works on GPU too but comes very close to the memory limit of the Colab GPU. [1]
+ds_test = ds_test.batch(64) # # On Colab/GPU, a higher batch size does not help and sometimes does not fit on the GPU (OOM).[2]
 ds_test = ds_test.cache()
 ds_test = ds_test.prefetch(AUTO)
 
@@ -106,3 +106,4 @@ print(classification_report(y_true=label_test, y_pred=y_prediction_bool,
 
 # References:
 # 1. https://colab.research.google.com/github/GoogleCloudPlatform/training-data-analyst/blob/master/courses/fast-and-lean-data-science/04_Keras_Flowers_transfer_learning_solution.ipynb#scrollTo=M3G-2aUBQJ-H&line=4&uniqifier=1
+# 2. https://colab.research.google.com/github/GoogleCloudPlatform/training-data-analyst/blob/master/courses/fast-and-lean-data-science/07_Keras_Flowers_TPU_solution.ipynb#scrollTo=M3G-2aUBQJ-H&line=7&uniqifier=1
