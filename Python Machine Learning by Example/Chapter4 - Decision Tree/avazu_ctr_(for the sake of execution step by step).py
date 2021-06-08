@@ -26,6 +26,8 @@ from sklearn.preprocessing import OneHotEncoder
 enc = OneHotEncoder(handle_unknown='ignore')
 X_train_enc = enc.fit_transform(X_train)
 
+print(type(X_train_enc))
+
 print(X_train_enc[0])
 
 X_test_enc = enc.transform(X_test)
