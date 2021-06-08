@@ -32,7 +32,7 @@ y_test = y[the_number_of_training_samples:]
 
 enc = OneHotEncoder(handle_unknown='ignore')
 
-X_train_enc = enc.fit_transform(X=X_train)
+X_train_enc = enc.fit_transform(X=X_train.to_numpy())
 
 print(type(X_train_enc))
 
