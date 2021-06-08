@@ -12,6 +12,9 @@ print(dataset.describe())
 y = dataset.filter(['click'])
 
 print(y)
+print(y.info())
+print(y.describe())
+print((y == 1).sum())
 
 X = dataset.drop(['click', 'id', 'hour', 'device_id', 'device_ip'], axis=1)
 
@@ -25,3 +28,12 @@ y_train = y[:the_number_of_training_samples]
 X_test = X[the_number_of_training_samples:]
 y_test = y[the_number_of_training_samples:]
 
+enc = OneHotEncoder(handle_unknown='ignore')
+
+X_train_enc = enc.fit_transform(X=X_train)
+
+print(type(X_train_enc))
+
+print(X_train_enc[0])
+
+X_test = enc.transform(X=X_test)
