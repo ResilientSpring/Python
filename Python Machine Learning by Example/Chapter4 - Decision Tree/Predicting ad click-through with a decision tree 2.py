@@ -25,6 +25,9 @@ print(X.shape)
 
 the_number_of_training_samples = int(the_number_of_rows_to_read * 0.9)
 
+X = X.to_numpy()
+y = y.to_numpy()
+
 X_train = X[:the_number_of_training_samples]
 y_train = y[:the_number_of_training_samples]
 X_test = X[the_number_of_training_samples:]
@@ -32,13 +35,13 @@ y_test = y[the_number_of_training_samples:]
 
 enc = OneHotEncoder(handle_unknown='ignore')
 
-X_train_enc = enc.fit_transform(X=X_train.to_numpy())
+X_train_enc = enc.fit_transform(X=X_train)
 
 print(type(X_train_enc))
 
 print(X_train_enc[0])
 
-X_test = enc.transform(X=X_test.to_numpy())
+X_test = enc.transform(X=X_test)
 
 # Options for the maximal depth:
 parameters = {'max_depth': [3, 10, None]}
