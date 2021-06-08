@@ -32,6 +32,10 @@ print(X_train_enc[0])
 
 X_test_enc = enc.transform(X_test)
 
+print(type(X_test_enc))
+
+print(X_test_enc[0])
+
 from sklearn.tree import DecisionTreeClassifier
 
 parameters = {'max_depth': [3, 10, None]}
