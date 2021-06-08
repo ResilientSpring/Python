@@ -48,6 +48,6 @@ decision_tree = DecisionTreeClassifier(criterion='gini', min_samples_split=30)
 grid_search = GridSearchCV(estimator=decision_tree, param_grid=parameters, cv=3,
                            scoring='roc_auc', n_jobs=-1)
 
-grid_search.fit(X=X_train.to_numpy(), y=y_train.to_numpy())
+grid_search.fit(X=X_train.values, y=y_train.values)
 
 print(grid_search.best_params_)

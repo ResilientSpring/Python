@@ -26,7 +26,11 @@ print(X.shape)
 the_number_of_training_samples = int(the_number_of_rows_to_read * 0.9)
 
 X_train = X[:the_number_of_training_samples]
+print('X_train:', "\n", X_train)
+
 y_train = y[:the_number_of_training_samples]
+print('y_train:', '\n', y_train)
+
 X_test = X[the_number_of_training_samples:]
 y_test = y[the_number_of_training_samples:]
 
@@ -48,6 +52,6 @@ decision_tree = DecisionTreeClassifier(criterion='gini', min_samples_split=30)
 grid_search = GridSearchCV(estimator=decision_tree, param_grid=parameters, cv=3,
                            scoring='roc_auc', n_jobs=-1)
 
-grid_search.fit(X=X_train.to_numpy(), y=y_train.to_numpy())
+grid_search.fit(X=X_train, y=y_train)
 
 print(grid_search.best_params_)
