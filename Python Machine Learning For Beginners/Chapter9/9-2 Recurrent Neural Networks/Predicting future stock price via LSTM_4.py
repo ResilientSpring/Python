@@ -109,4 +109,7 @@ plt.title('Facebook Stock Prices')
 plt.xlabel('Date')
 plt.ylabel('Stock Price')
 plt.legend()
+
+plt.savefig('Stock price trajectory.jpg')
+
 plt.show()
