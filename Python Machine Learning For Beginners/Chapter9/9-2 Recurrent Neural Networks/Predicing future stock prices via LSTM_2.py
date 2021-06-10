@@ -64,4 +64,5 @@ y_train = y_train.reshape(-1, 1)
 print(y_train.shape)
 
 # Train our stock price prediction model on the training set.
-model_history = model.fit(x=X_train, y=y_train, epochs=100, verbose=1, batch_size=32)
+model_history = model.fit(x=X_train, y=y_train, epochs=100, verbose=1, batch_size=32,
+                          validation_split=0.2)
