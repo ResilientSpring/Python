@@ -8,3 +8,7 @@ model = Sequential([SimpleRNN(units=16, return_sequences=True, input_shape=[max_
                     Dense(units=1)])
 
 model.compile(optimizer='adam', loss=mean_absolute_percentage_error)
+
+model.fit_generator(generator=train_generator, epochs=20,
+                    steps_per_epoch=n_train_samples // batch_size,
+                    validation_data=val_gen, validation_steps=n_val_samples // batch_size)
