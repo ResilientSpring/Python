@@ -17,3 +17,13 @@ fb_training_processed = fb_training_processed.reshape((-1, 1))
 
 fb_training_scaled = scaler.fit_transform(X=fb_training_processed)
 print(len(fb_training_scaled))
+
+# Training feature set contains the opening stock price of the past 60 days.
+fb_training_feature_set = []
+for i in range(60, len(fb_training_scaled)):
+    fb_training_feature_set.append(fb_training_scaled[i - 60:i, 0])
+
+fb_training_label_set = []
+for i in range(60, len(fb_training_scaled)):
+    fb_training_label_set.append(fb_training_scaled[i, 0])
+
