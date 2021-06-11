@@ -9,3 +9,5 @@ docs = np.array(['The sun is shining', 'The weather is sweet', 'The sun is shini
 bag = count.fit_transform(docs)
 
 print(count.vocabulary_)
+
+print(bag.toarray())
