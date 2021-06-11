@@ -1,3 +1,14 @@
+"""
+================================================
+Semi-supervised Classification on a Text Dataset
+================================================
+
+In this example, semi-supervised classifiers are trained on the 20 newsgroups
+dataset (which will be automatically downloaded).
+
+You can adjust the number of categories by giving their names to the dataset
+loader or setting them to `None` to get all 20 of them.
+"""
 import os
 
 import numpy as np
@@ -68,7 +79,7 @@ if __name__ == "__main__":
 
     # X_20 and y_20 are the subset of the train dataset indicated by the mask
     X_20, y_20 = map(list, zip(*((x, y)
-                                 for x, y, m in zip(X_train, y_train, y_mask) if m)))
+                     for x, y, m in zip(X_train, y_train, y_mask) if m)))
     print("Supervised SGDClassifier on 20% of the training data:")
     eval_and_print_metrics(pipeline, X_20, y_20, X_test, y_test)
 
@@ -82,5 +93,3 @@ if __name__ == "__main__":
         # LabelSpreading takes too long to run in the online documentation
         print("LabelSpreading on 20% of the data (rest is unlabeled):")
         eval_and_print_metrics(ls_pipeline, X_train, y_train, X_test, y_test)
-
-
