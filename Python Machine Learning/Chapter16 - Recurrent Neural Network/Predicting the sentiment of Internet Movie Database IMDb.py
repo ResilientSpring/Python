@@ -57,3 +57,8 @@ processed_dataset_train = dataset_train.map(encode_map_fn)
 processed_dataset_validation = dataset_validation.map(encode_map_fn)
 processed_dataset_test = dataset_test.map(encode_map_fn)
 
+# Look at the shape of some examples:
+tf.random.set_seed(1)
+for example in processed_dataset_train.shuffle(1000).take(5):
+    print('Sequence length:', example[0].shape)
+
