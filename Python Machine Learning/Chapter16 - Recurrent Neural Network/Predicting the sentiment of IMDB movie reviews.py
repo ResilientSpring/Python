@@ -8,3 +8,9 @@ print(dataframe)
 
 target = dataframe.pop('sentiment')
 print(target)
+
+target2 = dataframe.filter(['sentiment'], axis=1)
+print(target2)
+
+target3 = dataframe['sentiment']
+print(target3)
