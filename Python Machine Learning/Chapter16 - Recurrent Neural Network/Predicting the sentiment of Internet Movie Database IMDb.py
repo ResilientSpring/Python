@@ -34,3 +34,26 @@ for example in dataset_train:
     token_counts.update(tokens)
 
 print('Vocab-size:', len(token_counts))
+
+# Encoding unique tokens to integers
+encoder = tfds.deprecated.text.TokenTextEncoder(token_counts)
+
+example_str = 'This is an example!'
+
+print(encoder.encode(example_str))
+
+def encode(text_tensor, label):
+    text = text_tensor.numpy()[0]
+    encoded_text = encoder.encode(text)
+
+    return encoded_text, label
+
+
+def encode_map_fn(text, label):
+    return tf.py_function(encode, inp=[text, label], Tout=(tf.int64, tf.int64))
+
+
+processed_dataset_train = dataset_train.map(encode_map_fn)
+processed_dataset_validation = dataset_validation.map(encode_map_fn)
+processed_dataset_test = dataset_test.map(encode_map_fn)
+
