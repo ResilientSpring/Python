@@ -62,3 +62,12 @@ tf.random.set_seed(1)
 for example in processed_dataset_train.shuffle(1000).take(5):
     print('Sequence length:', example[0].shape)
 
+train_data = []
+processed_dataset_train.padded_batch(batch_size=32, padded_shapes=([-1], []))
+
+validation_data = []
+processed_dataset_validation.padded_batch(batch_size=32, padded_shapes=([-1], []))
+
+test_data = []
+processed_dataset_test.padded_batch(batch_size=32, padded_shapes=([-1], []))
+
