@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.losses import mean_squared_error
 import numpy as np
 import tensorflow as tf
+import matplotlib as mpl
 
 number_of_steps = 50
 series = time.generate_time_series(batch_size=10000, number_of_steps=number_of_steps + 1)
@@ -54,3 +55,17 @@ model = Sequential([Flatten(input_shape=[50, 1]),
 
 model.compile(loss="mse", optimizer="adam")
 history = model.fit(x=X_train, y=y_train, epochs=20, validation_data=(X_valid, y_valid))
+model.evaluate(X_valid, y_valid)
+
+def plot_learning_curves(loss, val_loss):
+    plt.plot(np.arange(len(loss)) + 0.5, loss, "b.-", label="Training loss")
+    plt.plot(np.arange(len(val_loss)) + 1, val_loss, "r.-", label="Validation loss")
+    plt.gca().xaxis.set_major_locator(mpl.ticker.MaxNLocator(integer=True))
+    plt.axis([1, 20, 0, 0.05])
+    plt.legend(fontsize=14)
+    plt.xlabel("Epochs")
+    plt.ylabel("Loss")
+    plt.grid(True)
+
+plot_learning_curves(history.history["loss"], history.history["val_loss"])
+plt.show()
