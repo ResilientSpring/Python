@@ -1,8 +1,39 @@
 import Time_Series_Generator as time
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Flatten, Dense
+import matplotlib.pyplot as plt
 
 number_of_steps = 50
 series = time.generate_time_series(batch_size=10000, number_of_steps=number_of_steps + 1)
 
 X_train, y_train = series[:7000, :number_of_steps], series[:7000, -1]
 X_valid, y_valid = series[7000:9000, :number_of_steps], series[7000:9000, -1]
-X_test,  y_test  = series[9000:, :number_of_steps], series[9000:, -1]
+X_test, y_test = series[9000:, :number_of_steps], series[9000:, -1]
+
+def plot_series(series, y=None, y_pred=None, x_label="$t$", y_label="$x(t)$"):
+    plt.plot(series, ".-")
+    if y is not None:
+        plt.plot(number_of_steps, y, "bx", markersize=10)
+    if y_pred is not None:
+        plt.plot(number_of_steps, y_pred, "ro")
+    plt.grid(True)
+    if x_label:
+        plt.xlabel(x_label, fontsize=16)
+    if y_label:
+        plt.ylabel(y_label, fontsize=16, rotation=0)
+    plt.hlines(0, 0, 100, linewidth=1)
+    plt.axis([0, number_of_steps + 1, -1, 1])
+
+
+fig, axes = plt.subplots(nrows=1, ncols=3, sharey=True, figsize=(12, 4))
+
+for col in range(3):
+    plt.sca(axes[col])
+    plot_series(X_valid[col, :, 0], y_valid[col, 0],
+                y_label=("$x(t)$" if col == 0 else None))
+
+plt.savefig("time_series_plot.jpg")
+plt.show()
+
+model = Sequential([Flatten(input_shape=[50, 1]),
+                    Dense(units=1)])
