@@ -2,6 +2,9 @@ import Time_Series_Generator as time
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense
 import matplotlib.pyplot as plt
+from tensorflow.keras.losses import mean_squared_error
+import numpy as np
+import tensorflow as tf
 
 number_of_steps = 50
 series = time.generate_time_series(batch_size=10000, number_of_steps=number_of_steps + 1)
@@ -35,5 +38,19 @@ for col in range(3):
 plt.savefig("time_series_plot.jpg")
 plt.show()
 
+y_prediction = X_valid[:, -1]
+y_prediction_mean = np.mean(mean_squared_error(y_true=y_valid, y_pred=y_prediction))
+print(y_prediction_mean)
+
+plot_series(X_valid[0, :, 0], y_valid[0, 0], y_prediction[0, 0])
+plt.show()
+
+
+np.random.seed(42)
+tf.random.set_seed(42)
+
 model = Sequential([Flatten(input_shape=[50, 1]),
                     Dense(units=1)])
+
+model.compile(loss="mse", optimizer="adam")
+history = model.fit(x=X_train, y=y_train, epochs=20, validation_data=(X_valid, y_valid))
