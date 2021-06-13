@@ -5,7 +5,12 @@ from tensorflow.keras.layers import SimpleRNN
 
 tf.random.set_seed(1)
 
-rnn_layer = SimpleRNN(units=2, use_bias=True, return_sequences=True, input_shape=(None, None, 5))
+rnn_layer = SimpleRNN(units=2, use_bias=True, return_sequences=True,)
+rnn_layer.build(input_shape=(None, None, 5))
+# A layer is a callable object that takes as input one or more tensors and that outputs one
+# or more tensors. It involves computation, defined in the call() method,
+# and a state (weight variables), defined either in the constructor __init__() or in the build()
+# method.[1]
 
 w_xh, w_oo, b_h = rnn_layer.weights
 
@@ -23,3 +28,6 @@ x_sequence = tf.reshape(x_sequence, shape=(1, 3, 5))
 output = rnn_layer(x_sequence)
 
 print(output)
+
+# References:
+# 1. https://www.tensorflow.org/api_docs/python/tf/keras/layers/Layer
