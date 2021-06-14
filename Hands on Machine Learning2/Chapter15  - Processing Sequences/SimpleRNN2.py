@@ -22,4 +22,9 @@ model = Sequential([Flatten(input_shape=[50, 1, ]),
 
 model.compile(loss="mse", optimizer="adam")
 history = model.fit(x=X_train, y=y_train, epochs=20, validation_data=(X_valid, y_valid))
-model.evaluate(X_valid, y_valid)
+model.evaluate(X_test, y_test)
+
+model2 = Sequential([SimpleRNN(units=1, input_shape=[None, 1])])
+model2.compile(loss='mse', optimizer='adam')
+history2 = model2.fit(x=X_train, y=y_train, epochs=20, validation_data=(X_valid, y_valid))
+model2.evaluate(x=X_test, y=y_test)
