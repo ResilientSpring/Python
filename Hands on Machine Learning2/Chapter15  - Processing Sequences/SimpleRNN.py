@@ -1,6 +1,6 @@
 import Time_Series_Generator as time
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Flatten, Dense
+from tensorflow.keras.layers import Flatten, Dense, SimpleRNN
 import matplotlib.pyplot as plt
 from tensorflow.keras.losses import mean_squared_error
 import numpy as np
@@ -69,3 +69,6 @@ def plot_learning_curves(loss, val_loss):
 
 plot_learning_curves(history.history["loss"], history.history["val_loss"])
 plt.show()
+
+
+model2 = Sequential([SimpleRNN(units=1, input_shape=[None, 1])])
