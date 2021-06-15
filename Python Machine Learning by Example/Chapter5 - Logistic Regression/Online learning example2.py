@@ -38,9 +38,9 @@ import timeit
 start_time = timeit.default_timer()
 
 # Use the first 1,000,000 samples for training, and the next 100,000 for testing
-for i in range(9):
-    x_train = X_train[i * 100000:(i + 1) * 100000]
-    y_train = Y_train[i * 100000:(i + 1) * 100000]
+for i in range(99):
+    x_train = X_train[i * 10000:(i + 1) * 10000]
+    y_train = Y_train[i * 10000:(i + 1) * 10000]
     x_train_enc = enc.transform(x_train)
     sgd_lr_online.partial_fit(x_train_enc.toarray(), y_train, classes=[0, 1])
 
