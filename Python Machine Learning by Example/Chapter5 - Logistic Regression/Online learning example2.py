@@ -50,3 +50,5 @@ x_test_enc = enc.transform(X_test)
 
 pred = sgd_lr_online.predict_proba(x_test_enc.toarray())[:, 1]
 print(f'Training samples: {n_train * 10}, AUC on testing set: {roc_auc_score(Y_test, pred):.3f}')
+
+print(f'Test samples:{X_test.shape[0]}')
