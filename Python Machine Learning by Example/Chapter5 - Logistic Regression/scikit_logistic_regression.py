@@ -53,12 +53,7 @@ bottom_10 = np.argsort(coef_abs)[0][:10]
 print('10 least important features are:\n', feature_names[bottom_10])
 
 # top 10 weights and the corresponding 10 most important features
-print(np.sort(coef_abs)[0][-10:])
-top_10 = np.argsort(coef_abs)[0][-10:]
-print('10 most important features are:\n', feature_names[top_10])
-
-# ---------------------------------------------------------------------------------------------
-# Online learning
+print(np.sort(coef_abs)[0][-10:])# Online learning
 
 n_rows = 100000 * 11
 df = pd.read_csv("trainee.csv", nrows=n_rows)
@@ -86,7 +81,7 @@ import timeit
 start_time = timeit.default_timer()
 
 # Use the first 1,000,000 samples for training, and the next 100,000 for testing
-for i in range(9):
+for i in range(10):
     x_train = X_train[i * 100000:(i + 1) * 100000]
     y_train = Y_train[i * 100000:(i + 1) * 100000]
     x_train_enc = enc.transform(x_train)
@@ -98,6 +93,11 @@ x_test_enc = enc.transform(X_test)
 
 pred = sgd_lr_online.predict_proba(x_test_enc.toarray())[:, 1]
 print(f'Training samples: {n_train * 10}, AUC on testing set: {roc_auc_score(Y_test, pred):.3f}')
+top_10 = np.argsort(coef_abs)[0][-10:]
+print('10 most important features are:\n', feature_names[top_10])
+
+# ---------------------------------------------------------------------------------------------
+
 
 # ---------------------------------------------------------------------------------------------
 # Multiclass classification with logistic regression
