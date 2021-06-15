@@ -1,16 +1,20 @@
 import numpy as np
 
+
 def sigmoid(x):
-    return 1.0/(1.0 + np.exp(-x))
+    return 1.0 / (1.0 + np.exp(-x))
+
 
 def sigmoid_prime(x):
-    return sigmoid(x)*(1.0-sigmoid(x))
+    return sigmoid(x) * (1.0 - sigmoid(x))
+
 
 def tanh(x):
     return np.tanh(x)
 
+
 def tanh_prime(x):
-    return 1.0 - x**2
+    return 1.0 - x ** 2
 
 
 class NeuralNetwork:
@@ -29,10 +33,10 @@ class NeuralNetwork:
         # range of weight values (-1,1)
         # input and hidden layers - random((2+1, 2+1)) : 3 x 3
         for i in range(1, len(layers) - 1):
-            r = 2*np.random.random((layers[i-1] + 1, layers[i] + 1)) -1
+            r = 2 * np.random.random((layers[i - 1] + 1, layers[i] + 1)) - 1
             self.weights.append(r)
         # output layer - random((2+1, 1)) : 3 x 1
-        r = 2*np.random.random( (layers[i] + 1, layers[i+1])) - 1
+        r = 2 * np.random.random((layers[i] + 1, layers[i + 1])) - 1
         self.weights.append(r)
 
     def fit(self, X, y, learning_rate=0.2, epochs=100000):
@@ -59,7 +63,7 @@ class NeuralNetwork:
             # we need to begin at the second to last layer
             # (a layer before the output layer)
             for l in range(len(a) - 2, 0, -1):
-                deltas.append(deltas[-1].dot(self.weights[l].T)*self.activation_prime(a[l]))
+                deltas.append(deltas[-1].dot(self.weights[l].T) * self.activation_prime(a[l]))
 
             # reverse
             # [level3(output)->level2(hidden)]  => [level2(hidden)->level3(output)]
@@ -80,9 +84,10 @@ class NeuralNetwork:
             a = self.activation(np.dot(a, self.weights[l]))
         return a
 
+
 if __name__ == '__main__':
 
-    nn = NeuralNetwork([2,2,1])
+    nn = NeuralNetwork([2, 2, 1])
 
     X = np.array([[0, 0],
                   [0, 1],
@@ -94,7 +99,6 @@ if __name__ == '__main__':
     nn.fit(X, y)
 
     for e in X:
-        print(e,nn.predict(e))
-
+        print(e, nn.predict(e))
 
 # Source: https://www.bogotobogo.com/python/files/NeuralNetworks/nn3.py
