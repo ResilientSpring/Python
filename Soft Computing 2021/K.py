@@ -56,7 +56,6 @@ class NeuralNetwork:
                 dot_value = np.dot(a[l], self.weights[l])
                 activation = self.activation(dot_value)
                 a.append(activation)
-
             # output layer
             error = y[i] - a[-1]
             deltas = [error * self.activation_prime(a[-1])]
@@ -81,12 +80,11 @@ class NeuralNetwork:
 
     def predict(self, x):
         a = np.concatenate((np.array([[1]]), np.array([x])), axis=1)
-
         for l in range(0, len(self.weights)):
             a = self.activation(np.dot(a, self.weights[l]))
         return a
 
-"""
+
 if __name__ == '__main__':
 
     nn = NeuralNetwork([2, 2, 1])
@@ -104,4 +102,4 @@ if __name__ == '__main__':
         print(e, nn.predict(e))
 
 # Source: https://www.bogotobogo.com/python/files/NeuralNetworks/nn3.py
-"""
+
