@@ -7,17 +7,17 @@ class NeuralNetMLP(object):
 
     :parameter
 
-    number_of_hidden_units : int (default:30)
+    number_of_hidden_units : int (default:2)
         Number of hidden units.
 
     l2 : float (default: 0.)
         Lambda value for L2-regularization.
         No regularization if l2 = 0 (default)
 
-    epochs : int (default: 100)
-        Number of passes over the training set.
+    iteration : int (default: 100)
+        Number of epochs over the training set.
 
-    eta : float (default: 0.001)
+    velocity : float (default: 0.001)
         Learning rate.
 
     shuffle : bool (default: True)
@@ -37,13 +37,13 @@ class NeuralNetMLP(object):
 
     """
 
-    def __init__(self, number_of_hidden_units=30, l2=0., epochs=100, eta=0.001,
+    def __init__(self, number_of_hidden_units=2, l2=0., epochs=100, velocity=0.001,
                  shuffle=True, minibatch_size=1, seed=None):
         self.random = np.random.RandomState(seed)
         self.n_hidden = number_of_hidden_units
         self.l2 = l2
         self.epochs = epochs
-        self.eta = eta
+        self.velocity = velocity
         self.shuffle = shuffle
         self.minibatch_size = minibatch_size
 
@@ -212,13 +212,13 @@ class NeuralNetMLP(object):
                 # Regularization and weight updates
                 delta_w_h = (grad_w_h + self.l2*self.w_h)
                 delta_b_h = grad_b_h # bias is not regularized
-                self.w_h -= self.eta * delta_w_h
-                self.b_h -= self.eta * delta_b_h
+                self.w_h -= self.velocity * delta_w_h
+                self.b_h -= self.velocity * delta_b_h
 
                 delta_w_out = (grad_w_out + self.l2*self.w_out)
                 delta_b_out = grad_b_out  # bias is not regularized
-                self.w_out -= self.eta * delta_w_out
-                self.b_out -= self.eta * delta_b_out
+                self.w_out -= self.velocity * delta_w_out
+                self.b_out -= self.velocity * delta_b_out
 
             #############
             # Evaluation
