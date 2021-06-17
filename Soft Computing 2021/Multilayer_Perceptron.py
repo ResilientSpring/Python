@@ -48,24 +48,6 @@ class NeuralNetMLP(object):
         self.minibatch_size = minibatch_size
 
 
-    def _onehot(self, y, n_classes):
-        """Encode labels into one-hot representation
-        Parameters
-        ------------
-        y : array, shape = [n_examples]
-            Target values.
-        n_classes : int
-            Number of classes
-        Returns
-        -----------
-        onehot : array, shape = (n_examples, n_labels)
-        """
-        onehot = np.zeros((n_classes, y.shape[0]))
-        for idx, val in enumerate(y.astype(int)):
-            onehot[val, idx] = 1.
-        return onehot.T
-
-
     def _sigmoid(self, z):
         """Compute logistic function (sigmoid)"""
 
