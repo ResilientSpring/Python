@@ -37,12 +37,12 @@ class NeuralNetMLP(object):
 
     """
 
-    def __init__(self, number_of_hidden_units=2, l2=0., epochs=100, velocity=0.001,
+    def __init__(self, number_of_hidden_units=2, l2=0., iterations=100, velocity=0.001,
                  shuffle=True, minibatch_size=1, seed=None):
         self.random = np.random.RandomState(seed)
         self.n_hidden = number_of_hidden_units
         self.l2 = l2
-        self.epochs = epochs
+        self.iterations = iterations
         self.velocity = velocity
         self.shuffle = shuffle
         self.minibatch_size = minibatch_size
@@ -163,13 +163,13 @@ class NeuralNetMLP(object):
         self.w_out = self.random.normal(loc=0.0, scale=0.1,
                                         size=(self.n_hidden, n_output))
 
-        epoch_strlen = len(str(self.epochs))  # for progress formatting
+        epoch_strlen = len(str(self.iterations))  # for progress formatting
         self.eval_ = {'cost': [], 'train_acc': [], 'valid_acc': []}
 
         y_train_enc = self._onehot(y_train, n_output)
 
         # iterate over training epochs
-        for i in range(self.epochs):
+        for i in range(self.iterations):
 
             # iterate over minibatches
             indices = np.arange(X_train.shape[0])
@@ -240,7 +240,7 @@ class NeuralNetMLP(object):
 
             sys.stderr.write('\r%0*d/%d | Cost: %.2f '
                              '| Train/Valid Acc.: %.2f%%/%.2f%% ' %
-                             (epoch_strlen, i+1, self.epochs, cost,
+                             (epoch_strlen, i+1, self.iterations, cost,
                               train_acc*100, valid_acc*100))
             sys.stderr.flush()
 
