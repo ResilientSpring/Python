@@ -40,7 +40,7 @@ class NeuralNetMLP(object):
     def __init__(self, number_of_hidden_units=2, l2=0., iterations=100, velocity=0.001,
                  shuffle=True, minibatch_size=1, seed=None):
         self.random = np.random.RandomState(seed)
-        self.n_hidden = number_of_hidden_units
+        self.number_of_hidden_units = number_of_hidden_units
         self.l2 = l2
         self.iterations = iterations
         self.velocity = velocity
@@ -153,14 +153,14 @@ class NeuralNetMLP(object):
         ########################
 
         # weights for input -> hidden
-        self.b_h = np.zeros(self.n_hidden)
+        self.b_h = np.zeros(self.number_of_hidden_units)
         self.w_h = self.random.normal(loc=0.0, scale=0.1,
-                                      size=(n_features, self.n_hidden))
+                                      size=(n_features, self.number_of_hidden_units))
 
         # weights for hidden -> output
         self.b_out = np.zeros(n_output)
         self.w_out = self.random.normal(loc=0.0, scale=0.1,
-                                        size=(self.n_hidden, n_output))
+                                        size=(self.number_of_hidden_units, n_output))
 
         epoch_strlen = len(str(self.iterations))  # for progress formatting
         self.eval_ = {'cost': [], 'train_acc': [], 'valid_acc': []}

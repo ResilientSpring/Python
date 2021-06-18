@@ -3,6 +3,7 @@ from sklearn.datasets import load_boston
 import A_shallow_neural_network_ as artificial_neural_network
 
 boston = load_boston()
+print(boston.data.shape)
 
 # The last 10 samples as testing set.
 number_of_test = 10
