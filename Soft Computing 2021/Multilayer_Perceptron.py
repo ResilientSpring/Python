@@ -68,7 +68,6 @@ class NeuralNetMLP(object):
         # step 3: net input of output layer
         # [n_examples, n_hidden] dot [n_hidden, n_classlabels]
         # -> [n_examples, n_classlabels]
-
         z_out = np.dot(a_h, self.w_out) + self.b_out
 
         # step 4: activation output layer
