@@ -43,7 +43,7 @@ for i in range(10):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-# plt.savefig('images/12_5.png', dpi=300)
+plt.savefig('12_5.png', dpi=300)
 plt.show()
 
 # Visualize 25 different versions of "7":
@@ -56,7 +56,7 @@ for i in range(25):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-# plt.savefig('images/12_6.png', dpi=300)
+plt.savefig('12_6.png', dpi=300)
 plt.show()
 
 np.savez_compressed('mnist_scaled.npz',
@@ -342,21 +342,16 @@ nn.fit(X_train=X_train[:55000],
 plt.plot(range(nn.epochs), nn.eval_['cost'])
 plt.ylabel('Cost')
 plt.xlabel('Epochs')
-#plt.savefig('images/12_07.png', dpi=300)
+plt.savefig('12_07.png', dpi=300)
 plt.show()
 
-plt.plot(range(nn.epochs), nn.eval_['train_acc'],
-         label='Training')
-plt.plot(range(nn.epochs), nn.eval_['valid_acc'],
-         label='Validation', linestyle='--')
+plt.plot(range(nn.epochs), nn.eval_['train_acc'], label='Training')
+plt.plot(range(nn.epochs), nn.eval_['valid_acc'], label='Validation', linestyle='--')
 plt.ylabel('Accuracy')
 plt.xlabel('Epochs')
 plt.legend(loc='lower right')
-plt.savefig('images/12_08.png', dpi=300)
+plt.savefig('12_08.png', dpi=300)
 plt.show()
-
-
-
 
 y_test_pred = nn.predict(X_test)
 acc = (np.sum(y_test == y_test_pred)
@@ -378,5 +373,5 @@ for i in range(25):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-#plt.savefig('images/12_09.png', dpi=300)
+plt.savefig('12_09.png', dpi=300)
 plt.show()
