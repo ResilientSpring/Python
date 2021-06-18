@@ -1,37 +1,15 @@
-import os
-import struct
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
 
-def load_mnist(path, kind='train'):
-    """Load MNIST data from `path`"""
-    labels_path = os.path.join(path,
-                               '%s_labels_idx1_ubyte' % kind)
-    images_path = os.path.join(path,
-                               '%s_images_idx3_ubyte' % kind)
+X, y = fetch_openml('mnist_784', version=1, return_X_y=True)
 
-    with open(labels_path, 'rb') as lbpath:
-        magic, n = struct.unpack('>II',
-                                 lbpath.read(8))
-        labels = np.fromfile(lbpath,
-                             dtype=np.uint8)
-
-    with open(images_path, 'rb') as imgpath:
-        magic, num, rows, cols = struct.unpack(">IIII",
-                                               imgpath.read(16))
-        images = np.fromfile(imgpath,
-                             dtype=np.uint8).reshape(len(labels), 784)
-        images = ((images / 255.) - .5) * 2
-
-    return images, labels
-
-
-X_train, y_train = load_mnist('', kind='train')
-print('Rows: %d, columns: %d' % (X_train.shape[0], X_train.shape[1]))
-
-X_test, y_test = load_mnist('', kind='t10k')
-print('Rows: %d, columns: %d' % (X_test.shape[0], X_test.shape[1]))
+y = y.astype(int)
+X = ((X / 255.) - .5) * 2
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=10000, random_state=123,
+                                                    stratify=y)
 
 # Visualize the first digit of each class:
 fig, ax = plt.subplots(nrows=2, ncols=5, sharex=True, sharey=True)
@@ -43,7 +21,7 @@ for i in range(10):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-plt.savefig('12_5.png', dpi=300)
+#plt.savefig('12_5.png', dpi=300)
 plt.show()
 
 # Visualize 25 different versions of "7":
@@ -56,21 +34,8 @@ for i in range(25):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-plt.savefig('12_6.png', dpi=300)
+#plt.savefig('12_6.png', dpi=300)
 plt.show()
-
-np.savez_compressed('mnist_scaled.npz',
-                    X_train=X_train,
-                    y_train=y_train,
-                    X_test=X_test,
-                    y_test=y_test)
-
-mnist = np.load('mnist_scaled.npz')
-print(mnist.files)
-
-X_train, y_train, X_test, y_test = [mnist[f] for f in ['X_train', 'y_train',
-                                                       'X_test', 'y_test']]
-print(X_train.shape)
 
 
 class NeuralNetMLP(object):
@@ -342,7 +307,7 @@ nn.fit(X_train=X_train[:55000],
 plt.plot(range(nn.epochs), nn.eval_['cost'])
 plt.ylabel('Cost')
 plt.xlabel('Epochs')
-plt.savefig('12_07.png', dpi=300)
+#plt.savefig('12_07.png', dpi=300)
 plt.show()
 
 plt.plot(range(nn.epochs), nn.eval_['train_acc'], label='Training')
@@ -350,7 +315,7 @@ plt.plot(range(nn.epochs), nn.eval_['valid_acc'], label='Validation', linestyle=
 plt.ylabel('Accuracy')
 plt.xlabel('Epochs')
 plt.legend(loc='lower right')
-plt.savefig('12_08.png', dpi=300)
+#plt.savefig('12_08.png', dpi=300)
 plt.show()
 
 y_test_pred = nn.predict(X_test)
