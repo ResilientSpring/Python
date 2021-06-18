@@ -16,12 +16,16 @@ def sigmoid_derivative(z):
 
 
 
-def train(X, y, n_hidden, learning_rate, n_iter):
+def train(X, y, the_number_of_units_in_a_hidden_layer, learning_rate, n_iter):
+    # m is the number of samples.
     m, n_input = X.shape
-    W1 = np.random.randn(n_input, n_hidden)
-    b1 = np.zeros((1, n_hidden))
-    W2 = np.random.randn(n_hidden, 1)
+
+    # Before training, we first randomly initialize weights and biases.
+    W1 = np.random.randn(n_input, the_number_of_units_in_a_hidden_layer)
+    b1 = np.zeros((1, the_number_of_units_in_a_hidden_layer))
+    W2 = np.random.randn(the_number_of_units_in_a_hidden_layer, 1)
     b2 = np.zeros((1, 1))
+
     for i in range(1, n_iter+1):
         Z2 = np.matmul(X, W1) + b1
         A2 = sigmoid(Z2)
