@@ -65,7 +65,7 @@ def train(X, y, learning_rate, n_iter, n_hidden=1):
         if i % 100 == 0:
             cost = np.mean((y - A3) ** 2)
 
-            print("Iteration %i, training loss: %f" % (i, cost))
+            print(f"Iteration {i}, training loss: {cost}")
 
         model = {'Weight1': Weight1, 'Bias1': Bias1, 'Weight2': Weight2, 'Bias2': Bias2}
 
