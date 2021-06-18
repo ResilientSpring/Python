@@ -21,7 +21,7 @@ for i in range(10):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-plt.savefig('12_5.png', dpi=300)
+#plt.savefig('12_5.png', dpi=300)
 plt.show()
 
 # Visualize 25 different versions of "7":
@@ -34,21 +34,8 @@ for i in range(25):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-plt.savefig('12_6.png', dpi=300)
+#plt.savefig('12_6.png', dpi=300)
 plt.show()
-
-np.savez_compressed('mnist_scaled.npz',
-                    X_train=X_train,
-                    y_train=y_train,
-                    X_test=X_test,
-                    y_test=y_test)
-
-mnist = np.load('mnist_scaled.npz')
-print(mnist.files)
-
-X_train, y_train, X_test, y_test = [mnist[f] for f in ['X_train', 'y_train',
-                                                       'X_test', 'y_test']]
-print(X_train.shape)
 
 
 class NeuralNetMLP(object):
@@ -320,7 +307,7 @@ nn.fit(X_train=X_train[:55000],
 plt.plot(range(nn.epochs), nn.eval_['cost'])
 plt.ylabel('Cost')
 plt.xlabel('Epochs')
-plt.savefig('12_07.png', dpi=300)
+#plt.savefig('12_07.png', dpi=300)
 plt.show()
 
 plt.plot(range(nn.epochs), nn.eval_['train_acc'], label='Training')
@@ -328,7 +315,7 @@ plt.plot(range(nn.epochs), nn.eval_['valid_acc'], label='Validation', linestyle=
 plt.ylabel('Accuracy')
 plt.xlabel('Epochs')
 plt.legend(loc='lower right')
-plt.savefig('12_08.png', dpi=300)
+#plt.savefig('12_08.png', dpi=300)
 plt.show()
 
 y_test_pred = nn.predict(X_test)
