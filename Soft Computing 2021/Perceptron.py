@@ -27,6 +27,7 @@ class Perceptron(object):
         self.n_iter = n_iter;
         self.random_state = random_state;
 
+
     def fit(self, X, y):
         """
         Fit training data.
@@ -61,9 +62,11 @@ class Perceptron(object):
             self.errors_.append(errors);
         return self;
 
+
     def net_input(self, X):
         """Calculate net input"""
         return np.dot(X, self.w_[1:]) + self.w_[0];
+
 
     def predict(self, X):
         """Return class label after unit step"""
