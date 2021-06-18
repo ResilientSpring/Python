@@ -29,4 +29,4 @@ def fit(X, y, number_of_units_in_the_hidden_layer, iteration, velocity):
         output_a22 = sigmoid(input_a22)
 
         input_a13  = (a02 * weight_a02_a13) + (output_a12 * weight_a12_a13) + (output_a22 * weight_a22_a13)
-        output_a13 = input_a13
+        output_a13 = sigmoid(input_a13)
