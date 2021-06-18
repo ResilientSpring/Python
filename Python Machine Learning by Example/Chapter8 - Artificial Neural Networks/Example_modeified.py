@@ -26,12 +26,19 @@ def train(X, y, the_number_of_units_in_a_hidden_layer, learning_rate, n_iter):
     W2 = np.random.randn(the_number_of_units_in_a_hidden_layer, 1)
     b2 = np.zeros((1, 1))
 
+    # In each iteration, we feed all layers of the network with the latest weights and biases.
     for i in range(1, n_iter+1):
         Z2 = np.matmul(X, W1) + b1
+
+        # The output values of the hidden layer.
         A2 = sigmoid(Z2)
+
         Z3 = np.matmul(A2, W2) + b2
+
+        # The output values of the output layer.
         A3 = Z3
 
+        # Calculate the gradients using the backpropagation algorithm.
         dZ3 = A3 - y
         dW2 = np.matmul(A2.T, dZ3)
         db2 = np.sum(dZ3, axis=0, keepdims=True)
@@ -40,11 +47,13 @@ def train(X, y, the_number_of_units_in_a_hidden_layer, learning_rate, n_iter):
         dW1 = np.matmul(X.T, dZ2)
         db1 = np.sum(dZ2, axis=0)
 
+        # Update the weights and biases with the resulting gradients.
         W2 = W2 - learning_rate * dW2 / m
         b2 = b2 - learning_rate * db2 / m
         W1 = W1 - learning_rate * dW1 / m
         b1 = b1 - learning_rate * db1 / m
 
+        # Print out the loss and the mean squared error for every 100 iterations.
         if i % 1 == 0:
             cost = np.mean((y - A3) ** 2)
             print('Iteration %i, training loss: %f' % (i, cost))
@@ -53,6 +62,7 @@ def train(X, y, the_number_of_units_in_a_hidden_layer, learning_rate, n_iter):
     return model
 
 
+# Take in a model and produce the regression results.
 def predict(x, model):
     W1 = model['W1']
     b1 = model['b1']

@@ -67,9 +67,9 @@ def train(X, y, learning_rate, n_iter, n_hidden=1):
 
             print(f"Iteration {i}, training loss: {cost}")
 
-        model = {'Weight1': Weight1, 'Bias1': Bias1, 'Weight2': Weight2, 'Bias2': Bias2}
+    model = {'Weight1': Weight1, 'Bias1': Bias1, 'Weight2': Weight2, 'Bias2': Bias2}
 
-        return model
+    return model
 
 # Take in a model and produce the regression results.
 def predict(x, model):
