@@ -1,33 +1,11 @@
 import sys
-
 import numpy as np
-
-X = np.array([[0, 0],
-              [0, 1],
-              [1, 0],
-              [1, 1]])
-
-y = np.array([0, 1, 1, 0])
-
-X0 = 1
-
-weight_X0_a12 = np.random.rand()
-weight_X0_a22 = np.random.rand()
-weight_X1_a12 = np.random.rand()
-weight_X1_a22 = np.random.rand()
-weight_X2_a12 = np.random.rand()
-weight_X2_a22 = np.random.rand()
-
-a02 = 1
-weight_a02_a13 = np.random.rand()
-weight_a12_a13 = np.random.rand()
-weight_a22_a13 = np.random.rand()
 
 
 class Particle_Swarm_Optimization(object):
 
     def __init__(self, number_of_units_in_the_hidden_layer=2, iterations=100, velocity=0.001,
-                  seed=None):
+                 seed=None):
         self.random = np.random.RandomState(seed)
         self.number_of_hidden_units = number_of_units_in_the_hidden_layer
         self.iterations = iterations
@@ -107,7 +85,7 @@ class Particle_Swarm_Optimization(object):
         ----------
         self
         """
-       # n_output = np.unique(y_train).shape[0]  # number of class labels
+        # n_output = np.unique(y_train).shape[0]  # number of class labels
         n_output = 1
         n_features = X_train.shape[1]
 
