@@ -23,11 +23,11 @@ for i in range(10):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-#plt.savefig('12_5.png', dpi=300)
+# plt.savefig('12_5.png', dpi=300)
 plt.show()
 
 # Visualize 25 different versions of "7":
-fig, ax = plt.subplots(nrows=5, ncols=5, sharex=True, sharey=True,)
+fig, ax = plt.subplots(nrows=5, ncols=5, sharex=True, sharey=True, )
 ax = ax.flatten()
 for i in range(25):
     img = X_train[y_train == 7][i].reshape(28, 28)
@@ -36,7 +36,7 @@ for i in range(25):
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-#plt.savefig('12_6.png', dpi=300)
+# plt.savefig('12_6.png', dpi=300)
 plt.show()
 
 
@@ -85,12 +85,29 @@ class NeuralNetMLP(object):
         self.shuffle = shuffle
         self.minibatch_size = minibatch_size
 
+    def _onehot(self, y, n_classes):
+        """Encode labels into one-hot representation
+        Parameters
+            ------------
+        y : array, shape = [n_examples]
+                Target values.
+            _classes : int
+                Number of classes
+            Returns
+            -----------
+            onehot : array, shape = (n_examples, n_labels)
+            """
+        onehot = np.zeros((n_classes, y.shape[0]))
+
+        for idx, val in enumerate(y.astype(int)):
+            onehot[val, idx] = 1.
+
+        return onehot.T
 
     def _sigmoid(self, z):
         """Compute logistic function (sigmoid)"""
 
         return 1. / (1. + np.exp(-np.clip(z, -250, 250)))
-
 
     def _forward(self, X):
         """Compute forward propagation step"""
@@ -112,7 +129,6 @@ class NeuralNetMLP(object):
         a_out = self._sigmoid(z_out)
 
         return z_h, a_h, z_out, a_out
-
 
     def _compute_cost(self, y_true, output):
         """Compute cost function.
@@ -150,7 +166,6 @@ class NeuralNetMLP(object):
 
         return cost
 
-
     def predict(self, X):
         """Predict class labels
         Parameters
@@ -165,7 +180,6 @@ class NeuralNetMLP(object):
         z_h, a_h, z_out, a_out = self._forward(X)
         y_pred = np.argmax(z_out, axis=1)
         return y_pred
-
 
     def fit(self, X_train, y_train, X_valid, y_valid):
         """ Learn weights from training data.
@@ -203,6 +217,7 @@ class NeuralNetMLP(object):
         epoch_strlen = len(str(self.iterations))  # for progress formatting
         self.eval_ = {'cost': [], 'train_acc': [], 'valid_acc': []}
 
+        y_train = self._onehot(y_train, n_output)
 
         # iterate over training epochs
         for i in range(self.iterations):
@@ -246,12 +261,12 @@ class NeuralNetMLP(object):
                 grad_b_out = np.sum(delta_out, axis=0)
 
                 # Regularization and weight updates
-                delta_w_h = (grad_w_h + self.l2*self.w_h)
-                delta_b_h = grad_b_h # bias is not regularized
+                delta_w_h = (grad_w_h + self.l2 * self.w_h)
+                delta_b_h = grad_b_h  # bias is not regularized
                 self.w_h -= self.velocity * delta_w_h
                 self.b_h -= self.velocity * delta_b_h
 
-                delta_w_out = (grad_w_out + self.l2*self.w_out)
+                delta_w_out = (grad_w_out + self.l2 * self.w_out)
                 delta_b_out = grad_b_out  # bias is not regularized
                 self.w_out -= self.velocity * delta_w_out
                 self.b_out -= self.velocity * delta_b_out
@@ -276,8 +291,8 @@ class NeuralNetMLP(object):
 
             sys.stderr.write('\r%0*d/%d | Cost: %.2f '
                              '| Train/Valid Acc.: %.2f%%/%.2f%% ' %
-                             (epoch_strlen, i+1, self.iterations, cost,
-                              train_acc*100, valid_acc*100))
+                             (epoch_strlen, i + 1, self.iterations, cost,
+                              train_acc * 100, valid_acc * 100))
             sys.stderr.flush()
 
             self.eval_['cost'].append(cost)
@@ -303,7 +318,7 @@ nn.fit(X_train=X_train[:55000],
 plt.plot(range(nn.iterations), nn.eval_['cost'])
 plt.ylabel('Cost')
 plt.xlabel('Epochs')
-#plt.savefig('12_07.png', dpi=300)
+# plt.savefig('12_07.png', dpi=300)
 plt.show()
 
 plt.plot(range(nn.iterations), nn.eval_['train_acc'], label='Training')
@@ -311,7 +326,7 @@ plt.plot(range(nn.iterations), nn.eval_['valid_acc'], label='Validation', linest
 plt.ylabel('Accuracy')
 plt.xlabel('Epochs')
 plt.legend(loc='lower right')
-#plt.savefig('12_08.png', dpi=300)
+# plt.savefig('12_08.png', dpi=300)
 plt.show()
 
 y_test_pred = nn.predict(X_test)
@@ -329,10 +344,10 @@ ax = ax.flatten()
 for i in range(25):
     img = miscl_img[i].reshape(28, 28)
     ax[i].imshow(img, cmap='Greys', interpolation='nearest')
-    ax[i].set_title('%d) t: %d p: %d' % (i+1, correct_lab[i], miscl_lab[i]))
+    ax[i].set_title('%d) t: %d p: %d' % (i + 1, correct_lab[i], miscl_lab[i]))
 
 ax[0].set_xticks([])
 ax[0].set_yticks([])
 plt.tight_layout()
-#plt.savefig('12_09.png', dpi=300)
+# plt.savefig('12_09.png', dpi=300)
 plt.show()
