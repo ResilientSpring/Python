@@ -44,3 +44,41 @@ class Particle_Swarm_Optimization(object):
             input_a13 = (a02 * weight_a02_a13) + (output_a12 * weight_a12_a13) + (output_a22 * weight_a22_a13)
             output_a13 = self.sigmoid(input_a13)
 
+
+    def _compute_cost(self, y_true, output):
+        """Compute cost function.
+        Parameters
+        ----------
+        y_true : array, shape = (n_examples, n_labels)
+            one-hot encoded class labels.
+        output : array, shape = [n_examples, n_output_units]
+            Activation of the output layer (forward propagation)
+        Returns
+        ---------
+        cost : float
+            Regularized cost
+        """
+
+        L2_term = (self.l2 * (np.sum(self.w_h ** 2.) + np.sum(self.w_out ** 2.)))
+
+        term1 = -y_true * (np.log(output))
+        term2 = (1. - y_true) * np.log(1. - output)
+        cost = np.sum(term1 - term2) + L2_term
+
+        # If you are applying this cost function to other
+        # datasets where activation
+        # values maybe become more extreme (closer to zero or 1)
+        # you may encounter "ZeroDivisionError"s due to numerical
+        # instabilities in Python & NumPy for the current implementation.
+        # I.e., the code tries to evaluate log(0), which is undefined.
+        # To address this issue, you could add a small constant to the
+        # activation values that are passed to the log function.
+        #
+        # For example:
+        #
+        # term1 = -y_enc * (np.log(output + 1e-5))
+        # term2 = (1. - y_enc) * np.log(1. - output + 1e-5)
+
+        return cost
+
+
