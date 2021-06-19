@@ -1,46 +1,14 @@
-import numpy as np
 import sys
 
+import numpy as np
 
-class NeuralNetMLP(object):
-    """Feedforward neural network / Multi-layer perceptron classifier.
 
-    :parameter
+class Particle_Swarm_Optimization(object):
 
-    number_of_hidden_units : int (default:2)
-        Number of hidden units.
-
-    l2 : float (default: 0.)
-        Lambda value for L2-regularization.
-        No regularization if l2 = 0 (default)
-
-    iteration : int (default: 100)
-        Number of epochs over the training set.
-
-    velocity : float (default: 0.001)
-        Learning rate.
-
-    shuffle : bool (default: True)
-        Shuffles training data every epoch if true to prevent circles.
-
-    minibatch_size : int (default: 1)
-        Number of training examples per minibatch.
-
-    seed : int (default: None)
-        Random seed for initializing weights and shuffling.
-
-    Attributes
-    --------------------
-    eval_ : dict
-        Dictionary collecting the cost, training accuracy,
-        and validation accuracy for each epoch during training.
-
-    """
-
-    def __init__(self, number_of_hidden_units=2, l2=0., iterations=100, velocity=0.001,
+    def __init__(self, number_of_units_in_the_hidden_layer=2, l2=0., iterations=100, velocity=0.001,
                  shuffle=True, minibatch_size=1, seed=None):
         self.random = np.random.RandomState(seed)
-        self.number_of_hidden_units = number_of_hidden_units
+        self.number_of_hidden_units = number_of_units_in_the_hidden_layer
         self.l2 = l2
         self.iterations = iterations
         self.velocity = velocity
@@ -48,32 +16,57 @@ class NeuralNetMLP(object):
         self.minibatch_size = minibatch_size
 
 
-    def _sigmoid(self, z):
-        """Compute logistic function (sigmoid)"""
+    def _onehot(self, y, n_classes):
+        """Encode labels into one-hot representation
+        Parameters
+        ------------
+        y : array, shape = [n_examples]
+            Target values.
+        _classes : int
+            Number of classes
+        Returns
+        -----------
+        onehot : array, shape = (n_examples, n_labels)
+        """
+        onehot = np.zeros((n_classes, y.shape[0]))
 
-        return 1. / (1. + np.exp(-np.clip(z, -250, 250)))
+        for idx, val in enumerate(y.astype(int)):
+            onehot[val, idx] = 1.
+
+        return onehot.T
+
+
+    def sigmoid(self, z):
+        return 1.0 / (1 + np.exp(-z))
 
 
     def _forward(self, X):
-        """Compute forward propagation step"""
+        X0 = 1
+        X1 = X[0]
+        X2 = X[1]
 
-        # step 1: net input of hidden layer
-        # [n_examples, n_features] dot [n_features, n_hidden]
-        # -> [n_examples, n_hidden]
-        z_h = np.dot(X, self.w_h) + self.b_h
+        weight_X0_a12 = np.random.rand()
+        weight_X0_a22 = np.random.rand()
+        weight_X1_a12 = np.random.rand()
+        weight_X1_a22 = np.random.rand()
+        weight_X2_a12 = np.random.rand()
+        weight_X2_a22 = np.random.rand()
 
-        # step 2: activation of hidden layer
-        a_h = self._sigmoid(z_h)
+        a02 = 1
+        weight_a02_a13 = np.random.rand()
+        weight_a12_a13 = np.random.rand()
+        weight_a22_a13 = np.random.rand()
 
-        # step 3: net input of output layer
-        # [n_examples, n_hidden] dot [n_hidden, n_classlabels]
-        # -> [n_examples, n_classlabels]
-        z_out = np.dot(a_h, self.w_out) + self.b_out
+        input_a12 = (X1 * weight_X1_a12) + (X2 * weight_X2_a12) + (X0 * weight_X0_a12)
+        output_a12 = self.sigmoid(input_a12)
 
-        # step 4: activation output layer
-        a_out = self._sigmoid(z_out)
+        input_a22 = (X1 * weight_X1_a22) + (X2 * weight_X2_a22) + (X0 * weight_X0_a22)
+        output_a22 = self.sigmoid(input_a22)
 
-        return z_h, a_h, z_out, a_out
+        input_a13 = (a02 * weight_a02_a13) + (output_a12 * weight_a12_a13) + (output_a22 * weight_a22_a13)
+        output_a13 = self.sigmoid(input_a13)
+
+        return input_a12, output_a12, input_a22, output_a22, input_a13, output_a13
 
 
     def _compute_cost(self, y_true, output):
@@ -124,8 +117,9 @@ class NeuralNetMLP(object):
         y_pred : array, shape = [n_examples]
             Predicted class labels.
         """
-        z_h, a_h, z_out, a_out = self._forward(X)
-        y_pred = np.argmax(z_out, axis=1)
+        input_a12, output_a12, input_a22, output_a22, input_a13, output_a13 = self._forward(X)
+
+        y_pred = np.argmax(input_a13, axis=1)
         return y_pred
 
 
@@ -165,9 +159,10 @@ class NeuralNetMLP(object):
         epoch_strlen = len(str(self.iterations))  # for progress formatting
         self.eval_ = {'cost': [], 'train_acc': [], 'valid_acc': []}
 
+        y_train = self._onehot(y_train, n_output)
 
         # iterate over training epochs
-        for i in range(self.iterations):
+        for i in range(1, self.iterations + 1):
 
             # iterate over minibatches
             indices = np.arange(X_train.shape[0])
@@ -208,12 +203,12 @@ class NeuralNetMLP(object):
                 grad_b_out = np.sum(delta_out, axis=0)
 
                 # Regularization and weight updates
-                delta_w_h = (grad_w_h + self.l2*self.w_h)
-                delta_b_h = grad_b_h # bias is not regularized
+                delta_w_h = (grad_w_h + self.l2 * self.w_h)
+                delta_b_h = grad_b_h  # bias is not regularized
                 self.w_h -= self.velocity * delta_w_h
                 self.b_h -= self.velocity * delta_b_h
 
-                delta_w_out = (grad_w_out + self.l2*self.w_out)
+                delta_w_out = (grad_w_out + self.l2 * self.w_out)
                 delta_b_out = grad_b_out  # bias is not regularized
                 self.w_out -= self.velocity * delta_w_out
                 self.b_out -= self.velocity * delta_b_out
@@ -238,8 +233,8 @@ class NeuralNetMLP(object):
 
             sys.stderr.write('\r%0*d/%d | Cost: %.2f '
                              '| Train/Valid Acc.: %.2f%%/%.2f%% ' %
-                             (epoch_strlen, i+1, self.iterations, cost,
-                              train_acc*100, valid_acc*100))
+                             (epoch_strlen, i + 1, self.iterations, cost,
+                              train_acc * 100, valid_acc * 100))
             sys.stderr.flush()
 
             self.eval_['cost'].append(cost)
@@ -247,3 +242,4 @@ class NeuralNetMLP(object):
             self.eval_['valid_acc'].append(valid_acc)
 
         return self
+
