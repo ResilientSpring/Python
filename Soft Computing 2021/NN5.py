@@ -4,12 +4,10 @@ import numpy as np
 
 class Particle_Swarm_Optimization(object):
 
-    def __init__(self, number_of_units_in_the_hidden_layer=2, iterations=100, velocity=0.001,
-                 seed=None):
+    def __init__(self, number_of_units_in_the_hidden_layer=2, iterations=100, seed=None):
         self.random = np.random.RandomState(seed)
         self.number_of_hidden_units = number_of_units_in_the_hidden_layer
         self.iterations = iterations
-        self.velocity = velocity
 
     def _sigmoid(self, z):
         return 1.0 / (1 + np.exp(-z))
@@ -117,6 +115,10 @@ class Particle_Swarm_Optimization(object):
             ##############################
             # Particle Swarm Optimization
             ##############################
+            velocity_train = self.random.uniform(low=0.01, high=10.00,
+                                                 size=[X_train.shape[0], X_train.shape[1]])
+
+            c1 = c2 = 2
 
 
             #############
@@ -149,6 +151,13 @@ class Particle_Swarm_Optimization(object):
 
         return self
 
+
+X = np.array([[0, 0],
+              [0, 1],
+              [1, 0],
+              [1, 1]])
+
+y = np.array([0, 1, 1, 0])
 
 nn = Particle_Swarm_Optimization(number_of_units_in_the_hidden_layer=2, iterations=1000)
 nn.fit(X_train=X, y_train=y, X_valid=X, y_valid=y)
