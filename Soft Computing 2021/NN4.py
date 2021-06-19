@@ -54,24 +54,28 @@ class Particle_Swarm_Optimization(object):
 
         return onehot.T
 
-    def sigmoid(self, z):
+    def _sigmoid(self, z):
         return 1.0 / (1 + np.exp(-z))
 
     def _forward(self, X):
 
-        X1 = X[0][0]
-        X2 = X[0][1]
+        # step 1: net input of hidden layer
+        # [n_examples, n_features] dot [n_features, n_hidden]
+        # -> [n_examples, n_hidden]
+        z_h = np.dot(X, self.w_h) + self.b_h
 
-        input_a12 = (X1 * weight_X1_a12) + (X2 * weight_X2_a12) + (X0 * weight_X0_a12)
-        output_a12 = self.sigmoid(input_a12)
+        # step 2: activation of hidden layer
+        a_h = self._sigmoid(z_h)
 
-        input_a22 = (X1 * weight_X1_a22) + (X2 * weight_X2_a22) + (X0 * weight_X0_a22)
-        output_a22 = self.sigmoid(input_a22)
+        # step 3: net input of output layer
+        # [n_examples, n_hidden] dot [n_hidden, n_classlabels]
+        # -> [n_examples, n_classlabels]
+        z_out = np.dot(a_h, self.w_out) + self.b_out
 
-        input_a13 = (a02 * weight_a02_a13) + (output_a12 * weight_a12_a13) + (output_a22 * weight_a22_a13)
-        output_a13 = self.sigmoid(input_a13)
+        # step 4: activation output layer
+        a_out = self._sigmoid(z_out)
 
-        return output_a13
+        return a_out
 
     def _compute_cost(self, y_true, output):
         """Compute cost function.
@@ -89,20 +93,6 @@ class Particle_Swarm_Optimization(object):
         term1 = - y_true * (np.log(output + 1e-5))
         term2 = (1. - y_true) * np.log(1. - output + 1e-5)
         cost = np.sum(term1 - term2)
-
-        # If you are applying this cost function to other
-        # datasets where activation
-        # values maybe become more extreme (closer to zero or 1)
-        # you may encounter "ZeroDivisionError"s due to numerical
-        # instabilities in Python & NumPy for the current implementation.
-        # I.e., the code tries to evaluate log(0), which is undefined.
-        # To address this issue, you could add a small constant to the
-        # activation values that are passed to the log function.
-        #
-        # For example:
-        #
-        # term1 = -y_enc * (np.log(output + 1e-5))
-        # term2 = (1. - y_enc) * np.log(1. - output + 1e-5)
 
         return cost
 
@@ -146,12 +136,12 @@ class Particle_Swarm_Optimization(object):
         ########################
 
         # weights for input -> hidden
-        self.b_h = np.ones(self.number_of_hidden_units)
+        self.b_h = self.random.uniform(low=0.01, high=10.00, size=self.number_of_hidden_units)
         self.w_h = self.random.uniform(low=0.01, high=10.00,
                                        size=(n_features, self.number_of_hidden_units))
 
         # weights for hidden -> output
-        self.b_out = np.ones(n_output)
+        self.b_out = self.random.uniform(low=0.01, high=10.00, size=n_output)
         self.w_out = self.random.uniform(low=0.01, high=10.00,
                                          size=(self.number_of_hidden_units, n_output))
 
@@ -186,10 +176,10 @@ class Particle_Swarm_Optimization(object):
             valid_acc = ((np.sum(y_valid == y_valid_pred)).astype(np.float) /
                          X_valid.shape[0])
 
-            sys.stderr.write('\r%0*d/%d | Cost: %.2f '
-                             '| Train/Valid Acc.: %.2f%%/%.2f%% ' %
-                             (epoch_strlen, i + 1, self.iterations, cost,
+            sys.stderr.write('\r%0*d/%d | Cost: %.2f '' | Cost: %.2f ''| Train/Valid Acc.: %.2f%%/%.2f%% ' %
+                             (epoch_strlen, i + 1, self.iterations, train_cost, cost,
                               train_acc * 100, valid_acc * 100))
+
             sys.stderr.flush()
 
             self.eval_['cost'].append(cost)
