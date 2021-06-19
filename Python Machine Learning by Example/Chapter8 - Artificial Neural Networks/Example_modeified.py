@@ -73,7 +73,6 @@ def predict(x, model):
     return A3
 
 
-
 from sklearn import datasets
 boston = datasets.load_boston()
 num_test = 10  # the last 10 samples as testing set
