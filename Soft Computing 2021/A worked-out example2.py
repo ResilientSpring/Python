@@ -23,6 +23,9 @@ def sigmoid(z):
 
 
 fitness = []
+fitness[0] = np.dot(X[0], Velocity[0])
+min_fitness0 = min(fitness[0])
 
-
+fitness[1] = np.dot(X[1], Velocity[1])
+min_fitness1 = min(fitness[1])
 
