@@ -71,7 +71,7 @@ class Particle_Swarm_Optimization(object):
         input_a13 = (a02 * weight_a02_a13) + (output_a12 * weight_a12_a13) + (output_a22 * weight_a22_a13)
         output_a13 = self.sigmoid(input_a13)
 
-        return input_a12, output_a12, input_a22, output_a22, input_a13, output_a13
+        return output_a13
 
     def _compute_cost(self, y_true, output):
         """Compute cost function.
