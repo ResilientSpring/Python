@@ -153,7 +153,7 @@ class NeuralNetMLP(object):
         ########################
 
         # weights for input -> hidden
-        self.b_h = np.zeros(self.number_of_hidden_units)
+        self.b_h = np.ones(self.number_of_hidden_units)
         self.w_h = self.random.normal(loc=0.0, scale=0.1,
                                       size=(n_features, self.number_of_hidden_units))
 
