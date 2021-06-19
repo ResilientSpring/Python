@@ -19,15 +19,15 @@ class Particle_Swarm_Optimization(object):
     def _onehot(self, y, n_classes):
         """Encode labels into one-hot representation
         Parameters
-            ------------
+        ------------
         y : array, shape = [n_examples]
-                Target values.
-            _classes : int
-                Number of classes
-            Returns
-            -----------
-            onehot : array, shape = (n_examples, n_labels)
-            """
+            Target values.
+        _classes : int
+            Number of classes
+        Returns
+        -----------
+        onehot : array, shape = (n_examples, n_labels)
+        """
         onehot = np.zeros((n_classes, y.shape[0]))
 
         for idx, val in enumerate(y.astype(int)):
@@ -117,9 +117,9 @@ class Particle_Swarm_Optimization(object):
         y_pred : array, shape = [n_examples]
             Predicted class labels.
         """
-        z_h, a_h, z_out, a_out = self._forward(X)
+        input_a12, output_a12, input_a22, output_a22, input_a13, output_a13 = self._forward(X)
 
-        y_pred = np.argmax(z_out, axis=1)
+        y_pred = np.argmax(input_a13, axis=1)
         return y_pred
 
 
