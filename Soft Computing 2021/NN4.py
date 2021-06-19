@@ -27,32 +27,11 @@ weight_a22_a13 = np.random.rand()
 class Particle_Swarm_Optimization(object):
 
     def __init__(self, number_of_units_in_the_hidden_layer=2, iterations=100, velocity=0.001,
-                 shuffle=True, minibatch_size=1, seed=None):
+                  seed=None):
         self.random = np.random.RandomState(seed)
         self.number_of_hidden_units = number_of_units_in_the_hidden_layer
         self.iterations = iterations
         self.velocity = velocity
-        self.shuffle = shuffle
-        self.minibatch_size = minibatch_size
-
-    def _onehot(self, y, n_classes):
-        """Encode labels into one-hot representation
-        Parameters
-        ------------
-        y : array, shape = [n_examples]
-            Target values.
-        _classes : int
-            Number of classes
-        Returns
-        -----------
-        onehot : array, shape = (n_examples, n_labels)
-        """
-        onehot = np.zeros((n_classes, y.shape[0]))
-
-        for idx, val in enumerate(y.astype(int)):
-            onehot[val, idx] = 1.
-
-        return onehot.T
 
     def _sigmoid(self, z):
         return 1.0 / (1 + np.exp(-z))
@@ -128,7 +107,8 @@ class Particle_Swarm_Optimization(object):
         ----------
         self
         """
-        n_output = np.unique(y_train).shape[0]  # number of class labels
+       # n_output = np.unique(y_train).shape[0]  # number of class labels
+        n_output = 1
         n_features = X_train.shape[1]
 
         ########################
@@ -148,15 +128,18 @@ class Particle_Swarm_Optimization(object):
         epoch_strlen = len(str(self.iterations))  # for progress formatting
         self.eval_ = {'cost': [], 'train_acc': [], 'valid_acc': []}
 
-        y_train = self._onehot(y_train, n_output)
-
         # iterate over training epochs
         for i in range(1, self.iterations + 1):
 
             # forward propagation
-            probability = self._forward(X_train)
+            likelihood = self._forward(X_train)
 
-            train_cost = self._compute_cost(y_true=y_train, output=probability)
+            train_cost = self._compute_cost(y_true=y_train, output=likelihood)
+
+            ##############################
+            # Particle Swarm Optimization
+            ##############################
+
 
             #############
             # Evaluation
@@ -176,7 +159,7 @@ class Particle_Swarm_Optimization(object):
             valid_acc = ((np.sum(y_valid == y_valid_pred)).astype(np.float) /
                          X_valid.shape[0])
 
-            sys.stderr.write('\r%0*d/%d | Cost: %.2f '' | Cost: %.2f ''| Train/Valid Acc.: %.2f%%/%.2f%% ' %
+            sys.stderr.write('\r%0*d/%d | Train Cost: %.2f '' | Cost: %.2f ''| Train/Valid Acc.: %.2f%%/%.2f%% ' %
                              (epoch_strlen, i + 1, self.iterations, train_cost, cost,
                               train_acc * 100, valid_acc * 100))
 
