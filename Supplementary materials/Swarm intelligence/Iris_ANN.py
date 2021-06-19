@@ -128,4 +128,5 @@ def predict(pos):
 print((predict(pos) == y).mean())
 
 plot_cost_history(cost_history=optimizer.cost_history)
+plt.savefig('fitness.jpg')
 plt.show()
