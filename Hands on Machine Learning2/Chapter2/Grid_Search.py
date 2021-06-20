@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 from sklearn.model_selection import StratifiedShuffleSplit
+from pandas.plotting import scatter_matrix
 
 url = "https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.csv"
 
@@ -46,6 +47,7 @@ for train_index, test_index in split.split(housing, housing["income_cat"]):
 def income_cat_proportions(data):
     return data["income_cat"].value_counts() / len(data)
 
+
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
 compare_props = pd.DataFrame({
@@ -57,3 +59,57 @@ compare_props["Rand. %error"] = 100 * compare_props["Random"] / compare_props["O
 compare_props["Strat. %error"] = 100 * compare_props["Stratified"] / compare_props["Overall"] - 100
 
 print(compare_props)
+
+for set_ in (strat_train_set, strat_test_set):
+    set_.drop("income_cat", axis=1, inplace=True)
+
+housing = strat_train_set.copy()
+housing.plot(kind="scatter", x="longitude", y="latitude")
+plt.savefig('Bad visualization plot.jpg')
+plt.show()
+
+housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
+plt.savefig('better visualization plot.jpg')
+plt.show()
+
+housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4,
+             s=housing["population"] / 100, label="population", figsize=(10, 7),
+             c="median_house_value", cmap=plt.get_cmap("jet"), colorbar=True,
+             sharex=False)
+plt.legend()
+
+plt.savefig('housing price scatter plot.jpg')
+plt.show()
+
+corr_matrix = housing.corr()
+
+corr_matrix["median_house_value"].sort_values(ascending=False)
+
+attributes = ["median_house_value", "median_income", "total_rooms",
+              "housing_median_age"]
+scatter_matrix(housing[attributes], figsize=(12, 8))
+
+plt.savefig('scatter_matrix_plot.jpg')
+plt.show()
+
+housing.plot(kind="scatter", x="median_income", y="median_house_value",
+             alpha=0.1)
+
+plt.axis([0, 16, 0, 550000])
+
+plt.savefig("income_vs_house_value_scatterplot")
+plt.show()
+
+housing["rooms_per_household"] = housing["total_rooms"]/housing["households"]
+housing["bedrooms_per_room"] = housing["total_bedrooms"]/housing["total_rooms"]
+housing["population_per_household"]=housing["population"]/housing["households"]
+
+corr_matrix = housing.corr()
+corr_matrix["median_house_value"].sort_values(ascending=False)
+
+housing.plot(kind="scatter", x="rooms_per_household", y="median_house_value",
+             alpha=0.2)
+plt.axis([0, 5, 0, 520000])
+plt.show()
+
+print(housing.describe())
