@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import keras
 from tensorflow.keras.utils import plot_model
 from mlxtend.plotting import plot_decision_regions
+import tensorflow
 
 tf.random.set_seed(1)
 np.random.seed(1)
@@ -40,9 +41,9 @@ plt.xlabel(r'$x_1$', size=15)
 plt.ylabel(r'$x_2$', size=15)
 plt.show()
 
-model = keras.Sequential()
+model = tensorflow.keras.Sequential()
 
-model.add(keras.layers.Dense(units=1, input_shape=(2, ), activation="sigmoid"))
+model.add(tensorflow.keras.layers.Dense(units=1, input_shape=(2, ), activation="sigmoid"))
 
 print(model.summary())
 
@@ -50,8 +51,9 @@ plot_model(model=model, show_shapes=True, show_layer_names=True)
 
 # After defining the model, we will compile the model and train it for 200 epochs using a
 # batch size of 2:
-model.compile(optimizer=keras.optimizers.SGD(), loss=keras.losses.BinaryCrossentropy(),
-              metrics=[keras.metrics.BinaryAccuracy()])
+model.compile(optimizer=(tensorflow.keras.optimizers.SGD(),
+                         loss=(tensorflow.keras.losses.BinaryCrossentropy(),
+              metrics=[(tensorflow.keras.metrics.BinaryAccuracy()])
 
 hist = model.fit(x=x_train, y=y_train, validation_data=(x_valid, y_valid), epochs=200,
                  batch_size=2, verbose=0)
