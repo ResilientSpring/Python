@@ -100,7 +100,7 @@ def f(x):
 
 
 # Initialize swarm
-options = {'c1': 0.5, 'c2': 0.3, 'w':0.9}
+options = {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
 
 # Call instance of PSO
 dimensions = (n_inputs * n_hidden) + (n_hidden * n_classes) + n_hidden + n_classes
@@ -123,5 +123,6 @@ def predict(pos):
     logits = logits_function(pos)
     y_pred = np.argmax(logits, axis=1)
     return y_pred
+
 
 print((predict(pos) == y).mean())
