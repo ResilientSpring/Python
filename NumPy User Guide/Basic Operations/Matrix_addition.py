@@ -21,6 +21,10 @@ b1 = np.random.rand(1, 2).reshape((n_hidden,))
 print(b1)
 print(b1.shape)
 
-z1 = X.dot(W1)
+z1 = np.dot(X, W1)
 print(z1)
 
+from sklearn.datasets import load_iris
+
+data = load_iris()
+print(data)
