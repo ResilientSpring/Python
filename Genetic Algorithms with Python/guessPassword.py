@@ -11,3 +11,5 @@ def generate_parent(length):
 
         genes.extend(random.sample(geneSet, sampleSize))
         return ''.join(genes)
+
+
