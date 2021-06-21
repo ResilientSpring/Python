@@ -1,5 +1,6 @@
 import random
 import datetime
+import time
 
 geneSet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!.'
 
@@ -26,4 +27,15 @@ def mutate(parent):
     return ''.join(childGenes)
 
 
+def display(guess):
+    timeDiff = datetime.datetime.now() - startTime
+    fitness = get_fitness(guess)
+    print('{}\t{}\t{}'.format(guess, fitness, timeDiff))
 
+
+random.seed()
+startTime = datetime.datetime.now()
+
+bestParent = generate_parent(len(target))
+bestFitness = get_fitness(bestParent)
+display(bestParent)
