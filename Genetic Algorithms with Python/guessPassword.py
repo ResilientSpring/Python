@@ -13,3 +13,5 @@ def generate_parent(length):
         return ''.join(genes)
 
 
+def get_fitness(guess):
+    return sum(1 for expected, actual in zip(target, guess) if expected == actual)
