@@ -39,3 +39,18 @@ startTime = datetime.datetime.now()
 bestParent = generate_parent(len(target))
 bestFitness = get_fitness(bestParent)
 display(bestParent)
+
+while True:
+    child = mutate(bestParent)
+    childFitness = get_fitness(child)
+
+    if bestFitness >= childFitness:
+        continue;
+
+    display(child)
+
+    if childFitness >= len(bestParent):
+        break
+
+    bestFitness = childFitness
+    bestParent = child
