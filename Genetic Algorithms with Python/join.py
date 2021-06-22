@@ -8,3 +8,7 @@ print(array)
 news = '.'.join(array)
 
 print(news)
+
+cram = ''.join(array)
+
+print(cram)
