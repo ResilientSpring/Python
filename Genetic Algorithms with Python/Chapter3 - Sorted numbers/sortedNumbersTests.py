@@ -1,5 +1,6 @@
 import unittest
 import datetime
+import genetic
 
 def get_fitness(genes):
     fitness = 1
@@ -27,6 +28,7 @@ class SortedNumbersTests(unittest.TestCase):
 
     def sort_numbers(self, totalNumbers):
         geneset = [i for i in range(100)]
+        startTime = datetime.datetime.now()
 
 
         def fnDisplay(candidate):
