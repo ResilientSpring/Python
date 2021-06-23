@@ -14,3 +14,15 @@ class And:
     def get_output(self):
         aValue = self._inputA.get_output()
         bValue = self._inputB.get_output()
+
+        return aValue and bValue
+
+
+class Source:
+    def __init__(self, sourceId, sourceContainer):
+        self._sourceId = sourceId
+        self._sourceContainer = sourceContainer
+
+    def get_output(self):
+        return self._sourceContainer[self._sourceId]
+
