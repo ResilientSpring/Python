@@ -11,6 +11,13 @@ allMetas = repeatMetas | startMetas | endMetas
 
 regexErrorsSeen = {}
 
+
+def display(candidate, startTime):
+    timeDiff = datetime.datetime.now() - startTime
+    print("{}\t{}\t{}".format(
+        repair_regex(candidate.Genes), candidate.Fitness, timeDiff))
+
+
 def repair_regex(genes):
     result = []
     finals = []
@@ -170,12 +177,50 @@ def mutate_move(genes):
     return True
 
 
+def find_regex(self, wanted, unwanted, expectedLength):
+    mutationRoundCounts = [1]
+    mutationOperators = [partial(mutate_add, geneSet=fullGeneset),
+                         partial(mutate_replace, geneSet=fullGeneset),
+                         mutate_remove, mutate_swap, mutate_move]
+
+def fnMutate(genes):
+    mutate(genes, fnGetFitness=fnGetFitness, mutationOperators=mutationOperators,)
+
+
 class RegexTests(unittest.TestCase):
     def test_two_digits(self):
         wanted = {'01', '01', '11', '10'}
         unwanted = ['00', '']
 
         self.find_regex(wanted, unwanted, 7)
+
+        def find_regex(self, wanted, unwanted, expectedLength,
+                       customOperators=None):
+            startTime = datetime.datetime.now()
+        textGenes = wanted | set(c for w in wanted for c in w)
+        fullGeneset = [i for i in allMetas | textGenes]
+
+        def fnDisplay(candidate):
+            display(candidate, startTime)
+
+        def fnGetFitness(genes):
+            return get_fitness(genes, wanted, unwanted)
+
+        mutationRoundCounts = [1]
+
+        mutationOperators = [
+            partial(mutate_add, geneset=fullGeneset),
+            partial(mutate_replace, geneset=fullGeneset),
+            mutate_remove,
+            mutate_swap,
+            mutate_move,
+        ]
+        if customOperators is not None:
+            mutationOperators.extend(customOperators)
+
+        def fnMutate(genes):
+            mutate(genes, fnGetFitness, mutationOperators,
+                   mutationRoundCounts)
 
 
     def find_regex(self, wanted, unwanted, expectedLength, customOperators=None):
