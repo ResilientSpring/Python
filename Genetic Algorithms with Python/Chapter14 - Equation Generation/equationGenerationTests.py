@@ -4,6 +4,14 @@ import genetic
 import random
 
 
+def display(candidate, startTime):
+    timeDiff = datetime.datetime.now() - startTime
+    print("{0}\t{1}\t{2}".format(
+        (' '.join(map(str, [i for i in candidate.Genes]))),
+        candidate.Fitness,
+        timeDiff))
+
+
 def create(numbers, operations, minNumbers, maxNumbers):
     genes = [random.choice(numbers)]
     count = random.randint(a=minNumbers, b=1 + maxNumbers)
