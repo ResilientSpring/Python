@@ -19,6 +19,10 @@ class Not:
 
         return 'Not({})'.format(self._input)
 
+    @staticmethod
+    def input_count():
+        return 1
+
 class And:
     def __init__(self, inputA, inputB):
         self._inputA = inputA
@@ -46,6 +50,10 @@ class And:
 
         return 'And({}{})'.format(self._inputA, self._inputB)
 
+    @staticmethod
+    def input_count():
+        return 2
+
 
 class Source:
     def __init__(self, sourceId, sourceContainer):
@@ -57,4 +65,8 @@ class Source:
 
     def __str__(self):
         return self._sourceId
+
+    @staticmethod
+    def input_count():
+        return 0
 

@@ -1,5 +1,27 @@
 import unittest
 import datetime
+import circuits
+import random
+
+def display(candidate, startTime):
+    circuit = nodes_to_circuit(nodes=candidate.Genes)
+    timeDiff = datetime.datetime.now() - startTime
+
+    print('{}\t{}\t{}'.format(circuit, candidate.Fitness, timeDiff))
+
+
+def create_gene(index, geneSet):
+    gateType = random.choice(geneSet)
+    indexA = indexB = None
+
+    if gateType[1].input_count() > 0:
+        indexA = random.randint(a=0, b=index)
+
+    if gateType[1].input_count() > 1:
+        indexB = random.randint(a=0, b=index)
+        if indexB == indexA :
+            indexB = random.randint(a=0, b=index)
+    return Node(gateType[0], indexA, indexB)
 
 
 class Node:
@@ -43,6 +65,11 @@ class CircuitTests(unittest.TestCase):
     def setUpClass(cls):
         cls.inputs = dict()
 
+        cls.geneSet = [[circuits.And, circuits.And],
+                       [lambda i1, i2: circuits.Not(i1), circuits.Not],
+                       [lambda i1, i2: circuits.Source('A', cls.inputs), circuits.Source],
+                       [lambda i1, i2: circuits.Source('B', cls.inputs), circuits.Source]]
+
     def test_generate_OR(self):
         rules = [
             [[False, False], False],
@@ -61,13 +88,14 @@ class CircuitTests(unittest.TestCase):
             if length is not None:
                 print("-- distinct nodes in circuit:",
                       len(nodes_to_circuit(candidate.Genes)[1]))
+
             display(candidate, startTime)
 
         def fnGetFitness(genes):
             return get_fitness(genes, rules, self.inputs)
 
         def fnCreateGene(index):
-            return create_gene(index, self.gates, self.sources)
+            return create_gene(index, self.geneSet)
 
         def fnMutate(genes):
             mutate(genes, fnCreateGene, fnGetFitness, len(self.sources))
