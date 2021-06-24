@@ -8,3 +8,14 @@ def evaluate(genes):
         elif operation == '-':
             result -= nextValue
     return result
+
+
+def get_fitness(genes, expectedTotal):
+    result =  evaluate(genes)
+
+    if result != expectedTotal:
+        fitness = expectedTotal - abs(result - expectedTotal)
+    else:
+        fitness = 1000 - len(genes)
+
+    return fitness
