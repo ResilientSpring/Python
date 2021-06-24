@@ -2,6 +2,7 @@ import unittest
 import datetime
 import genetic
 import random
+import Evaluate
 
 
 def display(candidate, startTime):
@@ -49,3 +50,11 @@ class EquationGenerationTests(unittest.TestCase):
     def test(self):
         numbers = [1, 2, 3, 4, 5, 6, 7]
         operations = ['+', '-']
+
+        expectedTotal = 29
+        optimalLengthSolution = [7, '+', 7, '+', 7, '+', 7, '+', 7, '-', 6]
+        minNumbers = (1 + len(optimalLengthSolution)) / 2
+        maxNumbers = 6 * minNumbers
+        startTime = datetime.datetime.now()
+
+    def fnDisplay(self):
