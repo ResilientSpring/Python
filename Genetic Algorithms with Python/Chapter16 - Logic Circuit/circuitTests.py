@@ -5,10 +5,18 @@ class Node:
         self.IndexB = indexB
 
     def nodes_to_circuit(self, nodes):
+
+        circuit = []
+
         for i, node in enumerate(nodes):
+
             inputA = circuit[node.IndexA] if node.IndexA is not None \
                                              and i > node.IndexA else None
 
             inputB = circuit[node.IndexB] if node.IndexB is not None \
                                              and i > node.IndexB else None
+
+            circuit.append(node.CreateGate(inputA, inputB))
+
+        return circuit[-1]
 
