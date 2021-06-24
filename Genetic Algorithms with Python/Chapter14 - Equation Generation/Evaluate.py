@@ -5,3 +5,6 @@ def evaluate(genes):
         nextValue = genes[i + 1]
         if operation == '+':
             result += nextValue
+        elif operation == '-':
+            result -= nextValue
+    return result
