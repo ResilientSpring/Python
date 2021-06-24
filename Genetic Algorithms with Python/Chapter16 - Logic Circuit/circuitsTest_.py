@@ -50,17 +50,17 @@ def nodes_to_circuit(nodes):
     for i, node in enumerate(nodes):
         used = {i}
 
-        inputA = circuit[node.IndexA] if node.IndexA is not None \
-                                         and i > node.IndexA else None
-
-        if inputA == circuit[node.IndexA]:
+        if node.IndexA is not None and i > node.IndexA:
+            inputA = circuit[node.IndexA]
             used.update(usedIndexes[node.IndexA])
+        else:
+            inputA = None
 
-        inputB = circuit[node.IndexB] if node.IndexB is not None \
-                                         and i > node.IndexB else None
-
-        if inputB == circuit[node.IndexB]:
+        if node.IndexB is not None and i > node.IndexB:
+            inputB = circuit[node.IndexB]
             used.update(usedIndexes[node.IndexB])
+        else:
+            inputB = None
 
         circuit.append(node.CreateGate(inputA, inputB))
 
@@ -103,6 +103,16 @@ class CircuitTests(unittest.TestCase):
 
         optimalLength = 6
         self.find_circuit(rules=rules, expectedLength=optimalLength)
+
+    def test_generate_XOR(self):
+        rules = [
+            [[False, False], False],
+            [[False, True], True],
+            [[True, False], True],
+            [[True, True], False]
+        ]
+
+        self.find_circuit(rules=rules, expectedLength=9)
 
     def find_circuit(self, rules, expectedLength):
         startTime = datetime.datetime.now()
@@ -149,7 +159,6 @@ class CircuitTests(unittest.TestCase):
 
         best = genetic.get_best(fnGetFitness, None, len(rules), None, fnDisplay, fnMutate,
                                 fnCreate, poolSize=3)
-
 
 
         self.assertTrue(best.Fitness == len(rules))

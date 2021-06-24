@@ -50,11 +50,8 @@ def nodes_to_circuit(nodes):
     for i, node in enumerate(nodes):
         used = {i}
 
-        inputA = circuit[node.IndexA] if node.IndexA is not None \
+        inputA = circuit[node.IndexA], used.update(usedIndexes[node.IndexA]) if node.IndexA is not None \
                                          and i > node.IndexA else None
-
-        if inputA == circuit[node.IndexA]:
-            used.update(usedIndexes[node.IndexA])
 
         inputB = circuit[node.IndexB] if node.IndexB is not None \
                                          and i > node.IndexB else None
