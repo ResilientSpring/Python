@@ -5,7 +5,7 @@ import random
 
 
 def display(candidate, startTime):
-    circuit = nodes_to_circuit(nodes=candidate.Genes)
+    circuit = nodes_to_circuit(nodes=candidate.Genes)[0]
     timeDiff = datetime.datetime.now() - startTime
 
     print('{}\t{}\t{}'.format(circuit, candidate.Fitness, timeDiff))
@@ -23,6 +23,15 @@ def create_gene(index, geneSet):
         if indexB == indexA:
             indexB = random.randint(a=0, b=index)
     return Node(gateType[0], indexA, indexB)
+
+
+def mutate(childGenes, fnCreateGene):
+    count = random.randint(a=1, b=5)
+    while count > 0:
+        count -= 1
+        indexesUsed = [i for i in nodes_to_circuit(childGenes)[1]]
+        index = random.choice(seq=indexesUsed)
+        childGenes[index] = fnCreateGene(index)
 
 
 class Node:
@@ -60,7 +69,7 @@ def nodes_to_circuit(nodes):
 
 
 def get_fitness(genes, rules, inputs):
-    circuit = nodes_to_circuit(genes)
+    circuit = nodes_to_circuit(genes)[0]
     sourceLabels = 'AB'
     rulesPassed = 0
 
@@ -112,7 +121,7 @@ class CircuitTests(unittest.TestCase):
         def fnMutate(genes):
             mutate(genes, fnCreateGene)
 
-        maxLength = 50
+        maxLength = expectedLength
 
         def fnCreate():
             return [fnCreateGene(i) for i in range(maxLength)]
