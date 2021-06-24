@@ -1,4 +1,5 @@
 import unittest
+import datetime
 
 
 class Node:
@@ -23,7 +24,25 @@ def nodes_to_circuit(nodes):
     return circuit[-1]
 
 
+def get_fitness(genes, rules, inputs):
+    circuit = nodes_to_circuit(genes)
+    sourceLabels = 'AB'
+    rulesPassed = 0
+
+    for rule in rules:
+        inputs.clear()
+        inputs.update(zip(sourceLabels, rule[0]))
+        if circuit.get_output() == rule[1]:
+            rulesPassed += 1
+    return rulesPassed
+
+
 class CircuitTests(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.inputs = dict()
+
     def test_generate_OR(self):
         rules = [
             [[False, False], False],
@@ -32,9 +51,8 @@ class CircuitTests(unittest.TestCase):
             [[True, True], True]
         ]
 
-        def find_circuit(self, rules, expectedLength):
-            def fnGetFitness(genes):
-                return get_fitness(genes, rules, self.inputs)
+        self.find_circuit(rules=rules, expectedLength=optimalLength)
+
 
     def find_circuit(self, rules, expectedLength):
         startTime = datetime.datetime.now()
