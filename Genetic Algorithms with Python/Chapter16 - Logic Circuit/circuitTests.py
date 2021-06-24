@@ -3,6 +3,7 @@ import datetime
 import circuits
 import random
 
+
 def display(candidate, startTime):
     circuit = nodes_to_circuit(nodes=candidate.Genes)
     timeDiff = datetime.datetime.now() - startTime
@@ -19,7 +20,7 @@ def create_gene(index, geneSet):
 
     if gateType[1].input_count() > 1:
         indexB = random.randint(a=0, b=index)
-        if indexB == indexA :
+        if indexB == indexA:
             indexB = random.randint(a=0, b=index)
     return Node(gateType[0], indexA, indexB)
 
@@ -34,7 +35,11 @@ class Node:
 def nodes_to_circuit(nodes):
     circuit = []
 
+    usedIndexes = []
+
     for i, node in enumerate(nodes):
+        used = {i}
+
         inputA = circuit[node.IndexA] if node.IndexA is not None \
                                          and i > node.IndexA else None
 
@@ -80,7 +85,6 @@ class CircuitTests(unittest.TestCase):
 
         self.find_circuit(rules=rules, expectedLength=optimalLength)
 
-
     def find_circuit(self, rules, expectedLength):
         startTime = datetime.datetime.now()
 
@@ -98,7 +102,7 @@ class CircuitTests(unittest.TestCase):
             return create_gene(index, self.geneSet)
 
         def fnMutate(genes):
-            mutate(genes, fnCreateGene, fnGetFitness, len(self.sources))
+            mutate(genes, fnCreateGene)
 
         maxLength = 50
 
