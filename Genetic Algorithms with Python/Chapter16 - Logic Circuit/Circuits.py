@@ -13,6 +13,12 @@ class Not:
 
         return not value
 
+    def __str__(self):
+        if self._input is None:
+            return 'Not(?)'
+
+        return 'Not({})'.format(self._input)
+
 class And:
     def __init__(self, inputA, inputB):
         self._inputA = inputA
@@ -34,6 +40,12 @@ class And:
 
         return aValue and bValue
 
+    def __str__(self):
+        if self._inputA is None or self._inputB is None:
+            return 'And(?)'
+
+        return 'And({}{})'.format(self._inputA, self._inputB)
+
 
 class Source:
     def __init__(self, sourceId, sourceContainer):
@@ -42,4 +54,7 @@ class Source:
 
     def get_output(self):
         return self._sourceContainer[self._sourceId]
+
+    def __str__(self):
+        return self._sourceId
 
