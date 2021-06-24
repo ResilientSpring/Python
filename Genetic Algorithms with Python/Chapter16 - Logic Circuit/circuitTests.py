@@ -54,7 +54,9 @@ def nodes_to_circuit(nodes):
 
         circuit.append(node.CreateGate(inputA, inputB))
 
-    return circuit[-1]
+        usedIndexes.append(used)
+
+    return circuit[-1], usedIndexes[-1]
 
 
 def get_fitness(genes, rules, inputs):
