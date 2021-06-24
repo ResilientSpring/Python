@@ -112,6 +112,8 @@ class CircuitTests(unittest.TestCase):
             [[True, True], False]
         ]
 
+        self.find_circuit(rules=rules, expectedLength=9)
+
     def find_circuit(self, rules, expectedLength):
         startTime = datetime.datetime.now()
 
