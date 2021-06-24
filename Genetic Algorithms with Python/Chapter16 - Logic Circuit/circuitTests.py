@@ -43,11 +43,14 @@ def nodes_to_circuit(nodes):
         inputA = circuit[node.IndexA] if node.IndexA is not None \
                                          and i > node.IndexA else None
 
-        if inputA != None:
+        if inputA == circuit[node.IndexA]:
             used.update(usedIndexes[node.IndexA])
 
         inputB = circuit[node.IndexB] if node.IndexB is not None \
                                          and i > node.IndexB else None
+
+        if inputB == circuit[node.IndexB]:
+            used.update(usedIndexes[node.IndexB])
 
         circuit.append(node.CreateGate(inputA, inputB))
 
