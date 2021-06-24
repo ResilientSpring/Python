@@ -6,8 +6,12 @@ class Not:
         if self._input is None:
             return None
 
-        return not self._input.get_output()
+        value = self._input.get_output()
 
+        if value is None:
+            return None
+
+        return not value
 
 class And:
     def __init__(self, inputA, inputB):
@@ -19,7 +23,14 @@ class And:
             return None
 
         aValue = self._inputA.get_output()
+
+        if aValue is None:
+            return None
+
         bValue = self._inputB.get_output()
+
+        if bValue is None:
+            return None
 
         return aValue and bValue
 
