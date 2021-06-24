@@ -177,11 +177,6 @@ def mutate_move(genes):
     return True
 
 
-def find_regex(self, wanted, unwanted, expectedLength):
-    mutationRoundCounts = [1]
-    mutationOperators = [partial(mutate_add, geneSet=fullGeneset),
-                         partial(mutate_replace, geneSet=fullGeneset),
-                         mutate_remove, mutate_swap, mutate_move]
 
 def fnMutate(genes):
     mutate(genes, fnGetFitness=fnGetFitness, mutationOperators=mutationOperators,)
@@ -222,8 +217,14 @@ class RegexTests(unittest.TestCase):
             mutate(genes, fnGetFitness, mutationOperators,
                    mutationRoundCounts)
 
+    def find_regex(self, wanted, unwanted, expectedLength):
+        mutationRoundCounts = [1]
+        mutationOperators = [partial(mutate_add, geneSet=fullGeneset),
+                         partial(mutate_replace, geneSet=fullGeneset),
+                         mutate_remove, mutate_swap, mutate_move]
 
-    def find_regex(self, wanted, unwanted, expectedLength, customOperators=None):
+
+    def find_regex2(self, wanted, unwanted, expectedLength, customOperators=None):
         startTime = datetime.datetime.now()
         textGenes = wanted | set(c for w in wanted for c in w)
         fullGeneset = [i for i in allMetas | textGenes]
