@@ -14,6 +14,29 @@ def create(numbers, operations, minNumbers, maxNumbers):
 
     return genes
 
+
+def mutate(genes, numbers, operations, minNumbers, maxNumbers):
+    numberCount = (1 + len(genes)) / 2
+    adding = numberCount < maxNumbers and random.randint(a=0, b=100) == 0
+
+    if adding:
+        genes.append(random.choice(operations))
+        genes.append(random.choice(numbers))
+
+        return
+
+    removing = numberCount > minNumbers and random.randint(a=0, b=20) == 0
+
+    if removing:
+        index = random.randrange(start=0, step=len(genes) - 1)
+        del genes[index]
+        del genes[index]
+        return
+
+    index = random.randrange(0, len(genes))
+    genes[index] = random.choice(operations) if (index & 1) == 1 else random.choice(numbers)
+
+
 class EquationGenerationTests(unittest.TestCase):
     def test(self):
         numbers = [1, 2, 3, 4, 5, 6, 7]
