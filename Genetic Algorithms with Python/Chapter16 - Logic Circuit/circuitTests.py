@@ -2,6 +2,7 @@ import unittest
 import datetime
 import circuits
 import random
+import genetic
 
 
 def display(candidate, startTime):
@@ -100,6 +101,7 @@ class CircuitTests(unittest.TestCase):
             [[True, True], True]
         ]
 
+        optimalLength = 6
         self.find_circuit(rules=rules, expectedLength=optimalLength)
 
     def find_circuit(self, rules, expectedLength):
@@ -145,10 +147,11 @@ class CircuitTests(unittest.TestCase):
         def fnGetNextFeatureValue(currentBest):
             return len(nodes_to_circuit(currentBest.Genes)[1])
 
-        best = genetic.hill_climbing(fnOptimizationFunction,
-                                     fnIsImprovement, fnIsOptimal,
-                                     fnGetNextFeatureValue, fnDisplay,
-                                     maxLength)
+        best = genetic.get_best(fnGetFitness, None, len(rules), None, fnDisplay, fnMutate,
+                                fnCreate, poolSize=3)
+
+
+
         self.assertTrue(best.Fitness == len(rules))
-        self.assertFalse(len(nodes_to_circuit(best.Genes)[1])
-                         > expectedLength)
+
+        self.assertFalse(len(nodes_to_circuit(best.Genes)[1]) > expectedLength)
