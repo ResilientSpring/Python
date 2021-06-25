@@ -74,7 +74,7 @@ ga_instance.plot_fitness(title='Iteration vs. Fitness', xlabel='Generation', yla
 
 # To get the details about the best solution found by PyGAD
 solution, solution_fitness, solution_idx = ga_instance.best_solution()
-print('Parameters of the best solution: {solution}'.format(solution=solution))
+print('Weights of the best solution: {solution}'.format(solution=solution))
 print(f'Fitness value of the best solution = '
       f'{solution_fitness}'.format(solution_fitness=solution_fitness))
 print(f'Index of the best solution: {solution_idx}'.format(solution_idx=solution_idx))
@@ -88,3 +88,9 @@ print('Predictions: \n', predictions)
 mae = MeanAbsoluteError()
 abs_error = mae(y_true=data_outputs, y_pred=predictions).numpy()
 print('Absolute Error:', abs_error)
+
+data_inputs_homework = np.array([[0.8, 0.7],
+                                 [0.8, 0.2],
+                                 [0.2, 0.3]])
+prediction = predict(model=model, solution=solution, data=data_inputs_homework)
+print('Prediction: \n', prediction)
