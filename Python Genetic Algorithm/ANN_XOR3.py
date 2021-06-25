@@ -43,18 +43,21 @@ data_outputs = numpy.array([0,
                             0])
 
 # The length of the input vector for each sample (i.e. number of neurons in the input layer).
-num_inputs = data_inputs.shape[1]
-# The number of neurons in the output layer (i.e. number of classes).
-num_classes = 2
+num_inputs = data_inputs.shape[2]
 
-# Creating an initial population of neural networks. The return of the initial_population() function holds references to the networks, not their weights. Using such references, the weights of all networks can be fetched.
-num_solutions = 6 # A solution or a network can be used interchangeably.
+# The number of neurons in the output layer (i.e. number of classes).
+num_classes = 1
+
+# Creating an initial population of neural networks.
+# The return of the initial_population() function holds references to the networks, not their weights.
+# Using such references, the weights of all networks can be fetched.
+num_solutions = 9 # A solution or a network can be used interchangeably.
 GANN_instance = pygad.gann.GANN(num_solutions=num_solutions,
                                 num_neurons_input=num_inputs,
                                 num_neurons_hidden_layers=[2],
                                 num_neurons_output=num_classes,
-                                hidden_activations=["relu"],
-                                output_activation="softmax")
+                                hidden_activations=["sigmoid"],
+                                output_activation="sigmoid")
 
 # population does not hold the numerical weights of the network instead it holds a list of references to each last layer of each network (i.e. solution) in the population. A solution or a network can be used interchangeably.
 # If there is a population with 3 solutions (i.e. networks), then the population is a list with 3 elements. Each element is a reference to the last layer of each network. Using such a reference, all details of the network can be accessed.
