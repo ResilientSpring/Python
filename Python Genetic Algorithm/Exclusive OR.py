@@ -1,7 +1,11 @@
+import numpy as np
+import tensorflow as tf
 import tensorflow.keras
 import pygad.kerasga
 import numpy
 import pygad
+from tensorflow.keras.initializers import ones
+from tensorflow.keras.losses import MeanSquaredError
 
 def fitness_func(solution, sol_idx):
     global data_inputs, data_outputs, keras_ga, model
@@ -10,8 +14,8 @@ def fitness_func(solution, sol_idx):
                                         solution=solution,
                                         data=data_inputs)
 
-    bce = tensorflow.keras.losses.BinaryCrossentropy()
-    solution_fitness = 1.0 / (bce(data_outputs, predictions).numpy() + 0.00000001)
+    mean_squared_error = MeanSquaredError()
+    solution_fitness = (mean_squared_error(data_outputs, predictions).numpy() + 0.00000001)
 
     return solution_fitness
 
@@ -21,14 +25,14 @@ def callback_generation(ga_instance):
 
 # Build the keras model using the functional API.
 input_layer  = tensorflow.keras.layers.Input(2)
-dense_layer = tensorflow.keras.layers.Dense(4, activation="relu")(input_layer)
-output_layer = tensorflow.keras.layers.Dense(2, activation="softmax")(dense_layer)
+dense_layer = tensorflow.keras.layers.Dense(2, activation="sigmoid", use_bias=True, bias_initializer=ones)(input_layer)
+output_layer = tensorflow.keras.layers.Dense(1, activation="sigmoid", use_bias=True, bias_initializer=ones)(dense_layer)
 
 model = tensorflow.keras.Model(inputs=input_layer, outputs=output_layer)
 
 # Create an instance of the pygad.kerasga.KerasGA class to build the initial population.
 keras_ga = pygad.kerasga.KerasGA(model=model,
-                                 num_solutions=10)
+                                 num_solutions=9)
 
 # XOR problem inputs
 data_inputs = numpy.array([[0.0, 0.0],
@@ -37,10 +41,10 @@ data_inputs = numpy.array([[0.0, 0.0],
                            [1.0, 1.0]])
 
 # XOR problem outputs
-data_outputs = numpy.array([[1.0, 0.0],
-                            [0.0, 1.0],
-                            [0.0, 1.0],
-                            [1.0, 0.0]])
+data_outputs = numpy.array([[0.0],
+                            [1.0],
+                            [1.0],
+                            [0.0]])
 
 # Prepare the PyGAD parameters. Check the documentation for more information: https://pygad.readthedocs.io/en/latest/README_pygad_ReadTheDocs.html#pygad-ga-class
 num_generations = 250 # Number of generations.
@@ -68,6 +72,10 @@ print("Index of the best solution : {solution_idx}".format(solution_idx=solution
 predictions = pygad.kerasga.predict(model=model,
                                     solution=solution,
                                     data=data_inputs)
+
+# predictions = predictions.numpy()
+# predictions = np.where(predictions >= 0.5, 1, 0)
+
 print("Predictions : \n", predictions)
 
 # Calculate the binary crossentropy for the trained model.
