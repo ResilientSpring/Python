@@ -20,8 +20,10 @@ def fitness_func(solution, sol_idx):
                                         solution=solution,
                                         data=data_inputs)
 
-    mae = MeanAbsoluteError()
-    solution_fitness = (mae(data_outputs, predictions))
+    def l2_loss(y_true, y_pred):
+        return abs(y_true - y_pred)
+
+    solution_fitness = (l2_loss(data_outputs, predictions))
 
     return solution_fitness
 
