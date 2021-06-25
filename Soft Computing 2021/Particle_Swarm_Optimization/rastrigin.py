@@ -1,4 +1,3 @@
-
 import numpy as np
 
 
@@ -17,3 +16,6 @@ def grad_error(current_pos):
     return np.array(
         [2 * x + 10 * 2 * np.pi * x * np.sin(2 * np.pi * x),
          2 * y + 10 * 2 * np.pi * y * np.sin(2 * np.pi * y)])
+
+
+# Source: https://archive.ph/MbzAm#selection-884.1-1545.3
