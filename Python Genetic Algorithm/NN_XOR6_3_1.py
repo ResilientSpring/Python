@@ -74,6 +74,7 @@ ga_instance.plot_fitness(title='Iteration vs. Fitness', xlabel='Generation', yla
 
 # To get the details about the best solution found by PyGAD
 solution, solution_fitness, solution_idx = ga_instance.best_solution()
+print('Parameters of the best solution: {solution}'.format(solution=solution))
 print(f'Fitness value of the best solution = '
       f'{solution_fitness}'.format(solution_fitness=solution_fitness))
 print(f'Index of the best solution: {solution_idx}'.format(solution_idx=solution_idx))
