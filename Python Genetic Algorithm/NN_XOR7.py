@@ -57,7 +57,7 @@ def callback_generation(ga_instance):
 # Create an instance of the pygad.GA Class
 ga_instance = pygad.GA(num_generations=250,
                        num_parents_mating=2,
-                       parent_selection_type='random',
+                       parent_selection_type='rank',
                        fitness_func=fitness_func, # initial_population=kerasGA.population_weights,
                        sol_per_pop=9, num_genes=9, init_range_low=0.01, init_range_high=10.00,
                        crossover_type='single_point', mutation_type='random',
