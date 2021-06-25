@@ -60,7 +60,7 @@ ga_instance = pygad.GA(num_generations=250,
                        parent_selection_type='random',
                        fitness_func=fitness_func, initial_population=kerasGA.population_weights,
                        sol_per_pop=9, num_genes=9, init_range_low=0.01, init_range_high=10.00,
-                       crossover_type='single_point', mutation_type='adaptive',
+                       crossover_type='single_point', mutation_type='random',
                        mutation_num_genes=2, save_best_solutions=True, save_solutions=True,
                        allow_duplicate_genes=True, stop_criteria='saturate_10',
                        on_generation=callback_generation)
