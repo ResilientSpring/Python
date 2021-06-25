@@ -15,10 +15,29 @@ from tensorflow.keras.activations import sigmoid
 from pygad.kerasga import predict
 
 
+def smooth_L1_loss(y_true, y_pred):
+    error = y_true - y_pred
+    is_small_error = tf.abs(error) < 1
+    squared_loss = tf.square(error) / 2
+    linear_loss = tf.abs(error) - 0.5
+
+    return tf.where(is_small_error, squared_loss, linear_loss)
+
+
+def error(current_position):
+    a12 = current_position[0]
+    a22 = current_position[1]
+    a13 = current_position[2]
+
+    return 1.0 / (1.0 + np.exp(-current_position))
+
+
 # Create a Keras model
 model = Sequential([InputLayer(input_shape=(2, )),
                     Dense(units=2, use_bias=True, bias_initializer=Ones(), activation=sigmoid),
                     Dense(units=1, use_bias=True, bias_initializer=Ones(), activation=sigmoid)])
+
+model.compile(loss=smooth_L1_loss)
 
 
 def error(current_pos):
@@ -98,3 +117,8 @@ class PSO:
 
 pso = PSO(dims=2, numOfBoids=30, numOfEpochs=500)
 pso.optimize()
+
+# References:
+# 1. https://stackoverflow.com/a/56255595/14900011
+# 2. https://zhuanlan.zhihu.com/p/48426076
+# 3. https://archive.ph/MbzAm
