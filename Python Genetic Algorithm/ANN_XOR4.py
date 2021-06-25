@@ -2,14 +2,18 @@ import numpy
 import pygad
 import pygad.nn
 import pygad.gann
+from tensorflow.keras.losses import MeanAbsoluteError
+from pygad.kerasga import predict
+
 
 def fitness_func(solution, sol_idx):
-    global GANN_instance, data_inputs, data_outputs
+    global data_inputs, data_outputs, kerasGA, model
 
-    predictions = pygad.nn.predict(last_layer=GANN_instance.population_networks[sol_idx],
-                                   data_inputs=data_inputs)
-    correct_predictions = numpy.where(predictions == data_outputs)[0].size
-    solution_fitness = (correct_predictions/data_outputs.size)*100
+    predictions = predict(model=model, solution=solution, data=data_inputs)
+
+    mae = MeanAbsoluteError()
+    abs_error = mae(y_true=data_outputs, y_pred=predictions).numpy() + 0.00000001
+    solution_fitness = 1.0 / abs_error
 
     return solution_fitness
 
