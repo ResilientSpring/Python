@@ -10,7 +10,6 @@ from tensorflow.keras.losses import MeanSquaredError, BinaryCrossentropy, MeanAb
 from tensorflow.keras.activations import sigmoid
 from tensorflow.keras import Model
 from tensorflow.keras.utils import plot_model, pack_x_y_sample_weight
-import tensorflow as tf
 
 
 def fitness_func(solution, sol_idx):
