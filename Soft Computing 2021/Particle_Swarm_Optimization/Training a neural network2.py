@@ -72,7 +72,7 @@ def forward_prop(params):
 
     # Compute for the softmax of the logits
     exp_scores = np.exp(logits)
-    probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
+    probs = exp_scores / np.sum(exp_scores, axis=1)
 
     # Compute for the negative log likelihood
 
@@ -128,3 +128,5 @@ def predict(pos):
 
 
 print((predict(pos) == y).mean())
+
+
