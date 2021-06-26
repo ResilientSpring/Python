@@ -10,12 +10,14 @@ n_iterations = int(input("Inform the number of iterations: "))
 target_error = float(input("Inform the target error: "))
 n_particles = int(input("Inform the number of particles: "))
 
+
 class Particle():
     def __init__(self):
-        self.position = np.array([(-1) ** (bool(random.getrandbits(1))) * random.random()*50, (-1)**(bool(random.getrandbits(1))) * random.random()*50])
+        self.position = np.array([(-1) ** (bool(random.getrandbits(1))) * random.random() * 50,
+                                  (-1) ** (bool(random.getrandbits(1))) * random.random() * 50])
         self.pbest_position = self.position
         self.pbest_value = float('inf')
-        self.velocity = np.array([0,0])
+        self.velocity = np.array([0, 0])
 
     def __str__(self):
         print("I am at ", self.position, " meu pbest is ", self.pbest_position)
@@ -32,7 +34,7 @@ class Space():
         self.n_particles = n_particles
         self.particles = []
         self.gbest_value = float('inf')
-        self.gbest_position = np.array([random.random()*50, random.random()*50])
+        self.gbest_position = np.array([random.random() * 50, random.random() * 50])
 
     def print_particles(self):
         for particle in self.particles:
@@ -44,23 +46,23 @@ class Space():
     def set_pbest(self):
         for particle in self.particles:
             fitness_cadidate = self.fitness(particle)
-            if(particle.pbest_value > fitness_cadidate):
+            if (particle.pbest_value > fitness_cadidate):
                 particle.pbest_value = fitness_cadidate
                 particle.pbest_position = particle.position
-
 
     def set_gbest(self):
         for particle in self.particles:
             best_fitness_cadidate = self.fitness(particle)
-            if(self.gbest_value > best_fitness_cadidate):
+            if (self.gbest_value > best_fitness_cadidate):
                 self.gbest_value = best_fitness_cadidate
                 self.gbest_position = particle.position
 
     def move_particles(self):
         for particle in self.particles:
             global W
-            new_velocity = (W*particle.velocity) + (c1*random.random()) * (particle.pbest_position - particle.position) + \
-                           (random.random()*c2) * (self.gbest_position - particle.position)
+            new_velocity = (W * particle.velocity) + (c1 * random.random()) * (
+                        particle.pbest_position - particle.position) + \
+                           (random.random() * c2) * (self.gbest_position - particle.position)
             particle.velocity = new_velocity
             particle.move()
 
@@ -71,11 +73,11 @@ search_space.particles = particles_vector
 search_space.print_particles()
 
 iteration = 0
-while(iteration < n_iterations):
+while (iteration < n_iterations):
     search_space.set_pbest()
     search_space.set_gbest()
 
-    if(abs(search_space.gbest_value - search_space.target) <= search_space.target_error):
+    if (abs(search_space.gbest_value - search_space.target) <= search_space.target_error):
         break
 
     search_space.move_particles()
