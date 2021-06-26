@@ -1,0 +1,16 @@
+2021-06-26 09:52:11,651 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 09:58:30,047 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 09:58:54,977 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:01:35,489 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:02:14,216 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:02:36,856 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:04:19,305 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:06:01,524 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:06:23,465 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:07:46,056 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:08:41,660 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:09:12,957 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -1.9381701266120608, best pos: [ 0.13066513  1.08354463  1.41264402  1.29457961 -0.09202706  1.591465
+  0.63658411  0.36776946  0.90355565  0.62993434  1.43811432  1.19574754]
+2021-06-26 10:19:16,027 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2021-06-26 10:19:45,265 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -1.9951313272639348, best pos: [1.84964056 1.2737242  1.56858008 1.17090054 2.32691824 1.12004334
+ 0.61877117 0.88691536 1.00622427 1.06598929 0.58193595 0.07864198]
