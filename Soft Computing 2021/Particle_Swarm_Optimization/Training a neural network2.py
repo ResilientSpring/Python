@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 # Import PySwarms
 import pyswarms as ps
+from pyswarms.utils.plotters import plot_cost_history
 
 X = np.array([[0, 0],
               [0, 1],
@@ -127,6 +128,16 @@ def predict(pos):
     return y_pred
 
 
+# Obtain cost history from optimizer instance
+cost_history = optimizer.cost_history
+
+# Plot!
+plot_cost_history(cost_history)
+plt.show()
 print((predict(pos) == y).mean())
 
+a = predict([0.8, 0.7])
+b = predict([0.8, 0.2])
+c = predict([0.2, 0.3])
 
+print('Outputs for [0.8, 0.7], [0.8, 0.2], [0.2, 0.3] are {}, {}, {}, respectively.'.format(a, b, c))
