@@ -1,3 +1,4 @@
+# Source: https://medium.com/analytics-vidhya/implementing-particle-swarm-optimization-pso-algorithm-in-python-9efc2eb179a6
 import random
 import numpy as np
 
