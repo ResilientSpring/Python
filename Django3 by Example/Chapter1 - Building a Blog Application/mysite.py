@@ -1,3 +1,7 @@
 import django
+from django.core.management.commands import startproject
+import venv
 
-django.get_version()
+print(django.get_version())
+
+print(startproject.TemplateCommand.help)
