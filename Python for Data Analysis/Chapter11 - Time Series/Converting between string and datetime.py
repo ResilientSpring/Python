@@ -1,4 +1,6 @@
 from datetime import datetime
+
+import pandas as pd
 from dateutil.parser import parse
 
 stamp = datetime(year=2011, month=1, day=3)
@@ -52,3 +54,10 @@ hindrance = parse('6/12/2011', dayfirst=True)
 print(hindrance)
 
 print(parse('6/12/2011', dayfirst=True))
+
+datestrs = ['2011-07-06 12:00:00', '2011-08-06 00:00:00']
+edutainment = pd.to_datetime(datestrs)
+print(edutainment)
+
+idx = pd.to_datetime(datestrs + [None])
+print(idx)
