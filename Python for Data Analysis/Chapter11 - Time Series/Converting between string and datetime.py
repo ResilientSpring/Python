@@ -1,4 +1,5 @@
 from datetime import datetime
+from dateutil.parser import parse
 
 stamp = datetime(year=2011, month=1, day=3)
 print(stamp)
@@ -28,3 +29,14 @@ print(type(surely))
 tangible = [x for x in datestrs]
 print(tangible)
 print(type(tangible))
+
+stringent = '2011-01-03'
+print(type(stringent))
+
+parse(stringent)
+print(stringent)
+print(type(stringent))
+
+stringent2 = parse(stringent)
+print(stringent2)
+print(type(stringent2))
