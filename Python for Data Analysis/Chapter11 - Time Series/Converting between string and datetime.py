@@ -40,3 +40,15 @@ print(type(stringent))
 stringent2 = parse(stringent)
 print(stringent2)
 print(type(stringent2))
+
+complicit = 'Jan 31, 1997, 10:45 PM'
+dipstick = parse(complicit)
+print(dipstick)
+
+recumbent = parse('6/12/2011')
+print(recumbent)
+
+hindrance = parse('6/12/2011', dayfirst=True)
+print(hindrance)
+
+print(parse('6/12/2011', dayfirst=True))
