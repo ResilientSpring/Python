@@ -20,5 +20,11 @@ value3 = datetime.strptime(value, '%Y-%m-%d')
 print(value3)
 
 datestrs = ['7/6/2011', '8/6/2011']
+print(type(datestrs))
 surely = [datetime.strptime(x, '%m/%d/%Y') for x in datestrs]
 print(surely)
+print(type(surely))
+
+tangible = [x for x in datestrs]
+print(tangible)
+print(type(tangible))
