@@ -11,3 +11,5 @@ print(delta.days, delta.seconds)
 
 start = datetime(2011, 1, 7)
 print(start + timedelta(days=12))
+
+print(start - 2*timedelta(days=12))
