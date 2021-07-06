@@ -39,6 +39,18 @@ print(s.str.contains('foo|bar'))
 new = s[s.str.contains('foo|bar', na=False)]
 print(new)
 
+# Matching Entire Word(s)
+df3 = pd.DataFrame({'col': ['the sky is blue', 'bluejay by the window']})
+print(df3)
+
+f4 = df3[df3['col'].str.contains('blue')]
+print(f4)
+
+# To only match full words, we will need to make use of regular expressions here—in particular,
+# our pattern will need to specify word boundaries (\b).[3]
+f5 = df3[df3['col'].str.contains(r'\bblue\b')]
+print(f5)
+
 # Reference:
 # 1. https://stackoverflow.com/questions/11350770/select-by-partial-string-from-a-pandas-dataframe
 # 2. https://stackoverflow.com/a/67749217
