@@ -16,3 +16,32 @@ print(weekly_index)
 
 weekly_index2 = pd.date_range(start='2021-07-06', end='2021-08-31', freq='W-SUN')
 print(weekly_index2)
+
+# Construct a DataFrame based on the weekly_index.
+# This could be the visitor count of a museum that only opens on Sundays.
+count = pd.DataFrame(data=[21, 15, 33, 34], columns=['visitors'], index=weekly_index)
+print(count)
+
+msft = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv')
+print(msft)
+print(msft.info())
+
+msft.loc[:, 'Date'] = pd.to_datetime(msft['Date'])
+print(msft.dtypes)
+print(msft)
+print(msft.info())
+
+print(30*'=')
+
+microsoft = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                        index_col='Date', parse_dates=['Date'])
+print(microsoft)
+print(microsoft.info())
+
+print(30*'=')
+
+microsoft2 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                         parse_dates=['Date'])
+print(microsoft2)
+print(microsoft2.info())
+print(microsoft2.dtypes)
