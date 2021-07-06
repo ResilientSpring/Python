@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 df = pd.DataFrame({
     'col1': ['A', 'A', 'B', np.nan, 'D', 'C'],
@@ -9,4 +10,7 @@ df = pd.DataFrame({
 
 print(df)
 
+df = df.sort_values(by=['col1'])
+print(df)
 
+# Reference: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html

@@ -6,5 +6,5 @@ print(microsoft)
 print(microsoft.info())
 print(microsoft.describe())
 
-microsoft = microsoft.sort_values(by='Date')
+microsoft = microsoft.sort_values(by=['Date'])
 print(microsoft)
