@@ -93,3 +93,7 @@ print(30*'=')
 
 microsoft = microsoft.sort_index()
 print(microsoft)
+
+# If you need to access only parts of a DatetimeIndex, like the date part without the time,
+# access the date attribute like this:
+print(microsoft.index.date)
