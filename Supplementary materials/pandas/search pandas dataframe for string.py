@@ -55,3 +55,4 @@ print(f5)
 # 1. https://stackoverflow.com/questions/11350770/select-by-partial-string-from-a-pandas-dataframe
 # 2. https://stackoverflow.com/a/67749217
 # 3. https://stackoverflow.com/a/55335207
+# 4. https://www.google.com/search?q=search+pandas+dataframe+for+string&oq=search+pandas+dataframe+for+&aqs=chrome.2.69i57j0l2j0i20i263j0i22i30l6.10657j0j7&sourceid=chrome&ie=UTF-8
