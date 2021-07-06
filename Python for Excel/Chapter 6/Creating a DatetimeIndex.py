@@ -26,6 +26,8 @@ msft = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel
 print(msft)
 print(msft.info())
 
+# Make sure to assign the transformed column back to the original DataFrame
+# if you want to change the original DataFrame:
 msft.loc[:, 'Date'] = pd.to_datetime(msft['Date'])
 print(msft.dtypes)
 print(msft)
@@ -45,3 +47,36 @@ microsoft2 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for
 print(microsoft2)
 print(microsoft2.info())
 print(microsoft2.dtypes)
+
+print(30*'=')
+
+# Column type conversion (method 1)
+microsoft3 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                         parse_dates=['Date'], dtype={"Volume": float})
+print(microsoft3)
+print(microsoft3.info())
+print(microsoft3.dtypes)
+
+print(30*'=')
+
+# Column type conversion (method 2)
+microsoft4 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                         parse_dates=['Date'])
+microsoft4.loc[:, 'Volume'] = microsoft4['Volume'].astype('float')
+print(microsoft4['Volume'].dtype)
+
+print(30*'=')
+
+# My personal experiments
+microsoft5 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                         parse_dates=['Date'])
+microsoft5['Volume'] = microsoft5['Volume'].astype('float')
+print(microsoft5['Volume'].dtype)
+
+print(30*'=')
+
+# My personal experiments
+microsoft6 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                         parse_dates=['Date'])
+microsoft6['Volume'].astype('float')
+print(microsoft6['Volume'].dtype)
