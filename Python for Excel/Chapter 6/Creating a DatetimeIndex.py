@@ -80,3 +80,16 @@ microsoft6 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for
                          parse_dates=['Date'])
 microsoft6['Volume'].astype('float')
 print(microsoft6['Volume'].dtype)
+
+print(30*'=')
+
+# My personal experiments
+microsoft7 = pd.read_csv('https://raw.githubusercontent.com/fzumstein/python-for-excel/1st-edition/csv/MSFT.csv',
+                         parse_dates=['Date'])
+# microsoft7['Volume'].astype('float', inplace=True)
+print(microsoft7['Volume'].dtype)
+
+print(30*'=')
+
+microsoft = microsoft.sort_index()
+print(microsoft)
