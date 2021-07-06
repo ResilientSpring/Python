@@ -51,3 +51,16 @@ print(result)
 condition = df2['country'] == ('Italy' and 'Germany')
 resulting = df2[condition]
 print(resulting)
+
+# This could be the yearly rainfall in millimeters
+rainfall = pd.DataFrame(data={'City 1': [300.1, 100.2],
+                              'City 2': [400.3, 300.4],
+                              'City 3': [1000.5, 1100.6]})
+
+print(rainfall)
+
+condition = rainfall < 400
+print(condition)
+
+selected_rainfall = rainfall[condition]
+print(selected_rainfall)
