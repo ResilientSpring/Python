@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
+# Using the magic encoding
+# -*- coding: utf-8 -*-
 
 
 # Convert wiki-table in the article 高等教育深耕計畫[4] to csv.[2][3]
@@ -169,3 +171,46 @@ private_vocational_centric_university = pd.DataFrame(data=[
     [65, "蘭陽技術學院", "Lan Yang Institute of Technology", 447, "North"]
 ])
 
+print(public_research_centric_university)
+
+header = ['Number', 'Chinese name', 'English name', 'Budget_received', 'Location', 'Note']
+
+# Adding a header to National universities of R&D
+public_research_centric_university.columns = header
+print(public_research_centric_university)
+
+# Filter the universities in the north.
+condition = public_research_centric_university['Location'] == "North"
+north_public_research = public_research_centric_university[condition]
+print(north_public_research)
+
+# Sum of the budget in the north.
+total_north_public_research = north_public_research['Budget_received'].sum()
+print(total_north_public_research)
+
+# Filter the universities in the south.
+condition = public_research_centric_university['Location'] == "South"
+south_public_research = public_research_centric_university[condition]
+print(south_public_research)
+
+# Sum of the budget inn the south.
+total_south_public_research = south_public_research['Budget_received'].sum()
+print(total_south_public_research)
+
+# The histogram of the data
+plt.bar(['North', 'South'], [total_north_public_research, total_south_public_research])
+
+plt.xlabel('Location (Northern Taiwan and Southern Taiwan, divided by Zhushui river)')
+plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
+plt.title('Government budget support for\n'
+          'public research centric universities (國立大學)\n'
+          'in North vs South', fontproperties="SimSun") # [1]
+
+# Tweak spacing to prevent clipping of ylabel
+plt.tight_layout()
+
+plt.savefig('Total_difference.jpg')
+plt.show()
+
+# References:
+# 1. web.archive.org/web/20210707115824/https://codertw.com/程式語言/359974/
