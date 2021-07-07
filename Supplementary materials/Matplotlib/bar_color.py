@@ -15,3 +15,5 @@ plt.show()
 
 plt.bar(x, y, color = "red")
 plt.show()
+
+# Source: https://www.w3schools.com/python/matplotlib_bars.asp
