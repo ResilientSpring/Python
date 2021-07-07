@@ -195,15 +195,15 @@ print(south_public_research)
 total_south_public_research = south_public_research['Budget_received'].sum()
 print(total_south_public_research)
 
-fig, ax = plt.subplots()
-
 # The histogram of the data
-plt.bar([total_north_public_research, total_south_public_research], height=[100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000])
-plt.xticks([total_north_public_research, total_south_public_research], ['North', 'South'])
-plt.xlabel(['Universities in northern Taiwan versus that in southern Taiwan'])
+plt.bar(['North', 'South'], [total_north_public_research, total_south_public_research])
+
+plt.xlabel('Location (Northern Taiwan and Southern Taiwan)')
 plt.ylabel('10 thousands New Taiwan Dollars')
-plt.title(r'Government budget support for the universities in North versus South')
+plt.title(r'Government budget support for the universities in North vs South')
 
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
+
+plt.savefig('Total_difference.jpg')
 plt.show()
