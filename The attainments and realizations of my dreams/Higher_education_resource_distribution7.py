@@ -200,8 +200,8 @@ print(total_south_public_research)
 # The histogram of the data
 plt.bar(['North', 'South'], [total_north_public_research, total_south_public_research])
 
-plt.xlabel('Location (Northern Taiwan and Southern Taiwan)')
-plt.ylabel('10 thousands New Taiwan Dollars')
+plt.xlabel('Location (Northern Taiwan and Southern Taiwan, divided by Zhushui river)')
+plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
 plt.title('Government budget support for\n'
           'public research centric universities (國立大學)\n'
           'in North vs South', fontproperties="SimSun") # [1]
