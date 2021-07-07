@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
+# Using the magic encoding
+# -*- coding: utf-8 -*-
 
 
 # Convert wiki-table in the article 高等教育深耕計畫[4] to csv.[2][3]
@@ -200,10 +202,15 @@ plt.bar(['North', 'South'], [total_north_public_research, total_south_public_res
 
 plt.xlabel('Location (Northern Taiwan and Southern Taiwan)')
 plt.ylabel('10 thousands New Taiwan Dollars')
-plt.title(r'Government budget support for the universities in North vs South')
+plt.title('Government budget support for\n'
+          'public research centric universities (國立大學)\n'
+          'in North vs South', fontproperties="SimSun") # [1]
 
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
 
 plt.savefig('Total_difference.jpg')
 plt.show()
+
+# References:
+# 1. web.archive.org/web/20210707115824/https://codertw.com/程式語言/359974/
