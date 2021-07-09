@@ -203,8 +203,8 @@ plt.bar(['North', 'South'], [total_north_public_research, total_south_public_res
 plt.xlabel('Location (Northern Taiwan and Southern Taiwan, divided by Zhushui river)')
 plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
 plt.title('Government budget support for\n'
-          'public research centric universities (國立大學)\n'
-          'in North vs South', fontproperties="SimSun") # [1]
+          'public research-centric universities (國立大學)\n'
+          'in North vs South in 2020', fontproperties="SimSun") # [1]
 
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
