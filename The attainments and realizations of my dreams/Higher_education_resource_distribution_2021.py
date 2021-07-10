@@ -198,7 +198,7 @@ total_south_public_research = south_public_research['Budget_received'].sum()
 print(total_south_public_research)
 
 # The histogram of the data
-plt.bar(['North Taiwan', 'Southern Taiwan'], [total_north_public_research, total_south_public_research])
+plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_public_research, total_south_public_research])
 
 plt.xlabel('Location (divided by Zhushui river)')
 plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
