@@ -49,7 +49,7 @@ condition = university['Location'] == 'South'
 south_university = university[condition]
 print(south_university)
 
-# Sum of the budget inn the south.
+# Sum of the budget in the south.
 total_south_university = south_university['Budget_received'].sum()
 print(total_south_university)
 
