@@ -33,3 +33,37 @@ header = ['Number', 'Chinese name', 'English name', 'Budget_received', 'Location
 
 # Adding a header to universities of R&D
 university.columns = header
+print(university)
+
+# Filter the universities in the north.
+condition = university['Location'] == 'North'
+north_university = university[condition]
+print(north_university)
+
+# Sum of the budget in the north.
+total_north_university = north_university['Budget_received'].sum()
+print(total_north_university)
+
+# Filter the universities in the south.
+condition = university['Location'] == 'South'
+south_university = university[condition]
+print(south_university)
+
+# Sum of the budget inn the south.
+total_south_university = south_university['Budget_received'].sum()
+print(total_south_university)
+
+# The histogram of the data
+plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_university, total_south_university])
+
+plt.xlabel('Location (divided by Zhushui river)')
+plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
+plt.title('Government budget support for\n'
+          'research-centric universities\n'
+          'in North vs South in 2006', fontproperties="SimSun") # [1]
+
+# Tweak spacing to prevent clipping of ylabel
+plt.tight_layout()
+
+plt.savefig('Total_difference_2006.jpg')
+plt.show()
