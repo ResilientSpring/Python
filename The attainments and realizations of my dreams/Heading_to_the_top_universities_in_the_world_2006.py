@@ -26,3 +26,10 @@ university = pd.DataFrame(data=[
     [15, "臺北醫學大學", "Taipei Medical University", 10000, "North"],
     [16, "國立臺灣師範大學", "National Taiwan Normal University", 9000, "North", ],
 ])
+
+print(university)
+
+header = ['Number', 'Chinese name', 'English name', 'Budget_received', 'Location', 'Note']
+
+# Adding a header to universities of R&D
+university.columns = header
