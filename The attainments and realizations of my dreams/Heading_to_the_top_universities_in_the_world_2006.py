@@ -11,5 +11,18 @@ import matplotlib.pyplot as plt
 university = pd.DataFrame(data=[
     [1, "國立臺灣大學", "National Taiwan University", 300000, "North", ],
     [2, "國立成功大學", "National Cheng Kung University", 170000, "South", ],
-    [3, "國立清華大學", "National Tsing Hua University", 100000, "North", "Derived from Beijing, China's Tsing Hua University"]
+    [3, "國立清華大學", "National Tsing Hua University", 100000, "North", "Derived from Beijing, China's Tsing Hua University"],
+    [4, "國立交通大學", "National Chiao Tung University", 80000, "North", "Derived from Shanghai, China's ChiaoTung University"],
+    [5, "國立中央大學", "National Central University", 60000, "North", ],
+    [6, "國立中山大學", "National Sun Yat-sen University", 60000, "South", "Derived from Guangzou, China's Sun Yat-sen University"],
+    [7, "國立陽明大學", "National Yang Ming University", 50000, "North", ],
+    [8, "國立中興大學", "National Chung Hsing University", 40000, "North", ],
+    [9, "國立臺灣科技大學", "National Taiwan University of Science and Technology", 30000, "North"],
+    [10, "國立政治大學", "National Chengchi University", 30000, "North", "Literally, 'National Politics University'"],
+    [11, "長庚大學", "Chang Gung University", 30000, "North"],
+    [12, "元智大學", "Yuan Ze University", 30000, "North"],
+    [13, "國立臺灣海洋大學", "National Taiwan Ocean University", 14000, "North", ],
+    [14, "中原大學", "Chung Yuan Christian University", 14000, "North"],
+    [15, "臺北醫學大學", "Taipei Medical University", 10000, "North"],
+    [16, "國立臺灣師範大學", "National Taiwan Normal University", 9000, "North", ],
 ])
