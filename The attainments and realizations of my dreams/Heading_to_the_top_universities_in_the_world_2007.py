@@ -56,14 +56,22 @@ print(total_south_university)
 # The histogram of the data
 plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_university, total_south_university])
 
-plt.xlabel('Location (divided by Zhushui river)')
+plt.xlabel('Location (divided by Zhushui river)\n'
+           'Dataset:\nhttps://web.archive.org/web/20210615094117/'
+           'https://zh.wikipedia.org/wiki/邁向頂尖大學計畫',
+           fontproperties="MS Gothic", fontsize=9) #[1]
+
 plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
+
 plt.title('Government budget support for\n'
           'research-centric universities\n'
-          'in North vs South in 2007', fontproperties="SimSun") # [1]
+          'in North vs South in 2007', fontproperties="Arial")
 
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
 
 plt.savefig('Total_difference_2007.jpg')
 plt.show()
+
+# References:
+# 1. https://stackoverflow.com/a/12444777/14900011
