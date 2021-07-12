@@ -73,7 +73,9 @@ plt.tight_layout()
 plt.savefig('Total_difference_2010.jpg')
 plt.show()
 
-pd.DataFrame.to_excel("Heading_to_the_top_universities_in_the_world_2010")
+university.to_excel("Heading_to_the_top_universities_in_the_world_2010.xlsx",
+                    sheet_name="Output", startrow=1, startcol=1, index=True, header=True,
+                    na_rep='<NA>', inf_rep='<INF>')
 
 # References:
 # 1. https://stackoverflow.com/a/12444777/14900011
