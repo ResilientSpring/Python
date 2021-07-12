@@ -21,8 +21,10 @@ university = pd.DataFrame(data=[
     [10, "國立政治大學", "National Chengchi University", 19000, "North", "Literally, 'National Politics University'"],
     [11, "國立臺灣科技大學", "National Taiwan University of Science and Technology", 17000, "North"],
     [12, "國立臺灣師範大學", "National Taiwan Normal University", 20000, "North", ],
-    [13, "國立臺灣海洋大學", "National Taiwan Ocean University", 10000, "North", ],
-    [14, "國立中正大學", "National Chung Cheng University", 10000, "South", "Literally, National Chiang Chung-cheng University"],
+    [13, "國立臺灣海洋大學", "National Taiwan Ocean University", 5000, "North", ],
+    [14, "中國醫藥大學", "China Medical University", 5000, "North"],
+    [15, "臺北醫學大學", "Taipei Medical University", 5000, "North"],
+    [16, "元智大學", "Yuan Ze University", 3000, "North"],
 ])
 
 print(university)
