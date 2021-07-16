@@ -1,6 +1,7 @@
 import pandas as pd
 import Time_Series_Generator
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 number_of_steps = 50
 
@@ -31,3 +32,12 @@ model = tf.keras.models.Sequential([
 
 model.compile(loss="mse", optimizer="adam")
 history = model.fit(X_train, y_train, epochs=20, validation_data=(X_valid, Y_valid))
+
+model.evaluate(X_test, Y_test)
+
+y_prediction = model.predict(x=X_test)
+
+pd.DataFrame(history.history).plot(figsize=(8, 5))
+plt.grid(True)
+plt.gca().set_ylim(0, 1)
+plt.show()
