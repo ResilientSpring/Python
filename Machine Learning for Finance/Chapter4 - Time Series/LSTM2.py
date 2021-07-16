@@ -183,14 +183,12 @@ from tensorflow.keras.layers import Conv1D, MaxPool1D, Dense, Activation, Global
 number_of_features = 29
 max_length = 100
 
-model = Sequential([Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu', padding='causal', dilation_rate=4),
-                    MaxPool1D(pool_size=5),
-                    Conv1D(filters=16, kernel_size=5, activation='relu', padding='causal', dilation_rate=4),
-                    MaxPool1D(5),
+
+model = Sequential([LSTM(units=16, input_shape=(max_length, number_of_features)),
                     Flatten(),
                     Dense(units=1)])
 
-model.compile(optimizer='adam', loss=mean_absolute_percentage_error)
+model.compile(optimizer='adam', loss='mean_absolute_percentage_error')
 
 from sklearn.model_selection import train_test_split
 
@@ -204,9 +202,8 @@ n_val_samples = val_df.shape[0]
 
 a, b = next(train_gen)
 
-number_of_features = 29
-max_length = 100
-
-model = Sequential([LSTM(units=16, input_shape=(max_length, number_of_features)),
-                    Dense(units=1)])
-
+model.fit(train_gen,
+          epochs=1,
+          steps_per_epoch=n_train_samples // batch_size,
+          validation_data=val_gen,
+          validation_steps=n_val_samples // batch_size)
