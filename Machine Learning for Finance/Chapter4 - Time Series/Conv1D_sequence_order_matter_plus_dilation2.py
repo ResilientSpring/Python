@@ -182,12 +182,13 @@ from tensorflow.keras.layers import Conv1D, MaxPool1D, Dense, Activation, Global
 number_of_features = 29
 max_length = 100
 
-model = Sequential([Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu', padding='causal', dilation_rate=4),
-                    MaxPool1D(pool_size=5),
-                    Conv1D(filters=16, kernel_size=5, activation='relu', padding='causal', dilation_rate=4),
-                    MaxPool1D(5),
-                    Flatten(),
-                    Dense(units=1)])
+model = Sequential(
+    [Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu', padding='causal', dilation_rate=4),
+     MaxPool1D(pool_size=5),
+     Conv1D(filters=16, kernel_size=5, activation='relu', padding='causal', dilation_rate=4),
+     MaxPool1D(5),
+     Flatten(),
+     Dense(units=1)])
 
 model.compile(optimizer='adam', loss=mean_absolute_percentage_error)
 
@@ -203,8 +204,17 @@ n_val_samples = val_df.shape[0]
 
 a, b = next(train_gen)
 
-model.fit_generator(train_gen,
-                    epochs=1,
-                    steps_per_epoch=n_train_samples // batch_size,
-                    validation_data=val_gen,
-                    validation_steps=n_val_samples // batch_size)
+history = model.fit_generator(train_gen,
+                              epochs=1,
+                              steps_per_epoch=n_train_samples // batch_size,
+                              validation_data=val_gen,
+                              validation_steps=n_val_samples // batch_size)
+
+plt.figure()
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.title('Conv1D_sequence_order_matters plus dilated convolution')
+plt.savefig('Conv1D_sequence_order_matters_plus_dilated convolution.jpg')
+plt.show()
