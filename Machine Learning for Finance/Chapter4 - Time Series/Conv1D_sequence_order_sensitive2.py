@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 train = pd.read_csv('train_1.csv').fillna(0)
 print(train.head())
@@ -202,8 +203,16 @@ n_val_samples = val_df.shape[0]
 
 a, b = next(train_gen)
 
-model.fit(train_gen,
-          epochs=10,
-          steps_per_epoch=n_train_samples // batch_size,
-          validation_data=val_gen,
-          validation_steps=n_val_samples // batch_size)
+history = model.fit(train_gen,
+                    epochs=10,
+                    steps_per_epoch=n_train_samples // batch_size,
+                    validation_data=val_gen,
+                    validation_steps=n_val_samples // batch_size)
+
+plt.figure()
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.title('Conv1D_sequence_order_sensitive.jpg')
+plt.show()
