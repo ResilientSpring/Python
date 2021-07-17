@@ -181,9 +181,9 @@ from tensorflow.keras.layers import Conv1D, MaxPool1D, Dense, Activation, Global
 number_of_features = 29
 max_length = 100
 
-model = Sequential([Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu'),
+model = Sequential([Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu', padding='causal'),
                     MaxPool1D(pool_size=5),
-                    Conv1D(filters=16, kernel_size=5, activation='relu'),
+                    Conv1D(filters=16, kernel_size=5, activation='relu', padding='causal'),
                     MaxPool1D(5),
                     Flatten(),
                     Dense(units=1)])
