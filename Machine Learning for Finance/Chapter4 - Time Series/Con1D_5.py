@@ -182,9 +182,9 @@ from tensorflow.keras.layers import Conv1D, MaxPool1D, Dense, Activation, Global
 number_of_features = 29
 max_length = 100
 
-model = Sequential([Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu', padding='causal'),
+model = Sequential([Conv1D(filters=16, kernel_size=5, input_shape=(100, 29), activation='relu'),
                     MaxPool1D(pool_size=5),
-                    Conv1D(filters=16, kernel_size=5, activation='relu', padding='causal'),
+                    Conv1D(filters=16, kernel_size=5, activation='relu'),
                     MaxPool1D(5),
                     Flatten(),
                     Dense(units=1)])
@@ -214,6 +214,6 @@ plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.ylabel('loss')
 plt.xlabel('epoch')
-plt.title('Conv1D_sequence_order_sensitive')
-plt.savefig('Conv1D_sequence_order_sensitive.jpg')
+plt.title('Conv1D')
+plt.savefig('Conv1D.jpg')
 plt.show()
