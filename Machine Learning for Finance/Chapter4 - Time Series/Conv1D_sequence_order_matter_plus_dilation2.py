@@ -205,7 +205,7 @@ n_val_samples = val_df.shape[0]
 a, b = next(train_gen)
 
 history = model.fit_generator(train_gen,
-                              epochs=1,
+                              epochs=10,
                               steps_per_epoch=n_train_samples // batch_size,
                               validation_data=val_gen,
                               validation_steps=n_val_samples // batch_size)
