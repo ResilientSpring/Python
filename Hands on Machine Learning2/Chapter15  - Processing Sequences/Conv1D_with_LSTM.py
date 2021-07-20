@@ -24,7 +24,7 @@ model = Sequential([Conv1D(filters=20, kernel_size=4, strides=2, padding='valid'
                            input_shape=[None, 1]),
                     LSTM(units=20, return_sequences=True),
                     LSTM(units=20, return_sequences=True),
-                    Conv1D(units=10, kernel_size=1)])
+                    Conv1D(filters=10, kernel_size=1)])
 
 model.compile(loss='mse', optimizer='adam')
 
