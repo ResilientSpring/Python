@@ -3,7 +3,7 @@ import Time_Series_Generator
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv1D, LSTM, GRU
+from tensorflow.keras.layers import Conv1D, LSTM, GRU, TimeDistributed, Dense
 
 number_of_steps = 50
 
@@ -24,7 +24,7 @@ model = Sequential([Conv1D(filters=20, kernel_size=4, strides=2, padding='valid'
                            input_shape=[None, 1]),
                     GRU(units=20, return_sequences=True),
                     GRU(units=20, return_sequences=True),
-                    Conv1D(filters=10, kernel_size=1)])
+                    TimeDistributed(Dense(units=10))])
 
 model.compile(loss='mse', optimizer='adam')
 
@@ -36,5 +36,5 @@ plt.plot(history.history['val_loss'])
 plt.xlabel('epoch')
 plt.ylabel('loss')
 plt.legend(['loss, val_loss'])
-plt.title('Conv1D_with_GRU2.jpg')
+plt.title('Conv1D_with_GRU3.jpg')
 plt.show()
