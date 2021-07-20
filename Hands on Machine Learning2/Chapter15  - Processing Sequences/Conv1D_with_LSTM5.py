@@ -46,4 +46,4 @@ plt.legend(['loss, val_loss'])
 plt.title('Conv1D_with_LSTM5.jpg')
 plt.show()
 
-
+# Reference: https://stackoverflow.com/questions/63315046/function-call-stack-train-function
