@@ -28,7 +28,7 @@ model = Sequential([Conv1D(filters=20, kernel_size=4, strides=2, padding='valid'
 
 model.compile(loss='mse', optimizer='adam')
 
-history = model.fit(x=X_train, y=y_train, epochs=20, validation_data=(X_valid, Y_valid))
+history = model.fit(x=X_train, y=y_train[:, 3::2], epochs=20, validation_data=(X_valid, Y_valid[:, 3::2]))
 
 plt.figure()
 plt.plot(history.history['loss'])
