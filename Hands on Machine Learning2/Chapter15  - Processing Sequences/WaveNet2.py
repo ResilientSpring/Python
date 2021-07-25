@@ -19,6 +19,7 @@ tf.random.set_seed(42)
 
 model = Sequential()
 model.add(InputLayer(input_shape=[None, 1]))
+
 for rate in (1, 2, 4, 8) * 2:
     model.add(Conv1D(filters=20, kernel_size=2, padding='causal', activation='relu',
                      dilation_rate=rate))
