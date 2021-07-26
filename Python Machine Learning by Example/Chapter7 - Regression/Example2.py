@@ -72,11 +72,11 @@ data_raw = pd.read_csv('19920103_20191231.csv', index_col='Date',
                        thousands=r',', dayfirst=True)
 data = generate_features(data_raw)
 
-start_train = '1992-01-03'
-end_train = '2018-12-29'
+start_train = '3-Jan-92'
+end_train = '29-Dec-18'
 
-start_test = '2019-01-01'
-end_test = '2019-12-31'
+start_test = '1-Jan-19'
+end_test = '31-Dec-19'
 
 data_train = data.loc[start_train:end_train]
 X_train = data_train.drop('close', axis=1).values
