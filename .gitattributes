@@ -1,1 +1,14 @@
 
+*.idx3_ubyte !text !filter !merge !diff
+train_images_idx3_ubyte !text !filter !merge !diff
+data_batch_3 !text !filter !merge !diff
+data_batch_1 !text !filter !merge !diff
+data_batch_2 !text !filter !merge !diff
+data_batch_4 !text !filter !merge !diff
+data_batch_5 !text !filter !merge !diff
+test_batch !text !filter !merge !diff
+*.xslx !text !filter !merge !diff
+*.csv !text !filter !merge !diff
+mnist_train.csv filter=lfs diff=lfs merge=lfs -text
+train_1.csv filter=lfs diff=lfs merge=lfs -text
+trainee.csv filter=lfs diff=lfs merge=lfs -text
