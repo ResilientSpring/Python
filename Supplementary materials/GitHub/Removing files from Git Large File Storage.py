@@ -27,16 +27,17 @@
 # for instance by running the info mode and by examining your rewritten commit history.[1]
 #
 # Once you are satisfied with the changes, you will need to force-push the new Git history of
-# any rewritten branches to all your remotes.
+# any rewritten branches to all your remotes.[5]
 # This is a step which should be taken with care, since you will be altering the Git history
 # on your remotes.[1]
 
 # You can "convert" your repository back to a plain Git repository with git lfs migrate export.[4]
 # You can confirm the type of file that Git LFS is managing by typing git lfs ls-files.[4]
-# Once you've made your commits, push your files to the Git remote: git lfs push origin Laptop.[4]
+# Once you've made your commits, push your files to the Git remote: git push origin Laptop.[4]
 
 # References:
 # 1. https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.1.ronn?utm_source=gitlfs_site&utm_medium=doc_man_migrate_link&utm_campaign=gitlfs
 # 2. https://git-lfs.github.com/
 # 3. https://docs.github.com/en/github/managing-large-files/removing-files-from-git-large-file-storage
 # 4. https://github.com/git-lfs/git-lfs#getting-started
+# 5. https://web.archive.org/web/20210308033203/https://www.atlassian.com/git/tutorials/syncing/git-push
