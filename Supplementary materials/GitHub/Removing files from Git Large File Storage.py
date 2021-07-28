@@ -32,6 +32,8 @@
 # on your remotes.[1]
 
 # You can "convert" your repository back to a plain Git repository with git lfs migrate export.[4]
+# You can confirm the type of file that Git LFS is managing by typing git lfs ls-files.[4]
+# Once you've made your commits, push your files to the Git remote: git lfs push origin Laptop.[4]
 
 # References:
 # 1. https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.1.ronn?utm_source=gitlfs_site&utm_medium=doc_man_migrate_link&utm_campaign=gitlfs
