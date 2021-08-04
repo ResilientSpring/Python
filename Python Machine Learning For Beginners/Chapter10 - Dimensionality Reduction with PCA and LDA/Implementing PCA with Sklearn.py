@@ -7,6 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
 
 # importing the dataset
 iris_df = sns.load_dataset("iris");
@@ -62,3 +63,10 @@ logistic_regression.fit(X=X_train, y=y_train)
 y_prediction = logistic_regression.predict(X=X_test)
 
 print(accuracy_score(y_true=y_test, y_pred=y_prediction))
+
+# With two features, you can easily visualize the dataset.
+## Print the actual data points.
+plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c=y_test, cmap='rainbow')
+plt.title("Print actual data points")
+plt.savefig('Dimensionality_reduction_from_4_to_2.jpg')
+plt.show()
