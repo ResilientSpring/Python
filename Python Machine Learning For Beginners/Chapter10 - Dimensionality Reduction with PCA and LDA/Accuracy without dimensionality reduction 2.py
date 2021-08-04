@@ -32,31 +32,6 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-# Creating object of PCA class
-pca = PCA()
-
-# Training PCA model on training data
-X_train_PCAed = pca.fit_transform(X_train)
-
-# Making predictions on test data
-X_test_PCAed = pca.transform(X_test)
-
-print(X_train_PCAed)
-print('=' * 30)
-print(X_test_PCAed)
-print('=' * 30)
-
-# How much variance does the first, second, third, and fourth principal component cause?
-variance_ratio = pca.explained_variance_ratio_
-print(variance_ratio)
-
-# According to the variance_ratio, select the two principal components that caused a
-# collective variance of 96.19% (72.22% + 23.97% = 96.19%)
-pca2 = PCA(n_components=2)
-
-X_train = pca2.fit_transform(X_train)
-X_test = pca2.transform(X_test)
-
 logistic_regression = LogisticRegression()
 logistic_regression.fit(X=X_train, y=y_train)
 
@@ -64,20 +39,8 @@ y_prediction = logistic_regression.predict(X=X_test)
 
 print(accuracy_score(y_true=y_test, y_pred=y_prediction))
 
-# With two features, you can easily visualize the dataset.
+# With four features, visualize the dataset.
 ## Print the actual data points.
 plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c=y_test, cmap='rainbow')
 plt.title("Print actual data points")
 plt.show()
-
-print(X_test[:, 0])
-print('=' * 30)
-print(X_test[:, 1])
-
-print('=' * 30)
-
-print(X_test)
-
-print('=' * 30)
-
-print(X_train)
