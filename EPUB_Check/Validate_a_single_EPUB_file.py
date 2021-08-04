@@ -1,6 +1,6 @@
 from epubcheck import EpubCheck
 
-result = EpubCheck('')
+result = EpubCheck()
 
 print(result.valid)
 print(result.messages)
