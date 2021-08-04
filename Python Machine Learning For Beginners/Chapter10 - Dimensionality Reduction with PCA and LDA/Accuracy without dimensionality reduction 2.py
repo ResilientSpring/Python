@@ -44,3 +44,16 @@ print(accuracy_score(y_true=y_test, y_pred=y_prediction))
 plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c=y_test, cmap='rainbow')
 plt.title("Print actual data points")
 plt.show()
+
+print(X_test[:, 0])
+print('=' * 30)
+print(X_test[:, 1])
+
+print('=' * 30)
+
+print(X_test)
+
+print('=' * 30)
+
+print(X_train)
+
