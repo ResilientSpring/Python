@@ -70,3 +70,21 @@ print(south_public_research)
 # Sum of the budget inn the south.
 total_south_public_research = south_public_research['Budget_received'].sum()
 print(total_south_public_research)
+
+# The histogram of the data
+plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_public_research, total_south_public_research])
+
+plt.xlabel('Location (divided by Zhuoshui River)\n\n'
+           'Dataset: https://sprout.moe.edu.tw/SproutWeb/Project/DocDownload\n',
+           fontproperties="Arial", fontsize=9)
+
+plt.ylabel('Unit: 10 thousands of New Taiwan Dollar')
+plt.title('Government budget support for\n'
+          'public research universities (國立大學)\n'
+          'in North vs South in 2019', fontproperties="MS Gothic")
+
+# Tweak spacing to prevent clipping of ylabel
+plt.tight_layout()
+
+plt.savefig('Total_difference_2019.jpg')
+plt.show()
