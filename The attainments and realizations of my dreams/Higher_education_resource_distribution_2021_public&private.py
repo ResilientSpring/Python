@@ -209,7 +209,7 @@ plt.title('Government budget support for\n'
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
 
-plt.savefig('Total_difference_2021.jpg')
+plt.savefig('Total_difference_2021_public&private.jpg')
 plt.show()
 
 # References:
