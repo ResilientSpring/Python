@@ -200,7 +200,10 @@ print(total_south_public_research)
 # The histogram of the data
 plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_public_research, total_south_public_research])
 
-plt.xlabel('Location (divided by Zhushui river)')
+plt.xlabel('Location (divided by Zhushui river)\n'
+           'Dataset:https://sprout.moe.edu.tw/SproutWeb/Project/DocDownload\n',
+           fontproperties="MS Gothic", fontsize=9)
+
 plt.ylabel('Unit: 10 thousands of New Taiwan Dollars')
 plt.title('Government budget support for\n'
           'public research-centric universities (國立大學)\n'
@@ -209,7 +212,7 @@ plt.title('Government budget support for\n'
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
 
-plt.savefig('Total_difference_2021_public&private.jpg')
+plt.savefig('Total_difference_2021_.jpg')
 plt.show()
 
 # References:
