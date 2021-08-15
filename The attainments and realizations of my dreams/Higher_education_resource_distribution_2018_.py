@@ -46,7 +46,7 @@ public_research_centric_university = pd.DataFrame(data=[
 ])
 
 public_vocational_centric_university = pd.DataFrame(data=[
-    [1, "國立高雄科技大學", "National Kaohsiung University of Science and Technology", 20123+14389+5422, "South"],
+    [1, "國立高雄科技大學", "National Kaohsiung University of Science and Technology", (20123+14389+5422), "South"],
     [2, "國立臺灣科技大學", "National Taiwan University of Science and Technology", 31600, "North"],
     [3, "國立臺北科技大學", "National Taipei University of Technology", 27887, "North"],
     [4, "國立虎尾科技大學", "National Formosa University", 22684, "South"],
@@ -103,3 +103,68 @@ private_research_centric_university = pd.DataFrame(data=[
     [37, "法鼓文理學院", "Dharma Drum Institute of Liberal Arts", 381, "North"],
     [38, "稻江科技暨管理學院", "DaouJian Institute", 202, "South"]
 ])
+
+print(public_research_centric_university)
+
+header = ['Number', 'Chinese name', 'English name', 'Budget_received', 'Location', 'Note']
+
+# Adding a header to National universities of R&D
+public_research_centric_university.columns = header
+print(public_research_centric_university)
+
+# Filter the universities in the north.
+condition = public_research_centric_university['Location'] == "North"
+north_public_research = public_research_centric_university[condition]
+print(north_public_research)
+
+# Sum of the budget in the north.
+total_north_public_research = north_public_research['Budget_received'].sum()
+print(total_north_public_research)
+
+# Filter the universities in the south.
+condition = public_research_centric_university['Location'] == "South"
+south_public_research = public_research_centric_university[condition]
+print(south_public_research)
+
+# Sum of the budget inn the south.
+total_south_public_research = south_public_research['Budget_received'].sum()
+print(total_south_public_research)
+
+
+header2 = ['Number', 'Chinese name', 'English name', 'Budget_received', 'Location']
+
+print(public_vocational_centric_university)
+
+public_vocational_centric_university.columns = header2
+print(public_vocational_centric_university)
+
+condition = public_vocational_centric_university['Location'] == "North"
+north_public_vocational = public_vocational_centric_university[condition]
+print(north_public_vocational)
+
+total_north_public_vocational = north_public_vocational['Budget_received'].sum()
+print(total_north_public_vocational)
+
+condition = public_vocational_centric_university['Location'] == "South"
+south_public_vocational = public_vocational_centric_university[condition]
+print(south_public_vocational)
+
+total_south_public_vocational = south_public_vocational['Budget_received'].sum()
+print(total_south_public_vocational)
+
+print(private_research_centric_university)
+private_research_centric_university.columns = header2
+print(private_research_centric_university)
+
+condition = private_research_centric_university["Location"] == "North"
+north_private_research = private_research_centric_university[condition]
+print(north_private_research)
+total_north_private_research = north_private_research['Budget_received'].sum()
+print(total_north_private_research)
+
+condition = private_research_centric_university["Location"] == "South"
+south_private_research = private_research_centric_university[condition]
+print(south_private_research)
+
+total_south_private_research = south_private_research['Budget_received'].sum()
+print(total_south_private_research)
