@@ -25,3 +25,13 @@ review_length = [len(x) for x in X_train]
 
 plt.hist(x=review_length, bins=10)
 plt.show()
+
+max_length = 200
+X_train = pad_sequences(X_train, maxlen=max_length)
+X_test = pad_sequences(X_test, maxlen=max_length)
+
+print('X_train shape after padding: ', X_train.shape)
+print('X_test shape after padding: ', X_test.shape)
+
+tf.random.set_seed(42)
+model = models.Sequential([])
