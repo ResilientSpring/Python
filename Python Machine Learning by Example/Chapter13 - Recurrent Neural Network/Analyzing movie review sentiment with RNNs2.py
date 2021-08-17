@@ -24,4 +24,5 @@ print([index_word.get(i, ' ') for i in X_train[0]])
 review_length = [len(x) for x in X_train]
 
 plt.hist(x=review_length, bins=5)
+plt.savefig('bins=5.jpg')
 plt.show()
