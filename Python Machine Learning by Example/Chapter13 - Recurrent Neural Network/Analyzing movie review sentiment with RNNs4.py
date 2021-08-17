@@ -24,5 +24,23 @@ print([index_word.get(i, ' ') for i in X_train[0]])
 review_length = [len(x) for x in X_train]
 
 plt.hist(x=review_length, bins=10)
-plt.savefig("Review_length_distribution.jpg")
 plt.show()
+
+max_length = 250
+X_train = pad_sequences(X_train, maxlen=max_length)
+X_test = pad_sequences(X_test, maxlen=max_length)
+
+print('X_train shape after padding: ', X_train.shape)
+print('X_test shape after padding: ', X_test.shape)
+
+tf.random.set_seed(42)
+model = models.Sequential([layers.Embedding(input_dim=5000, output_dim=32),
+                           layers.LSTM(units=50),
+                           layers.Dense(units=1, activation='sigmoid')])
+
+print(model.summary())
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.fit(x=X_train, y=y_train, batch_size=64, epochs=3, validation_data=(X_test, y_test))
+
+accuracy = model.evaluate(x=X_test, y=y_test, verbose=0)[1]
+print('Test accuracy: ', accuracy)
