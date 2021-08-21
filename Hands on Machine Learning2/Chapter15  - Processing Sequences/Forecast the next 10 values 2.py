@@ -87,4 +87,5 @@ X_new, Y_new = series[:, :50, :], series[:, 50:, :]
 Y_pred = model.predict(X_new)[:, -1][..., np.newaxis]
 
 plot_multiple_forecasts(X_new, Y_new, Y_pred)
+plt.savefig('Forecast the next 10 values')
 plt.show()
