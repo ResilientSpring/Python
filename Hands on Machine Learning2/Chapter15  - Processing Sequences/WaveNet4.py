@@ -66,5 +66,5 @@ model.evaluate(X_test, Y_test)
 
 plot_learning_curves(history.history["loss"], history.history["val_loss"])
 
-plt.savefig('LSTM_with_Conv1D')
+plt.savefig('WaveNet')
 plt.show()
