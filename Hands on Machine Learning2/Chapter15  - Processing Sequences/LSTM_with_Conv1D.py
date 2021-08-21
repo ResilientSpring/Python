@@ -64,6 +64,7 @@ Y = np.empty((10000, n_steps, 10))
 
 for step_ahead in range(1, 10 + 1):
     Y[..., step_ahead - 1] = series[..., step_ahead:step_ahead + n_steps, 0]
+
 Y_train = Y[:7000]
 Y_valid = Y[7000:9000]
 Y_test = Y[9000:]
@@ -81,5 +82,3 @@ model = tf.keras.models.Sequential([
 
 model.compile(loss="mse", optimizer="adam", metrics=[last_time_step_mse])
 history = model.fit(X_train, Y_train[:, 3::2], epochs=20, validation_data=(X_valid, Y_valid[:, 3::2]))
-
-
