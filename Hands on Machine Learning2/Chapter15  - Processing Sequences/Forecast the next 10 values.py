@@ -70,3 +70,12 @@ model = tf.keras.models.Sequential([
 model.compile(loss="mse", optimizer="adam")
 history = model.fit(X_train, Y_train, epochs=20, validation_data=(X_valid, Y_valid))
 
+
+np.random.seed(43)
+
+series = generate_time_series(1, 50 + 10)
+X_new, Y_new = series[:, :50, :], series[:, -10:, :]
+Y_pred = model.predict(X_new)[..., np.newaxis]
+
+plot_multiple_forecasts(X_new, Y_new, Y_pred)
+plt.show()
