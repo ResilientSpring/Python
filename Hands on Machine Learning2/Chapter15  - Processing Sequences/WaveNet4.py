@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import matplotlib as mpl
-import Time_Series_Generator as time
+import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, SimpleRNN, Conv1D, InputLayer
 
@@ -19,6 +19,17 @@ def generate_time_series(batch_size, n_steps):
 
 def last_time_step_mse(Y_true, Y_pred):
     return tf.keras.metrics.mean_squared_error(Y_true[:, -1], Y_pred[:, -1])
+
+
+def plot_learning_curves(loss, val_loss):
+    plt.plot(np.arange(len(loss)) + 0.5, loss, "b.-", label="Training loss")
+    plt.plot(np.arange(len(val_loss)) + 1, val_loss, "r.-", label="Validation loss")
+    plt.gca().xaxis.set_major_locator(mpl.ticker.MaxNLocator(integer=True))
+    plt.axis([1, 20, 0, 0.05])
+    plt.legend(fontsize=14)
+    plt.xlabel("Epochs")
+    plt.ylabel("Loss")
+    plt.grid(True)
 
 
 n_steps = 50
@@ -45,7 +56,15 @@ model = Sequential([Conv1D(filters=20, kernel_size=2, padding='causal', activati
                     Conv1D(filters=20, kernel_size=2, padding='causal', activation='relu',
                            dilation_rate=4),
                     Conv1D(filters=20, kernel_size=2, padding='causal', activation='relu',
-                           dilation_rate=8)])
+                           dilation_rate=8),
+                    Conv1D(filters=10, kernel_size=1, )])
 
 model.compile(loss="mse", optimizer="adam", metrics=[last_time_step_mse])
 history = model.fit(X_train, Y_train, epochs=20, validation_data=(X_valid, Y_valid))
+
+model.evaluate(X_test, Y_test)
+
+plot_learning_curves(history.history["loss"], history.history["val_loss"])
+
+plt.savefig('LSTM_with_Conv1D')
+plt.show()
