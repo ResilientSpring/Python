@@ -83,7 +83,7 @@ model = tf.keras.models.Sequential([
 model.compile(loss="mse", optimizer="adam", metrics=[last_time_step_mse])
 history = model.fit(X_train, Y_train[:, 3::2], epochs=20, validation_data=(X_valid, Y_valid[:, 3::2]))
 
-model.evaluate(X_valid, Y_valid)
+model.evaluate(X_test, Y_test[:, 3::2])
 
 plot_learning_curves(history.history["loss"], history.history["val_loss"])
 
