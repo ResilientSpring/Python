@@ -27,3 +27,11 @@ dataset_size = tokenizer.document_count # total number of characters.
 
 print("max_id: ", max_id)
 print('dataset_size: ', dataset_size)
+
+# Only top num_words-1 most frequent words will be taken into account. [1]
+# If the num_words argument was specific, the maximum possible index value is num_words - 1.[2]
+encoded = tokenizer.texts_to_sequences([shakespeare_text]) - 1
+
+# Reference:
+# 1. https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer#texts_to_sequences
+# 2. https://www.tensorflow.org/api_docs/python/tf/keras/datasets/imdb/load_data
