@@ -35,6 +35,8 @@ encoded = tokenizer.texts_to_sequences([shakespeare_text]) - 1
 # Take the first 90% of text as training set
 train_size = dataset_size * 90 // 100
 
+dataset = tf.data.Dataset.from_tensor_slices(encoded[:train_size])
+
 # Reference:
 # 1. https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer#texts_to_sequences
 # 2. https://www.tensorflow.org/api_docs/python/tf/keras/datasets/imdb/load_data
