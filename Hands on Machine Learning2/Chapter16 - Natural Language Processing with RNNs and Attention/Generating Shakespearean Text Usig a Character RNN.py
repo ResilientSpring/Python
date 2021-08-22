@@ -17,3 +17,9 @@ tokenizer = tf.keras.preprocessing.text.Tokenizer(char_level=True)
 tokenizer.fit_on_texts([shakespeare_text])
 
 print(tokenizer.texts_to_sequences(['First']))
+
+print(tokenizer.sequences_to_texts([[20, 6, 9, 8, 3]]))
+
+print(tokenizer.texts_to_sequences('Citizen'))
+
+print(tokenizer.sequences_to_texts([[19], [6], [3], [6], [36], [2], [10]]))
