@@ -25,4 +25,5 @@ print(tokenizer.sequences_to_texts([[20, 6, 9, 8, 3]]))
 max_id = len(tokenizer.word_index) # number of distinct characters
 dataset_size = tokenizer.document_count # total number of characters.
 
-encoded = tokenizer.texts_to_sequences([shakespeare_text])
+print("max_id: ", max_id, '\n')
+print('dataset_size: ', dataset_size)
