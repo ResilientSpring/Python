@@ -7,3 +7,13 @@ with open(filepath) as f:
 
 
 print(shakespeare_text[:148])
+
+# Initialize Java's tokenizer
+tokenizer = tf.keras.preprocessing.text.Tokenizer(char_level=True)
+
+# Fit a tokenizer to the text - tokenizer will find all the characters in the text and map them to
+# a different character ID, as char_level = True, from 1 to the number of distinct characters.
+# 0 is reserved for masking.
+tokenizer.fit_on_texts([shakespeare_text])
+
+print(tokenizer.texts_to_sequences(['First']))
