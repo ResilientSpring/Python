@@ -26,4 +26,4 @@ max_id = len(tokenizer.word_index) # number of distinct characters
 dataset_size = tokenizer.document_count # total number of characters.
 
 # Convert list to array and keep it in the list?
-[encoded] = np.array(tokenizer.texts_to_sequences([shakespeare_text]))
+encoded = tokenizer.texts_to_sequences([shakespeare_text])
