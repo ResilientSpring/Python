@@ -8,4 +8,4 @@ def parse_page(page):
     return ''.join(x[:-3]), x[-3], x[-2], x[-1]
 
 
-print(parse_page(train.Page[3]))
+print(parse_page(train.Page[2]))
