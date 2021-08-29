@@ -17,3 +17,5 @@ df.columns = ['Subject', 'Sub_Page', 'Access', 'Agent']
 
 train = pd.concat([train, df], axis=1)
 del train['Page']
+
+train.Sub_Page.value_counts().plot(kind='bar')
