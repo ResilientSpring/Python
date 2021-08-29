@@ -8,4 +8,12 @@ def parse_page(page):
     return ''.join(x[:-3]), x[-3], x[-2], x[-1]
 
 
-print(parse_page(train.Page[2]))
+print(parse_page(train.Page[0]))
+
+
+l = list(train.Page.apply(parse_page))
+df = pd.DataFrame(l)
+df.columns = ['Subject', 'Sub_Page', 'Access', 'Agent']
+
+train = pd.concat([train, df], axis=1)
+del train['Page']
