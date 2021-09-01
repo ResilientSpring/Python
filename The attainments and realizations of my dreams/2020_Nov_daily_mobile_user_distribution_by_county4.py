@@ -9,7 +9,8 @@ print(df)
 new = df.drop(labels=["COUNTY_ID"], axis=1)
 print(new)
 
-new.to_csv('2020_Nov_daily_mobile_user_distribution_by_county.csv')
+branding = new.reset_index().set_index('COUNTY')
+print(branding)
 
 # References:
 # 1. https://stackoverflow.com/a/27325729/14900011
