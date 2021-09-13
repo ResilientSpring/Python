@@ -7,3 +7,5 @@ print(distribution)
 distribution2 = pd.read_csv('2020_transposed_translated_mobile_user_distribution_by_county.csv',
                             index_col=0)
 print(distribution2)
+
+
