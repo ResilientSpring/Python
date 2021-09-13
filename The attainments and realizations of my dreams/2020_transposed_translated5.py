@@ -6,6 +6,3 @@ distribution = pd.read_csv('2020_transposed_translated_mobile_user_distribution_
 
 print(distribution)
 
-distribution.hist(bins=50, figsize=(20, 15))
-plt.show()
-
