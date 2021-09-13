@@ -4,4 +4,9 @@ distribution = pd.read_csv('2020_translated_Nov_daily_mobile_user_distribution_b
                            index_col=0)
 
 print(distribution.head())
+print(30*'=')
 print(distribution.info())
+print(30*'=')
+print(distribution["INFO_TIME"].value_counts())
+print(30*'=')
+print(distribution.describe())
