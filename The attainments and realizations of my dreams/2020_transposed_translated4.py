@@ -5,4 +5,3 @@ distribution = pd.read_csv('2020_transposed_translated_mobile_user_distribution_
                            index_col=0, header=0, skiprows=1)
 
 print(distribution)
-
