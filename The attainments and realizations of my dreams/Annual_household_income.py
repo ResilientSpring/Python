@@ -25,6 +25,7 @@ plt.title("Annual household income by region in Taiwan")
 plt.legend()
 plt.grid(linewidth=0.7)
 plt.ylabel("Income (1 million New Taiwan Dollar)")
+plt.xlabel("Reference: https://statfy.mol.gov.tw/map02.aspx?cid=64&xFunc=138&xKey=1")
 
 plt.savefig("Annual_household_income")
 plt.show()
