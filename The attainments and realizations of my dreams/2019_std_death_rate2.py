@@ -20,8 +20,12 @@ for rect in plot:
             '%d'%int(height), ha='center', va='bottom')
 
 plt.title("2019 Standardized Death Rate By Region In Taiwan")
+
 plt.ylabel("Death per 10 thousands people")
 plt.xlabel("Reference: https://www.moi.gov.tw/cl.aspx?n=14661")
+
+plt.ylim(250, 550)
+
 plt.show()
 
 # Reference:
