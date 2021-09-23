@@ -39,4 +39,8 @@ for i in range(0, NN, 1):
         print("You must give a valid number!")
         continue # Jump to the next loop iteration
 
-    score = score
+    score = score + points(a, b, user_answer)
+    print("Your score is now: {:d}".format(score))
+
+
+print("\nFinished! \nYour final score: {:d} (max: {:d})".format(score, N*N))
