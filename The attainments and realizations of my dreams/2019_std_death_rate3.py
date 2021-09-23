@@ -24,7 +24,7 @@ plt.title("2019 Standardized Death Rate By Region In Taiwan")
 plt.ylabel("Death per 10 thousands people")
 plt.xlabel("Reference: https://www.moi.gov.tw/cl.aspx?n=14661")
 
-plt.ylim(280, 580)
+plt.ylim(280, 560)
 
 plt.show()
 
