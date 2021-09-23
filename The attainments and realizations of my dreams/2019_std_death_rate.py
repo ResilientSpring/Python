@@ -10,6 +10,7 @@ label = ["Taipei", "Hsinchu City", "New Taipei", "Taoyuan", "Taichung", "Hsinchu
 
 fig, ax = plt.subplots(figsize=(10, 7)) # [1]
 plt.xticks(region_num, labels=label, rotation=47)
+# plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 
 plot = ax.bar(region_num, death_rate)
 
