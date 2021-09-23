@@ -19,7 +19,7 @@ plt.plot(year, income_Hsinchu_city, label="Hsinchu city")
 plt.plot(year, income_Miaoli_county, label="Miaoli")
 plt.plot(year, income_Taichung, label="Taichung")
 plt.plot(year, income_Tainan, label="Tainan")
-plt.plot(year, income_Kaohsiung, label="Kaohsiung")
+plt.plot(year, income_Kaohsiung, label="Kaohsiung", marker='*', ms=12)
 
 plt.title("Annual household income by region in Taiwan")
 plt.legend()
