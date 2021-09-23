@@ -8,7 +8,7 @@ units_sold = [500, 600, 750, 900, 1100, 1050, 1000, 950, 800, 700, 550, 450]
 
 fig, ax = plt.subplots()
 
-plt.xticks(month_num, calendar.month_name[1:13], rotation=20)
+plt.xticks(month_num, calendar.month_name[1:13], rotation=27)
 
 plot = ax.bar(month_num, units_sold)
 
