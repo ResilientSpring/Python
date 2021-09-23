@@ -8,7 +8,7 @@ label = ["Taipei", "Hsinchu City", "New Taipei", "Taoyuan", "Taichung", "Hsinchu
          "Penghu", "Changhua", "Chiayi City", "Yilan", "Keelung", "Tainan", "Kaohsiung",
          "Chiayi", "Miaoli", "Nantou", "Yunlin", "Hualien", "Pingtung", "Taitung"]
 
-fig, ax = plt.subplots(figsize=(10, 8)) # [1]
+fig, ax = plt.subplots(figsize=(10, 8))  # [1]
 plt.xticks(region_num, labels=label, rotation=47)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 
@@ -16,8 +16,8 @@ plot = ax.bar(region_num, death_rate)
 
 for rect in plot:
     height = rect.get_height()
-    ax.text(rect.get_x() + rect.get_width() / 2., 1.002*height,
-            '%d'%int(height), ha='center', va='bottom')
+    ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
+            '%d' % int(height), ha='center', va='bottom')
 
 plt.title("2019 Standardized Death Rate By Region In Taiwan")
 
