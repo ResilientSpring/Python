@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-fig, axes = plt.subplots(nrows=2, ncols=1, sharex='True', sharey='True')
+fig, axes = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=True)
 
 for i in range(2):
     for j in range(2):
