@@ -33,3 +33,4 @@ axs[1, 1].set_title('bar, unequal bins')
 fig.tight_layout()
 plt.show()
 
+# Source: https://matplotlib.org/stable/gallery/statistics/histogram_histtypes.html?highlight=stack
