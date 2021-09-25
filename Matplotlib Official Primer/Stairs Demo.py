@@ -12,11 +12,10 @@ axs[0].stairs(h, edges + 5, baseline=50, label='Modified baseline')
 axs[0].stairs(h, edges + 10, baseline=None, label='No edges')
 axs[0].set_title("Step Histograms")
 
-axs[1].stairs(np.arange(1, 6, 1), fill=True,
-              label='Filled histogram\nw/ automatic edges')
-axs[1].stairs(np.arange(1, 6, 1)*0.3, np.arange(2, 8, 1),
-              orientation='horizontal', hatch='//',
+axs[1].stairs(np.arange(1, 6, 1), fill=True, label='Filled histogram\nw/ automatic edges')
+axs[1].stairs(np.arange(1, 6, 1)*0.3, np.arange(2, 8, 1), orientation='horizontal', hatch='//',
               label='Hatched histogram\nw/ horizontal orientation')
+
 axs[1].set_title("Filled histogram")
 
 patch = StepPatch(values=[1, 2, 3, 2, 1],
