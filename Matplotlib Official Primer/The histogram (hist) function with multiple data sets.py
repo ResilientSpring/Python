@@ -26,3 +26,5 @@ ax3.set_title('different sample sizes')
 
 fig.tight_layout()
 plt.show()
+
+# Source: https://matplotlib.org/stable/gallery/statistics/histogram_multihist.html?highlight=stack
