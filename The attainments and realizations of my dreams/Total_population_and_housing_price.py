@@ -97,7 +97,7 @@ plt.ylim(23000000, 23700000)
 
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
 
-plt.plot(housing_index)
+plt.plot(x, housing_index)
 
 plt.grid(linewidth=0.3)
 plt.xlabel("Year")
