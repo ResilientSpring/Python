@@ -12,3 +12,6 @@ ax.set_xticks([])
 ax.set_yticks([])
 
 plt.show()
+
+# Reference:
+# https://matplotlib.org/stable/gallery/frontpage/histogram.html#sphx-glr-gallery-frontpage-histogram-py
