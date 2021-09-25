@@ -98,7 +98,8 @@ axes.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
 axes.set_xlabel("Year\n"
                 "References:\n"
                 "1. https://www.ris.gov.tw/app/portal/346 \n"
-                "2. https://www.macromicro.me/collections/15/tw-housing-relative/124/tw-housing-price-sinyi")
+                "2. https://www.macromicro.me/collections/15/\n"
+                "tw-housing-relative/124/tw-housing-price-sinyi")
 
 axes.set_ylabel("Population (Unit: 10 millions)")
 
