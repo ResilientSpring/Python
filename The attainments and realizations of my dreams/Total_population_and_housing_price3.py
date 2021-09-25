@@ -95,8 +95,12 @@ figure, axes = plt.subplots()
 axes.stackplot(x, northTW, centralTW, southTW, eastTW, outlyingTW, labels=year)
 axes.set_ylim(23000000, 23700000)
 axes.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
-axes.set_xlabel("Year")
-axes.set_ylabel("Population")
+axes.set_xlabel("Year\n"
+                "References:\n"
+                "1. https://www.ris.gov.tw/app/portal/346 \n"
+                "2. https://www.macromicro.me/collections/15/tw-housing-relative/124/tw-housing-price-sinyi")
+
+axes.set_ylabel("Population (Unit: 10 millions)")
 
 axes2 = axes.twinx()
 axes2.set_ylabel("Housing Price Index (2010/4 - 2021/04)")
