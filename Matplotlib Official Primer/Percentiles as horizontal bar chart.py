@@ -141,3 +141,5 @@ arts = plot_student_results(student, scores, cohort_size)
 plt.show()
 
 # Source: https://matplotlib.org/stable/gallery/statistics/barchart_demo.html
+
+# Further reading: https://matplotlib.org/stable/tutorials/introductory/sample_plots.html?highlight=stack
