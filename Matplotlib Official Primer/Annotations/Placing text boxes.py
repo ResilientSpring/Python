@@ -22,3 +22,6 @@ ax.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=14,
         verticalalignment='top', bbox=props)
 
 plt.show()
+
+# Reference:
+# https://matplotlib.org/stable/gallery/text_labels_and_annotations/placing_text_boxes.html#sphx-glr-gallery-text-labels-and-annotations-placing-text-boxes-py
