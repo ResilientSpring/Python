@@ -103,7 +103,9 @@ axes.set_xlabel("Year\n"
 axes.set_ylabel("Population (Unit: 10 millions)")
 
 axes2 = axes.twinx()
-axes2.set_ylabel("Housing Price Index (2010/4 - 2021/04)")
+axes2.set_ylabel("Yearly Housing Price Index (2010/4 - 2021/04) \n"
+                 "Method: (Guotai + Xinyi) / 2", color='goldenrod')
+
 axes2.plot(x, housing_index, color='gold')
 axes2.tick_params(axis='y', labelcolor='goldenrod')
 
