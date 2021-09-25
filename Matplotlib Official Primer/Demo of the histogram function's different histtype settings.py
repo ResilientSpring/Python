@@ -13,12 +13,10 @@ w = np.random.normal(mu_w, sigma_w, size=100)
 
 fig, axs = plt.subplots(nrows=2, ncols=2)
 
-axs[0, 0].hist(x, 20, density=True, histtype='stepfilled', facecolor='g',
-               alpha=0.75)
+axs[0, 0].hist(x, 20, density=True, histtype='stepfilled', facecolor='g', alpha=0.75)
 axs[0, 0].set_title('stepfilled')
 
-axs[0, 1].hist(x, 20, density=True, histtype='step', facecolor='g',
-               alpha=0.75)
+axs[0, 1].hist(x, 20, density=True, histtype='step', facecolor='g', alpha=0.75)
 axs[0, 1].set_title('step')
 
 axs[1, 0].hist(x, density=True, histtype='barstacked', rwidth=0.8)
