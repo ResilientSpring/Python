@@ -105,3 +105,7 @@ plt.ylabel("Population")
 plt.title("Taiwan's population change from 2010 - 2021/08 ")
 
 plt.show()
+
+# References:
+# 1. https://www.macromicro.me/collections/15/tw-housing-relative/124/tw-housing-price-sinyi
+# 2.
