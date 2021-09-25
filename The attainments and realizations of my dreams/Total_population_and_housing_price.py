@@ -74,12 +74,30 @@ outlyingTW = [(107308 + 96918), # 2010 Fujian + Penghu
 
 x = range(10, 22)
 
+date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+index = [(330.60 + 129.45) / 2]
+housing_index = [(91.03 + 191.07) / 2, # 2010/04 (Guotai index + Xinyi index) / 2
+                 (102.42 + 218.72) / 2, # 2011/04
+                 (109.85 + 241.27) / 2, # 2012/04
+                 (117.29 + 278.51) / 2, # 2013/04
+                 (124.60 + 297.78) / 2, # 2014/04
+                 (124.61 + 289.3) / 2,  # 2015/04
+                 (95.92 + 279.74) / 2, # 2016/04
+                 (101.89 + 282.36) / 2, # 2017/04
+                 (107.48 + 285.55) / 2, # 2018/04
+                 (114.48 + 294.46) / 2, # 2019/04
+                 (125.22 + 302.61) / 2, # 2020/04
+                 (129.45 + 333.60) / 2, # 2021/04
+                 ]
+
 figure, axes = plt.subplots()
 
 axes.stackplot(x, northTW, centralTW, southTW, eastTW, outlyingTW, labels=year)
 plt.ylim(23000000, 23700000)
 
 plt.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
+
+plt.plot(housing_index)
 
 plt.grid(linewidth=0.3)
 plt.xlabel("Year")
