@@ -23,3 +23,5 @@ ax.set_ylabel('Number of people (millions)')
 plt.show()
 
 # Source: https://matplotlib.org/stable/gallery/lines_bars_and_markers/stackplot_demo.html#stackplots
+
+# Further reading: https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.stackplot.html?highlight=stack#matplotlib.axes.Axes.stackplot
