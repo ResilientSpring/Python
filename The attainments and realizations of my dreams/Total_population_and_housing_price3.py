@@ -110,7 +110,7 @@ axes2.plot(x, housing_index, color='gold')
 axes2.tick_params(axis='y', labelcolor='goldenrod')
 
 plt.grid(linewidth=0.3)
-plt.title("Taiwan's population change from 2010 - 2021/08 ")
+plt.title("Taiwan's population change from 2010 - 2021/08 \n in relation to Annual Housing Price Index")
 
 figure.tight_layout()
 
