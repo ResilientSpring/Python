@@ -89,6 +89,11 @@ plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
 plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
 plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
+# get the current axes and store it to ax
+ax = plt.gca()
+
+
+
 plt.xlabel('Year')
 plt.ylabel('Population')
 plt.title("The composition of Taiwan's population")
