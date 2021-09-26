@@ -77,7 +77,21 @@ x = range(10, 22)
 
 date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 
-figure, axes = plt.subplots()
+south = np.array(southTW)
+central = np.array(centralTW)
+north = np.array(northTW)
+east = np.array(eastTW)
+outlying = np.array(outlyingTW)
 
+plt.bar(year, south, color='g', label="South Taiwan")
+plt.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
+plt.xlabel('Year')
+plt.ylabel('Population')
+plt.title("The composition of Taiwan's population")
+plt.legend()
+plt.show()
 
