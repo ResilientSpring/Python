@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import numpy as np
 
 year = ["2010", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
@@ -90,12 +91,13 @@ plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Ta
 plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
 # get the current axes and store it to ax
-ax = plt.gca()
+axes = plt.gca()
 
-
+axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
+axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
 
 plt.xlabel('Year')
-plt.ylabel('Population')
+plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population")
 plt.legend()
 plt.show()
