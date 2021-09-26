@@ -79,7 +79,7 @@ date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 figure, axes = plt.subplots()
 
 axes.hist(x=[northTW, centralTW, southTW, eastTW, outlyingTW], bins=12, density=True, stacked=True,
-          histtype='bar')
+          histtype='barstacked')
 
 axes.set_ylabel('Population')
 axes.set_xlabel('Year')
@@ -88,4 +88,5 @@ axes.set_title("The composition of Taiwan's population \n"
 
 axes.legend()
 
+figure.tight_layout()
 plt.show()

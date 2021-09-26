@@ -80,9 +80,9 @@ date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 figure, axes = plt.subplots()
 
 # Stacked bars can be achieved by passing individual bottom values per bar.[1]
-axes.bar(year, southTW, label='South Taiwan', bottom=centralTW)
-axes.bar(year, centralTW, label='Central Taiwan', bottom=northTW)
-axes.bar(year, northTW, label='Northern Taiwan')
+axes.bar(year, southTW, label='South Taiwan', )
+axes.bar(year, centralTW, label='Central Taiwan', bottom=southTW)
+axes.bar(year, northTW, label='Northern Taiwan', bottom=southTW+centralTW)
 
 axes.set_ylabel('Population')
 axes.set_xlabel('Year')
