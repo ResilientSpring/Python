@@ -122,9 +122,19 @@ axes = plt.gca()
 axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
 axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
 
+plt.xticks(rotation=27)
 plt.xlabel('Year')
 plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population in history")
 plt.legend()
+
+cm = 1/2.54  # centimeters in inches.[2]
+
+# Change the figure size.[1]
+plt.figure(figsize=(18*cm, 8*cm))
+
 plt.show()
 
+# References:
+# 1. https://stackoverflow.com/a/24073700/14900011
+# 2. https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/figure_size_units.html
