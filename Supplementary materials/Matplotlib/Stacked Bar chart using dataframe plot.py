@@ -14,4 +14,6 @@ print(df)
 df.plot(x='Team', kind='bar', stacked=True,
         title='Stacked Bar Graph by dataframe')
 
+plt.show()
+
 # Source: https://www.geeksforgeeks.org/create-a-stacked-bar-plot-in-matplotlib/
