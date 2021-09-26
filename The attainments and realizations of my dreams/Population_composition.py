@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 year = ["2010", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
 
@@ -75,48 +76,22 @@ outlyingTW = [(107308 + 96918), # 2010 Fujian + Penghu
 x = range(10, 22)
 
 date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
-index = [(330.60 + 129.45) / 2]
-housing_index = [(91.03 + 191.07) / 2, # 2010/04 (Guotai index + Xinyi index) / 2
-                 (102.42 + 218.72) / 2, # 2011/04
-                 (109.85 + 241.27) / 2, # 2012/04
-                 (117.29 + 278.51) / 2, # 2013/04
-                 (124.60 + 297.78) / 2, # 2014/04
-                 (124.61 + 289.3) / 2,  # 2015/04
-                 (95.92 + 279.74) / 2, # 2016/04
-                 (101.89 + 282.36) / 2, # 2017/04
-                 (107.48 + 285.55) / 2, # 2018/04
-                 (114.48 + 294.46) / 2, # 2019/04
-                 (125.22 + 302.61) / 2, # 2020/04
-                 (129.45 + 333.60) / 2, # 2021/04
-                 ]
 
 figure, axes = plt.subplots()
 
-axes.stackplot(x, northTW, centralTW, southTW, eastTW, outlyingTW, labels=year)
-axes.set_ylim(23000000, 23700000)
-axes.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
-axes.set_xlabel("Year\n"
-                "References:\n"
-                "1. https://www.ris.gov.tw/app/portal/346 \n"
-                "2. https://www.macromicro.me/collections/15/\n"
-                "tw-housing-relative/124/tw-housing-price-sinyi")
+# Stacked bars can be achieved by passing individual bottom values per bar.[1]
+axes.bar(year, southTW, label='South Taiwan', )
+axes.bar(year, centralTW, label='Central Taiwan', bottom=southTW)
+axes.bar(year, northTW, label='Northern Taiwan', bottom=southTW+centralTW)
 
-axes.set_ylabel("Population (Unit: 10 millions)")
+axes.set_ylabel('Population')
+axes.set_xlabel('Year')
+axes.set_title("The composition of Taiwan's population \n"
+               "has changed dramatically over the past 20 years.")
 
-axes2 = axes.twinx()
-axes2.set_ylabel("Yearly Housing Price Index (2010/4 - 2021/04) \n"
-                 "Method: (Guotai + Xinyi) / 2", color='goldenrod')
-
-axes2.plot(x, housing_index, color='gold')
-axes2.tick_params(axis='y', labelcolor='goldenrod')
-
-plt.grid(linewidth=0.3)
-plt.title("Taiwan's population change from 2010 - 2021/08 \n in relation to Annual Housing Price Index")
-
-figure.tight_layout()
+axes.legend()
 
 plt.show()
 
 # References:
-# 1. https://www.macromicro.me/collections/15/tw-housing-relative/124/tw-housing-price-sinyi
-# 2.
+# 1. https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html

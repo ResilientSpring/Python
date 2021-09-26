@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import numpy as np
 
 year = ["2010", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
 
@@ -75,48 +77,28 @@ outlyingTW = [(107308 + 96918), # 2010 Fujian + Penghu
 x = range(10, 22)
 
 date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
-index = [(330.60 + 129.45) / 2]
-housing_index = [(91.03 + 191.07) / 2, # 2010/04 (Guotai index + Xinyi index) / 2
-                 (102.42 + 218.72) / 2, # 2011/04
-                 (109.85 + 241.27) / 2, # 2012/04
-                 (117.29 + 278.51) / 2, # 2013/04
-                 (124.60 + 297.78) / 2, # 2014/04
-                 (124.61 + 289.3) / 2,  # 2015/04
-                 (95.92 + 279.74) / 2, # 2016/04
-                 (101.89 + 282.36) / 2, # 2017/04
-                 (107.48 + 285.55) / 2, # 2018/04
-                 (114.48 + 294.46) / 2, # 2019/04
-                 (125.22 + 302.61) / 2, # 2020/04
-                 (129.45 + 333.60) / 2, # 2021/04
-                 ]
 
-figure, axes = plt.subplots()
+south = np.array(southTW)
+central = np.array(centralTW)
+north = np.array(northTW)
+east = np.array(eastTW)
+outlying = np.array(outlyingTW)
 
-axes.stackplot(x, northTW, centralTW, southTW, eastTW, outlyingTW, labels=year)
-axes.set_ylim(23000000, 23700000)
-axes.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
-axes.set_xlabel("Year\n"
-                "References:\n"
-                "1. https://www.ris.gov.tw/app/portal/346 \n"
-                "2. https://www.macromicro.me/collections/15/\n"
-                "tw-housing-relative/124/tw-housing-price-sinyi")
+plt.bar(year, south, color='g', label="South Taiwan")
+plt.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
-axes.set_ylabel("Population (Unit: 10 millions)")
+# get the current axes and store it to ax
+axes = plt.gca()
 
-axes2 = axes.twinx()
-axes2.set_ylabel("Yearly Housing Price Index (2010/4 - 2021/04) \n"
-                 "Method: (Guotai + Xinyi) / 2", color='goldenrod')
+axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
+axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
 
-axes2.plot(x, housing_index, color='gold')
-axes2.tick_params(axis='y', labelcolor='goldenrod')
-
-plt.grid(linewidth=0.3)
-plt.title("Taiwan's population change from 2010 - 2021/08 \n in relation to Annual Housing Price Index")
-
-figure.tight_layout()
-
+plt.xlabel('Year')
+plt.ylabel('Population (Unit: 10 millions)')
+plt.title("The composition of Taiwan's population")
+plt.legend()
 plt.show()
 
-# References:
-# 1. https://www.macromicro.me/collections/15/tw-housing-relative/124/tw-housing-price-sinyi
-# 2.

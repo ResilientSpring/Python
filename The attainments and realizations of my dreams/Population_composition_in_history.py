@@ -1,8 +1,16 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import numpy as np
 
-year = ["2010", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
+year = ["1960", "70", "80", "90", "2000", "2010",
+        "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
 
-northTW = [(3897367 + 2618772 + 460486 + 2002060 + 513015 + 384134 + 415344), # 2010
+northTW = [(829012 + 898655 + 339456 + 489676 + 464792 + 234442 + 108035), # 1960
+           (1240576 + 1769568 + 412787 + 726750 + 587652 + 324040), # 1970
+           (2258757 + 2220427 + 442988 + 1052800 + 641937 + 344867), # 1980
+           (3048034 + 2719659 + 450943 + 1355175 + 374492 + 352919 + 324426), # 1990
+           (3567896 + 2646474 + 465186 + 1732617 + 439713 + 388425 + 368439), # 2000
+           (3897367 + 2618772 + 460486 + 2002060 + 513015 + 384134 + 415344), # 2010
            (3916451 + 2650968 + 459061 + 2013305 + 517641 + 379927 + 420052), # 2011
            (3939305 + 2673226 + 458595 + 2030161 + 523993 + 377153 + 425071), # 2012
            (3954929 + 2686516 + 458456 + 2044023 + 530486 + 374914 + 428483), # 2013
@@ -16,7 +24,12 @@ northTW = [(3897367 + 2618772 + 460486 + 2002060 + 513015 + 384134 + 415344), # 
            (4019898 + 2553798 + 451635 + 2272976 + 573858 + 365591 + 452781), # 2021/08
            ]
 
-centralTW = [(2648419 + 560968 + 1307286 + 526491 + 717653), # 2010
+centralTW = [(298119 + 605437 + 435084 + 880684 + 412942 + 672557), # 1960
+             (448140 + 785903 + 524744 + 1050246 + 511040 + 800578), # 1970
+             (593427 + 1013176 + 542745 + 1166352 + 524245 + 796276), # 1980
+             (761802 + 1258157 + 547609 + 1245288 + 536479 + 753639), # 1990
+             (965790 + 1494308 + 559703 + 1310531 + 541537 + 743368), # 2000
+             (2648419 + 560968 + 1307286 + 526491 + 717653), # 2010
              (2664394 + 562010 + 1303039 + 522807 + 713556), # 2011
              (2684893 + 563976 + 1299868 + 520196 + 710991), # 2012
              (2701661 + 565554 + 1296013 + 517222 + 707792), # 2013
@@ -30,7 +43,12 @@ centralTW = [(2648419 + 560968 + 1307286 + 526491 + 717653), # 2010
              (2818139 + 539879 + 1259246 + 487185 + 672557), # 2021/08
              ]
 
-southTW = [(1873794 + 2773483 + 543248 + 873509 + 272390), # 2010
+southTW = [(337602 + 787203 + 467931 + 617380 + 710273 + 645400), # 1960
+           (474835 + 934865 + 828191 + 830661 + 849914 + 828761), # 1970
+           (583799 + 962827 + 1202123 + 1000645 + 825967 + 888270), # 1980
+           (683251 + 1026983 + 1386723 + 1119263 + 257597 + 552277 + 893282), # 1990
+           (734650 + 1107687 + 1490560 + 1234707 + 266183 + 562305 + 907590), # 2000
+           (1873794 + 2773483 + 543248 + 873509 + 272390), # 2010
            (1876960 + 2774470 + 537942 + 864529 + 271526), # 2011
            (1881645 + 2778659 + 533723 + 858441 + 271220), # 2012
            (1883208 + 2779877 + 529229 + 852286 + 270872), # 2013
@@ -44,7 +62,12 @@ southTW = [(1873794 + 2773483 + 543248 + 873509 + 272390), # 2010
            (1867554 + 2753530 + 495662 + 807159 + 264858), # 2021/08
            ]
 
-eastTW = [(338805 + 230673), # 2010
+eastTW = [(252264 + 208272), # 1960
+          (335799 + 291761), # 1970
+          (355178 + 281218), # 1980
+          (352233 + 256803), # 1990
+          (353630 + 245312), # 2000
+          (338805 + 230673), # 2010
           (336838 + 228290), # 2011
           (335190 + 226252), # 2012
           (333897 + 224821), # 2013
@@ -58,7 +81,12 @@ eastTW = [(338805 + 230673), # 2010
           (322506 + 213956), # 2021/08
           ]
 
-outlyingTW = [(107308 + 96918), # 2010 Fujian + Penghu
+outlyingTW = [(0 + 0 + 96986), # 1960
+              (61305 + 16939 + 119153), # 1970
+              (51883 + 9058 + 107043), # 1980
+              (42754 + 5585 + 95932), # 1990
+              (53832 + 6733 + 89496), # 2000
+              (107308 + 96918), # 2010 Fujian + Penghu
               (113989 + 97157), # 2011
               (124421 + 98843), # 2012
               (132878 + 100400), # 2013
@@ -74,49 +102,39 @@ outlyingTW = [(107308 + 96918), # 2010 Fujian + Penghu
 
 x = range(10, 22)
 
-date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
-index = [(330.60 + 129.45) / 2]
-housing_index = [(91.03 + 191.07) / 2, # 2010/04 (Guotai index + Xinyi index) / 2
-                 (102.42 + 218.72) / 2, # 2011/04
-                 (109.85 + 241.27) / 2, # 2012/04
-                 (117.29 + 278.51) / 2, # 2013/04
-                 (124.60 + 297.78) / 2, # 2014/04
-                 (124.61 + 289.3) / 2,  # 2015/04
-                 (95.92 + 279.74) / 2, # 2016/04
-                 (101.89 + 282.36) / 2, # 2017/04
-                 (107.48 + 285.55) / 2, # 2018/04
-                 (114.48 + 294.46) / 2, # 2019/04
-                 (125.22 + 302.61) / 2, # 2020/04
-                 (129.45 + 333.60) / 2, # 2021/04
-                 ]
+date = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 
-figure, axes = plt.subplots()
+south = np.array(southTW)
+central = np.array(centralTW)
+north = np.array(northTW)
+east = np.array(eastTW)
+outlying = np.array(outlyingTW)
 
-axes.stackplot(x, northTW, centralTW, southTW, eastTW, outlyingTW, labels=year)
-axes.set_ylim(23000000, 23700000)
-axes.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
-axes.set_xlabel("Year\n"
-                "References:\n"
-                "1. https://www.ris.gov.tw/app/portal/346 \n"
-                "2. https://www.macromicro.me/collections/15/\n"
-                "tw-housing-relative/124/tw-housing-price-sinyi")
+plt.bar(year, south, color='g', label="South Taiwan")
+plt.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
-axes.set_ylabel("Population (Unit: 10 millions)")
+# get the current axes and store it to ax
+axes = plt.gca()
 
-axes2 = axes.twinx()
-axes2.set_ylabel("Yearly Housing Price Index (2010/4 - 2021/04) \n"
-                 "Method: (Guotai + Xinyi) / 2", color='goldenrod')
+axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
+axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
 
-axes2.plot(x, housing_index, color='gold')
-axes2.tick_params(axis='y', labelcolor='goldenrod')
+plt.xticks(rotation=27)
+plt.xlabel('Year')
+plt.ylabel('Population (Unit: 10 millions)')
+plt.title("The composition of Taiwan's population in history")
+plt.legend()
 
-plt.grid(linewidth=0.3)
-plt.title("Taiwan's population change from 2010 - 2021/08 \n in relation to Annual Housing Price Index")
+cm = 1/2.54  # centimeters in inches.[2]
 
-figure.tight_layout()
+# Change the figure size.[1]
+plt.figure(figsize=(18*cm, 8*cm))
 
 plt.show()
 
 # References:
-# 1. https://www.macromicro.me/collections/15/tw-housing-relative/124/tw-housing-price-sinyi
-# 2.
+# 1. https://stackoverflow.com/a/24073700/14900011
+# 2. https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/figure_size_units.html
