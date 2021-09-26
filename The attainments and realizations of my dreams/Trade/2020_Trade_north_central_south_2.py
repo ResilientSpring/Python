@@ -14,3 +14,5 @@ exportation = pd.DataFrame(data=[[1544095246, 5561724423, 2550413664, 3030786960
                            index=["出口貨物離岸價格(包含小三通)", "出口快遞貨物離岸價格", "出口快遞簡易離岸價格"])
 
 print(exportation)
+
+# Reference: https://portal.sw.nat.gov.tw/APGA/GA11_LIST
