@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 year = ["2010", "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
 
@@ -79,10 +78,8 @@ date = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 
 figure, axes = plt.subplots()
 
-# Stacked bars can be achieved by passing individual bottom values per bar.[1]
-axes.bar(year, southTW, label='South Taiwan', bottom=centralTW)
-axes.bar(year, centralTW, label='Central Taiwan', bottom=northTW)
-axes.bar(year, northTW, label='Northern Taiwan')
+axes.hist(x=[northTW, centralTW, southTW, eastTW, outlyingTW], bins=12, density=True, stacked=True,
+          histtype='bar')
 
 axes.set_ylabel('Population')
 axes.set_xlabel('Year')
@@ -92,6 +89,3 @@ axes.set_title("The composition of Taiwan's population \n"
 axes.legend()
 
 plt.show()
-
-# References:
-# 1. https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html
