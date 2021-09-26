@@ -6,7 +6,7 @@ x = range(2011, 2018)
 y = [26.48, 27.56, 29.41, 33.27, 36.32, 37.55, 40.28, 44.35, 48.36, 50.05,
      53.06, 57.39, 62.27, 65.55, 69.17, 74.76, 81.5, 83.18, 86.74, 93.8, 98.75]
 
-plt.plot(y, '^', label="Netflix subscribers", linestyle='-')
+plt.plot(y, marker='^', label="Netflix subscribers", linestyle='-')
 
 # get the current axes and store it to ax
 ax = plt.gca()
