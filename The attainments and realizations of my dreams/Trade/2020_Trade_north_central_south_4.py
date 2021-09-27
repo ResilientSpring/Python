@@ -18,5 +18,14 @@ print(exportation)
 total_exportation = exportation.sum(axis=0)
 print(total_exportation)
 
-exportation2 = exportation.append(total_exportation)
+exportation2 = exportation.append(total_exportation, ignore_index=True)
 print(exportation2)
+
+print(exportation2.iloc[:, 0])
+
+exportation2.index = ["出口貨物離岸價格(包含小三通)", "出口快遞貨物離岸價格", "出口快遞簡易離岸價格", "Sum of the customs"]
+print(exportation2)
+
+print(exportation2.iloc[:, 0])
+
+exportation2.to_csv("2020_export_value_from_each_customs.csv")
