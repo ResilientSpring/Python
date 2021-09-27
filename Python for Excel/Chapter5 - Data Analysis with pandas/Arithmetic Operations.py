@@ -18,3 +18,9 @@ print(more_rainfall)
 more_rainfall_plus = rainfall + more_rainfall
 
 print(more_rainfall_plus)
+
+summation = rainfall.loc[1, :] + rainfall
+print(summation)
+
+summation2 = rainfall.add(rainfall.loc[:, "City2"], axis=0)
+print(summation2)
