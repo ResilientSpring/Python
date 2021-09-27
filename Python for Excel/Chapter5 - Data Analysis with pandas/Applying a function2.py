@@ -6,11 +6,6 @@ rainfall = pd.DataFrame(data=[[300.1, 400.1, 1000.5],
 
 print(rainfall)
 
-def format_string(x):
-    return f"{x:,.2f}"
-
-
-# Note that we pass in the function without calling it.
-rainfall.applymap(format_string)
+rainfall.applymap(lambda x: f"{x:,.2f}")
 
 print(rainfall)
