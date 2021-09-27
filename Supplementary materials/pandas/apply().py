@@ -14,5 +14,8 @@ frame.apply(f)
 
 print(frame)
 
+frame2 = frame.apply(f)
+print(frame2)
+
 # Reference:
 # 1. https://stackoverflow.com/a/19798528/14900011
