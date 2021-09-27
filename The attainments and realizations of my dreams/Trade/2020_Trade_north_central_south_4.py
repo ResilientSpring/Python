@@ -15,4 +15,8 @@ exportation = pd.DataFrame(data=[[1544095246, 5561724423, 2550413664, 3030786960
 
 print(exportation)
 
-surplus = pd.DataFrame()
+total_exportation = exportation.sum(axis=0)
+print(total_exportation)
+
+exportation2 = exportation.append(total_exportation)
+print(exportation2)
