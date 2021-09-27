@@ -15,8 +15,4 @@ exportation = pd.DataFrame(data=[[1544095246, 5561724423, 2550413664, 3030786960
 
 print(exportation)
 
-surplus = exportation - importation
-
-print(surplus)
-
-# Reference: https://portal.sw.nat.gov.tw/APGA/GA11_LIST
+surplus = pd.DataFrame()
