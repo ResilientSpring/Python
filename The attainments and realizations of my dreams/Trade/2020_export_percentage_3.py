@@ -26,17 +26,17 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.2f%%', shadow=True, s
 
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-plt.title("The contribution of each region to total export in Taiwan 2020")
+plt.title("The contribution of each region to total export ($NTD) in Taiwan 2020")
 
 textstr = '\n'.join((
-    r'Reference:',
-    r'https://matplotlib.org/stable/gallery/text_labels_and_annotations/placing_text_boxes.html',
+    r'Dataset:',
+    r'https://portal.sw.nat.gov.tw/APGA/GA11_LIST',
 ))
 # these are matplotlib.patch.Patch properties
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 
 # place a text box in upper left in axes coords
-ax1.text(0.10, 0.25, textstr, transform=ax1.transAxes, fontsize=14,
+ax1.text(0.09, 0.01, textstr, transform=ax1.transAxes, fontsize=12,
          verticalalignment='top', bbox=props)
 
 plt.show()
