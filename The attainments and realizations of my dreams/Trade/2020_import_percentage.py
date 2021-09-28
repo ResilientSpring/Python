@@ -21,4 +21,22 @@ labels = 'Keelung customs\n(Container ports in N.TW & E.TW)', 'Taipei customs\n(
 sizes = [19.67, 49.15, 13.67, 17.49]
 explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
 
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.2f%%', shadow=True, startangle=90)
 
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.title("The contribution of each region to total import ($NTD) in Taiwan 2020")
+
+textstr = '\n'.join((
+    r'Dataset:',
+    r'https://portal.sw.nat.gov.tw/APGA/GA11_LIST',
+))
+# these are matplotlib.patch.Patch properties
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+
+# place a text box in upper left in axes coords
+ax1.text(0.09, 0.01, textstr, transform=ax1.transAxes, fontsize=12,
+         verticalalignment='top', bbox=props)
+
+plt.show()
