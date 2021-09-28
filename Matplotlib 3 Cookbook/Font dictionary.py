@@ -10,4 +10,4 @@ t = np.linspace(0.0, 5.0, 100)
 y = np.sin(2 * np.pi * t) * np.exp(-t/2)
 plt.plot(t, y, 'm')
 
-#
+# Define the text, title, and labels, and print them on the plot.
