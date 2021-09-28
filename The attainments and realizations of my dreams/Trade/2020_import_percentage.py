@@ -28,15 +28,13 @@ ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 plt.title("The contribution of each region to total import ($NTD) in Taiwan 2020")
 
-textstr = '\n'.join((
-    r'Dataset:',
-    r'https://portal.sw.nat.gov.tw/APGA/GA11_LIST',
-))
+textstr = 'Dataset:https://portal.sw.nat.gov.tw/APGA/GA11_LIST'
+
 # these are matplotlib.patch.Patch properties
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 
 # place a text box in upper left in axes coords
-ax1.text(0.09, 0.01, textstr, transform=ax1.transAxes, fontsize=12,
+ax1.text(0.09, 0.00, textstr, transform=ax1.transAxes, fontsize=11,
          verticalalignment='top', bbox=props)
 
 plt.show()
