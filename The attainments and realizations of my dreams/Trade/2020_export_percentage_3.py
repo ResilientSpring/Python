@@ -28,4 +28,15 @@ ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 plt.title("The contribution of each region to total export in Taiwan 2020")
 
+textstr = '\n'.join((
+    r'Reference:',
+    r'https://matplotlib.org/stable/gallery/text_labels_and_annotations/placing_text_boxes.html',
+))
+# these are matplotlib.patch.Patch properties
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+
+# place a text box in upper left in axes coords
+ax1.text(0.10, 0.25, textstr, transform=ax1.transAxes, fontsize=14,
+         verticalalignment='top', bbox=props)
+
 plt.show()
