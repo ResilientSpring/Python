@@ -16,13 +16,16 @@ ax.plot(theta, r, color=[0.9, 0.4, 0.7], lw=3) # lw = line width
 # R, G, and B values vary from 0 (dark) to 1 (bright).
 
 # Plot a point with diamond marker at the 600 point on the polar curve.
-ind = 600
-pointr, pointtheta = r[ind], theta[ind]
+index = 600
+point_r, point_theta = r[index], theta[index]
 
-ax.plot([pointtheta], [pointr], 'D', markersize=10)
+# the coordinates point_theta and point_r
+ax.plot([point_theta], [point_r], 'D', markersize=10)
 
 # Define the annotation for the diamond point
-ax.annotate('a polar annotation', xy=(pointtheta, pointr), xytext=(1.0, 0.75),
+## xy specifies the coordinates of the point to be annotated.
+## xytext specifies the coordinates where the text description should be placed.
+ax.annotate('a polar annotation', xy=(point_theta, point_r), xytext=(1.0, 0.75),
             textcoords='figure fraction', arrowprops=dict(facecolor='red', shrink=0.05),
             horizontalalignment='right', verticalalignment='bottom')
 
