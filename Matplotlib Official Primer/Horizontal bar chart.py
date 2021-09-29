@@ -22,3 +22,5 @@ ax.set_xlabel('Performance')
 ax.set_title('How fast do you want to go today?')
 
 plt.show()
+
+# Source: https://matplotlib.org/stable/gallery/lines_bars_and_markers/barh.html
