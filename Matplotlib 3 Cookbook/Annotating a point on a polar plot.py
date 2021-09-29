@@ -12,6 +12,8 @@ theta = 2 * 2*np.pi * r
 
 # Plot the polar chart with theta and r.
 ax.plot(theta, r, color=[0.9, 0.4, 0.7], lw=3)
+# color is specified with R, G, and B color values to create a custom color.
+# R, G, and B values vary from 0 (dark) to 1 (bright).
 
 # Plot a point with diamond marker at the 600 point on the polar curve.
 ind = 600
