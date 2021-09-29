@@ -10,7 +10,10 @@ width = 0.35       # the width of the bars: can also be len(x) sequence
 
 fig, ax = plt.subplots()
 
+#  the parameters yerr used for error bars,
 ax.bar(labels, men_means, width, yerr=men_std, label='Men')
+
+# and bottom to stack the women's bars on top of the men's bars.
 ax.bar(labels, women_means, width, yerr=women_std, bottom=men_means,
        label='Women')
 
