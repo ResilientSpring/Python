@@ -1,6 +1,6 @@
-import tensorflow as tf
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
 
 tf.random.set_seed(1)
 np.random.seed(1)
@@ -32,11 +32,15 @@ y_valid = y[100:]
 
 figure, axes = plt.subplots(nrows=1, ncols=1, figsize=(6, 6))
 
-plt.plot(x[y == 0, 0], x[y == 0, 1], 'o', alpha=0.75, markersize=10)
-plt.plot(x[y == 1, 0], x[y == 1, 1], '<', alpha=0.75, markersize=10)
-plt.xlabel(r'$x_1$', size=15)
-plt.ylabel(r'$x_2$', size=15)
+axes.plot(x[y == 0, 0], x[y == 0, 1], 'o', alpha=0.75, markersize=10)
+axes.plot(x[y == 1, 0], x[y == 1, 1], '<', alpha=0.75, markersize=10)
+axes.set_xlabel(r'$x_1$', size=15)
+axes.set_ylabel(r'$x_2$', size=15)
+
+axes.text(
+    0, 0, "Direction", ha="center", va="center", rotation=45, size=15,
+    bbox=dict(boxstyle="rarrow,pad=0.3", fc="cyan", ec="b", lw=2))
 
 plt.show()
 
-
+# Reference: https://matplotlib.org/stable/tutorials/text/annotations.html#sphx-glr-tutorials-text-annotations-py
