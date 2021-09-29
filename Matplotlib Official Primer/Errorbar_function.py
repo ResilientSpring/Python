@@ -7,4 +7,7 @@ y = np.exp(-x)
 
 fig, ax = plt.subplots()
 ax.errorbar(x, y, xerr=0.2, yerr=0.4)
+
+plt.title('Error_bar function')
+
 plt.show()
