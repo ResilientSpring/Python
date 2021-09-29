@@ -26,6 +26,10 @@ plt.xlabel("Reference: https://www.moi.gov.tw/cl.aspx?n=14661")
 
 plt.ylim(280, 560)
 
+plt.annotate(text="The Tsai regime announced the foundation of a new medical college in N.TW",
+             xy=(6, 400), xytext=(6, 520), textcoords='figure fraction',
+             arrowprops=dict(facecolor='red', shrink=0.05),)
+
 plt.show()
 
 # Reference:
