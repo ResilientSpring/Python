@@ -25,6 +25,8 @@ ax.legend()
 # Label with label_type 'center' instead of the default 'edge'
 ax.bar_label(p1, label_type='center')
 ax.bar_label(p2, label_type='center')
-ax.bar_label(p2)
+# ax.bar_label(p2)
+
+plt.savefig('Bar label.jpg')
 
 plt.show()
