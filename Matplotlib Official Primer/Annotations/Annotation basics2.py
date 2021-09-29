@@ -12,3 +12,5 @@ plt.annotate('local max', xy=(1.3, 0.6),  xycoords='data',
              horizontalalignment='center', verticalalignment='bottom',)
 
 plt.show()
+
+# Reference: https://matplotlib.org/stable/tutorials/text/annotations.html#sphx-glr-tutorials-text-annotations-py
