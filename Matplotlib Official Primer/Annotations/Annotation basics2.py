@@ -9,6 +9,6 @@ plt.plot(t, y, 'm')
 plt.annotate('local max', xy=(1.3, 0.6),  xycoords='data',
              xytext=(2.8, 0.7), textcoords='data',
              arrowprops=dict(facecolor='black', shrink=0.05),
-             horizontalalignment='center', verticalalignment='top',)
+             horizontalalignment='center', verticalalignment='bottom',)
 
 plt.show()
