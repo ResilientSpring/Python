@@ -11,3 +11,14 @@ y = np.sin(2 * np.pi * t) * np.exp(-t/2)
 plt.plot(t, y, 'm')
 
 # Define the text, title, and labels, and print them on the plot.
+plt.text(x=2, y=0.65, s=r'$\sin(2 \pi t) \exp(-t/2)$', fontdict=font)
+
+plt.title('Damped exponential decay', fontdict=font)
+
+plt.xlabel('time (s)', fontdict=font)
+plt.ylabel('voltage (mV)', fontdict=font)
+
+# Adjust the space to prevent clipping of ylabel.
+plt.subplots_adjust(left=0.15)
+
+plt.show()
