@@ -11,3 +11,5 @@ ax.errorbar(x, y, xerr=0.2, yerr=0.4)
 plt.title('Error_bar function')
 
 plt.show()
+
+# Source: https://matplotlib.org/stable/gallery/statistics/errorbar.html
