@@ -30,7 +30,8 @@ x_valid = x[100:, :]
 ## the label set for validation (100 - 199)
 y_valid = y[100:]
 
-fig = plt.figure(figsize=(6, 6))
+figure, axes = plt.subplots(nrows=1, ncols=1, figsize=(6, 6))
+
 plt.plot(x[y == 0, 0], x[y == 0, 1], 'o', alpha=0.75, markersize=10)
 plt.plot(x[y == 1, 0], x[y == 1, 1], '<', alpha=0.75, markersize=10)
 plt.xlabel(r'$x_1$', size=15)
