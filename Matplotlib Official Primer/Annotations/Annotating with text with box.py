@@ -39,4 +39,13 @@ plt.plot(x[y == 0, 0], x[y == 0, 1], 'o', alpha=0.75, markersize=10)
 plt.plot(x[y == 1, 0], x[y == 1, 1], '<', alpha=0.75, markersize=10)
 plt.xlabel(r'$x_1$', size=15)
 plt.ylabel(r'$x_2$', size=15)
+
+plt.text(x=0, y=0, s='Direction',
+         horizontalalignment='center',
+         verticalalignment='center',
+         xycoords='data',
+         textcoords='data',
+         rotation=45, size=15,
+         bbox=dict(boxstyle="rarrow,pad=0.3", fc="cyan", ec="b", lw=2))
+
 plt.show()
