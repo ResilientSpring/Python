@@ -22,6 +22,7 @@ ax.xaxis.set_major_locator(MultipleLocator(1.000))
 ax.xaxis.set_minor_locator(AutoMinorLocator(4))
 ax.yaxis.set_major_locator(MultipleLocator(1.000))
 ax.yaxis.set_minor_locator(AutoMinorLocator(4))
+
 # FuncFormatter is created and used automatically
 ax.xaxis.set_minor_formatter(minor_tick)
 
