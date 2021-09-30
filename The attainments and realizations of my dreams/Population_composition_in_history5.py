@@ -110,6 +110,12 @@ north = np.array(northTW)
 east = np.array(eastTW)
 outlying = np.array(outlyingTW)
 
+print(south)
+print(central)
+print(north)
+print(east)
+print(outlying)
+
 cm = 1/2.54
 figure, axes = plt.subplots(figsize=(18*cm, 8*cm))
 
@@ -128,9 +134,9 @@ plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population in history")
 plt.legend()
 
-axes.bar_label(container=p1, fmt='{:.2f}'.format(p1), label_type='center')
-axes.bar_label(container=p2, fmt='{:.2f}'.format(p2), label_type='center')
-axes.bar_label(container=p3, fmt='{:.2f}'.format(p3), label_type='center')
+# axes.bar_label(container=p1, fmt='{:.2f}'.format(p1), label_type='center')
+# axes.bar_label(container=p2, fmt='{:.2f}'.format(p2), label_type='center')
+# axes.bar_label(container=p3, fmt='{:.2f}'.format(p3), label_type='center')
 
 plt.show()
 
