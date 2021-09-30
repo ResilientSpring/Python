@@ -110,34 +110,14 @@ north = np.array(northTW)
 east = np.array(eastTW)
 outlying = np.array(outlyingTW)
 
-print(south)
-print(central)
-print(north)
-print(east)
-print(outlying)
+plt.bar(year, south, color='g', label="South Taiwan")
+plt.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
-Total1960 = south[0] + central[0] + north[0] + east[0] + outlying[0]
-Total1970 = south[1] + central[1] + north[1] + east[1] + outlying[1]
-Total1980 = south[2] + central[2] + north[2] + east[2] + outlying[2]
-Total1990 = south[3] + central[3] + north[3] + east[3] + outlying[3]
-Total2000 = south[4] + central[4] + north[4] + east[4] + outlying[4]
-Total2010 = south[5] + central[5] + north[5] + east[5] + outlying[5]
-Total2015 = south[10] + central[10] + north[10] + east[10] + outlying[10]
-Total2020 = south[15] + central[15] + north[15] + east[15] + outlying[15]
-Total2021 = south[16] + central[16] + north[16] + east[16] + outlying[16]
-
-totality = [Total1960, Total1970, Total1980, Total1990, Total2000, Total2010, Total2020, Total2021]
-
-print(totality)
-
-cm = 1/2.54
-figure, axes = plt.subplots(figsize=(18*cm, 15*cm))
-
-p1 = axes.bar(year, south, color='g', label="South Taiwan")
-p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan")
-p3 = axes.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
-p4 = axes.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
-p5 = axes.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
+# get the current axes and store it to ax
+axes = plt.gca()
 
 axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
 axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
@@ -148,9 +128,13 @@ plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population in history")
 plt.legend()
 
-axes.bar_label(container=p1, fmt='{:.2f}'.format(p1), label_type='center')
-axes.bar_label(container=p2, fmt='{:.2f}'.format(p2), label_type='center')
-axes.bar_label(container=p3, fmt='{:.2f}'.format(p3), label_type='center')
+cm = 1/2.54  # centimeters in inches.[2]
+
+# Change the figure size.[1]
+plt.figure(figsize=(18*cm, 15*cm))
 
 plt.show()
 
+# References:
+# 1. https://stackoverflow.com/a/24073700/14900011
+# 2. https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/figure_size_units.html
