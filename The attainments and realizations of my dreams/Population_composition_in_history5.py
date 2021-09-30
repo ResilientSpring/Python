@@ -116,8 +116,11 @@ print(north)
 print(east)
 print(outlying)
 
+total = [i for i in range(0, len(south, central, north, east, outlying)) in south, central, north, east, outlying]:
+
+
 cm = 1/2.54
-figure, axes = plt.subplots(figsize=(18*cm, 8*cm))
+figure, axes = plt.subplots(figsize=(18*cm, 12*cm))
 
 p1 = axes.bar(year, south, color='g', label="South Taiwan")
 p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan")
@@ -134,9 +137,9 @@ plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population in history")
 plt.legend()
 
-# axes.bar_label(container=p1, fmt='{:.2f}'.format(p1), label_type='center')
-# axes.bar_label(container=p2, fmt='{:.2f}'.format(p2), label_type='center')
-# axes.bar_label(container=p3, fmt='{:.2f}'.format(p3), label_type='center')
+axes.bar_label(container=p1, fmt='{:.2f}'.format(p1), label_type='center')
+axes.bar_label(container=p2, fmt='{:.2f}'.format(p2), label_type='center')
+axes.bar_label(container=p3, fmt='{:.2f}'.format(p3), label_type='center')
 
 plt.show()
 
