@@ -120,6 +120,11 @@ Total1960 = south[0] + central[0] + north[0] + east[0] + outlying[0]
 Total1970 = south[1] + central[1] + north[1] + east[1] + outlying[1]
 Total1980 = south[2] + central[2] + north[2] + east[2] + outlying[2]
 Total1990 = south[3] + central[3] + north[3] + east[3] + outlying[3]
+Total2000 = south[4] + central[4] + north[4] + east[4] + outlying[4]
+Total2010 = south[5] + central[5] + north[5] + east[5] + outlying[5]
+Total2015 = south[10] + central[10] + north[10] + east[10] + outlying[10]
+Total2020 = south[15] + central[15] + north[15] + east[15] + outlying[15]
+Total2021 = south[16] + central[16] + north[16] + east[16] + outlying[16]
 
 
 
