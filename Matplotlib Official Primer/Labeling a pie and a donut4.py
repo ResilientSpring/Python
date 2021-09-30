@@ -36,5 +36,6 @@ ax.set_title("Matplotlib bakery: A pie")
 
 plt.show()
 
-# Source:
-# https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_and_donut_labels.html#sphx-glr-gallery-pie-and-polar-charts-pie-and-donut-labels-py
+# References:
+# 1. https://stackoverflow.com/questions/25068384/bbox-to-anchor-and-loc-in-matplotlib
+# 2. https://stackoverflow.com/questions/39803385/what-does-a-4-element-tuple-argument-for-bbox-to-anchor-mean-in-matplotlib/39806180#39806180
