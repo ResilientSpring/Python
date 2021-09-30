@@ -110,15 +110,14 @@ north = np.array(northTW)
 east = np.array(eastTW)
 outlying = np.array(outlyingTW)
 
-cm = 1/2.54
+plt.bar(year, south, color='g', label="South Taiwan")
+plt.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
-figure, axes = plt.subplots(figsize=(18*cm, 8*cm))
-
-p1 = axes.bar(year, south, color='g', label="South Taiwan")
-p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan")
-p3 = axes.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
-p4 = axes.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
-p5 = axes.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
+# get the current axes and store it to ax
+axes = plt.gca()
 
 axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
 axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
@@ -129,11 +128,10 @@ plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population in history")
 plt.legend()
 
-# Label with label_type 'center' instead of the default 'edge'
-axes.bar_label(p1, label_type='center')
-axes.bar_label(p2, label_type='center')
-axes.bar_label(p3, label_type='center')
-axes.bar_label(p2)
+cm = 1/2.54  # centimeters in inches.[2]
+
+# Change the figure size.[1]
+plt.figure(figsize=(18*cm, 8*cm))
 
 plt.show()
 
