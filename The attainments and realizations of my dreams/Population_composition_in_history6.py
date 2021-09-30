@@ -116,5 +116,11 @@ print(north)
 print(east)
 print(outlying)
 
+Total1960 = south[0] + central[0] + north[0] + east[0] + outlying[0]
+Total1970 = south[1] + central[1] + north[1] + east[1] + outlying[1]
+Total1980 = south[2] + central[2] + north[2] + east[2] + outlying[2]
+Total1990 = south[3] + central[3] + north[3] + east[3] + outlying[3]
+
+
 
 
