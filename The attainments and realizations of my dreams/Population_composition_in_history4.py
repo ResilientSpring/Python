@@ -128,9 +128,9 @@ plt.ylabel('Population (Unit: 10 millions)')
 plt.title("The composition of Taiwan's population in history")
 plt.legend()
 
-plt.bar_label(container=p1, fmt='%.2f', label_type='center')
-plt.bar_label(container=p2, fmt='%.2f', label_type='center')
-plt.bar_label(container=p3, fmt='%.2f', label_type='center')
+axes.bar_label(container=p1, fmt='%.2f', label_type='center')
+axes.bar_label(container=p2, fmt='%.2f', label_type='center')
+axes.bar_label(container=p3, fmt='%.2f', label_type='center')
 
 plt.show()
 
