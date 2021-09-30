@@ -28,7 +28,7 @@ wedges, texts, autotexts = ax.pie(data, autopct=lambda pct: func(pct, data),
 ax.legend(wedges, ingredients,
           title="Ingredients",
           loc="center left",
-          bbox_to_anchor=(1, 10, 0.5, 1))
+          bbox_to_anchor=(1, 0, 0.5, 1))
 
 plt.setp(autotexts, size=8, weight="bold")
 
