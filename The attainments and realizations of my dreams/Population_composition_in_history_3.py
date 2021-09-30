@@ -111,16 +111,15 @@ east = np.array(eastTW)
 outlying = np.array(outlyingTW)
 
 
-cm = 1/2.54  # centimeters in inches.[2]
+cm = 1/2.54
 
-# Change the figure size.[1]
 plt.figure(figsize=(28*cm, 15*cm))
 
-plt.bar(year, south, color='g', label="South Taiwan")
-plt.bar(year, central, color='y', bottom=south, label="Central Taiwan")
-plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
-plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
-plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
+plt.bar(year, south, color='g', label="South Taiwan", align='edge', width=0.3) # Adjusting the spacing between bars. [1]
+plt.bar(year, central, color='y', bottom=south, label="Central Taiwan", align='edge', width=0.3)
+plt.bar(year, north, color='b', bottom=south + central, label="North Taiwan", align='edge', width=0.3)
+plt.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan", align='edge', width=0.3)
+plt.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands", align='edge', width=0.3)
 
 # get the current axes and store it to ax
 axes = plt.gca()
@@ -137,5 +136,4 @@ plt.legend()
 plt.show()
 
 # References:
-# 1. https://stackoverflow.com/a/24073700/14900011
-# 2. https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/figure_size_units.html
+# 1. https://stackoverflow.com/a/40575741/14900011
