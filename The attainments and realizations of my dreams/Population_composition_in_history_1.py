@@ -131,7 +131,7 @@ plt.legend()
 cm = 1/2.54  # centimeters in inches.[2]
 
 # Change the figure size.[1]
-plt.figure(figsize=(18*cm, 15*cm))
+plt.figure(figsize=(28*cm, 15*cm))
 
 plt.show()
 
