@@ -26,6 +26,8 @@ ax.bar_label(ax.containers[0], label_type='edge')
 # pad the spacing between the number and the edge of the figure
 ax.margins(y=0.1)
 
+plt.savefig('Spacing.jpg')
+
 plt.show()
 
 # Source: https://stackoverflow.com/a/67561982/14900011

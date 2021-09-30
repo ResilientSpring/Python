@@ -24,7 +24,9 @@ ax = df.plot(kind='bar', figsize=(12, 8), title='Amount Frequency',
 ax.bar_label(ax.containers[0], label_type='edge')
 
 # pad the spacing between the number and the edge of the figure
-ax.margins(y=0.6)
+ax.margins(y=0.8)
+
+plt.savefig('Spacing2.jpg')
 
 plt.show()
 
