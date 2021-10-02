@@ -24,7 +24,7 @@ for c in ax.containers:
 
     labels = []
     for v in c:
-        w = v.get_width()
+        w = v.get_height()
         if w > 0:
             labels.append(f'{w:.2f}%')
         else:
