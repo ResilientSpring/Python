@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 # create sample data as shown in the OP
 np.random.seed(365)
-people = ('A','B','C','D','E','F','G','H')
+
+people = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H')
 bottomdata = 3 + 10 * np.random.rand(len(people))
 topdata = 3 + 10 * np.random.rand(len(people))
 
