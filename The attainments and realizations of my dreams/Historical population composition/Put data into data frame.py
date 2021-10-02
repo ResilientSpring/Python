@@ -138,6 +138,13 @@ totality = [Total1940, Total1956, Total1960, Total1970, Total1980, Total1990, To
 
 print(totality)
 
+df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Outlying"],
+                  data=[northTW,
+                        centralTW,
+                        southTW,
+                        eastTW,
+                        outlyingTW])
 
+print(df)
 
 
