@@ -109,35 +109,6 @@ outlyingTW = [(0 + 0 + 264786), # 1940
               (140004 + 13420 + 105645)  # 2021/08
               ]
 
-
-south = np.array(southTW)
-central = np.array(centralTW)
-north = np.array(northTW)
-east = np.array(eastTW)
-outlying = np.array(outlyingTW)
-
-print(south)
-print(central)
-print(north)
-print(east)
-print(outlying)
-
-Total1940 = south[0] + central[0] + north[0] + east[0] + outlying[0]
-Total1956 = south[1] + central[1] + north[1] + east[1] + outlying[1]
-Total1960 = south[2] + central[2] + north[2] + east[2] + outlying[2]
-Total1970 = south[3] + central[3] + north[3] + east[3] + outlying[3]
-Total1980 = south[4] + central[4] + north[4] + east[4] + outlying[4]
-Total1990 = south[5] + central[5] + north[5] + east[5] + outlying[5]
-Total2000 = south[6] + central[6] + north[6] + east[6] + outlying[6]
-Total2010 = south[7] + central[7] + north[7] + east[7] + outlying[7]
-Total2015 = south[12] + central[12] + north[12] + east[12] + outlying[12]
-Total2020 = south[17] + central[17] + north[17] + east[17] + outlying[17]
-Total2021 = south[18] + central[18] + north[18] + east[18] + outlying[18]
-
-totality = [Total1940, Total1956, Total1960, Total1970, Total1980, Total1990, Total2000, Total2010, Total2020, Total2021]
-
-print(totality)
-
 df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Outlying"],
                   data=[northTW,
                         centralTW,
@@ -147,4 +118,4 @@ df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Out
 
 print(df)
 
-
+df.to_csv("The composition of Taiwan's population in history.csv")
