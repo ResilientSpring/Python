@@ -148,10 +148,10 @@ plt.title("The composition of Taiwan's population in history")
 plt.legend()
 
 # Label with label_type 'center' instead of the default 'edge'
-axes.bar_label(p1 / total * 100, label_type='center', fmt='%.2f')  # [1]
-axes.bar_label(p2 / total * 100, label_type='center', fmt='%.2f')
-axes.bar_label(p3 / total * 100, label_type='center', fmt='%.2f')
-axes.bar_label(p5 / total * 100)
+axes.bar_label(p1 / (p1 + p2 + p3 + p4 + p5), label_type='center', fmt='%.2f')  # [1]
+axes.bar_label(p2 / (p1 + p2 + p3 + p4 + p5), label_type='center', fmt='%.2f')
+axes.bar_label(p3 / (p1 + p2 + p3 + p4 + p5), label_type='center', fmt='%.2f')
+axes.bar_label(p5 /(p1 + p2 + p3 + p4 + p5))
 
 plt.show()
 
