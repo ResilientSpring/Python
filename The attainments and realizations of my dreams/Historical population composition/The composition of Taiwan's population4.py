@@ -130,11 +130,11 @@ cm = 1 / 2.54
 
 figure, axes = plt.subplots(figsize=(28 * cm, 15 * cm))
 
-p1 = axes.bar(year, south, color='g', label="South Taiwan", align='edge')
-p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan", align='edge')
-p3 = axes.bar(year, north, color='b', bottom=south + central, label="North Taiwan", align='edge')
-p4 = axes.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan", align='edge')
-p5 = axes.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands", align='edge')
+p1 = axes.bar(year, south, color='g', label="South Taiwan")
+p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+p3 = axes.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+p4 = axes.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+p5 = axes.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
 
 axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
 axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
