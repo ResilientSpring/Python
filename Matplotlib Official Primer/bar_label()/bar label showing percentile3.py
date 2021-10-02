@@ -16,7 +16,7 @@ print(df)
 
 cm = 1 / 2.54
 
-ax = df.plot(kind='barh', stacked=True, figsize=(28 * cm, 15 * cm))
+ax = df.plot(kind='bar', stacked=True, figsize=(28 * cm, 15 * cm))
 
 for c in ax.containers:
 
