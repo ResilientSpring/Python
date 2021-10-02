@@ -40,3 +40,11 @@ ax.legend(bbox_to_anchor=(1.025, 1), loc='upper left', borderaxespad=0.)
 ax.set_ylabel("People", fontsize=18)
 ax.set_xlabel("Percent", fontsize=18)
 plt.show()
+
+# Source: https://stackoverflow.com/a/64202669/14900011
+# References:
+# 1. https://www.google.com/search?q=python+3.8+vs+3.7
+# 2. https://docs.python.org/3/whatsnew/3.8.html
+# 3. https://www.google.com/search?q=walrus+operator
+# 4. https://towardsdatascience.com/the-walrus-operator-7971cd339d7d
+# 5. https://www.geeksforgeeks.org/display-percentage-above-bar-chart-in-matplotlib/
