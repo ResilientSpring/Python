@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 
 year = ["1940", "56", "60", "70", "80", "90", "2000", "2010",
         "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
@@ -118,4 +120,18 @@ df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Out
 
 print(df)
 
+south = np.array(southTW)
+central = np.array(centralTW)
+north = np.array(northTW)
+east = np.array(eastTW)
+outlying = np.array(outlyingTW)
 
+cm = 1 / 2.54
+
+figure, axes = plt.subplots(figsize=(28 * cm, 15 * cm))
+
+p1 = axes.bar(year, south, color='g', label="South Taiwan", align='edge', width=0.3)  # Adjusting the spacing between bars. [1]
+p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan", align='edge', width=0.3)
+p3 = axes.bar(year, north, color='b', bottom=south + central, label="North Taiwan", align='edge', width=0.3)
+p4 = axes.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan", align='edge', width=0.3)
+p5 = axes.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands", align='edge', width=0.3)
