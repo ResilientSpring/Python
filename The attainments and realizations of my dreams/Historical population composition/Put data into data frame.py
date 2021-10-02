@@ -137,3 +137,7 @@ Total2021 = south[18] + central[18] + north[18] + east[18] + outlying[18]
 totality = [Total1940, Total1956, Total1960, Total1970, Total1980, Total1990, Total2000, Total2010, Total2020, Total2021]
 
 print(totality)
+
+
+
+
