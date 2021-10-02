@@ -22,10 +22,12 @@ ax.set_xticklabels(('G1', 'G2', 'G3', 'G4', 'G5'))
 ax.legend()
 
 # Label with label_type 'center' instead of the default 'edge'
-ax.bar_label(p1, label_type='center')
-# ax.bar_label(p2, label_type='center')
+ax.bar_label(p1, label_type='edge')
+ax.bar_label(p2, label_type='edge')
 ax.bar_label(p2)
 
-plt.savefig('Bar label 2.jpg')
+plt.savefig('bar label type of edge.jpg')
 
 plt.show()
+
+# Source: https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_label_demo.html?highlight=stack#bar-label-demo
