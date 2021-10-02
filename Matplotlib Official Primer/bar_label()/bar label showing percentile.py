@@ -42,6 +42,7 @@ ax.set_xlabel("Percent", fontsize=18)
 plt.show()
 
 # Source: https://stackoverflow.com/a/64202669/14900011
+
 # References:
 # 1. https://www.google.com/search?q=python+3.8+vs+3.7
 # 2. https://docs.python.org/3/whatsnew/3.8.html
