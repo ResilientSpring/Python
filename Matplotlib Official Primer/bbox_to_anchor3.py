@@ -5,12 +5,12 @@ data = {'var': ['TR', 'AC', 'F&B'], '2019 1Q': [6600, 1256, 588], '2019 2Q': [65
 df = pd.DataFrame(data)
 df.set_index('var', inplace=True)
 
-ax = df.T.plot.bar(stacked=True, figsize=(10, 5), rot=0)
+ax = df.T.plot.bar(stacked=True, figsize=(12, 6), rot=0)
 
 for c in ax.containers:
     ax.bar_label(c, label_type='center')
 
-ax.legend(title='Categories', bbox_to_anchor=(1.05, 1), loc='upper left')
+ax.legend(title='Categories', bbox_to_anchor=(1.01, 1), loc='upper left')
 
 plt.show()
 
