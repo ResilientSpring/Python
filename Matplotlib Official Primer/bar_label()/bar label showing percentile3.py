@@ -12,6 +12,8 @@ topdata = 3 + 10 * np.random.rand(len(people))
 # create the dataframe
 df = pd.DataFrame({'Female': bottomdata, 'Male': topdata}, index=people)
 
+print(df)
+
 ax = df.plot(kind='barh', stacked=True, figsize=(8, 6))
 
 for c in ax.containers:
