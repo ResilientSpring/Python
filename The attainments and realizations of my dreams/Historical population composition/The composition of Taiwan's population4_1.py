@@ -1,13 +1,13 @@
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 
 year = ["1940", "56", "60", "70", "80", "90", "2000", "2010",
         "'11", "'12", "'13", "'14", "'15", "'16", "'17", "'18", "'19", "'20", "'21/08"]
 
-northTW = [(458714 + 326407 + 210386 + 264786 + 256322 + 100151 + 44872),  # 1940
-           (668093 + 737029 + 303188 + 411575 + 409053 + 194006 + 86439),  # 1956
+northTW = [(458714 + 326407 + 210386 + 264786 + 256322 + 100151 + 44872),   # 1940
+           (668093 + 737029 + 303188 + 411575 + 409053 + 194006 + 86439),   # 1956
            (829012 + 898655 + 339456 + 489676 + 464792 + 234442 + 108035),  # 1960
            (1240576 + 1769568 + 412787 + 726750 + 587652 + 324040),  # 1970
            (2258757 + 2220427 + 442988 + 1052800 + 641937 + 344867),  # 1980
@@ -28,7 +28,7 @@ northTW = [(458714 + 326407 + 210386 + 264786 + 256322 + 100151 + 44872),  # 194
            ]
 
 centralTW = [(133301 + 357743 + 262308 + 570528 + 242137 + 394830),  # 1940
-             (247088 + 537387 + 395324 + 793858 + 357284 + 604484),  # 1956
+             (247088 + 537387 + 395324 + 793858	+ 357284 + 604484),  # 1956
              (298119 + 605437 + 435084 + 880684 + 412942 + 672557),  # 1960
              (448140 + 785903 + 524744 + 1050246 + 511040 + 800578),  # 1970
              (593427 + 1013176 + 542745 + 1166352 + 524245 + 796276),  # 1980
@@ -69,7 +69,7 @@ southTW = [(173148 + 501777 + 152265 + 339163 + 418244 + 365786),  # 1940
            (1867554 + 2753530 + 495662 + 807159 + 264858),  # 2021/08
            ]
 
-eastTW = [(147744 + 86852),  # 1940
+eastTW = [(147744 + 86852),   # 1940
           (219701 + 568469),  # 1956
           (252264 + 208272),  # 1960
           (335799 + 291761),  # 1970
@@ -90,7 +90,7 @@ eastTW = [(147744 + 86852),  # 1940
           (322506 + 213956),  # 2021/08
           ]
 
-outlyingTW = [(0 + 0 + 264786),  # 1940
+outlyingTW = [(0 + 0 + 264786), # 1940
               (0 + 0 + 85886),  # 1956
               (0 + 0 + 96986),  # 1960
               (61305 + 16939 + 119153),  # 1970
@@ -120,12 +120,38 @@ df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Out
 
 print(df)
 
-transposed_df = df.transpose()
+south = np.array(southTW)
+central = np.array(centralTW)
+north = np.array(northTW)
+east = np.array(eastTW)
+outlying = np.array(outlyingTW)
 
-ax = df.plot(kind='bar', stacked=True, figsize=(8, 6))
+cm = 1 / 2.54
 
-for c in ax.containers:
-    ax.bar_label(c, fmt='%.2f%%', label_type='center')
+figure, axes = plt.subplots(figsize=(28 * cm, 15 * cm))
 
+p1 = axes.bar(year, south, color='g', label="South Taiwan")
+p2 = axes.bar(year, central, color='y', bottom=south, label="Central Taiwan")
+p3 = axes.bar(year, north, color='b', bottom=south + central, label="North Taiwan")
+p4 = axes.bar(year, east, color='r', bottom=south + central + north, label="Eastern Taiwan")
+p5 = axes.bar(year, outlying, color='k', bottom=south + central + north + east, label="Outlying Islands")
+
+axes.yaxis.set_major_locator(ticker.MultipleLocator(5000000))
+axes.yaxis.set_minor_locator(ticker.MultipleLocator(1000000))
+
+plt.xticks(rotation=27)
+plt.xlabel('Year')
+plt.ylabel('Population (Unit: 10 millions)')
+plt.title("The composition of Taiwan's population in history")
+plt.legend()
+
+# Label with label_type 'center' instead of the default 'edge'
+axes.bar_label(p1, label_type='center', fmt='%.2f')  # [1]
+axes.bar_label(p2, label_type='center', fmt='%.2f')
+axes.bar_label(p3, label_type='center', fmt='%.2f')
+axes.bar_label(p5)
 
 plt.show()
+
+# References:
+# 1. https://stackoverflow.com/a/64797097/14900011
