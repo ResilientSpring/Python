@@ -14,7 +14,9 @@ df = pd.DataFrame({'Female': bottomdata, 'Male': topdata}, index=people)
 
 print(df)
 
-ax = df.plot(kind='barh', stacked=True, figsize=(8, 6))
+cm = 1 / 2.54
+
+ax = df.plot(kind='barh', stacked=True, figsize=(28 * cm, 15 * cm))
 
 for c in ax.containers:
 
