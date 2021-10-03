@@ -16,3 +16,5 @@ ax = plt.subplot(projection='polar')
 ax.bar(theta, radii, width=width, bottom=0.0, color=colors, alpha=0.5)
 
 plt.show()
+
+# Source: https://matplotlib.org/stable/gallery/pie_and_polar_charts/polar_bar.html#sphx-glr-gallery-pie-and-polar-charts-polar-bar-py
