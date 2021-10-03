@@ -14,4 +14,9 @@ data = [[75, 144, 114, 102, 108],
         [90, 75, 135, 75, 90]]
 
 plt.table(cellText=data, rowLabels=rows, colLabels=columns, loc='bottom')
+
+plt.ylabel("Units Sold")
+plt.xticks([])
+plt.title("The Number Of Batteries Sold Per Year")
+
 plt.show()
