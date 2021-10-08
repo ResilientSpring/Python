@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.colors as colour
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
@@ -28,3 +29,36 @@ summary = [df["Taipei"].sum(), df["New Taipei"].sum(), df["Taoyuan"].sum(), df["
            df["Tainan"].sum(), df["Kaohsiung"].sum()]
 
 print(summary)
+
+cumulative_sum = pd.DataFrame(data=summary,
+                              columns=["Cumulative sum"],
+                              index=administrative_duty)
+
+print(cumulative_sum)
+
+figure, axes = plt.subplots()
+
+# hide axes
+figure.patch.set_visible(False)
+axes.axis('off')
+axes.axis('tight')
+
+axes.table(cellText=cumulative_sum.values,
+           colLabels=cumulative_sum.columns,
+           colColours=[colour.CSS4_COLORS.get('springgreen')],
+           colWidths=[0.4, 0.4, 0.4, 0.4, 0.4, 0.4],
+           cellColours=['w', 'w', 'w', 'w', 'w', 'w'],
+           cellLoc='center',
+           rowLabels=cumulative_sum.index,
+           rowColours=[colour.CSS4_COLORS.get('lightskyblue'),
+                       colour.CSS4_COLORS.get('lightskyblue'),
+                       colour.CSS4_COLORS.get('lightskyblue'),
+                       colour.CSS4_COLORS.get('lightskyblue'),
+                       colour.CSS4_COLORS.get('lightskyblue'),
+                       colour.CSS4_COLORS.get('lightskyblue')],
+           loc='center',
+           )
+
+figure.tight_layout()
+
+plt.show()
