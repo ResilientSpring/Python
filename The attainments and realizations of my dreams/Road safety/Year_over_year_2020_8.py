@@ -29,6 +29,12 @@ Taipei = df.loc[:, "Taipei"].to_numpy()
 
 print(Taipei)
 
+New_Taipei = df.loc[:, "New Taipei"].to_numpy()
+Taoyuan = df.loc[:, "Taoyuan"].to_numpy()
+Taichung = df.loc[:, "Taichung"].to_numpy()
+Tainan = df.loc[:, "Tainan"].to_numpy()
+Kaohsiung = df.loc[:, "Kaohsiung"].to_numpy()
+
 summary = [df["Taipei"].sum(), df["New Taipei"].sum(), df["Taoyuan"].sum(), df["Taichung"].sum(),
            df["Tainan"].sum(), df["Kaohsiung"].sum()]
 
@@ -43,6 +49,12 @@ print(cumulative_sum)
 figure, (axes1, axes2) = plt.subplots(2)
 
 axes1.plot(year, Taipei, label="Taipei")
+axes1.plot(year, New_Taipei, label="New Taipei")
+axes1.plot(year, Taoyuan, label="Taoyuan")
+axes1.plot(year, Taichung, label="Taichung")
+axes1.plot(year, Tainan, label="Tainan")
+axes1.plot(year, Kaohsiung, label="Kaohsiumg")
+
 axes1.set_title("The Number of Deaths in Road Accident in Taiwan by Region")
 axes1.set_xlabel("Year")
 axes1.set_ylabel("The number of deaths")
