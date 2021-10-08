@@ -94,7 +94,7 @@ text = figure.text(0.5, 0.02,
                    'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
                    horizontalalignment='center',
                    verticalalignment='center',
-                   size=8,
+                   size=13,
                    fontproperties='MS Gothic')
 
 text.set_path_effects([path_effects.Normal()])
