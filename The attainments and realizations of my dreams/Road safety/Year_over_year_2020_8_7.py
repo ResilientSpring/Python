@@ -89,11 +89,19 @@ axes2.table(cellText=cumulative_sum.values,
 
 figure.tight_layout()
 
+# matplotlib text [1][2]
 text = figure.text(0.5, 0.02,
-                   'Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
+                   'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
                    horizontalalignment='center',
                    verticalalignment='center',
                    size=8,
                    fontproperties='MS Gothic')
 
+text.set_path_effects([path_effects.Normal()])
+
 plt.show()
+
+# References:
+# 1. https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html
+# 2. https://matplotlib.org/stable/tutorials/advanced/patheffects_guide.html#sphx-glr-tutorials-advanced-patheffects-guide-py
+
