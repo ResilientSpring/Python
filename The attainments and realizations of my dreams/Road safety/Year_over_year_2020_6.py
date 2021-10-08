@@ -40,7 +40,7 @@ cumulative_sum = pd.DataFrame(data=summary,
 
 print(cumulative_sum)
 
-figure, (axes1, axes2) = plt.subplots(nrows=1, ncols=2)
+figure, (axes1, axes2) = plt.subplots(nrows=1, ncols=2) # matplotlib subplot [1]
 
 axes1.plot(year, Taipei, label="Taipei")
 
@@ -68,3 +68,7 @@ axes2.table(cellText=cumulative_sum.values,
 figure.tight_layout()
 
 plt.show()
+
+# References:
+# 1. https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html
+
