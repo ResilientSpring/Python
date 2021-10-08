@@ -93,13 +93,16 @@ def label(xy, text):
 
 figure.tight_layout()
 
-font = {'family': 'DejaVu Sans', 'name': 'MS Gothic', 'style': 'italic',
-        'color': 'orange', 'weight': 'bold', 'size': 12}
+# font = {'family': 'DejaVu Sans', 'name': 'MS Gothic', 'style': 'italic',
+#        'color': 'orange', 'weight': 'bold', 'size': 12}
 
-plt.text(x=3, y=1, s="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數", fontdict=font)
+# plt.text(x=3, y=1, s="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數", fontdict=font)
 
 plt.annotate(text="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數",
-             xycoords='figure fraction', xy=(25, 2.5), textcoords='offset points', xytext=(2.5, 2.5),
+             textcoords='offset points',
+             xytext=(0.5, 0.1),
+             xy=(0.5, 0.1),
+
              fontproperties='MS Gothic')
 
 plt.show()
