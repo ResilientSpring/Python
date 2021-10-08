@@ -61,7 +61,7 @@ axes1.set_xlabel("Year")
 axes1.set_ylabel("The number of deaths")
 
 # If a 4-tuple or BboxBase is given, then it specifies the bbox (x, y, width, height) that the legend is placed in.[6]
-axes1.legend(bbox_to_anchor=(1, 1, 2, 4)) # [5][6]
+axes1.legend(bbox_to_anchor=(0.1, 0.1, 2, 4)) # [5][6]
 
 axes1.grid(True)
 
