@@ -88,11 +88,8 @@ table = axes2.table(cellText=cumulative_sum.values,  # matplotlib table size [3]
                     )
 
 # Scale column widths by xscale and row heights by yscale.[4]
-table.scale(2.4, 2.2)  # [3]
+table.scale(2, 1.6)  # [3]
 table.set_fontsize(14)  # [3]
-
-
-figure.tight_layout() # [7]
 
 # matplotlib text [1][2]
 text = figure.text(0.5, 0.02,
@@ -113,4 +110,3 @@ plt.show()
 # 4. https://matplotlib.org/stable/api/table_api.html#matplotlib.table.Table.scale
 # 5. https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_and_donut_labels.html#sphx-glr-gallery-pie-and-polar-charts-pie-and-donut-labels-py
 # 6. https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html#matplotlib.axes.Axes.legend
-# 7. https://matplotlib.org/stable/tutorials/intermediate/tight_layout_guide.html
