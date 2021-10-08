@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+pd.options.plotting.backend = "plotly"
+
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
 year = ["2009", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "2020"]
@@ -24,12 +26,6 @@ df = pd.DataFrame(data=death, columns=administrative_duty, index=year)
 
 print(df)
 
-df.plot(grid=True, use_index=True, figsize=(10, 8),
-        title="The Number of Deaths in Road Accident in Taiwan by Region")
-
-plt.xlabel("Year")
-plt.ylabel("The number of deaths (Unit: person)")
-plt.text(x=1, y=1, s="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數",
-         style='italic', bbox={'facecolor': 'red', 'alpha': 0.8, 'pad': 10}, fontproperties="MS Gothic")
+df.plot()
 
 plt.show()
