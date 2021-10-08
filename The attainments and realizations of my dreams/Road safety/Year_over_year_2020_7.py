@@ -43,6 +43,9 @@ print(cumulative_sum)
 figure, (axes1, axes2) = plt.subplots(2)
 
 axes1.plot(year, Taipei, label="Taipei")
+axes1.set_title("The Number of Deaths in Road Accident in Taiwan by Region")
+axes1.set_xlabel("Year")
+axes1.set_ylabel("The number of deaths")
 
 # hide axes
 # axes[0, 1].patch.set_visible(False)
