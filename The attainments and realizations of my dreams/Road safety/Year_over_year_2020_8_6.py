@@ -99,7 +99,8 @@ font = {'family': 'DejaVu Sans', 'name': 'MS Gothic', 'style': 'italic',
 plt.text(x=3, y=1, s="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數", fontdict=font)
 
 plt.annotate(text="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數",
-             xycoords='figure fraction', xy=(2.5, 2.5), textcoords='offset points', xytext=(2.5, 2.5))
+             xycoords='figure fraction', xy=(25, 2.5), textcoords='offset points', xytext=(2.5, 2.5),
+             fontproperties='MS Gothic')
 
 plt.show()
 
