@@ -61,6 +61,8 @@ axes1.set_ylabel("The number of deaths")
 
 axes1.legend()
 
+axes1.grid(True)
+
 # hide axes
 # axes[0, 1].patch.set_visible(False)
 axes2.axis('off')
