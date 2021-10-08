@@ -38,8 +38,10 @@ print(cumulative_sum)
 
 figure, axes = plt.subplots(nrows=1, ncols=2)
 
+axes[0, 0].plot(year, df.loc[:, "Taipei"].values(), label="Taipei")
+
 # hide axes
-figure.patch.set_visible(False)
+# axes[0, 1].patch.set_visible(False)
 axes[0, 1].axis('off')
 axes[0, 1].axis('tight')
 
@@ -58,8 +60,6 @@ axes[0, 1].table(cellText=cumulative_sum.values,
                              colour.CSS4_COLORS.get('lightskyblue')],
                  loc='center',
                  )
-
-axes[0, 0].plot(data=df)
 
 figure.tight_layout()
 
