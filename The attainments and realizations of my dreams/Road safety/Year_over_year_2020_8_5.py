@@ -29,20 +29,39 @@ Taipei = df.loc[:, "Taipei"].to_numpy()
 
 print(Taipei)
 
+New_Taipei = df.loc[:, "New Taipei"].to_numpy()
+Taoyuan = df.loc[:, "Taoyuan"].to_numpy()
+Taichung = df.loc[:, "Taichung"].to_numpy()
+Tainan = df.loc[:, "Tainan"].to_numpy()
+Kaohsiung = df.loc[:, "Kaohsiung"].to_numpy()
+
 summary = [df["Taipei"].sum(), df["New Taipei"].sum(), df["Taoyuan"].sum(), df["Taichung"].sum(),
            df["Tainan"].sum(), df["Kaohsiung"].sum()]
 
 print(summary)
 
 cumulative_sum = pd.DataFrame(data=summary,
-                              columns=["Cumulative sum"],
+                              columns=["Cumulative Deaths (2009-2020)"],
                               index=administrative_duty)
 
 print(cumulative_sum)
 
-figure, (axes1, axes2) = plt.subplots(nrows=1, ncols=2) # matplotlib subplot [1]
+figure, (axes1, axes2) = plt.subplots(2)
 
 axes1.plot(year, Taipei, label="Taipei")
+axes1.plot(year, New_Taipei, label="New Taipei")
+axes1.plot(year, Taoyuan, label="Taoyuan")
+axes1.plot(year, Taichung, label="Taichung")
+axes1.plot(year, Tainan, label="Tainan")
+axes1.plot(year, Kaohsiung, label="Kaohsiung")
+
+axes1.set_title("The Number of Deaths in Road Accident in Taiwan by Region")
+axes1.set_xlabel("Year")
+axes1.set_ylabel("The number of deaths")
+
+axes1.legend()
+
+axes1.grid(True)
 
 # hide axes
 # axes[0, 1].patch.set_visible(False)
@@ -63,12 +82,23 @@ axes2.table(cellText=cumulative_sum.values,
                         colour.CSS4_COLORS.get('lightskyblue'),
                         colour.CSS4_COLORS.get('lightskyblue')],
             loc='center',
+            url='Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數'
             )
 
+
+def label(xy, text):
+    y = xy[1] - 0.15  # shift y-value for label so that it's below the artist.[1]
+    plt.text(xy[0], y, text, ha="center", family='sans-serif', size=14)
+
+
 figure.tight_layout()
+
+font = {'family': 'DejaVu Sans', 'name': 'MS Gothic', 'style': 'italic',
+        'color': 'orange', 'weight': 'bold', 'size': 12}
+
+plt.text(x=3, y=1, s="Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數", fontdict=font)
 
 plt.show()
 
 # References:
-# 1. https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html
-
+# 1. https://matplotlib.org/stable/gallery/shapes_and_collections/artist_reference.html#sphx-glr-gallery-shapes-and-collections-artist-reference-py
