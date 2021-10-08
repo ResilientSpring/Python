@@ -38,19 +38,20 @@ print(cumulative_sum)
 
 figure, axes = plt.subplots()
 
-# hide axes
+# hide axes [1]
 figure.patch.set_visible(False)
 axes.axis('off')
 axes.axis('tight')
 
+# Plot a table using matplotlib.[2]
 axes.table(cellText=cumulative_sum.values,
            colLabels=cumulative_sum.columns,
            colColours=[colour.CSS4_COLORS.get('springgreen')],
-           colWidths=[0.4, 0.4, 0.4, 0.4, 0.4, 0.4],
+           colWidths=[0.4, 0.4, 0.4, 0.4, 0.4, 0.4], # colwidths matplotlib [3][4]
            cellColours=['w', 'w', 'w', 'w', 'w', 'w'],
            cellLoc='center',
            rowLabels=cumulative_sum.index,
-           rowColours=[colour.CSS4_COLORS.get('lightskyblue'),
+           rowColours=[colour.CSS4_COLORS.get('lightskyblue'), #[5][6][7]
                        colour.CSS4_COLORS.get('lightskyblue'),
                        colour.CSS4_COLORS.get('lightskyblue'),
                        colour.CSS4_COLORS.get('lightskyblue'),
@@ -62,3 +63,12 @@ axes.table(cellText=cumulative_sum.values,
 figure.tight_layout()
 
 plt.show()
+
+# References:
+# 1. https://stackoverflow.com/a/45936469
+# 2. https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.table.html
+# 3. https://stackoverflow.com/a/46977181
+# 4. https://stackoverflow.com/a/15514091
+# 5. https://matplotlib.org/stable/gallery/color/named_colors.html
+# 6. https://stackoverflow.com/a/46664216
+# 7. https://matplotlib.org/stable/gallery/color/color_demo.html
