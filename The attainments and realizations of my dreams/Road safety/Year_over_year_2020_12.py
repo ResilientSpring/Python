@@ -48,7 +48,7 @@ cumulative_sum = pd.DataFrame(data=summary,
 
 print(cumulative_sum)
 
-figure, (axes1, axes2) = plt.subplots(2)
+figure, (axes1, axes2, axes3) = plt.subplots(3)
 
 axes1.plot(year, Taipei, label="Taipei")
 axes1.plot(year, New_Taipei, label="New Taipei")
@@ -91,6 +91,8 @@ table = axes2.table(cellText=cumulative_sum.values,  # matplotlib table size [3]
 # Scale column widths by xscale and row heights by yscale.[4]
 table.scale(2.01, 1.57)  # [3]
 table.set_fontsize(14)  # [3]
+
+axes3 = cumulative_sum.plot.kde()
 
 # matplotlib text [1][2]
 text = figure.text(0.5, 0.04,
