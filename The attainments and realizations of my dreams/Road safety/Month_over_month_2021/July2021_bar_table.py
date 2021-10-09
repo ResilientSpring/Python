@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
@@ -21,23 +22,17 @@ df = pd.DataFrame(data=deaths,
                   columns=administrative_duty)
 print(df)
 
-figure, axes = plt.subplots()
+# Get some pastel shades for the colors
+colors = plt.colormaps().BuPu(np.linspace(0, 0.5, len(month_as_of_now)))
+n_rows = len(deaths)
 
-axes.plot(month_as_of_now, df.loc[:, "Taipei"].to_numpy(), label="Taipei")
-axes.plot(month_as_of_now, df.loc[:, "New Taipei"].to_numpy(), label="New Taipei")
-axes.plot(month_as_of_now, df.loc[:, "Taoyuan"].to_numpy(), label="Taoyuan")
-axes.plot(month_as_of_now, df.loc[:, "Taichung"].to_numpy(), label="Taichung")
-axes.plot(month_as_of_now, df.loc[:, "Tainan"].to_numpy(), label="Tainan")
-axes.plot(month_as_of_now, df.loc[:, "Kaohsiung"].to_numpy(), label="Kaohsiung")
+index = np.arange(len(administrative_duty)) + 0.3
+bar_width = 0.4
 
-axes.set_title("The Cumulative Number of Deaths in Road Accident in Taiwan by Region (2021/01-07)")
+# Initialize the vertical-offset for the stacked bar chart.
+y_offset = np.zeros(len(administrative_duty))
 
-axes.legend()
-
-axes.grid(True)
-
-axes.set_ylabel("The number of deaths")
-
-axes.set_xlabel("Months in 2021")
+# Plot bars and create text labels for the table
+cell_text = []
 
 plt.show()
