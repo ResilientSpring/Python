@@ -47,7 +47,7 @@ cumulative_sum = pd.DataFrame(data=summary,
 
 print(cumulative_sum)
 
-figure, (axes1, axes2, axes3) = plt.subplots(3, figsize=(10, 8))
+figure, (axes1, axes2, axes3) = plt.subplots(3, figsize=(9, 9))
 
 axes1.plot(year, Taipei, label="Taipei")
 axes1.plot(year, New_Taipei, label="New Taipei")
