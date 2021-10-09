@@ -13,7 +13,7 @@ deaths = [[14, 30, 18, 28, 31, 31], # Jan
           [47, 85, 77, 106, 106, 123], # Apr
           [57, 106, 99, 128, 147, 153], # May
           [66, 123, 123, 151, 172, 177], # Jun
-          [73, 146, 145, 178, 190, 173], # Jul
+          [73, 146, 145, 178, 190, 193], # Jul
           ]
 
 df = pd.DataFrame(data=deaths,
@@ -30,8 +30,14 @@ axes.plot(month_as_of_now, df.loc[:, "Taichung"].to_numpy(), label="Taichung")
 axes.plot(month_as_of_now, df.loc[:, "Tainan"].to_numpy(), label="Tainan")
 axes.plot(month_as_of_now, df.loc[:, "Kaohsiung"].to_numpy(), label="Kaohsiung")
 
+axes.set_title("The Cumulative Number of Deaths in Road Accident in Taiwan by Region (2021/01-07)")
+
 axes.legend()
 
 axes.grid(True)
+
+axes.set_ylabel("The number of deaths")
+
+axes.set_xlabel("Months in 2021")
 
 plt.show()
