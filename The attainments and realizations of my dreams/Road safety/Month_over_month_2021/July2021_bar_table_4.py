@@ -32,13 +32,15 @@ n_rows = len(deaths)
 index = np.arange(len(administrative_duty)) + 0.3
 bar_width = 0.4
 
+figure, axes = plt.subplots()
+
 # Initialize the vertical-offset for the stacked bar chart.
 y_offset = np.zeros(len(administrative_duty))
 
 # Plot bars and create text labels for the table
 cell_text = []
 for row in range(n_rows):
-    plt.bar(index, deaths[row], bar_width, bottom=y_offset, color=colors[row])
+    axes.bar(index, deaths[row], bar_width, bottom=y_offset, color=colors[row])
     y_offset = y_offset + deaths[row]
     cell_text.append([x for x in y_offset])
 
@@ -47,30 +49,30 @@ colors = colors[::-1]
 cell_text.reverse()
 
 # Add a table at the bottom of the axes
-the_table = plt.table(cellText=cell_text,
-                      rowLabels=month_as_of_now,
-                      rowColours=colors,
-                      colLabels=administrative_duty,
-                      loc='bottom')
+the_table = axes.table(cellText=cell_text,
+                       rowLabels=month_as_of_now,
+                       rowColours=colors,
+                       colLabels=administrative_duty,
+                       loc='bottom')
 
 # Adjust layout to make room for the table:
 plt.subplots_adjust(left=0.2, bottom=0.2)
 
-plt.ylabel("The number of deaths")
-plt.xticks([])
-plt.title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2021/01-07)")
+axes.set_ylabel("The number of deaths")
+axes.set_xticks([])
+axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2021/01-07)")
 
-plt.grid(True)  # pyplot.grid [1][2]
+axes.grid(True)  # pyplot.grid [1][2]
 
-plt.tight_layout()
+figure.tight_layout()
 
 # matplotlib text [1][2]
-text = plt.text(2.4, 3.9,
-                'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
-                horizontalalignment='center',
-                verticalalignment='center',
-                size=13,
-                fontproperties='MS Gothic')
+text = figure.text(0.5, 0.04,
+                   'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
+                   horizontalalignment='center',
+                   verticalalignment='center',
+                   size=13,
+                   fontproperties='MS Gothic')
 
 text.set_path_effects([path_effects.Normal()])
 
