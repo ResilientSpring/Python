@@ -92,6 +92,7 @@ table.scale(2.01, 1.57)  # [3]
 table.set_fontsize(14)  # [3]
 
 axes3.bar(administrative_duty, summary) # Create a bar chart. [7]
+axes3.bar_label(axes3.containers[0], label_type='edge') # Add a bar label. [9]
 axes3.plot(administrative_duty, summary, '-o', color='orange') # Add a trend line.[8]
 
 # matplotlib text [1][2]
@@ -115,3 +116,4 @@ plt.show()
 # 6. https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html#matplotlib.axes.Axes.legend
 # 7. https://matplotlib.org/stable/gallery/ticks_and_spines/custom_ticker1.html#sphx-glr-gallery-ticks-and-spines-custom-ticker1-py
 # 8. https://stackoverflow.com/a/48842891
+# 9. https://stackoverflow.com/a/67561982/
