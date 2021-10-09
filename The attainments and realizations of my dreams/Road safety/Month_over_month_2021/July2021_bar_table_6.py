@@ -68,7 +68,7 @@ figure.tight_layout()
 
 # matplotlib text [1][2]
 text = figure.text(0.5, 0.04,
-                   'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
+                   'Reference:https://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100',
                    horizontalalignment='center',
                    verticalalignment='center',
                    size=12,
