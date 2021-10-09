@@ -65,7 +65,7 @@ plt.grid(True)  # pyplot.grid [1][2]
 plt.tight_layout()
 
 # matplotlib text [1][2]
-text = plt.text(0.5, 0.04,
+text = plt.text(0.9, 0.01,
                 'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
                 horizontalalignment='center',
                 verticalalignment='center',
