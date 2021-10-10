@@ -79,3 +79,5 @@ plt.show()
 # 1. https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html
 # 2. https://matplotlib.org/stable/gallery/subplots_axes_and_figures/geo_demo.html#sphx-glr-gallery-subplots-axes-and-figures-geo-demo-py
 # 3. https://stackoverflow.com/a/51454824
+
+# Adapted from: https://matplotlib.org/stable/gallery/misc/table_demo.html
