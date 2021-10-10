@@ -91,7 +91,7 @@ table = axes2.table(cellText=cumulative_sum.values,  # matplotlib table size [3]
 table.scale(2.01, 1.57)  # [3]
 table.set_fontsize(14)  # [3]
 
-axes3.bar(administrative_duty, summary) # Create a bar chart. [7]
+axes3.bar(administrative_duty, summary, color=colour.CSS4_COLORS.get('palegreen'), linewidth=1, ecolor=colour.CSS4_COLORS.get('dodgerblue')) # Create a bar chart and its format. [7][11][12]
 axes3.bar_label(axes3.containers[0], label_type='edge', color='r', fontsize=14)# Add a bar label and its format.[9][10]
 axes3.plot(administrative_duty, summary, '-o', color='orange') # Add a trend line.[8]
 
@@ -118,3 +118,5 @@ plt.show()
 # 8. https://stackoverflow.com/a/48842891
 # 9. https://stackoverflow.com/a/67561982/
 # 10. https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_label_demo.html
+# 11. https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html#matplotlib.axes.Axes.bar
+# 12. https://matplotlib.org/stable/gallery/color/named_colors.html
