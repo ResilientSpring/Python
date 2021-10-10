@@ -92,7 +92,7 @@ table.scale(2.01, 1.57)  # [3]
 table.set_fontsize(14)  # [3]
 
 axes3.bar(administrative_duty, summary) # Create a bar chart. [7]
-axes3.bar_label(axes3.containers[0], label_type='edge', color='b', fontsize=14)# Add a bar label and its format.[9][10]
+axes3.bar_label(axes3.containers[0], label_type='edge', color='r', fontsize=14)# Add a bar label and its format.[9][10]
 axes3.plot(administrative_duty, summary, '-o', color='orange') # Add a trend line.[8]
 
 # matplotlib text [1][2]
