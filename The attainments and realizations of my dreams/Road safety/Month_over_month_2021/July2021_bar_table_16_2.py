@@ -34,7 +34,7 @@ n_rows = len(deaths)
 index = np.arange(len(administrative_duty)) + 0.3
 bar_width = 0.4
 
-figure, (axes, axes2) = plt.subplots(2, figsize=(10, 18))
+figure, (axes, axes2) = plt.subplots(2, figsize=(10, 10))
 
 # Initialize the vertical-offset for the stacked bar chart.
 y_offset = np.zeros(len(administrative_duty))
@@ -77,7 +77,7 @@ axes2.bar(administrative_duty, [73, 146, 145, 178, 190, 193])
 axes2.bar_label(axes2.containers[0], label_type='edge')
 axes2.plot(administrative_duty, [73, 146, 145, 178, 190, 193], '-o', color='orange')
 
-figure.tight_layout()
+# figure.tight_layout()
 
 # matplotlib text [1][2]
 text = figure.text(0.5, 0.04,
