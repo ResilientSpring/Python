@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# sold in each year
+# table's row
 rows = ['2011', '2012', '2013', '2014', '2015']
 
-# The types of batteries
+# table's column
 columns = ('7Ah', '35Ah', '40Ah', '135Ah', '150Ah', '150Ah')
 
 data = [[75, 144, 114, 102, 108],
