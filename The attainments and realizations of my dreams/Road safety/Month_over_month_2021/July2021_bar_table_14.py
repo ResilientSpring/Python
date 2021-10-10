@@ -10,13 +10,13 @@ month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "
 
 month_as_of_now = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"]
 
-deaths = [[14, 30, 18, 28, 31, 31], # January
+deaths = [[14, 30, 18, 28, 31, 31],  # January
           [9, 25, 20, 18, 31, 39],  # February
-          [13, 15, 18, 36, 21, 28], # March
-          [11, 15, 21, 24, 23, 25], # April
-          [10, 21, 22, 22, 37, 34], # May
-          [9, 17, 24, 23, 29, 20], # June
-          [7, 23, 22, 27, 18, 16], # July
+          [13, 15, 18, 36, 21, 28],  # March
+          [11, 15, 21, 24, 23, 25],  # April
+          [10, 21, 22, 22, 37, 34],  # May
+          [9, 17, 24, 23, 29, 20],  # June
+          [7, 23, 22, 27, 18, 16],  # July
           ]
 
 df = pd.DataFrame(data=deaths,
@@ -42,11 +42,20 @@ y_offset = np.zeros(len(administrative_duty))
 # Plot bars and create text labels for the table
 cell_text = []
 for row in range(n_rows):
-    axes.bar(index, deaths[row], bar_width, bottom=y_offset, color=colors[row])
-    axes.bar_label(axes.containers[0], label_type='center')
+    plot = axes.bar(index, deaths[row], bar_width, bottom=y_offset, color=colors[row])
+    #    axes.bar_label(axes.containers[0], label_type='center')
     y_offset = y_offset + deaths[row]
     cell_text.append([x for x in y_offset])
 
+    i = 0
+
+    # Each iteration of this for loop labels each bar with corresponding value for the given year
+    for rectangle in plot:
+        height = rectangle.get_height()
+        axes.text(rectangle.get_x() + rectangle.get_width() / 2, y_offset[i], '%d' % int(y_offset[i]),
+                  horizontalalignment='center', verticalalignment='bottom')
+
+        i = i + 1
 
 # Add a table at the bottom of the axes
 the_table = axes.table(cellText=cell_text,
