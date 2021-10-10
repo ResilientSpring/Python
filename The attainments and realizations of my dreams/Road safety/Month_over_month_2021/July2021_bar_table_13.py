@@ -43,7 +43,7 @@ y_offset = np.zeros(len(administrative_duty))
 cell_text = []
 for row in range(n_rows):
     axes.bar(index, deaths[row], bar_width, bottom=y_offset, color=colors[row])
-    axes.bar_label(axes.containers[0], label_type='edge')
+    axes.bar_label(axes.containers[0], label_type='center')
     y_offset = y_offset + deaths[row]
     cell_text.append([x for x in y_offset])
 
