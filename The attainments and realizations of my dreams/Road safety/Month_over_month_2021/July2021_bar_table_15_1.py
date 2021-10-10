@@ -80,7 +80,7 @@ axes2.plot(administrative_duty, [73, 146, 145, 178, 190, 193], '-o', color='oran
 figure.tight_layout()
 
 # matplotlib text [1][2]
-text = figure.text(0.5, 0.04,
+text = figure.text(0.5, 0.01,
                    'Reference:https://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100',
                    horizontalalignment='center',
                    verticalalignment='center',
