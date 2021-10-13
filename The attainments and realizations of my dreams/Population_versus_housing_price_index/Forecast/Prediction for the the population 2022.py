@@ -124,3 +124,12 @@ df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Out
                         outlyingTW])
 
 print(df)
+
+total = []
+
+for i in range(0, 20, 1):
+    summation = df.iloc[:, i].sum()
+    total.append(summation)
+
+
+print(total)
