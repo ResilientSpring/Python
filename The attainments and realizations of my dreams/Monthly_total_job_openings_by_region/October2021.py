@@ -19,7 +19,7 @@ for rect in plot:
 plt.title("2021/10 the number of job openings in Taiwan by region")
 
 # plt.ylabel("")
-plt.xlabel("https://web.archive.org/web/20211023110903/https://www.104.com.tw/jb/category/?cat=2")
+plt.xlabel("Reference: https://web.archive.org/web/20211023110903/https://www.104.com.tw/jb/category/?cat=2")
 
 plt.ylim(20000, 90000)
 
