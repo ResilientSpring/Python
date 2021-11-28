@@ -16,7 +16,7 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom')
 
-plt.title("2021/10 the number of job openings in Taiwan by region")
+plt.title("2021/11 the number of job openings in Taiwan by region")
 
 # plt.ylabel("")
 plt.xlabel("Reference: https://web.archive.org/web/20211128163303/https://www.104.com.tw/jb/category/?cat=2")
