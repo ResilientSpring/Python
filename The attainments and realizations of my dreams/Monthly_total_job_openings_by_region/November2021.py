@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 region_num = [1, 2, 3, 4, 5, 6, 7]
-position_vacancies = [89351, 52065, 38298, 30692, 50527, 23497, 28960]
+position_vacancies = [92415, 53496, 39357, 31572, 51570, 23956, 29969]
 
 label = ["Taipei", "New Taipei", "Taoyuan", "Hsinchu", "Taichung", "Tainan", "Kaohsiung"]
 
@@ -19,7 +19,7 @@ for rect in plot:
 plt.title("2021/10 the number of job openings in Taiwan by region")
 
 # plt.ylabel("")
-plt.xlabel("Reference: https://web.archive.org/web/20211023110903/https://www.104.com.tw/jb/category/?cat=2")
+plt.xlabel("Reference: https://web.archive.org/web/20211128163303/https://www.104.com.tw/jb/category/?cat=2")
 
 plt.ylim(20000, 90000)
 
