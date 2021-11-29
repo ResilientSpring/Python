@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 # Using the magic encoding
 # -*- coding: utf-8 -*-
 
-matplotlib.rc('font', family="MS Gothic")
+matplotlib.rc('font', family="MS Gothic") # [1]
 
 region_num = [1, 2, 3, 4, 5, 6, 7]
 position_vacancies = [92415, 53496, 39357, 31572, 51570, 23956, 29969]
@@ -29,3 +29,6 @@ plt.xlabel("Reference: https://web.archive.org/web/20211128163303/https://www.10
 plt.ylim(20000, 90000)
 
 plt.show()
+
+# Reference:
+# 1. https://stackoverflow.com/questions/10960463/non-ascii-characters-in-matplotlib
