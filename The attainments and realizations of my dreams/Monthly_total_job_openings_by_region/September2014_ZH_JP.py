@@ -1,9 +1,14 @@
+import matplotlib
 import matplotlib.pyplot as plt
+# Using the magic encoding
+# -*- coding: utf-8 -*-
+
+matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5, 6, 7]
 position_vacancies = [66549, 34819, 21948, 17828, 27710, 12300, 16584]
 
-label = ["Taipei", "New Taipei", "Taoyuan", "Hsinchu", "Taichung", "Tainan", "Kaohsiung"]
+label = ["台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"]
 
 fig, ax = plt.subplots(figsize=(8, 7))
 plt.xticks(region_num, labels=label, rotation=7)
