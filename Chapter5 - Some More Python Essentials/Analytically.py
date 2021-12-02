@@ -8,3 +8,6 @@ dfdx_expr = sym.diff(f_expr, x)   # Compute f'(x) symbolically
 
 # turn symbolic expressions into functions
 f = sym.lambdify([x], f_expr)  # f = lambda x: 5*x**3 + 2*x**2 - 1
+dfdx = sym.lambdify([x], dfdx_expr)   # dfdx = lambda x: 15*x**2 4*x
+
+print(f(1), dfdx(1))   # Call and print, x = 1
