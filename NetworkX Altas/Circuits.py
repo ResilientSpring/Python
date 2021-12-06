@@ -40,5 +40,44 @@ def formula_to_string(formula):
     return _to_string(formula, root)
 
 
+circuit = nx.DiGraph()
+# Layer 0
+circuit.add_node(0, label="∧", layer=0)
+# Layer 1
+circuit.add_node(1, label="∨", layer=1)
+circuit.add_node(2, label="∨", layer=1)
+circuit.add_edge(0, 1)
+circuit.add_edge(0, 2)
+# Layer 2
+circuit.add_node(3, label="x", layer=2)
+circuit.add_node(4, label="y", layer=2)
+circuit.add_node(5, label="¬", layer=2)
+circuit.add_edge(1, 3)
+circuit.add_edge(1, 4)
+circuit.add_edge(2, 4)
+circuit.add_edge(2, 5)
+# Layer 3
+circuit.add_node(6, label="z", layer=3)
+circuit.add_edge(5, 6)
+# Convert the circuit to an equivalent formula.
+formula = circuit_to_formula(circuit)
+print(formula_to_string(formula))
 
+
+labels = nx.get_node_attributes(circuit, "label")
+options = {
+    "node_size": 600,
+    "alpha": 0.5,
+    "node_color": "blue",
+    "labels": labels,
+    "font_size": 22,
+}
+plt.figure(figsize=(8, 8))
+pos = nx.multipartite_layout(circuit, subset_key="layer")
+nx.draw_networkx(circuit, pos, **options)
+plt.title(formula_to_string(formula))
+plt.axis("equal")
+plt.show()
+
+# Source: https://networkx.org/documentation/stable/auto_examples/algorithms/plot_circuits.html#sphx-glr-auto-examples-algorithms-plot-circuits-py
 
