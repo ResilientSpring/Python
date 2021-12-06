@@ -13,4 +13,4 @@ directed_graph.add_nodes_from(vertices)
 
 nx.draw(G=directed_graph, with_labels=True, node_color='y', node_size=800)
 
-plt.draw()
+plt.show()
