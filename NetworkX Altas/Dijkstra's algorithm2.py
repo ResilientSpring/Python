@@ -10,3 +10,5 @@ graph.add_weighted_edges_from(edge)
 nx.draw_planar(G=graph, with_labels=True, node_color='y', node_size=800, font_size=14, width=0.8)
 
 plt.show()
+
+print(nx.dijkstra_path(G=graph, source='a', target='d'))
