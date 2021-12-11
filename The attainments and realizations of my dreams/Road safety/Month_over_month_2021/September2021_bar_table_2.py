@@ -36,7 +36,7 @@ n_rows = len(deaths)
 index = np.arange(len(administrative_duty)) + 0.3
 bar_width = 0.4
 
-figure, (axes, axes2) = plt.subplots(2, figsize=(9, 7))
+figure, (axes, axes2) = plt.subplots(2, figsize=(9, 9))
 
 # Initialize the vertical-offset for the stacked bar chart.
 y_offset = np.zeros(len(administrative_duty))
