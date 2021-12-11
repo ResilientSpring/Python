@@ -75,9 +75,9 @@ axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by R
 
 axes.grid(True)  # pyplot.grid [1][2]
 
-axes2.bar(administrative_duty, [73, 146, 145, 178, 190, 193])
+axes2.bar(administrative_duty, [96, 187, 204, 213, 233, 237])
 axes2.bar_label(axes2.containers[0], label_type='edge')
-axes2.plot(administrative_duty, [73, 146, 145, 178, 190, 193], '-o', color='orange')
+axes2.plot(administrative_duty, [96, 187, 204, 213, 233, 237], '-o', color='orange')
 
 figure.tight_layout()
 
