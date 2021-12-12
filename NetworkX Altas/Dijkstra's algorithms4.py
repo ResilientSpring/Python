@@ -20,3 +20,6 @@ plt.show()
 print(nx.dijkstra_path(G=graph, source='0', target='12'))
 
 print(nx.dijkstra_path_length(G=graph, source='0', target='12'))
+
+# Further reading:
+# https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
