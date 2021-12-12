@@ -17,4 +17,8 @@ nx.draw_planar(G=graph, with_labels=True, node_color='y', node_size=800, font_si
 
 plt.show()
 
+print(nx.algorithms.centrality.degree_centrality(G=graph))
 
+# Further reading:
+# 1. https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality
+# 2. https://networkx.org/documentation/stable/reference/algorithms/centrality.html
