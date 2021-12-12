@@ -6,3 +6,5 @@ nx.draw_planar(triangle_graph, with_labels=True, node_size=1000, node_color="#ff
                width=0.8, font_size=14)
 
 plt.show()
+
+# Reference: https://networkx.org/nx-guides/content/algorithms/dag/index.html
