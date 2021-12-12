@@ -12,3 +12,6 @@ nx.draw_planar(G=graph, with_labels=True, node_color='y', node_size=800, font_si
 plt.show()
 
 print(nx.dijkstra_path(G=graph, source='a', target='d'))
+
+# Reference:
+# 1.https://networkx.org/documentation/stable/reference/introduction.html#algorithms
