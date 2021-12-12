@@ -18,3 +18,5 @@ nx.draw_planar(G=graph, with_labels=True, node_color='y', node_size=800, font_si
 plt.show()
 
 print(nx.dijkstra_path(G=graph, source='0', target='12'))
+
+print(nx.dijkstra_path_length(G=graph, source='0', target='12'))
