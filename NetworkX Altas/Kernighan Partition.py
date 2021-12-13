@@ -16,3 +16,7 @@ graph.add_weighted_edges_from(edge)
 result = nx.algorithms.community.kernighan_lin_bisection(G=graph)
 
 print(result)
+
+nx.draw_planar(G=graph, with_labels=True, node_color='g', node_size=800, font_size=14, width=0.8)
+
+plt.show()
