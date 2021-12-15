@@ -13,3 +13,7 @@ B.add_edges_from([(1, "a"), (1, "b"), (2, "b"), (2, "c"), (3, "c"), (4, "a")])
 
 c = bipartite.color(G=B)
 print(c)
+
+nx.draw_planar(G=B, with_labels=True, node_color='g', node_size=800, font_size=14, width=0.8)
+
+plt.show()
