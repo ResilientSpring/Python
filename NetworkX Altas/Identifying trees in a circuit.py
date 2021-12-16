@@ -54,3 +54,21 @@ circuit.add_edge(1, 3)
 circuit.add_edge(2, 3)
 
 
+# Convert the circuit to an equivalent formula.
+formula = circuit_to_formula(circuit)
+print(formula_to_string(formula))
+
+labels = nx.get_node_attributes(circuit, "label")
+options = {
+    "node_size": 600,
+    "alpha": 0.5,
+    "node_color": "blue",
+    "labels": labels,
+    "font_size": 22,
+}
+plt.figure(figsize=(8, 8))
+pos = nx.multipartite_layout(circuit, subset_key="layer")
+nx.draw_networkx(circuit, pos, **options)
+plt.title(formula_to_string(formula))
+plt.axis("equal")
+plt.show()
