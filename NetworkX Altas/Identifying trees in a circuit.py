@@ -45,6 +45,8 @@ circuit = nx.DiGraph()
 circuit.add_node(0, label="PI1", layer=0)
 circuit.add_node(1, label="PI2", layer=0)
 circuit.add_node(2, label="PI3", layer=0)
+circuit.add_node(3, label="PI4", layer=0)
+circuit.add_node(5, label="PI5", layer=0)
 
 # Layer 1
 circuit.add_node(3, label="PO1", layer=1)
