@@ -116,5 +116,5 @@ plt.title(formula_to_string(formula))
 plt.axis("equal")
 plt.show()
 
-print(approximate.steiner_tree(G=circuit, terminal_nodes=[14, 15]))
-
+print(nx.algorithms.tree.is_tree(G=circuit))
+print(nx.algorithms.tree.is_forest(G=circuit))
