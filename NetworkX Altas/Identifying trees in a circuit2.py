@@ -62,13 +62,14 @@ circuit.add_edge(2, 7)
 circuit.add_edge(3, 7)
 circuit.add_edge(3, 8)
 circuit.add_edge(4, 8)
-circuit.add_edge(4, 12)
 
 # Layer 2
 circuit.add_node(9, label="E", layer=2)
 circuit.add_node(10, label="F", layer=2)
 circuit.add_node(11, label="G", layer=2)
 circuit.add_node(12, label="H", layer=2)
+
+circuit.add_edge(4, 12)
 
 circuit.add_edge(5, 9)
 circuit.add_edge(6, 9)
