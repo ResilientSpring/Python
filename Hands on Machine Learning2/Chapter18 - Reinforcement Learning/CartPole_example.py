@@ -7,7 +7,7 @@ environment.seed(42)
 
 observation = environment.reset()
 
-print(observation)
+print(observation) # cart's horizontal position, its velocity, the angle of the pole (0 = vertical), and the angular velocity.
 
 image = environment.render(mode="rgb_array")
 print(image.shape)
@@ -26,6 +26,8 @@ plot_environment(environment)
 plt.show()
 
 print(environment.action_space)
+
+print(observation[2])
 
 action = 1 # accelerate right
 observation, reward, done, info = environment.step(action)
