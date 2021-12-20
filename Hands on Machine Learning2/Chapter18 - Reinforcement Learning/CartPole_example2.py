@@ -2,7 +2,7 @@ import gym
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.animation as anime
-from IPython.display import HTML
+from IPython.display import HTML, display
 
 environment = gym.make('CartPole-v1')
 
@@ -103,4 +103,4 @@ print(animation)
 
 animation.to_jshtml(fps=30, embed_frames=True, default_mode=None)
 
-HTML(animation.to_jshtml())
+display(HTML(animation.to_jshtml()))
