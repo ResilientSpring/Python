@@ -96,4 +96,6 @@ def plot_animation(frames, repeat=False, interval=40):
     return animation
 
 
-plot_animation(frames=frames)
+animation = plot_animation(frames=frames)
+
+print(animation)
