@@ -1,5 +1,6 @@
 import gym
 import matplotlib.pyplot as plt
+import numpy as np
 
 environment = gym.make('CartPole-v1')
 
@@ -50,3 +51,11 @@ for episode in range(500):
         action = basic_policy(observation)
         observation, reward, done, info = environment.step(action)
         episode_rewards += reward
+
+        if done:
+            break
+
+    totals.append(episode_rewards)
+
+
+print(np.mean(totals), np.std(totals), np.min(totals), np.max(totals))
