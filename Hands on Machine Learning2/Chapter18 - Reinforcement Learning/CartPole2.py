@@ -7,3 +7,5 @@ observation = environment.reset()
 print(observation)
 
 environment.render()
+
+print(environment.action_space)
