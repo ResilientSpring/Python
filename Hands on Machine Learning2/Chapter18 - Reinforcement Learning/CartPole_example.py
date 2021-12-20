@@ -33,3 +33,20 @@ action = 1 # accelerate right
 observation, reward, done, info = environment.step(action)
 
 print(observation, '\n', reward, '\n', done, '\n', info)
+
+def basic_policy(observation):
+    angle = observation[2]
+
+    return 0 if angle < 0 else 1
+
+
+totals = []
+
+for episode in range(500):
+    episode_rewards = 0
+    observation = environment.reset()
+
+    for step in range(200):
+        action = basic_policy(observation)
+        observation, reward, done, info = environment.step(action)
+        episode_rewards += reward
