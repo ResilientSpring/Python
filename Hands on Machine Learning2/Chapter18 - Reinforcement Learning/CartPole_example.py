@@ -1,6 +1,7 @@
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.animation as anime
 
 environment = gym.make('CartPole-v1')
 
@@ -59,3 +60,40 @@ for episode in range(500):
 
 
 print(np.mean(totals), np.std(totals), np.min(totals), np.max(totals))
+
+# Let's visualize one episode:
+environment.seed(42)
+
+frames = []
+
+observation = environment.reset()
+
+for step in range(200):
+    image = environment.render(mode='rgb_array')
+    frames.append(image)
+    action = basic_policy(observation)
+
+    observation, reward, done, info = environment.step(action)
+
+    if done:
+        break
+
+
+# Now show the animation:
+
+def update_scene(num, frames, patch):
+    patch.set_data(frames[num])
+    return patch
+
+
+def plot_animation(frames, repeat=False, interval=40):
+    figure = plt.figure()
+    patch = plt.imshow(X=frames[0])
+    plt.axis('off')
+    animation = anime.FuncAnimation(fig=figure, func=update_scene, frames=len(frames), fargs=(frames, patch), interval=interval, repeat=repeat)
+
+    plt.close()
+    return animation
+
+
+plot_animation(frames=frames)
