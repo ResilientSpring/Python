@@ -99,3 +99,5 @@ def plot_animation(frames, repeat=False, interval=40):
 animation = plot_animation(frames=frames)
 
 print(animation)
+
+animation.to_jshtml(fps=30, embed_frames=True, default_mode=None)
