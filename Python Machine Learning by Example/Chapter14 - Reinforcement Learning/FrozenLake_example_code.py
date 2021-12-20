@@ -1,9 +1,6 @@
-
 import gym
-import torch
 
-
-env = gym.make("FrozenLake-v0")
+env = gym.make("FrozenLake-v1")
 
 n_state = env.observation_space.n
 print(n_state)
@@ -14,6 +11,8 @@ print(n_action)
 env.reset()
 
 env.render()
+
+# Source: https://github.com/PacktPublishing/Python-Machine-Learning-By-Example-Third-Edition/blob/master/chapter14/simulate_frozenlake.py
 
 new_state, reward, is_done, info = env.step(2)
 env.render()
