@@ -9,6 +9,8 @@ print(number_of_state)
 number_of_action = environment.action_space.n
 print(number_of_action)
 
+environment.reset()
+
 environment.render()
 
 # Take a right action
