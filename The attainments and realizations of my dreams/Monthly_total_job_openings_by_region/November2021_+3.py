@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
 
 region_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-position_vacancies = [92415, 53496, 39357, 31572, 51570, 23956, 29969]
+position_vacancies = [92415, 53496, 39357, 31572, 5843, 51570, 9722, 23956, 29969, 3826]
 
-label = ["Taipei", "New Taipei", "Taoyuan", "Hsinchu", "Taichung", "Tainan", "Kaohsiung"]
+label = ["Taipei", "New Taipei", "Taoyuan", "Hsinchu", "Miaoli", "Taichung", "Changhua", "Tainan", "Kaohsiung", "Pingtung"]
 
 fig, ax = plt.subplots(figsize=(8, 7))
-plt.xticks(region_num, labels=label, rotation=7)
+plt.xticks(region_num, labels=label, rotation=20)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 
 plot = ax.bar(region_num, position_vacancies)
@@ -21,6 +21,6 @@ plt.title("2021/11 the number of job openings in Taiwan by region")
 # plt.ylabel("")
 plt.xlabel("Reference: https://web.archive.org/web/20211128163303/https://www.104.com.tw/jb/category/?cat=2")
 
-plt.ylim(20000, 90000)
+plt.ylim(3000, 90000)
 
 plt.show()
