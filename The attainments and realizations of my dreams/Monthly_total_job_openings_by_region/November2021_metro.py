@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
 
-region_num = [1, 2, 3, 4, 5, 6, 7]
-position_vacancies = [145911, 76772, 64285, 32988, 33795, 29969]
+region_num = [1, 2, 3, 4, 5, 6]
+position_vacancies = [150860, 76772, 64285, 32988, 33795, 3161]
 
 label = ["Greater Taipei", "Taoyuan\nHsinchu\nMiaoli", "Taichung\nChanghua\nNantou",
-         "Yunlin\nChiayi\nTainan", "Kaohsiung\nPingtung"]
+         "Yunlin\nChiayi\nTainan", "Kaohsiung\nPingtung", "others"]
 
-fig, ax = plt.subplots(figsize=(8, 7))
+fig, ax = plt.subplots(figsize=(8, 8))
 plt.xticks(region_num, labels=label, rotation=7)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 
@@ -22,6 +22,6 @@ plt.title("2021/11 the number of job openings in Taiwan by metro")
 # plt.ylabel("")
 plt.xlabel("Reference: https://web.archive.org/web/20211128163303/https://www.104.com.tw/jb/category/?cat=2")
 
-plt.ylim(20000, 90000)
+plt.ylim(30000, 150000)
 
 plt.show()
