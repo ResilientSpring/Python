@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
 region_num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-position_vacancies = [92415, 53496, 39357, 31572, 5843, 51570, 9722, 23956, 29969, 3826]
+position_vacancies = [92415, 53496, 39357, 31572, 51570, 9722, 23956, 29969, 5843, 9722, 3826]
 
-label = ["Taipei", "New Taipei", "Taoyuan", "Hsinchu", "Miaoli", "Taichung", "Changhua", "Tainan", "Kaohsiung", "Pingtung"]
+label = ["Taipei", "New Taipei", "Taoyuan", "Hsinchu", "Taichung", "Tainan", "Kaohsiung", "Miaoli", "Changhua", "Pingtung"]
 
 fig, ax = plt.subplots(figsize=(8, 7))
 plt.xticks(region_num, labels=label, rotation=20)
