@@ -8,3 +8,5 @@ T = {"b"}
 nx.draw_planar(G=graph, with_labels=True, node_color='g', node_size=800, font_size=14, width=0.8)
 
 plt.show()
+
+print(nx.cut_size(graph, {"a"}, {"b"}))
