@@ -8,3 +8,8 @@ nx.draw_planar(G=graph, with_labels=True, node_color='g', node_size=800, font_si
 plt.show()
 
 print(nx.algorithms.is_directed_acyclic_graph(graph))
+
+print(nx.cut_size(graph, {0, 1, 2}, {3, 4, 5}))
+
+# Reference:
+# https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.cuts.cut_size.html#networkx.algorithms.cuts.cut_size
