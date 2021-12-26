@@ -119,6 +119,8 @@ plt.show()
 print(nx.algorithms.tree.is_tree(G=circuit))
 print(nx.algorithms.tree.is_forest(G=circuit))
 
-residential = nx.algorithms.flow.minimum_cut(flowG=circuit, _s=[0, 1, 2, 3, 4], _t=[14, 15])
+residential = nx.algorithms.flow.minimum_cut(flowG=circuit,
+                                             _s=["PI1", "PI2", "PI3", "PI4", "PI5"],
+                                             _t=["PO1", "PO2"])
 
 print(residential)
