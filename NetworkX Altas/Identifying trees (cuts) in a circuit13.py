@@ -131,4 +131,4 @@ nx.draw_planar(G=branching, with_labels=True, node_color='g', node_size=800, fon
 
 plt.show()
 
-print('\n', nx.algorithms.minimum_spanning_arborescence(G=circuit))
+print('\n', nx.algorithms.minimum_branching(G=circuit))
