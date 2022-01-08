@@ -104,7 +104,7 @@ housing_index = [(91.03 + 191.07) / 2, # 2010/04 (Guotai index + Xinyi index) / 
 figure, axes = plt.subplots()
 
 axes.stackplot(x, northTW, centralTW, southTW, eastTW, outlyingTW, labels=year)
-axes.set_ylim(23400000, 23700000)
+axes.set_ylim(23350000, 23700000)
 axes.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
 axes.set_xlabel("Year\n"
                 "References:\n"
