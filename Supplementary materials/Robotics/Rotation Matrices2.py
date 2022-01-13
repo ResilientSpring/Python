@@ -1,6 +1,6 @@
 import numpy as np
 
-theta1 = 0  # Theta 1 angle in degree
+theta1 = 90  # Theta 1 angle in degree
 theta2 = 0  # Theta 2 angle in degree
 
 # Convert these two angles from degrees to radians
