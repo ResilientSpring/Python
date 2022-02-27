@@ -21,6 +21,6 @@ plt.title("2022/02 the number of job openings in Taiwan by region")
 # plt.ylabel("")
 plt.xlabel("Reference: https://web.archive.org/web/20220226163214/https://www.104.com.tw/jb/category/?cat=2")
 
-plt.ylim(27500, 107000)
+plt.ylim(27500, 100500)
 
 plt.show()
