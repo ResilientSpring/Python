@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 region_num = [1, 2, 3, 4, 5]
-position_vacancies = [173152, 86229, 74105, 38453, 38373]
+position_vacancies = [140966, 72721, 61138, 31208, 31440]
 
 label = ["Greater Taipei", "Taoyuan\nHsinchu\nMiaoli", "Taichung\nChanghua\nNantou",
          "Yunlin\nChiayi\nTainan", "Kaohsiung\nPingtung"]
