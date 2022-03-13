@@ -34,3 +34,11 @@ for iw in range(Ns_p):
 P = (wp2 - wp1) * P / (Ns_p + 1);
 Qp = (wp2 - wp1) * Qp / (Ns_p + 1);
 
+Qs = np.zeros(NH, NH)
+
+for iw in range(Ns_s1):
+    w = iw*deltaw;
+    Qs1 = Qs1 + cos(w*(NV-0.5)) * np.array((cos(w*(NV-0.5)))).transpose()
+
+
+Qs1 = ws1 * Qs1 / (Ns_s1 + 1);
