@@ -1,5 +1,6 @@
 from math import pi, cos
 import numpy as np
+import matplotlib.pyplot as plt
 
 N = 40;
 ws1 = 0.3*pi;
@@ -42,3 +43,21 @@ for iw in range(Ns_s1):
 
 
 Qs1 = ws1 * Qs1 / (Ns_s1 + 1);
+
+Qs2 = np.zeros(NH, NH);
+
+for iw in range(Ns_s2):
+    w = ws2 + iw*deltaw;
+    Qs2 = Qs2 + cos(w*(NV-0.5)) * np.array((cos(w*(NV-0.5)))).transpose()
+
+
+Qs2 = (pi - ws2) * Qs2 / (Ns_s2 + 1);
+
+Q = Qp + Qs1 + Qs2;
+A = -0.5 * np.invert(Q) * P
+
+h = np.zeros(N, 1)
+h[1:NH] = 0.5 * np.flipud(A)
+h[NH+1:N] = 0.5 * A
+
+
