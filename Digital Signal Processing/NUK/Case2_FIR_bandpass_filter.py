@@ -1,4 +1,5 @@
-from math import pi
+from math import pi, cos
+import numpy as np
 
 N = 40;
 ws1 = 0.3*pi;
@@ -16,4 +17,20 @@ NV = []
 
 for i in range(NH):
     NV.append(i)
+
+
+NV = np.array(NV)
+NV = NV.transpose()
+
+P = np.zeros(NH, 1);
+Qp = np.zeros(NH, NH);
+
+for iw in range(Ns_p):
+    w = wp1 + iw*deltaw;
+    P = P - 2*cos(w*(NV-0.5));
+    Qp = Qp + cos(w * (NV-0.5)) * np.array((cos(w * (NV-0.5)))).transpose()
+
+
+P = (wp2 - wp1) * P / (Ns_p + 1);
+Qp = (wp2 - wp1) * Qp / (Ns_p + 1);
 
