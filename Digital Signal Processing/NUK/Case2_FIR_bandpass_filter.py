@@ -60,4 +60,14 @@ h = np.zeros(N, 1)
 h[1:NH] = 0.5 * np.flipud(A)
 h[NH+1:N] = 0.5 * A
 
+# figure, (ax1, ax2, ax3, ax4) = plt.subplots(2, 2)
 
+# ax1.stem([0:N-1], h)
+
+# plt.stem([0:N-1], h)
+
+plt.stem(range(N), h)
+
+plt.xlabel('n')
+plt.ylabel('Impulse response')
+plt.title('Case 2 bandpass filter ')
