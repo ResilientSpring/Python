@@ -16,3 +16,5 @@ plt.grid()
 plt.show()
 
 # Source: https://scipy.github.io/devdocs/tutorial/signal.html#filter-transformations
+
+# Reference: https://stackoverflow.com/questions/37833940/frequency-response-scipy-signal
