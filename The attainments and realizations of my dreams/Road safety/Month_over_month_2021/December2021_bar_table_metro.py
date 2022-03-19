@@ -39,7 +39,7 @@ n_rows = len(deaths)
 index = np.arange(len(administrative_duty)) + 0.3
 bar_width = 0.4
 
-figure, (axes, axes2) = plt.subplots(2, figsize=(9, 9))
+figure, (axes, axes2) = plt.subplots(2, figsize=(10, 10))
 
 # Initialize the vertical-offset for the stacked bar chart.
 y_offset = np.zeros(len(administrative_duty))
@@ -78,9 +78,9 @@ axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by R
 
 axes.grid(True)  # pyplot.grid [1][2]
 
-axes2.bar(administrative_duty, [132, 266, 269, 283, 295, 333])
+axes2.bar(administrative_duty, [132, 266, 269, 283, 295, 541])
 axes2.bar_label(axes2.containers[0], label_type='edge')
-axes2.plot(administrative_duty, [132, 266, 269, 283, 295, 333], '-o', color='orange')
+axes2.plot(administrative_duty, [132, 266, 269, 283, 295, 541], '-o', color='orange')
 
 figure.tight_layout()
 
