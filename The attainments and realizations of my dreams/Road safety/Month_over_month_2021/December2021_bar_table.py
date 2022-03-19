@@ -8,7 +8,7 @@ administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", 
 
 month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-month_as_of_now = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
+month_as_of_now = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 deaths = [[14, 30, 18, 28, 31, 31],  # January
           [9, 25, 20, 18, 31, 39],  # February
@@ -19,6 +19,9 @@ deaths = [[14, 30, 18, 28, 31, 31],  # January
           [7, 23, 22, 27, 18, 16],  # July
           [10, 21, 27, 13, 17, 15], # August
           [13, 20, 32, 22, 26, 29], # September
+          [9, 21, 16, 30, 21, 33], # October
+          [15, 25, 25, 22, 18, 26], # November
+          [11, 33, 24, 18, 25, 37], # December
           ]
 
 df = pd.DataFrame(data=deaths,
@@ -71,13 +74,13 @@ plt.subplots_adjust(left=0.2, bottom=0.2)
 
 axes.set_ylabel("The number of deaths")
 axes.set_xticks([])
-axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2021/01-09)")
+axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2021/01-12)")
 
 axes.grid(True)  # pyplot.grid [1][2]
 
-axes2.bar(administrative_duty, [96, 187, 204, 213, 233, 237])
+axes2.bar(administrative_duty, [132, 266, 269, 283, 295, 333])
 axes2.bar_label(axes2.containers[0], label_type='edge')
-axes2.plot(administrative_duty, [96, 187, 204, 213, 233, 237], '-o', color='orange')
+axes2.plot(administrative_duty, [132, 266, 269, 283, 295, 333], '-o', color='orange')
 
 figure.tight_layout()
 
