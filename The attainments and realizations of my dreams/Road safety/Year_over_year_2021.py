@@ -5,7 +5,7 @@ import pandas as pd
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-year = ["2009", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "2020"]
+year = ["2009", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
 
 death = [[133, 254, 198, 318, 340, 402],  # 2009
          [152, 255, 227, 373, 319, 388],  # 2010
@@ -19,7 +19,7 @@ death = [[133, 254, 198, 318, 340, 402],  # 2009
          [137, 248, 244, 245, 289, 280],  # 2018
          [131, 225, 249, 270, 294, 351],  # 2019
          [102, 232, 264, 325, 317, 347],  # 2020
-         #         [73, 146, 145, 178, 190, 193],  # 2021/01-07
+         [132, 266, 269, 283, 295, 333],  # 2021
          ]
 
 df = pd.DataFrame(data=death, columns=administrative_duty, index=year)
@@ -42,7 +42,7 @@ summary = [df["Taipei"].sum(), df["New Taipei"].sum(), df["Taoyuan"].sum(), df["
 print(summary)
 
 cumulative_sum = pd.DataFrame(data=summary,
-                              columns=["Accumulative Deaths (2009-2020)"],
+                              columns=["Accumulative Deaths (2009-2021)"],
                               index=administrative_duty)
 
 print(cumulative_sum)
