@@ -11,7 +11,7 @@ font = {'family': 'MS Gothic',
 region_num = [1, 2, 3, 4, 5, 6]
 position_vacancies = [109262, 63982, 46161, 61036, 28391, 35120]
 
-label = ["台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"]
+label = ["台北", "新北", "桃園", "台中", "台南", "高雄"]
 
 fig, ax = plt.subplots(figsize=(8, 7))
 plt.xticks(region_num, labels=label, rotation=7)
