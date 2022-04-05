@@ -1,12 +1,9 @@
+import matplotlib
 import matplotlib.pyplot as plt
 # Using the magic encoding
 # -*- coding: utf-8 -*-
 
-font = {'family': 'MS Gothic',
-        'color':  'darkred',
-        'weight': 'normal',
-        'size': 16,
-        }
+matplotlib.rc('font', family="MS Gothic") # [1]
 
 region_num = [1, 2, 3, 4, 5, 6]
 position_vacancies = [109262, 63982, 46161, 61036, 28391, 35120]
