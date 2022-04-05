@@ -8,8 +8,8 @@ font = {'family': 'MS Gothic',
         'size': 16,
         }
 
-region_num = [1, 2, 3, 4, 5, 6, 7]
-position_vacancies = [92415, 53496, 39357, 31572, 51570, 23956, 29969]
+region_num = [1, 2, 3, 4, 5, 6]
+position_vacancies = [109262, 63982, 46161, 61036, 28391, 35120]
 
 label = ["台北", "新北", "桃園", "新竹", "台中", "台南", "高雄"]
 
@@ -29,6 +29,6 @@ plt.title("2022/03 台灣各地區職缺數統計\nthe number of job openings in
 # plt.ylabel("")
 plt.xlabel("Reference: https://web.archive.org/web/20220327070711/https://www.104.com.tw/jb/category/?cat=2")
 
-plt.ylim(20000, 90000)
+plt.ylim(20000, 100000)
 
 plt.show()
