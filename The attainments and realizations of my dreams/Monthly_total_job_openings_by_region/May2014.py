@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 region_num = [1, 2, 3, 4, 5]
-position_vacancies = [96973, 39547, 26732+5221+1628, 1797+2514+11186, 15584+1740]
+position_vacancies = [102089, 41530, 27916+5399+1760, 1895+2715+12282, 16930+1882]
 
 label = ["Greater Taipei", "Taoyuan\nHsinchu\nMiaoli", "Taichung\nChanghua\nNantou",
          "Yunlin\nChiayi\nTainan", "Kaohsiung\nPingtung"]
@@ -17,10 +17,10 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom')
 
-plt.title("2014/04 the number of job openings in Taiwan by metro")
+plt.title("2014/05 the number of job openings in Taiwan by metro")
 
 # plt.ylabel("")
-plt.xlabel("Reference: https://web.archive.org/web/20140403201635/http://www.104.com.tw:80/jb/category/?cat=2")
+plt.xlabel("Reference: https://web.archive.org/web/20140528071247/http://www.104.com.tw:80/jb/category/?cat=2")
 
 plt.ylim(10000, 100000)
 
