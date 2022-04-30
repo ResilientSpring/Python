@@ -14,6 +14,7 @@ label = ["大台北", "桃園\n新竹\n苗栗", "台中\n彰化\n南投",
 fig, ax = plt.subplots(figsize=(9, 8))
 plt.xticks(region_num, labels=label, rotation=7, fontsize=12) # [1]
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
+plt.tick_params(axis='y', labelsize=12) # [2]
 
 plot = ax.bar(region_num, position_vacancies)
 
@@ -33,3 +34,4 @@ plt.show()
 
 # Reference:
 # 1. https://stackoverflow.com/a/12444777/
+# 2. https://stackoverflow.com/a/11386056/
