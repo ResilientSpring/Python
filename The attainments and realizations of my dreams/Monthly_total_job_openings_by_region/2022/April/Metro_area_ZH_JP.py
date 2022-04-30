@@ -22,7 +22,7 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom')
 
-plt.title("2022/04 台灣各生活圈職缺數統計\n the number of job openings in Taiwan by metro", fontproperties="MS Gothic")
+plt.title("2022/04 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontproperties="MS Gothic")
 
 # plt.ylabel("")
 plt.xlabel("參考資料: https://web.archive.org/web/20220428163845/https://www.104.com.tw/jb/category/?cat=2")
