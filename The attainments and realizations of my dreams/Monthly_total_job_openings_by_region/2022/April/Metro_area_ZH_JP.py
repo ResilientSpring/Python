@@ -8,7 +8,7 @@ matplotlib.rc('font', family="MS Gothic")
 region_num = [1, 2, 3, 4, 5]
 position_vacancies = [179197, 89380, 76630, 39687, 40032]
 
-label = ["大台北", "桃園\n新竹\n苗栗", "台中T\n彰化\n南投",
+label = ["大台北", "桃園\n新竹\n苗栗", "台中\n彰化\n南投",
          "雲林\n嘉義\n台南", "高雄\n屏東"]
 
 fig, ax = plt.subplots(figsize=(9, 8))
