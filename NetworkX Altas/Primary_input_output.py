@@ -80,20 +80,15 @@ circuit.add_edge(7, 11)
 circuit.add_edge(8, 11)
 
 # Layer 3
-circuit.add_node(13, label="I", layer=3)
-circuit.add_node(14, label="PO1", layer=3)
-
-# Layer 4
-circuit.add_node(15, label="PO2", layer=4)
+circuit.add_node(13, label="PO1", layer=3)
+circuit.add_node(14, label="PO2", layer=3)
 
 
-circuit.add_edge(9, 15)
+circuit.add_edge(9, 13)
 circuit.add_edge(10, 13)
 circuit.add_edge(11, 13)
 circuit.add_edge(11, 14)
 circuit.add_edge(12, 14)
-
-circuit.add_edge(13, 15)
 
 # Convert the circuit to an equivalent formula.
 formula = circuit_to_formula(circuit)
@@ -104,7 +99,7 @@ labels = nx.get_node_attributes(circuit, "label")
 options = {
     "node_size": 600,
     "alpha": 0.5,
-    "node_color": "blue",
+    "node_color": "aqua",
     "labels": labels,
     "font_size": 22,
 }
