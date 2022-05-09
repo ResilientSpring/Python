@@ -107,7 +107,8 @@ options = {
 plt.figure(figsize=(8, 8))
 pos = nx.multipartite_layout(circuit, subset_key="layer")
 nx.draw_networkx(circuit, pos, **options)
-plt.title(formula_to_string(formula))
+# plt.title(formula_to_string(formula))
+plt.title(r'G = ($\nu_g  \cup  \nu_{io}$, $\mathit{E}$)')
 plt.axis("equal")
 plt.show()
 
