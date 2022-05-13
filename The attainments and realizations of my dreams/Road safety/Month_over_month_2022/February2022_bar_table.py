@@ -10,8 +10,8 @@ month = ["Jan", "Feb"]
 
 month_as_of_now = ["Jan", "Feb"]
 
-deaths = [[23, 30, 18, 28, 31, 31],  # January
-          [16, 25, 20, 18, 31, 39],  # February
+deaths = [[13, 23, 29, 28, 31, 31],  # January
+          [7, 16, 20, 18, 31, 39],  # February
           ]
 
 df = pd.DataFrame(data=deaths,
@@ -68,9 +68,9 @@ axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by R
 
 axes.grid(True)  # pyplot.grid [1][2]
 
-axes2.bar(administrative_duty, [39, 187, 204, 213, 233, 237])
+axes2.bar(administrative_duty, [20, 39, 49, 213, 233, 237])
 axes2.bar_label(axes2.containers[0], label_type='edge')
-axes2.plot(administrative_duty, [39, 187, 204, 213, 233, 237], '-o', color='orange')
+axes2.plot(administrative_duty, [20, 39, 49, 213, 233, 237], '-o', color='orange')
 
 figure.tight_layout()
 
