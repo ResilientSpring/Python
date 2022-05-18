@@ -128,14 +128,10 @@ for i in range(0, 19, 1):
 
 print(totality)
 
-s = pd.Series(data=totality)
-s.name = "Total"  # The name of the Series becomes the index of the row in the DataFrame.
-print(s)
-
-df = df.append(s)
-
-print(df)
-
 df2 = pd.DataFrame(data=totality, index=year, columns=["Total"])
 
 print(df2)
+
+df = df.append(df2.transpose())
+
+print(df)
