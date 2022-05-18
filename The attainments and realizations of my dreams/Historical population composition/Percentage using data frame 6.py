@@ -120,6 +120,17 @@ df = pd.DataFrame(columns=year, index=["North", "Central", "South", "East", "Out
 
 print(df)
 
+totality = []
+
+for i in range(0, 19, 1):
+    totality.append(northTW[i] + centralTW[i] + southTW[i] + eastTW[i] + outlyingTW[i])
+
+
+print(totality)
+
+s = pd.Series(data=np.array(totality).T, index=["Total"])
+print(s)
+
 transposed_df = df.transpose()
 
 ax = transposed_df.plot(kind='barh', stacked=True, figsize=(8, 6))
