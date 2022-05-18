@@ -132,6 +132,10 @@ s = pd.Series(data=totality)
 s.name = "Total"  # The name of the Series becomes the index of the row in the DataFrame.
 print(s)
 
+df = df.append(s)
+
+print(df)
+
 transposed_df = df.transpose()
 
 ax = transposed_df.plot(kind='barh', stacked=True, figsize=(8, 6))
