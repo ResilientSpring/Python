@@ -136,7 +136,7 @@ df = df.append(s)
 
 print(df)
 
-df2 = pd.DataFrame(data=np.array(totality).transpose(), index=["Total"], columns=year)
+df2 = pd.DataFrame(data=totality, index=["Total"], columns=year)
 
 print(df2)
 
