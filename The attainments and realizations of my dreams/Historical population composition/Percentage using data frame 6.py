@@ -136,6 +136,10 @@ df = df.append(s)
 
 print(df)
 
+df2 = pd.DataFrame(data=totality, index=["Total"], columns=year)
+
+print(df2)
+
 transposed_df = df.transpose()
 
 ax = transposed_df.plot(kind='barh', stacked=True, figsize=(8, 6))
