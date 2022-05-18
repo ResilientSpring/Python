@@ -132,7 +132,7 @@ s = pd.Series(data=totality)
 s.name = "Total"  # The name of the Series becomes the index of the row in the DataFrame.
 print(s)
 
-df = df.append(s, ignore_index=True)
+df = df.append(s)
 
 print(df)
 
