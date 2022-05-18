@@ -141,7 +141,7 @@ transposed_df = df.transpose()
 ax = transposed_df.plot(kind='barh', stacked=True, figsize=(8, 6))
 
 for c in ax.containers:
-    ax.bar_label(c, fmt='%.2f%', label_type='center')
+    ax.bar_label(c, fmt='%.2f%%', label_type='center')
 
 
 plt.show()
