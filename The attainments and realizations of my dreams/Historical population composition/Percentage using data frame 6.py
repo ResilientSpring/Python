@@ -129,7 +129,7 @@ for i in range(0, 19, 1):
 print(totality)
 
 s = pd.Series(data=totality)
-s.name = "Total"
+s.name = "Total"  # The name of the Series becomes the index of the row in the DataFrame.
 print(s)
 
 transposed_df = df.transpose()
@@ -146,3 +146,5 @@ for c in ax.containers:
 
 plt.show()
 
+# References:
+# 1. https://stackoverflow.com/a/16824696/
