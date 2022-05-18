@@ -128,7 +128,8 @@ for i in range(0, 19, 1):
 
 print(totality)
 
-s = pd.DataFrame(data=totality, index=["Total"])
+s = pd.Series(data=totality)
+s.name = "Total"
 print(s)
 
 transposed_df = df.transpose()
