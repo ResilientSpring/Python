@@ -136,6 +136,6 @@ df = df.append(s)
 
 print(df)
 
-df2 = pd.DataFrame(data=totality, index=["Total"], columns=year)
+df2 = pd.DataFrame(data=totality)
 
 print(df2)
