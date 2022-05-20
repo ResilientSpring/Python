@@ -6,7 +6,7 @@ import matplotlib
 matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5]
-position_vacancies = [179197, 89380, 76630, 39687, 40032]
+position_vacancies = [176040, 87874, 74498, 39687, 40032]
 
 label = ["大台北 Greater\nTaipei", "桃園 Taoyuan\n新竹 Hsinchu\n苗栗 Miaoli", "台中 Taichung\n彰化 Changhua\n南投 Nantou",
          "雲林 Yunlin\n嘉義 Chiayi\n台南 Tainan", "高雄 Kaohsiung\n屏東 Pingtung"]
@@ -26,7 +26,7 @@ for rect in plot:
 plt.title("2022/05 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20) # [1]
 
 # plt.ylabel("")
-plt.xlabel("參考資料 Reference: https://web.archive.org/web/20220428163845/https://www.104.com.tw/jb/category/?cat=2")
+plt.xlabel("參考資料 Reference: https://web.archive.org/web/20220520164749/https://www.104.com.tw/jb/category/?cat=2")
 
 plt.ylim(35000, 165000)
 
