@@ -113,3 +113,6 @@ plt.axis("equal")
 plt.show()
 
 print(nx.isolates(G=circuit))
+
+isolations = nx.isolates(G=circuit)
+print(isolations)
