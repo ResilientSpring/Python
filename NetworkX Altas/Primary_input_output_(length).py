@@ -113,3 +113,4 @@ plt.axis("equal")
 plt.show()
 
 print(len(circuit))
+print(circuit.size())
