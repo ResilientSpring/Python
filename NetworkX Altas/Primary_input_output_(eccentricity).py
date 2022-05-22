@@ -115,5 +115,5 @@ plt.show()
 print(nx.algorithms.tree.is_tree(G=circuit))
 print(nx.algorithms.tree.is_forest(G=circuit))
 
-ecc = nx.eccentricity(G=circuit)
+ecc = nx.eccentricity(G=circuit, v=13)
 print(ecc)
