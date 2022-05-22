@@ -115,6 +115,5 @@ plt.show()
 print(nx.algorithms.tree.is_tree(G=circuit))
 print(nx.algorithms.tree.is_forest(G=circuit))
 
-path = nx.shortest_simple_paths(G=circuit, source=3, target=14)
-print(next(path))
-print(next(path))
+ecc = nx.eccentricity(G=circuit)
+print(ecc)
