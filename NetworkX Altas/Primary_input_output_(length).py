@@ -114,3 +114,5 @@ plt.show()
 
 print(len(circuit))
 print(circuit.size())
+print(circuit.number_of_edges())
+print(circuit.number_of_nodes())
