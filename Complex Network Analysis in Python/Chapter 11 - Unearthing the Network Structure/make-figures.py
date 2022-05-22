@@ -9,3 +9,5 @@ F.add_edges_from([("A", "a0"), ("a0", "a1"), ("a1", "a2"), ("a1", "a3"), ("a3", 
 
 nx.draw_networkx(G=F, arrows=True, with_labels=True)
 
+plt.show()
+
