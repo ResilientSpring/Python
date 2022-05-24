@@ -119,4 +119,5 @@ print(nx.number_of_cliques(G=circuit))
 print(nx.number_connected_components(G=circuit))
 print(nx.number_strongly_connected_components(G=circuit))
 print(nx.number_weakly_connected_components(G=circuit))
+print(nx.number_of_isolates(G=circuit))
 
