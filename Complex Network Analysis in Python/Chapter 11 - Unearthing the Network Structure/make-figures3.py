@@ -15,4 +15,4 @@ nx.draw_networkx(G=F, arrows=True, with_labels=True)
 
 plt.show()
 
-print(nx.strongly_connected_components(G=F))
+print(list(nx.strongly_connected_components(G=F)))
