@@ -113,4 +113,5 @@ plt.axis("equal")
 plt.show()
 
 print(list(nx.strongly_connected_components(G=circuit)))
+print(list(nx.weakly_connected_components(G=circuit)))
 
