@@ -1,9 +1,9 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import random
-random.seed(9)
+random.seed(10)
 import numpy as np
-np.random.seed(9)
+np.random.seed(10)
 
 F = nx.DiGraph()
 F.add_node("C")
