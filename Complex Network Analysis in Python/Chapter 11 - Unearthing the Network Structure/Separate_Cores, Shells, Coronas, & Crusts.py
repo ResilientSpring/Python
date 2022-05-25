@@ -11,3 +11,4 @@ nx.draw_networkx(G=G, arrows=True, with_labels=True)
 
 plt.show()
 
+print(nx.k_core(G=G).nodes())
