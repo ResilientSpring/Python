@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import random
 import numpy as np
 
-random.seed(8)
+random.seed(9)
 np.random.seed(19)
 
 G = nx.Graph((("Alpha", "Brazo"), ("Brazo", "Charlie"), ("Charlie", "Delta"), ("Charlie", "Echo"),
@@ -19,3 +19,4 @@ plt.show()
 print(nx.k_core(G=G).nodes())
 print(nx.k_crust(G=G).nodes())
 print(nx.k_shell(G=G).nodes())
+print(nx.k_corona(G=G, k=3).nodes())
