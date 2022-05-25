@@ -20,3 +20,5 @@ print(nx.k_core(G=G).nodes())
 print(nx.k_crust(G=G).nodes())
 print(nx.k_shell(G=G).nodes())
 print(nx.k_corona(G=G, k=3).nodes())
+
+print(nx.k_core(G=G, k=2).nodes())
