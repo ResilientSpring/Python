@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import random
 import numpy as np
 
-random.seed(1)
-np.random.seed(2)
+# random.seed(1)
+# np.random.seed(2)
 
 # Generate a 5-clique
 G = nx.complete_graph(n=5, create_using=nx.Graph())
