@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import random
 import numpy as np
 
+random.seed(4)
+np.random.seed(14)
+
 G = nx.Graph((("Alpha", "Brazo"), ("Brazo", "Charlie"), ("Charlie", "Delta"), ("Charlie", "Echo"),
               ("Charlie", "Foxtrot"), ("Delta", "Echo"), ("Delta", "Foxtrot"), ("Echo", "Foxtrot"),
               ("Echo", "Golf"), ("Echo", "Hotel"), ("Foxtrot", "Golf"), ("Foxtrot", "Hotel"),
