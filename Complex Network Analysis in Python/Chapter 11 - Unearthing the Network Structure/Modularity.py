@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 import networkx.algorithms.approximation as approximate
+import community
 
 
 def circuit_to_formula(circuit):
@@ -112,3 +113,6 @@ plt.title(r'G = ($\nu_g  \cup  \nu_{io}$, $\mathit{E}$)')
 plt.axis("equal")
 plt.show()
 
+part = community.best_partition(graph=circuit)
+
+print(part)
