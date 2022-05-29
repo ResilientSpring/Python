@@ -114,3 +114,4 @@ plt.show()
 
 print(nx.predecessor(G=circuit, source=0, target=14))
 print(nx.predecessor(G=circuit, source=1, target=14))
+print(nx.predecessor(circuit, 10))
