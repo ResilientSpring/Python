@@ -113,3 +113,9 @@ plt.axis("equal")
 plt.show()
 
 print(nx.condensation(G=circuit))
+
+condensed = nx.condensation(G=circuit)
+
+nx.draw(G=condensed, with_labels=True, node_color='y', node_size=800)
+
+plt.show()
