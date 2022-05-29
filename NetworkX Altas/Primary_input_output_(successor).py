@@ -112,4 +112,7 @@ plt.title(r'G = ($\nu_g  \cup  \nu_{io}$, $\mathit{E}$)')
 plt.axis("equal")
 plt.show()
 
-print(circuit.successors(8))
+print(list(circuit.successors(8))) # [1]
+
+# References:
+# 1. https://stackoverflow.com/a/47161556
