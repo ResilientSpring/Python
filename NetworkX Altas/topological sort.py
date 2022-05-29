@@ -113,4 +113,5 @@ plt.axis("equal")
 plt.show()
 
 print(list(nx.topological_sort(G=circuit)))
-
+print(list(nx.topological_sort(G=circuit)))
+print(list(nx.topological_sort(G=circuit)))
