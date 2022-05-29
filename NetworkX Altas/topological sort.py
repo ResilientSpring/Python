@@ -112,5 +112,5 @@ plt.title(r'G = ($\nu_g  \cup  \nu_{io}$, $\mathit{E}$)')
 plt.axis("equal")
 plt.show()
 
-print(nx.topological_sort(G=circuit))
+print(list(nx.topological_sort(G=circuit)))
 
