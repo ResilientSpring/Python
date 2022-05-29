@@ -117,3 +117,8 @@ for subgraph in nx.attracting_components(G=circuit):
 
     print(subgraph_.edges())
     print(subgraph_.nodes())
+
+
+# References:
+# 1. https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.components.attracting_components.html#networkx.algorithms.components.attracting_components
+# 2. https://stackoverflow.com/a/22180998/
