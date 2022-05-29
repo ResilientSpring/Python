@@ -112,6 +112,8 @@ plt.title(r'G = ($\nu_g  \cup  \nu_{io}$, $\mathit{E}$)')
 plt.axis("equal")
 plt.show()
 
-subgraph = nx.number_attracting_components(G=circuit)
+for subgraph in nx.attracting_components(G=circuit):
+    subgraph_ = circuit.subgraph(nodes=subgraph).copy()
 
-print(subgraph)
+    print(subgraph_.edges())
+    print(subgraph_.nodes())
