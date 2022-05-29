@@ -113,7 +113,7 @@ plt.axis("equal")
 plt.show()
 
 # print(circuit.successors(n=8))
-print(list(circuit.successors(8))) # [1]
+print(list(circuit.successors(n=8))) # [1]
 
 # References:
 # 1. https://stackoverflow.com/a/47161556
