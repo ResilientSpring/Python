@@ -11,6 +11,9 @@ print(nx.maximal_matching(G=G))
 
 print(nx.is_matching(G=G, matching={(2, 4), (3, 5)}))
 print(nx.maximal_independent_set(G=G))
+
+# Returns the minimum maximal matching of G.
+# That is, out of all maximal matchings of the graph G, the smallest is returned.
 print(nx.algorithms.approximation.min_maximal_matching(G=G))
 
 # Reference:
