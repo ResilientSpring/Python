@@ -9,3 +9,4 @@ plt.show()
 
 print(nx.maximal_independent_set(G=G))
 print(nx.maximal_independent_set(G=G))
+print(nx.maximal_independent_set(G=G))
