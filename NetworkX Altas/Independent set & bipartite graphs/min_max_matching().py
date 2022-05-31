@@ -12,3 +12,6 @@ print(nx.maximal_matching(G=G))
 print(nx.is_matching(G=G, matching={(2, 4), (3, 5)}))
 print(nx.maximal_independent_set(G=G))
 print(nx.algorithms.approximation.min_maximal_matching(G=G))
+
+# Reference:
+# https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.approximation.matching.min_maximal_matching.html#networkx.algorithms.approximation.matching.min_maximal_matching
