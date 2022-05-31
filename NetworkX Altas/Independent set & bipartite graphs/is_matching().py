@@ -10,3 +10,6 @@ plt.show()
 print(nx.maximal_matching(G=G))
 
 print(nx.is_matching(G=G, matching={(2, 4), (3, 5)}))
+
+# Reference:
+# https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.matching.is_matching.html#networkx.algorithms.matching.is_matching
