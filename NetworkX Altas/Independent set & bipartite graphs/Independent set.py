@@ -10,7 +10,10 @@ plt.show()
 print(nx.maximal_independent_set(G=G))
 print(nx.maximal_independent_set(G=G))
 print(nx.maximal_independent_set(G=G))
+print(nx.maximal_independent_set(G=G, nodes=[0]))
 print(nx.maximal_independent_set(G=G, nodes=[1]))
+print(nx.maximal_independent_set(G=G, nodes=[2]))
+print(nx.maximal_independent_set(G=G, nodes=[3]))
 print(nx.maximal_independent_set(G=G, nodes=[4]))
 
 # Reference:
