@@ -8,3 +8,7 @@ nx.draw(G=G, with_labels=True, node_color='y', node_size=800)
 plt.show()
 
 print(nx.maximal_matching(G=G))
+
+# Reference:
+# https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.matching.maximal_matching.html
+
