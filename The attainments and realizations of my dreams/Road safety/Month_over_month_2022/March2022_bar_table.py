@@ -6,14 +6,15 @@ import pandas as pd
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-month_as_of_now = ["Jan", "Feb", "Mar"]
+month = ["Jan", "Feb", "Mar"]
 
 deaths = [[13, 23, 29, 28, 24, 23],  # January
-          [7, 16, 20, 24, 19, 30],  # February
+          [7, 16, 20, 24, 20, 30],   # February
+          [9, 29, 14, 27, 34, 43],   # March
           ]
 
 df = pd.DataFrame(data=deaths,
-                  index=month_as_of_now,
+                  index=month,
                   columns=administrative_duty)
 print(df)
 
@@ -21,7 +22,7 @@ print(df)
 
 # Matplotlib has a number of built-in colormaps accessible via matplotlib.cm.get_cmap.[4]
 cmap = cm.get_cmap("YlOrRd")  # Colormap reference[5]
-colors = cmap(np.linspace(0, 0.5, len(month_as_of_now)))
+colors = cmap(np.linspace(0, 0.5, len(month)))
 n_rows = len(deaths)
 
 index = np.arange(len(administrative_duty)) + 0.3
@@ -52,7 +53,7 @@ for row in range(n_rows):
 
 # Add a table at the bottom of the axes
 the_table = axes.table(cellText=cell_text,
-                       rowLabels=month_as_of_now,
+                       rowLabels=month,
                        rowColours=colors,
                        colLabels=administrative_duty,
                        loc='bottom')
