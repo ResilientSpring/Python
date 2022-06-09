@@ -63,7 +63,7 @@ plt.subplots_adjust(left=0.2, bottom=0.2)
 
 axes.set_ylabel("The number of deaths")
 axes.set_xticks([])
-axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2022/01-02)")
+axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2022/01-03)")
 
 axes.grid(True)  # pyplot.grid [1][2]
 
