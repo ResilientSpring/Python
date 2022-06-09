@@ -67,9 +67,18 @@ axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by R
 
 axes.grid(True)  # pyplot.grid [1][2]
 
-axes2.bar(administrative_duty, [20, 39, 49, 52, 43, 53])
+# Count the grand total automatically
+sum_TPE = deaths[0][0] + deaths[1][0] + deaths[2][0]
+sum_NTP = deaths[0][1] + deaths[1][1] + deaths[2][1]
+sum_TAO = deaths[0][2] + deaths[1][2] + deaths[2][2]
+sum_TCH = deaths[0][3] + deaths[1][3] + deaths[2][3]
+sum_TNA = deaths[0][4] + deaths[1][4] + deaths[2][4]
+sum_KAO = deaths[0][5] + deaths[1][5] + deaths[2][5]
+
+
+axes2.bar(administrative_duty, [sum_TPE, sum_NTP, sum_TAO, sum_TCH, sum_TNA, sum_KAO])
 axes2.bar_label(axes2.containers[0], label_type='edge')
-axes2.plot(administrative_duty, [20, 39, 49, 52, 43, 53], '-o', color='orange')
+axes2.plot(administrative_duty, [sum_TPE, sum_NTP, sum_TAO, sum_TCH, sum_TNA, sum_KAO], '-o', color='orange')
 
 figure.tight_layout()
 
