@@ -46,18 +46,18 @@ def hat_graph(ax, xlabels, values, group_labels):
 
 # initialise labels and a numpy array make sure you have
 # N labels of N number of values in the array
-xlabels = ['2017', '\'18', '\'19', '\'20', '\'21']
-Taipei = np.array([5, 15, 22, 20, 25])
-Kaohsiung = np.array([25, 32, 34, 30, 27])
+xlabels = ['2018', '\'19', '\'20', '\'21', '\'22']
+Taipei = np.array([3, 0, 1, 0, 0])              # Taipei + New Taipei
+Kaohsiung = np.array([22, 8, 9, 15, 0])          # Kaohsiung
 
 fig, ax = plt.subplots()
 hat_graph(ax, xlabels, [Taipei, Kaohsiung], ['Taipei', 'Kaohsiung'])
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_xlabel('Year\nReference: https://airtw.epa.gov.tw/CHT/Query/Bad_Day.aspx')
-ax.set_ylabel('Days polluted by the perilous levels of PM 2.5')
+ax.set_ylabel('Days polluted by the unsafe levels of AQI')
 ax.set_ylim(0, 60)
-ax.set_title('The number of Days under Hazardous (carcinogenic) PM2.5 Level')
+ax.set_title('The number of Days of December with Air Quality Index > 100')
 ax.legend()
 
 fig.tight_layout()
