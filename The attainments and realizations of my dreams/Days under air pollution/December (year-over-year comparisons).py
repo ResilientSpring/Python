@@ -47,11 +47,11 @@ def hat_graph(ax, xlabels, values, group_labels):
 # initialise labels and a numpy array make sure you have
 # N labels of N number of values in the array
 xlabels = ['2017', '\'18', '\'19', '\'20', '\'21']
-playerA = np.array([5, 15, 22, 20, 25])
-playerB = np.array([25, 32, 34, 30, 27])
+Taipei = np.array([5, 15, 22, 20, 25])
+Kaohsiung = np.array([25, 32, 34, 30, 27])
 
 fig, ax = plt.subplots()
-hat_graph(ax, xlabels, [playerA, playerB], ['Taipei', 'Kaohsiung'])
+hat_graph(ax, xlabels, [Taipei, Kaohsiung], ['Taipei', 'Kaohsiung'])
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_xlabel('Year\nReference: https://airtw.epa.gov.tw/CHT/Query/Bad_Day.aspx')
