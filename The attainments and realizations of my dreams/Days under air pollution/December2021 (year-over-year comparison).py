@@ -47,8 +47,8 @@ def hat_graph(ax, xlabels, values, group_labels):
 # initialise labels and a numpy array make sure you have
 # N labels of N number of values in the array
 xlabels = ['2018', '\'19', '\'20', '\'21', '\'22']
-Taipei = np.array([5, 15, 22, 20, 25])
-Kaohsiung = np.array([25, 32, 34, 30, 27])
+Taipei = np.array([5, 15, 22, 20, 25])              # Taipei + New Taipei
+Kaohsiung = np.array([25, 32, 34, 30, 27])          # Kaohsiung
 
 fig, ax = plt.subplots()
 hat_graph(ax, xlabels, [Taipei, Kaohsiung], ['Taipei', 'Kaohsiung'])
