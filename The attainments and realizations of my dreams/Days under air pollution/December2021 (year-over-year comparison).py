@@ -56,7 +56,7 @@ hat_graph(ax, xlabels, [Taipei, Kaohsiung], ['Taipei', 'Kaohsiung'])
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_xlabel('Year\nReference: https://airtw.epa.gov.tw/CHT/Query/Bad_Day.aspx')
 ax.set_ylabel('Days polluted by the unsafe levels of AQI')
-ax.set_ylim(0, 60)
+ax.set_ylim(0, 31)
 ax.set_title('The number of Days of December with Air Quality Index > 100')
 ax.legend()
 
