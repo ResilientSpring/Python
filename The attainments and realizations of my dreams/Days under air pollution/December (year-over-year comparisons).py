@@ -54,10 +54,10 @@ fig, ax = plt.subplots()
 hat_graph(ax, xlabels, [playerA, playerB], ['Player A', 'Player B'])
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_xlabel('Games')
-ax.set_ylabel('Score')
+ax.set_xlabel('Year')
+ax.set_ylabel('Days polluted by the perilous levels of PM2.5')
 ax.set_ylim(0, 60)
-ax.set_title('The # of Days under Dangerous PM2.5 Level')
+ax.set_title('The # of Days under Hazardous PM2.5 Level')
 ax.legend()
 
 fig.tight_layout()
