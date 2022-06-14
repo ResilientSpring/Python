@@ -51,7 +51,7 @@ playerA = np.array([5, 15, 22, 20, 25])
 playerB = np.array([25, 32, 34, 30, 27])
 
 fig, ax = plt.subplots()
-hat_graph(ax, xlabels, [playerA, playerB], ['Player A', 'Player B'])
+hat_graph(ax, xlabels, [playerA, playerB], ['Taipei', 'Kaohsiung'])
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_xlabel('Year\nReference: https://airtw.epa.gov.tw/CHT/Query/Bad_Day.aspx')
