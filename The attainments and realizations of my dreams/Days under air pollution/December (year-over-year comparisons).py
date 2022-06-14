@@ -57,7 +57,7 @@ hat_graph(ax, xlabels, [playerA, playerB], ['Player A', 'Player B'])
 ax.set_xlabel('Games')
 ax.set_ylabel('Score')
 ax.set_ylim(0, 60)
-ax.set_title('Scores by number of game and players')
+ax.set_title('The # of Days under dangerous PM2.5 Level')
 ax.legend()
 
 fig.tight_layout()
