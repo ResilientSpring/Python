@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 # Convert wiki-table in the article 高等教育深耕計畫[4] to csv.[2][3]
 
 public_research_centric_university = pd.DataFrame(data=[
-    [1, "國立臺灣大學", "National Taiwan University", 232673, "North", ],
-    [2, "國立成功大學", "National Cheng Kung University", 141284, "South", ],
+    [1, "國立臺灣大學", "National Taiwan University", 232587, "North", ],
+    [2, "國立成功大學", "National Cheng Kung University", 141178, "South", ],
     [3, "國立清華大學", "National Tsing Hua University", 121202, "North", "Derived from Beijing, China's Tsing Hua University"],
     [4, "國立陽明交通大學（交大校區）", "National Yang Ming Chiao Tung University (Hsinchu)", 104500, "North", "Derived from Shanghai, China's ChiaoTung University"],
     [5, "國立中興大學", "National Chung Hsing University", 43582, "North", ],
