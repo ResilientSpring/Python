@@ -80,7 +80,7 @@ plt.xlabel('Location (divided by Zhuoshui River)\n\n'
 
 plt.ylabel('Unit: 10 thousands of New Taiwan Dollar')
 plt.title('Government budget support for public research universities (國立大學)\n'
-          'in North vs South in 2021', fontproperties="MS Gothic")
+          'in North vs South in 2022', fontproperties="MS Gothic")
 
 # Tweak spacing to prevent clipping of ylabel
 plt.tight_layout()
