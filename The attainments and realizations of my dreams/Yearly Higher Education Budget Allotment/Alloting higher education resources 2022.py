@@ -16,7 +16,7 @@ public_research_centric_university = pd.DataFrame(data=[
     [5, "國立中興大學", "National Chung Hsing University", 43745, "North", ],
     [6, "國立中央大學", "National Central University", 42228, "North", ],
     [7, "國立陽明交通大學（陽明校區）", "National Yang Ming Chiao Tung University (Taipei)", 0, "North", ],
-    [8, "國立政治大學", "National Chengchi University", 32164, "North", "Literally, 'National Politics University'"],
+    [8, "國立政治大學", "National Chengchi University", 31579, "North", "Literally, 'National Politics University'"],
     [9, "國立中山大學", "National Sun Yat-sen University", 31954, "South", ],
     [10, "國立臺灣師範大學", "National Taiwan Normal University", 22734, "North", ],
     [11, "國立中正大學", "National Chung Cheng University", 15521, "South", "Literally, National Chiang Chung-cheng University"],
