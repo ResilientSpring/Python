@@ -1,6 +1,4 @@
-import numpy as np
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 # Using the magic encoding
 # -*- coding: utf-8 -*-
