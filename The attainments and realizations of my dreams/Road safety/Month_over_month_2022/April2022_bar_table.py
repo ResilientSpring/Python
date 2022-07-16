@@ -6,11 +6,12 @@ import pandas as pd
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-month = ["Jan", "Feb", "Mar"]
+month = ["Jan", "Feb", "Mar", "Apr"]
 
 deaths = [[13, 23, 29, 28, 24, 23],  # January
           [7, 16, 20, 24, 20, 30],   # February
           [9, 29, 14, 27, 34, 43],   # March
+          [8, 23, 23, 23, 27, 30],   # April
           ]
 
 df = pd.DataFrame(data=deaths,
@@ -63,7 +64,7 @@ plt.subplots_adjust(left=0.2, bottom=0.2)
 
 axes.set_ylabel("The number of deaths")
 axes.set_xticks([])
-axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2022/01-03)")
+axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2022/01-04)")
 
 axes.grid(True)  # pyplot.grid [1][2]
 
