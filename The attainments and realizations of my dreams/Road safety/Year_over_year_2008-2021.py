@@ -7,7 +7,8 @@ administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", 
 
 year = ["2008", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
 
-death = [[133, 254, 198, 318, 340, 402],  # 2009
+death = [[115, 261, 226, 371, 371, 398],  # 2008
+         [133, 254, 198, 318, 340, 402],  # 2009
          [152, 255, 227, 373, 319, 388],  # 2010
          [140, 264, 195, 382, 346, 373],  # 2011
          [130, 252, 195, 370, 288, 417],  # 2012
@@ -42,7 +43,7 @@ summary = [df["Taipei"].sum(), df["New Taipei"].sum(), df["Taoyuan"].sum(), df["
 print(summary)
 
 cumulative_sum = pd.DataFrame(data=summary,
-                              columns=["Accumulative Deaths (2009-2021)"],
+                              columns=["Accumulative Deaths (2008-2021)"],
                               index=administrative_duty)
 
 print(cumulative_sum)
@@ -84,7 +85,7 @@ table = axes2.table(cellText=cumulative_sum.values,  # matplotlib table size [3]
                                 colour.CSS4_COLORS.get('lightskyblue'),
                                 colour.CSS4_COLORS.get('lightskyblue')],
                     loc='center',
-                    url='Reference:\nhttps://roadsafety.tw/Dashboard/Custom?type=30日死亡人數'
+                    url='Reference:\nhttps://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100'
                     )
 
 # Scale column widths by xscale and row heights by yscale.[4]
@@ -97,7 +98,7 @@ axes3.plot(administrative_duty, summary, '-o', color='orange') # Add a trend lin
 
 # matplotlib text [1][2]
 text = figure.text(0.5, 0.04,
-                   'Reference:https://roadsafety.tw/Dashboard/Custom?type=30日死亡人數',
+                   'Reference:https://stat.motc.gov.tw/mocdb/stmain.jsp?sys=100',
                    horizontalalignment='center',
                    verticalalignment='center',
                    size=13,
