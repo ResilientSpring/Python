@@ -40,14 +40,19 @@ plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 # Insert text watermark [1]
 plt.text(x=2, y=1, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation='30',
-         transform=IdentityTransform()) # data coordinates [2] [Note1]
+         transform=IdentityTransform()) # data coordinates [2] [Note1] [3] [Note2]
 
 plt.show()
 
 # Reference:
 # 1. https://matplotlib.org/stable/gallery/text_labels_and_annotations/watermark_text.html
 # 2. https://matplotlib.org/stable/tutorials/advanced/transforms_tutorial.html
+# 3. https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text
 
 # Notes:
 # 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
 # and (width, height) is top right of the display window in pixels.[2]
+#
+# 2. default transform specifies that text is in data coords,
+# alternatively, you can specify text in axis coords ((0, 0) is lower-left and (1, 1) is upper-right).
+# The example below places text in the center of the Axes:[3]
