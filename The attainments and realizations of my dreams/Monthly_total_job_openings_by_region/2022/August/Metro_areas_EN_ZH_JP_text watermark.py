@@ -4,6 +4,7 @@ import matplotlib.cbook as cbook
 import matplotlib.image as image
 # Using the magic encoding
 # -*- coding: utf-8 -*-
+from matplotlib.transforms import IdentityTransform
 
 matplotlib.rc('font', family="MS Gothic")
 
@@ -37,10 +38,16 @@ img = image.imread('CC-BY.png')
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
 # Insert text watermark [1]
-plt.text(x=10, y=10, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey',
-         alpha=0.9, ha='center', va='center', rotation='30')
+plt.text(x=2, y=1, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey', alpha=0.9,
+         ha='center', va='center', rotation='30',
+         transform=IdentityTransform()) # data coordinates [2] [Note1]
 
 plt.show()
 
 # Reference:
 # 1. https://matplotlib.org/stable/gallery/text_labels_and_annotations/watermark_text.html
+# 2. https://matplotlib.org/stable/tutorials/advanced/transforms_tutorial.html
+
+# Notes:
+# 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
+# and (width, height) is top right of the display window in pixels.[2]
