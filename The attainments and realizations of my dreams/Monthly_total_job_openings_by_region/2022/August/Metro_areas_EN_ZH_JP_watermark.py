@@ -41,3 +41,7 @@ plt.show()
 # Reference:
 # 1. https://matplotlib.org/stable/tutorials/introductory/images.html
 # 2. https://matplotlib.org/stable/gallery/images_contours_and_fields/watermark_image.html
+
+# Handy websites for choosing the CC license (image).
+# 1. https://commons.wikimedia.org/wiki/Commons:Licensing#Well-known_licenses
+# 2. https://creativecommons.org/choose/
