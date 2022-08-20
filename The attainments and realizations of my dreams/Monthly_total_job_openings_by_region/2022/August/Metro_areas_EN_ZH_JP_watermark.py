@@ -32,12 +32,11 @@ plt.xlabel("參考資料 Reference: https://web.archive.org/web/20220820070855/h
 
 plt.ylim(38000, 165000)
 
-with cbook.get_sample_data('CC-BY.png') as file:
-    img = image.imread(file)
-
+img = image.imread('CC-BY.png') # Load image. [1]
 
 plt.figimage(X=img, xo=20, yo=20, alpha=0.5)
 
 plt.show()
 
 # Reference:
+# 1. https://matplotlib.org/stable/tutorials/introductory/images.html
