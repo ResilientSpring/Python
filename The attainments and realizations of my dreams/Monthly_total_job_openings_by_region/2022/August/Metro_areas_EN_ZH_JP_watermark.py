@@ -34,7 +34,7 @@ plt.ylim(38000, 165000)
 
 img = image.imread('CC-BY.png') # Load image. [1]
 
-plt.figimage(X=img, xo=20, yo=20, alpha=0.5)  # Insert watermark image. [2]
+plt.figimage(X=img, xo=20, yo=20, alpha=0.9)  # Insert watermark image. [2]
 
 plt.show()
 
