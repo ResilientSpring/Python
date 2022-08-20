@@ -37,7 +37,7 @@ img = image.imread('CC-BY.png')
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
 # Insert text watermark [1]
-plt.text(x=0.5, y=0.5, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey',
+plt.text(x=450, y=450, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey',
          alpha=0.9, ha='center', va='center', rotation='30')
 
 plt.show()
