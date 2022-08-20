@@ -34,9 +34,10 @@ plt.ylim(38000, 165000)
 
 img = image.imread('CC-BY.png') # Load image. [1]
 
-plt.figimage(X=img, xo=20, yo=20, alpha=0.5)
+plt.figimage(X=img, xo=20, yo=20, alpha=0.5)  # Insert watermark image. [2]
 
 plt.show()
 
 # Reference:
 # 1. https://matplotlib.org/stable/tutorials/introductory/images.html
+# 2. https://matplotlib.org/stable/gallery/images_contours_and_fields/watermark_image.html
