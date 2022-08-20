@@ -28,7 +28,7 @@ plt.title("2022/08 台灣各生活圈職缺數\n the number of job openings in T
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference: https://web.archive.org/web/20220820070855/https://www.104.com.tw/jb/category/?cat=2")
 
-plt.ylim(35000, 165000)
+plt.ylim(38000, 165000)
 
 plt.show()
 
