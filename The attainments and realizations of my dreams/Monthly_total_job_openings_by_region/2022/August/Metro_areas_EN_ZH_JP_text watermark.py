@@ -38,7 +38,7 @@ img = image.imread('CC-BY.png')
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
 # Insert text watermark [1]
-plt.text(x=0.6, y=0.6, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey', alpha=0.9,
+plt.text(x=0.6, y=0.7, s="CC-BY 4.0 @Beipiao", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation='30',
          transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
 
