@@ -49,14 +49,14 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
 year_num = np.arange(0, 29, 1)
 print(year_num)
 
-year_num2 = range(0, 29, 1)
+year_num2 = range(0, 30, 1)
 print(year_num2)
 
 number_of_births = [322938, 329581, 325545, 326002, 271450, 283661, 305312, 260354, 247530, 227070,
                     216419, 205854, 204459, 204414, 198733, 191310, 166886, 196627, 229481, 199113,
                     210383, 213598, 208440, 193844, 181601, 177767, 165249, 153820]
 
-label = np.arange(1994, 2022, 1)
+label = np.arange(1994, 2023, 1)
 print(label)
 
 # xmin, xmax = xlim = 0, 10
