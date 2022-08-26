@@ -46,15 +46,15 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
                        cmap=plt.cm.Blues_r, cmap_range=(0, 0.8))
 
 
-xmin, xmax = xlim = 0, 10
-ymin, ymax = ylim = 0, 1
+# xmin, xmax = xlim = 0, 10
+ymin, ymax = ylim = 150000, 330000
 
 fig, ax = plt.subplots()
-ax.set(xlim=xlim, ylim=ylim, autoscale_on=False)
+ax.set(ylim=ylim, autoscale_on=False)
 
 # background image
-gradient_image(ax, direction=1, extent=(0, 1, 0, 1), transform=ax.transAxes,
-               cmap=plt.cm.RdYlGn, cmap_range=(0.2, 0.8), alpha=0.5)
+gradient_image(ax, direction=1, extent=(0, 1, 0, 1), transform=ax.transAxes, cmap=plt.cm.RdYlGn,
+               cmap_range=(0.2, 0.8), alpha=0.5)
 
 N = 10
 x = np.arange(N) + 0.15
