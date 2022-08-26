@@ -3,7 +3,7 @@ import numpy as np
 
 plt.rcdefaults()
 
-fig, ax = plt.subplots(figsize=(8, 8))
+fig, ax = plt.subplots(figsize=(7, 7))
 
 city = ('Taipei', 'New Taipei', 'Taoyuan', 'Taichung', 'Tainan', 'Kaohsiung')
 y_pos = np.arange(len(city))
