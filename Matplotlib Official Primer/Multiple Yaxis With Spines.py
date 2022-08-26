@@ -25,9 +25,9 @@ ax.set_ylabel("Density")
 twin1.set_ylabel("Temperature")
 twin2.set_ylabel("Velocity")
 
-ax.yaxis.label.set_color(p1.get_color())
-twin1.yaxis.label.set_color(p2.get_color())
-twin2.yaxis.label.set_color(p3.get_color())
+ax.yaxis.label_year.set_color(p1.get_color())
+twin1.yaxis.label_year.set_color(p2.get_color())
+twin2.yaxis.label_year.set_color(p3.get_color())
 
 tkw = dict(size=4, width=1.5)
 ax.tick_params(axis='y', colors=p1.get_color(), **tkw)

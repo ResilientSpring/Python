@@ -57,8 +57,8 @@ number_of_births = [322938, 329581, 325545, 326002, 271450, 283661, 305312, 2603
                     210383, 213598, 208440, 193844, 181601, 177767, 165249, 153820,
                     (13137, 9617, 12788, 11222, 9442, 10943, 10950)]
 
-label = np.arange(1994, 2023, 1)
-print(label)
+label_year = np.arange(1994, 2023, 1)
+print(label_year)
 
 # xmin, xmax = xlim = 0, 10
 ymin, ymax = ylim = 150000, 330000
@@ -73,7 +73,7 @@ gradient_image(ax, direction=1, extent=(0, 1, 0, 1), transform=ax.transAxes, cma
 N = 10
 x = np.arange(N) + 0.15
 y = np.random.rand(N)
-gradient_bar(ax=ax, x=x, y=number_of_births, width=0.7)
+gradient_bar(ax=ax, x=label_year, y=number_of_births, width=0.7)
 ax.set_aspect('auto')
 
 
