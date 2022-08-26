@@ -85,7 +85,7 @@ axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of bi
 plt.xticks(year_num, labels=label_year_text, rotation=7, fontsize=12)
 plt.tick_params(axis='y', labelsize=12)
 
-gradient_bar(ax=axe, x=label_year, y=number_of_births, width=0.7)
+gradient_bar(ax=axe, x=year_num, y=number_of_births, width=0.7)
 
 plt.show()
 
