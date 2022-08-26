@@ -23,7 +23,7 @@ fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(24, 10))
 axe.set_xticks(year_number, labels=label_year_text, rotation=7, fontsize=12)
 axe.tick_params(axis='y', labelsize=12)
 
-plot = axe.bar(year_number, number_of_births, align='center', width=0.3) # Keep bars from cramming themselves into the center. [1][2]
+plot = axe.bar(year_number, number_of_births, align='center', width=0.3)
 
 for rect in plot:
     height = rect.get_height()
@@ -38,10 +38,10 @@ axe.set_xlabel("Year")
 
 axe.set_ylim(78000, 330000)
 
-plt.margins(x=0, y=0, tight=False)
+plt.margins(x=0, y=0, tight=False) #[1][2]
 
 plt.show()
 
 # References:
-# 1. https://stackoverflow.com/a/40575741/
-# 2. https://stackoverflow.com/a/20454355
+# 1. https://www.google.com/search?q=matplotlib+margins
+# 2. https://matplotlib.org/3.1.1/gallery/subplots_axes_and_figures/axes_margins.html
