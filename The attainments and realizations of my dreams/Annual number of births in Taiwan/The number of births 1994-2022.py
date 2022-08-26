@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
+# Using the magic encoding
+# -*- coding: utf-8 -*-
 
 matplotlib.rc('font', family="MS Gothic")
 
@@ -45,56 +47,47 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
         gradient_image(ax, extent=(left, right, bottom, top), cmap=plt.cm.Blues_r, cmap_range=(0, 0.8))
 
 
-# arange automatically balloons into a list with 29 elements from 1 to 28. [2]
-year_num = np.arange(1, 30, 1)
-print(year_num)
 
-year_num = list(year_num)
-
-year_num2 = range(1, 30, 1)
-print(year_num2)
-
-year_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-
-year_number2 = []
-
-for i in np.arange(1, 30, 1):
-    year_number2.append(i)
-
-print(year_number2)
+year_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+               24, 25, 26, 27, 28, 29]
 
 number_of_births = [322938, 329581, 325545, 326002, 271450, 283661, 305312, 260354, 247530, 227070,
                     216419, 205854, 204459, 204414, 198733, 191310, 166886, 196627, 229481, 199113,
                     210383, 213598, 208440, 193844, 181601, 177767, 165249, 153820,
                     (13137, 9617, 12788, 11222, 9442, 10943, 10950)]
 
-label_year = np.arange(1994, 2023, 1)
-print(label_year)
-
 label_year_text = ["1994", "'95", "'96", "'97", "'98", "'99", "2000", "'01", "'02", "'03", "'04", "'05",
                    "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17",
                    "'18", "'19", "'20", "'21", "'22"]
 
-# xmin, xmax = xlim = 0, 10
-ymin, ymax = ylim = 150000, 330000
-
 fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(8, 7))
-axe.set(ylim=ylim, autoscale_on=False)
+axe.set_xticks(year_number, labels=label_year_text, rotation=7, fontsize=12)
+axe.tick_params(axis='y', labelsize=12)
+
+plot = axe.bar(year_number, number_of_births)
+
+for rect in plot:
+    height = rect.get_height()
+    axe.text(rect.get_x() + rect.get_width() / 2., 1.002 * height, '%d' % int(height),
+             ha='center', va='bottom', fontsize=12)
+
 
 # background image
 gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, cmap=plt.cm.RdYlGn,
                cmap_range=(0.2, 0.8), alpha=0.5)
 
 
-axe.set_aspect('auto')
-axe.set_xlabel("Year")
-axe.set_ylabel("The number of births")
+# gradient_bar(ax=axe, x=year_number, y=number_of_births, width=0.7)
+
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
+# axe.set_ylabel("The number of births")
+axe.set_xlabel("Year")
+axe.set_aspect('auto')
 
-plt.xticks(year_num, labels=label_year_text, rotation=7, fontsize=12)
-plt.tick_params(axis='y', labelsize=12)
+# xmin, xmax = xlim = 0, 10
+ymin, ymax = ylim = 150000, 330000
 
-gradient_bar(ax=axe, x=year_num, y=number_of_births, width=0.7)
+axe.set(ylim=ylim, autoscale_on=False)
 
 plt.show()
 
