@@ -27,8 +27,8 @@ plot = axe.bar(year_number, number_of_births)
 
 for rect in plot:
     height = rect.get_height()
-    axe.text(rect.get_x() + rect.get_width() / 2., 1.002 * height, '%d' % int(height),
-             ha='center', va='bottom', fontsize=12)
+    axe.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
+            '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
 
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
