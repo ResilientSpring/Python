@@ -95,6 +95,10 @@ text = figure.text(0.5, 0.01,
 
 text.set_path_effects([path_effects.Normal()])
 
+img = image.imread('CC-BY.png')
+
+plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
+
 plt.show()
 
 # References:
