@@ -72,9 +72,11 @@ gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, c
 
 
 gradient_bar(ax=axe, x=label_year, y=number_of_births, width=0.7)
-axe.set_aspect('auto')
 
-plt.title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
+axe.set_aspect('auto')
+axe.set_xlabel("Year")
+axe.set_ylabel("The number of births")
+axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
 
 plt.show()
 
