@@ -45,14 +45,14 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
         gradient_image(ax, extent=(left, right, bottom, top), cmap=plt.cm.Blues_r, cmap_range=(0, 0.8))
 
 
-
+# arange automatically balloons into a list with 29 elements from 1 to 28. [2]
 year_num = np.arange(0, 29, 1)
 print(year_num)
 
 year_num2 = range(0, 29, 1)
 print(year_num2)
 
-position_vacancies = [176040, 87874, 74498, 38787, 39508]
+number_of_births = [176040, 87874, 74498, 38787, 39508]
 
 # xmin, xmax = xlim = 0, 10
 ymin, ymax = ylim = 150000, 330000
@@ -75,3 +75,4 @@ plt.show()
 
 # References:
 # 1. https://matplotlib.org/stable/gallery/lines_bars_and_markers/gradient_bar.html
+# 2. https://numpy.org/doc/stable/reference/generated/numpy.arange.html
