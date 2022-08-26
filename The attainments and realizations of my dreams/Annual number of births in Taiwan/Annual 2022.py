@@ -5,7 +5,6 @@ plt.rcdefaults()
 
 fig, ax = plt.subplots(figsize=(8, 8))
 
-# Example data
 city = ('Taipei', 'New Taipei', 'Taoyuan', 'Taichung', 'Tainan', 'Kaohsiung')
 y_pos = np.arange(len(city))
 births = [8297, 12111, 10216, 9955, 5078, 9013]
@@ -21,3 +20,6 @@ ax.set_title('The number of births by city (2022/01-07) ')
 ax.bar_label(horizontal_bar, labels=['±%.2f' % e for e in error], padding=8, color='b', fontsize=14)
 
 plt.show()
+
+# References:
+# 1. https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_label_demo.html
