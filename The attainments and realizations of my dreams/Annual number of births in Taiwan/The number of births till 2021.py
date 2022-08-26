@@ -1,9 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import matplotlib
 import numpy as np
 
-np.random.seed(19680801)
+matplotlib.rc('font', family="MS Gothic")
 
 
 def gradient_image(ax, extent, direction=0.3, cmap_range=(0, 1), **kwargs):
@@ -42,9 +42,17 @@ def gradient_image(ax, extent, direction=0.3, cmap_range=(0, 1), **kwargs):
 def gradient_bar(ax, x, y, width=0.5, bottom=0):
     for left, top in zip(x, y):
         right = left + width
-        gradient_image(ax, extent=(left, right, bottom, top),
-                       cmap=plt.cm.Blues_r, cmap_range=(0, 0.8))
+        gradient_image(ax, extent=(left, right, bottom, top), cmap=plt.cm.Blues_r, cmap_range=(0, 0.8))
 
+
+
+year_num = np.arange(0, 29, 1)
+print(year_num)
+
+year_num2 = range(0, 29, 1)
+print(year_num2)
+
+position_vacancies = [176040, 87874, 74498, 38787, 39508]
 
 # xmin, xmax = xlim = 0, 10
 ymin, ymax = ylim = 150000, 330000
