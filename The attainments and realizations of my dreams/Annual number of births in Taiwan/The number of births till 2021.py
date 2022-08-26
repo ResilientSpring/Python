@@ -46,12 +46,12 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
 
 
 # arange automatically balloons into a list with 29 elements from 1 to 28. [2]
-year_num = np.arange(0, 30, 1)
+year_num = np.arange(1, 30, 1)
 print(year_num)
 
 year_num = list(year_num)
 
-year_num2 = range(0, 30, 1)
+year_num2 = range(1, 30, 1)
 print(year_num2)
 
 number_of_births = [322938, 329581, 325545, 326002, 271450, 283661, 305312, 260354, 247530, 227070,
