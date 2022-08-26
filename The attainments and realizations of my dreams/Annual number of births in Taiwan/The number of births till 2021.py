@@ -52,7 +52,9 @@ print(year_num)
 year_num2 = range(0, 29, 1)
 print(year_num2)
 
-number_of_births = [176040, 87874, 74498, 38787, 39508]
+number_of_births = [322938, 329581, 325545, 326002, 271450, 283661, 305312, 260354, 247530, 227070,
+                    216419, 205854, 204459, 204414, 198733, 191310, 166886, 196627, 229481, 199113,
+                    210383, 213598, 208440, 193844, 181601, 177767, 165249, 153820]
 
 label = np.arange(1994, 2022, 1)
 print(label)
@@ -79,3 +81,5 @@ plt.show()
 # References:
 # 1. https://matplotlib.org/stable/gallery/lines_bars_and_markers/gradient_bar.html
 # 2. https://numpy.org/doc/stable/reference/generated/numpy.arange.html
+
+# Data: https://statis.moi.gov.tw/micst/stmain.jsp?sys=220&ym=8300&ymt=11000&kind=21&type=1&funid=c0120101&cycle=4&outmode=0&compmode=0&outkind=1&fld0=1&cod00=1&rdm=fu0Necq9
