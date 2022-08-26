@@ -54,7 +54,8 @@ year_num = list(year_num)
 year_num2 = range(1, 30, 1)
 print(year_num2)
 
-year_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+year_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+               24, 25, 26, 27, 28, 29]
 
 year_number2 = []
 
@@ -101,7 +102,7 @@ axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of bi
 plt.xticks(year_num, labels=label_year_text, rotation=7, fontsize=12)
 plt.tick_params(axis='y', labelsize=12)
 
-gradient_bar(ax=axe, x=year_num, y=number_of_births, width=0.7)
+gradient_bar(ax=axe, x=year_number3, y=number_of_births, width=0.7)
 
 plt.show()
 
