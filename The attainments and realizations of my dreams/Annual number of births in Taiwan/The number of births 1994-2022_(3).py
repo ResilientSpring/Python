@@ -23,7 +23,7 @@ fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(20, 8))
 axe.set_xticks(year_number, labels=label_year_text, rotation=7, fontsize=12)
 axe.tick_params(axis='y', labelsize=12)
 
-plot = axe.bar(year_number, number_of_births, align='edge') # Keep bars from cramming themselves into the center. [1]
+plot = axe.bar(year_number, number_of_births, align='edge') # Keep bars from cramming themselves into the center. [1][2]
 
 for rect in plot:
     height = rect.get_height()
@@ -42,3 +42,4 @@ plt.show()
 
 # References:
 # 1. https://stackoverflow.com/a/40575741/
+# 2. https://stackoverflow.com/a/20454355
