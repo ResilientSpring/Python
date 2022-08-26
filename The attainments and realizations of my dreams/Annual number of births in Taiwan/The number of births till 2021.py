@@ -73,7 +73,7 @@ gradient_image(ax, direction=1, extent=(0, 1, 0, 1), transform=ax.transAxes, cma
 N = 10
 x = np.arange(N) + 0.15
 y = np.random.rand(N)
-gradient_bar(ax, x, y, width=0.7)
+gradient_bar(ax=ax, x=x, y=y, width=0.7)
 ax.set_aspect('auto')
 
 
