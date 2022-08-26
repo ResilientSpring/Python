@@ -54,7 +54,7 @@ print(year_num2)
 
 number_of_births = [176040, 87874, 74498, 38787, 39508]
 
-label = np.arange(1994, 2021, 1)
+label = np.arange(1994, 2022, 1)
 print(label)
 
 # xmin, xmax = xlim = 0, 10
