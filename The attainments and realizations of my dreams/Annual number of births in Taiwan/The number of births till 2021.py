@@ -49,6 +49,8 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
 year_num = np.arange(0, 29, 1)
 print(year_num)
 
+year_num = list(year_num)
+
 year_num2 = range(0, 30, 1)
 print(year_num2)
 
