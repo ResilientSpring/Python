@@ -63,16 +63,16 @@ print(label_year)
 # xmin, xmax = xlim = 0, 10
 ymin, ymax = ylim = 150000, 330000
 
-fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 7))
-ax.set(ylim=ylim, autoscale_on=False)
+fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(8, 7))
+axe.set(ylim=ylim, autoscale_on=False)
 
 # background image
-gradient_image(ax, direction=1, extent=(0, 1, 0, 1), transform=ax.transAxes, cmap=plt.cm.RdYlGn,
+gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, cmap=plt.cm.RdYlGn,
                cmap_range=(0.2, 0.8), alpha=0.5)
 
 
-gradient_bar(ax=ax, x=label_year, y=number_of_births, width=0.7)
-ax.set_aspect('auto')
+gradient_bar(ax=axe, x=label_year, y=number_of_births, width=0.7)
+axe.set_aspect('auto')
 
 plt.title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
 
