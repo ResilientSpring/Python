@@ -94,13 +94,6 @@ gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, c
                cmap_range=(0.2, 0.8), alpha=0.5)
 
 
-axe.set_aspect('auto')
-axe.set_xlabel("Year")
-axe.set_ylabel("The number of births")
-axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
-axe.set_xticks(year_num, labels=label_year_text, rotation=7, fontsize=12)
-axe.tick_params(axis='y', labelsize=12)
-
 # gradient_bar(ax=axe, x=year_number, y=number_of_births, width=0.7)
 
 plot = axe.bar(year_number, number_of_births)
@@ -110,6 +103,13 @@ for rect in plot:
     axe.text(rect.get_x() + rect.get_width() / 2., 1.002 * height, '%d' % int(height),
              ha='center', va='bottom', fontsize=12)
 
+
+axe.set_aspect('auto')
+axe.set_xlabel("Year")
+axe.set_ylabel("The number of births")
+axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
+axe.set_xticks(year_num, labels=label_year_text, rotation=7, fontsize=12)
+axe.tick_params(axis='y', labelsize=12)
 
 plt.show()
 
