@@ -7,47 +7,6 @@ import numpy as np
 
 matplotlib.rc('font', family="MS Gothic")
 
-
-def gradient_image(ax, extent, direction=0.3, cmap_range=(0, 1), **kwargs):
-    """
-    Draw a gradient image based on a colormap.
-
-    Parameters
-    ----------
-    ax : Axes
-        The axes to draw on.
-    extent
-        The extent of the image as (xmin, xmax, ymin, ymax).
-        By default, this is in Axes coordinates but may be
-        changed using the *transform* keyword argument.
-    direction : float
-        The direction of the gradient. This is a number in
-        range 0 (=vertical) to 1 (=horizontal).
-    cmap_range : float, float
-        The fraction (cmin, cmax) of the colormap that should be
-        used for the gradient, where the complete colormap is (0, 1).
-    **kwargs
-        Other parameters are passed on to `.Axes.imshow()`.
-        In particular useful is *cmap*.
-    """
-    phi = direction * np.pi / 2
-    v = np.array([np.cos(phi), np.sin(phi)])
-    X = np.array([[v @ [1, 0], v @ [1, 1]],
-                  [v @ [0, 0], v @ [0, 1]]])
-    a, b = cmap_range
-    X = a + (b - a) / X.max() * X
-    im = ax.imshow(X, extent=extent, interpolation='bicubic',
-                   vmin=0, vmax=1, **kwargs)
-    return im
-
-
-def gradient_bar(ax, x, y, width=0.5, bottom=0):
-    for left, top in zip(x, y):
-        right = left + width
-        gradient_image(ax, extent=(left, right, bottom, top), cmap=plt.cm.Blues_r, cmap_range=(0, 0.8))
-
-
-
 year_number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
                24, 25, 26, 27, 28, 29]
 
@@ -72,22 +31,12 @@ for rect in plot:
              ha='center', va='bottom', fontsize=12)
 
 
-# background image
-gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, cmap=plt.cm.RdYlGn,
-               cmap_range=(0.2, 0.8), alpha=0.5)
-
-
-# gradient_bar(ax=axe, x=year_number, y=number_of_births, width=0.7)
-
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
+
 # axe.set_ylabel("The number of births")
 axe.set_xlabel("Year")
-axe.set_aspect('auto')
 
-# xmin, xmax = xlim = 0, 10
-ymin, ymax = ylim = 150000, 330000
-
-axe.set(ylim=ylim, autoscale_on=False)
+axe.set_ylim()
 
 plt.show()
 
