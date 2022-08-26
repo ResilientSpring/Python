@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.image as image
 
 plt.rcdefaults()
 
@@ -18,6 +19,10 @@ ax.set_title('The number of births by city (2022/01-07) ')
 
 # Label with given captions, custom padding and annotate options
 ax.bar_label(horizontal_bar, labels=births, padding=8, color='b', fontsize=14)
+
+img = image.imread('CC-BY.png')
+
+plt.figimage(X=img, xo=600, yo=600, alpha=0.9)
 
 plt.show()
 
