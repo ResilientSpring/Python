@@ -3,7 +3,7 @@ import numpy as np
 
 plt.rcdefaults()
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(9, 8))
 
 # Example data
 city = ('Taipei', 'New Taipei', 'Taoyuan', 'Taichung', 'Tainan', 'Kaohsiung')
