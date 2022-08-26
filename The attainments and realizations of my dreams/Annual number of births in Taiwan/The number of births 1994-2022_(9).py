@@ -41,7 +41,7 @@ axe.set_ylim(78000, 330000)
 plt.margins(x=0, y=0, tight=False)  # [1][2]
 fig.tight_layout()  # [3]
 
-text = fig.text(0.5, 0.04,
+text = fig.text(0.5, 0.7,
                 'Reference:https://statis.moi.gov.tw/micst/stmain.jsp?sys=100',
                 horizontalalignment='center',
                 verticalalignment='center',
