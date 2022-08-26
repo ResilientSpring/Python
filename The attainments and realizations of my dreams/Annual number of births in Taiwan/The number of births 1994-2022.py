@@ -58,18 +58,9 @@ label_year_text = ["1994", "'95", "'96", "'97", "'98", "'99", "2000", "'01", "'0
                    "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17",
                    "'18", "'19", "'20", "'21", "'22"]
 
-# xmin, xmax = xlim = 0, 10
-ymin, ymax = ylim = 150000, 330000
-
 fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(8, 7))
-axe.set(ylim=ylim, autoscale_on=False)
-
-# background image
-gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, cmap=plt.cm.RdYlGn,
-               cmap_range=(0.2, 0.8), alpha=0.5)
-
-
-# gradient_bar(ax=axe, x=year_number, y=number_of_births, width=0.7)
+axe.set_xticks(year_number, labels=label_year_text, rotation=7, fontsize=12)
+axe.tick_params(axis='y', labelsize=12)
 
 plot = axe.bar(year_number, number_of_births)
 
@@ -79,12 +70,22 @@ for rect in plot:
              ha='center', va='bottom', fontsize=12)
 
 
-axe.set_aspect('auto')
-axe.set_xlabel("Year")
-axe.set_ylabel("The number of births")
+# background image
+gradient_image(axe, direction=1, extent=(0, 1, 0, 1), transform=axe.transAxes, cmap=plt.cm.RdYlGn,
+               cmap_range=(0.2, 0.8), alpha=0.5)
+
+
+# gradient_bar(ax=axe, x=year_number, y=number_of_births, width=0.7)
+
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
-axe.set_xticks(year_number, labels=label_year_text, rotation=7, fontsize=12)
-axe.tick_params(axis='y', labelsize=12)
+# axe.set_ylabel("The number of births")
+axe.set_xlabel("Year")
+axe.set_aspect('auto')
+
+# xmin, xmax = xlim = 0, 10
+ymin, ymax = ylim = 150000, 330000
+
+axe.set(ylim=ylim, autoscale_on=False)
 
 plt.show()
 
