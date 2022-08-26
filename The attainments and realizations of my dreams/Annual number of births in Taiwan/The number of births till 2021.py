@@ -84,7 +84,7 @@ axe.set_xlabel("Year")
 axe.set_ylabel("The number of births")
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
 
-plt.xticks(year_num, labels=label, rotation=7, fontsize=12)
+plt.xticks(year_num, labels=label_year_text, rotation=7, fontsize=12)
 
 plt.show()
 
