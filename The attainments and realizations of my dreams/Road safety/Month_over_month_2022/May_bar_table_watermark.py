@@ -97,7 +97,7 @@ text.set_path_effects([path_effects.Normal()])
 
 img = image.imread('CC-BY.png')
 
-plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
+plt.figimage(X=img, xo=700, yo=700, alpha=0.9)
 
 plt.show()
 
