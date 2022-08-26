@@ -19,7 +19,7 @@ label_year_text = ["1994", "'95", "'96", "'97", "'98", "'99", "2000", "'01", "'0
                    "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17",
                    "'18", "'19", "'20", "'21", "'22"]
 
-fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(18, 10))
+fig, axe = plt.subplots(nrows=1, ncols=1, figsize=(22, 10))
 axe.set_xticks(year_number, labels=label_year_text, rotation=7, fontsize=12)
 axe.tick_params(axis='y', labelsize=12)
 
