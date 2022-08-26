@@ -63,7 +63,7 @@ print(label_year)
 # xmin, xmax = xlim = 0, 10
 ymin, ymax = ylim = 150000, 330000
 
-fig, ax = plt.subplots(figsize=(8, 7))
+fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 7))
 ax.set(ylim=ylim, autoscale_on=False)
 
 # background image
