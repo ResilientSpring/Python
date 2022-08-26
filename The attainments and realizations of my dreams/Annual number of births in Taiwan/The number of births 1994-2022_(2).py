@@ -36,7 +36,7 @@ axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of bi
 # axe.set_ylabel("The number of births")
 axe.set_xlabel("Year")
 
-axe.set_ylim()
+axe.set_ylim(150000, 330000)
 
 plt.show()
 
