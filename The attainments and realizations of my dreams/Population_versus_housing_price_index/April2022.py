@@ -132,3 +132,4 @@ plt.show()
 # References:
 # 1. https://pip.moi.gov.tw/V3/E/SCRE0201.aspx
 # 2. https://www.cathay-red.com.tw/tw/About/House
+# 3. https://www.sinyinews.com.tw/quarterly
