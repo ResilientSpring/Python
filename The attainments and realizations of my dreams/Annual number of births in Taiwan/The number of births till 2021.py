@@ -62,6 +62,10 @@ number_of_births = [322938, 329581, 325545, 326002, 271450, 283661, 305312, 2603
 label_year = np.arange(1994, 2023, 1)
 print(label_year)
 
+label_year_text = ["1994", "'95", "'96", "'97", "'98", "'99", "2000", "'01", "'02", "'03", "'04", "'05",
+                   "'06", "'07", "'08", "'09", "'10", "'11", "'12", "'13", "'14", "'15", "'16", "'17",
+                   "'18", "'19", "'20", "'21", "'22"]
+
 # xmin, xmax = xlim = 0, 10
 ymin, ymax = ylim = 150000, 330000
 
@@ -79,6 +83,8 @@ axe.set_aspect('auto')
 axe.set_xlabel("Year")
 axe.set_ylabel("The number of births")
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
+
+plt.xticks(year_num, labels=label, rotation=7, fontsize=12)
 
 plt.show()
 
