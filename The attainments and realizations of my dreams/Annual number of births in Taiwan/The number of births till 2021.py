@@ -46,7 +46,7 @@ def gradient_bar(ax, x, y, width=0.5, bottom=0):
 
 
 # arange automatically balloons into a list with 29 elements from 1 to 28. [2]
-year_num = np.arange(0, 29, 1)
+year_num = np.arange(0, 30, 1)
 print(year_num)
 
 year_num = list(year_num)
