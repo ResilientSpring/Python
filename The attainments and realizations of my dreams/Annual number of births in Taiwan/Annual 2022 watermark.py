@@ -22,7 +22,7 @@ ax.bar_label(horizontal_bar, labels=births, padding=8, color='b', fontsize=14)
 
 img = image.imread('CC-BY.png')
 
-plt.figimage(X=img, xo=600, yo=600, alpha=0.9)
+plt.figimage(X=img, xo=600, yo=650, alpha=0.9)
 
 plt.show()
 
