@@ -70,9 +70,7 @@ ax.set(ylim=ylim, autoscale_on=False)
 gradient_image(ax, direction=1, extent=(0, 1, 0, 1), transform=ax.transAxes, cmap=plt.cm.RdYlGn,
                cmap_range=(0.2, 0.8), alpha=0.5)
 
-N = 10
-x = np.arange(N) + 0.15
-y = np.random.rand(N)
+
 gradient_bar(ax=ax, x=label_year, y=number_of_births, width=0.7)
 ax.set_aspect('auto')
 
