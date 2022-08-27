@@ -53,7 +53,7 @@ text = fig.text(0.5, 0.7,
 
 img = image.imread('CC-BY.png')
 
-plt.figimage(X=img, xo=2000, yo=700, alpha=0.9)
+plt.figimage(X=img, xo=2000, yo=850, alpha=0.9)
 
 plt.show()
 
