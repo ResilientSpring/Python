@@ -35,7 +35,7 @@ for rect in plot:
 
 axe.set_title(label="1994-2022/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
 
-axe.set_ylabel("The number of births")
+axe.set_ylabel("The number of births (Unit: 1 baby)")
 axe.set_xlabel("Year")
 
 axe.set_ylim(78000, 330000)
