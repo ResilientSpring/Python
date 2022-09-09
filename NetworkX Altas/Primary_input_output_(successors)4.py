@@ -49,9 +49,9 @@ circuit.add_node(2, label="PI3", layer=0)
 circuit.add_node(3, label="PI4", layer=0)
 
 # Layer 1
-circuit.add_node(4, label="A", layer=1)
-circuit.add_node(5, label="B", layer=1)
-circuit.add_node(6, label="C", layer=1)
+circuit.add_node(4, label="m", layer=1)
+circuit.add_node(5, label="o", layer=1)
+circuit.add_node(6, label="p", layer=1)
 
 circuit.add_edge(0, 4)
 circuit.add_edge(0, 5)
@@ -61,13 +61,13 @@ circuit.add_edge(2, 6)
 circuit.add_edge(3, 6)
 
 # Layer 2
-circuit.add_node(7, label="E", layer=2)
+circuit.add_node(7, label="n", layer=2)
 
 circuit.add_edge(5, 7)
 circuit.add_edge(6, 7)
 
 # Layer 3
-circuit.add_node(8, label="I", layer=3)
+circuit.add_node(8, label="x", layer=3)
 
 circuit.add_edge(4, 8)
 circuit.add_edge(7, 8)
