@@ -69,18 +69,13 @@ circuit.add_edge(6, 7)
 # Layer 3
 circuit.add_node(8, label="I", layer=3)
 
-circuit.add_edge(9, 13)
-circuit.add_edge(10, 13)
-circuit.add_edge(11, 13)
-circuit.add_edge(11, 14)
-circuit.add_edge(12, 14)
+circuit.add_edge(4, 8)
+circuit.add_edge(7, 8)
 
 # Layer 4 (Primary outputs)
-circuit.add_node(15, label="PO1", layer=4)
-circuit.add_node(16, label="PO2", layer=4)
+circuit.add_node(9, label="PO1", layer=4)
 
-circuit.add_edge(13, 15)
-circuit.add_edge(14, 16)
+circuit.add_edge(8, 9)
 
 
 # Convert the circuit to an equivalent formula.
