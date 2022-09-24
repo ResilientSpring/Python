@@ -12,6 +12,8 @@ income_Hsinchu_county = [1283995, 1365150, 1616327, 1519478, 1539555, 1619782, 1
 income_Hsinchu_city = [1427572, 1537317, 1572296, 1426379, 1602826, 1618903, 1602415]
 income_Miaoli_county = [1008241, 1166196, 1029485, 1045881, 1073028, 1161999, 1214424]
 
+fig, ax = plt.subplots(figsize=(9, 9))
+
 plt.plot(year, income_Taipei, label="Taipei")
 plt.plot(year, income_New_Taipei, label="New Taipei")
 plt.plot(year, income_Taoyuan, label="Taoyuan")
