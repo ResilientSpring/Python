@@ -70,7 +70,7 @@ print(south_public_research)
 total_south_public_research = south_public_research['Budget_received'].sum()
 print(total_south_public_research)
 
-fig, ax = plt.subplots(figsize=(9, 9))
+fig, ax = plt.subplots(figsize=(6, 6))
 
 # The histogram of the data
 plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_public_research, total_south_public_research])
@@ -88,7 +88,7 @@ plt.tight_layout()
 
 img = image.imread('CC-BY.png')
 
-plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
+plt.figimage(X=img, xo=500, yo=500, alpha=0.9)
 
 # Insert text watermark
 plt.text(x=0.6, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
