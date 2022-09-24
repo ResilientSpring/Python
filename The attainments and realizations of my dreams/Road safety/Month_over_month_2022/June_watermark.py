@@ -7,13 +7,14 @@ import matplotlib.image as image
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-month = ["Jan", "Feb", "Mar", "Apr", "May"]
+month = ["Jan", "Feb", "Mar", "Apr", "May", "June"]
 
 deaths = [[13, 23, 29, 28, 24, 23],  # January
           [7, 16, 20, 24, 20, 30],   # February
           [9, 29, 14, 27, 34, 43],   # March
           [8, 25, 23, 23, 27, 31],   # April
-          [7, 33, 16, 27, 27, 27],   # May
+          [7, 34, 16, 27, 27, 27],   # May
+          [4, 27, 27, 15, 23, 26],   # June
           ]
 
 df = pd.DataFrame(data=deaths,
