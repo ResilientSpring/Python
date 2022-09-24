@@ -70,6 +70,8 @@ print(south_public_research)
 total_south_public_research = south_public_research['Budget_received'].sum()
 print(total_south_public_research)
 
+fig, ax = plt.subplots(figsize=(9, 9))
+
 # The histogram of the data
 plt.bar(['Northern Taiwan', 'Southern Taiwan'], [total_north_public_research, total_south_public_research])
 
