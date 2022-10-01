@@ -32,6 +32,14 @@ plt.xlabel("參考資料 Reference: https://web.archive.org/web/20210927094609/h
 
 plt.ylim(30000, 130000)
 
+img = image.imread('CC-BY.png')
+
+plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
+
+plt.text(x=0.6, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
+         ha='center', va='center', rotation='30',
+         transform=ax.transAxes)
+
 plt.show()
 
 # Reference:
