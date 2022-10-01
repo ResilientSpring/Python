@@ -55,7 +55,7 @@ img = image.imread('CC-BY.png')
 
 plt.figimage(X=img, xo=2000, yo=900, alpha=0.9)
 
-plt.text(x=0.3, y=0.5, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
+plt.text(x=0.2, y=0.4, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation='30',
          transform=axe.transAxes)
 
