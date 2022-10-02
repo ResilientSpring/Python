@@ -8,7 +8,7 @@ administrative_duty = ["Yilan", "Hsinchu", "Miaoli", "Chanhua", "Nantou", "Yunli
 
 year = ["2008", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
 
-death = pd.read_csv('Deaths_in_road_accidents_2008_2021.csv')
+death = pd.read_csv('Deaths_in_road_accidents_2008_2021.csv', encoding='Big-5')
 
 print(death)
 
