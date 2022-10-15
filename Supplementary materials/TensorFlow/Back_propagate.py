@@ -20,3 +20,7 @@ plt.show()
 
 def my_output(X, weights, biases):
     return tf.add(tf.multiply(x=X, y=weights), biases)
+
+
+def loss_function(y_true, y_prediction):
+    return tf.reduce_mean(tf.square(y_true - y_prediction))
