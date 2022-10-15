@@ -13,13 +13,13 @@ x0 = tf.constant(x, dtype=tf.float32)
 y0 = tf.constant(y_, dtype=tf.float32)
 
 # Layer 1 = the 2x3 hidden sigmoid
-m1 = tf.Variable(tf.random_uniform([2, 3], minval=0.1, maxval=0.9, dtype=tf.float32))
-b1 = tf.Variable(tf.random_uniform([3], minval=0.1, maxval=0.9, dtype=tf.float32))
+m1 = tf.Variable(tf.random.uniform([2, 3], minval=0.1, maxval=0.9, dtype=tf.float32))
+b1 = tf.Variable(tf.random.uniform([3], minval=0.1, maxval=0.9, dtype=tf.float32))
 h1 = tf.sigmoid(tf.matmul(x0, m1) + b1)
 
 # Layer 2 = the 3x1 sigmoid output
-m2 = tf.Variable(tf.random_uniform([3, 1], minval=0.1, maxval=0.9, dtype=tf.float32))
-b2 = tf.Variable(tf.random_uniform([1], minval=0.1, maxval=0.9, dtype=tf.float32))
+m2 = tf.Variable(tf.random.uniform([3, 1], minval=0.1, maxval=0.9, dtype=tf.float32))
+b2 = tf.Variable(tf.random.uniform([1], minval=0.1, maxval=0.9, dtype=tf.float32))
 y_out = tf.sigmoid(tf.matmul(h1, m2) + b2)
 
 ### loss
