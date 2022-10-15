@@ -27,7 +27,7 @@ y_out = tf.sigmoid(tf.matmul(h1, m2) + b2)
 loss = tf.reduce_sum(tf.square(y0 - y_out))
 
 # training step : gradient decent (1.0) to minimize loss
-train = tf.keras.optimizers.SGD(1.0)
+train = tf.compat.v1.train.GradientDescentOptimizer(1.0).minimize(loss)
 
 ### training
 # run 500 times using all the X and Y
