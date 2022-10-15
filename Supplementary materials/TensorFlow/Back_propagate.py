@@ -18,12 +18,13 @@ print("y_values: ", y_values)
 plt.scatter(x=x_values, y=y_values)
 plt.show()
 
+
 def my_output(X, weights, biases):
     return tf.add(tf.multiply(x=X, y=weights), biases)
 
 
 def loss_function(y_true, y_prediction):
-    return tf.reduce_mean(tf.square(y_true - y_prediction))
+    return tf.reduce_mean(tf.square(y_prediction - y_true))
 
 
 my_optimization_algorithm = tf.optimizers.SGD(learning_rate=0.02)
@@ -42,4 +43,3 @@ for i in range(100):
     with tf.GradientTape() as tape:
         predictions = my_output(X=rand_x, weights=weights, biases=biases)
         loss = loss_function(y_true=rand_y, y_prediction=predictions)
-
