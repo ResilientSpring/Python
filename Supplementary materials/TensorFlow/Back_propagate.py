@@ -33,7 +33,7 @@ train = tf.keras.optimizers.SGD(1.0)
 # run 500 times using all the X and Y
 # print out the loss and any other interesting info
 with tf.compat.v1.Session() as sess:
-    sess.run(tf.global_variables_initializer())
+    sess.run(tf.compat.v1.global_variables_initializer())
     for step in range(500):
         sess.run(train)
 
