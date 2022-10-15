@@ -43,3 +43,6 @@ for i in range(100):
     with tf.GradientTape() as tape:
         predictions = my_output(X=rand_x, weights=weights, biases=biases)
         loss = loss_function(y_true=rand_y, y_prediction=predictions)
+
+        history.append(loss.NumPy())
+
