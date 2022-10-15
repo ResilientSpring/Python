@@ -34,4 +34,7 @@ weights = tf.Variable(tf.random.normal(shape=[1]))
 biases = tf.Variable(tf.random.normal(shape=[1]))
 history = list()
 
-
+for i in range(100):
+    random_index = np.random.choice(100)
+    rand_x = [x_values[random_index]]
+    rand_y = [y_values[random_index]]
