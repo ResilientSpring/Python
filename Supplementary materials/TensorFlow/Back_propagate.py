@@ -17,3 +17,6 @@ print("y_values: ", y_values)
 # of the two variables:
 plt.scatter(x=x_values, y=y_values)
 plt.show()
+
+def my_output(X, weights, biases):
+    return tf.add(tf.multiply(x=X, y=weights), biases)
