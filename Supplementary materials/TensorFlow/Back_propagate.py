@@ -24,3 +24,14 @@ def my_output(X, weights, biases):
 
 def loss_function(y_true, y_prediction):
     return tf.reduce_mean(tf.square(y_true - y_prediction))
+
+
+my_optimization_algorithm = tf.optimizers.SGD(learning_rate=0.02)
+
+tf.random.set_seed(1)
+
+weights = tf.Variable(tf.random.normal(shape=[1]))
+biases = tf.Variable(tf.random.normal(shape=[1]))
+history = list()
+
+
