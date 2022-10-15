@@ -38,3 +38,8 @@ for i in range(100):
     random_index = np.random.choice(100)
     rand_x = [x_values[random_index]]
     rand_y = [y_values[random_index]]
+
+    with tf.GradientTape() as tape:
+        predictions = my_output(X=rand_x, weights=weights, biases=biases)
+        loss = loss_function(y_true=rand_y, y_prediction=predictions)
+
