@@ -48,7 +48,7 @@ for i in range(100):
     gradients = tape.gradient(target=loss, sources=[weights, biases])
 
     my_optimization_algorithm.apply_gradients(zip(gradients, [weights, biases]))
-    if(i + 1) % 25 == 0:
+    if(i + 1) % 5 == 0:
         print(f'Step {i+1} Weights: {weights.numpy()} Biases: {biases.numpy()}')
         print(f'Loss = {loss.numpy()}')
 
