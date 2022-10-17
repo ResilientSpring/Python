@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 np.random.seed(0)
 
 # Sample random numbers from a normal distribution with mean 1 and standard deviation of 0.1.
-x_values = np.random.normal(1, 0.1, 100).astype(np.float)
+x_values = np.random.normal(1, 0.1, 100).astype(np.float32)
 
 print("x_values: ", x_values)
 
@@ -44,5 +44,16 @@ for i in range(100):
         predictions = my_output(X=rand_x, weights=weights, biases=biases)
         loss = loss_function(y_true=rand_y, y_prediction=predictions)
 
-        history.append(loss.NumPy())
+    history.append(loss.numpy())
+    gradients = tape.gradient(target=loss, sources=[weights, biases])
 
+    my_optimization_algorithm.apply_gradients(zip(gradients, [weights, biases]))
+    if(i + 1) % 2 == 0:
+        print(f'Step {i+1} Weights: {weights.numpy()} Biases: {biases.numpy()}')
+        print(f'Loss = {loss.numpy()}')
+
+
+plt.plot(history)
+plt.xlabel('iterations')
+plt.ylabel('loss')
+plt.show()
