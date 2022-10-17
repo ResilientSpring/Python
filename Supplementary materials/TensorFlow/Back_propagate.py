@@ -45,5 +45,15 @@ for i in range(100):
         loss = loss_function(y_true=rand_y, y_prediction=predictions)
 
     history.append(loss.numpy())
+    gradients = tape.gradient(target=loss, sources=[weights, biases])
+
+    my_optimization_algorithm.apply_gradients(zip(gradients, [weights, biases]))
+    if(i + 1) % 25 == 0:
+        print(f'Step {i+1} Weights: {weights.numpy()} Biases: {biases.numpy()}')
+        print(f'Loss = {loss.numpy()}')
 
 
+plt.plot(history)
+plt.xlabel('iterations')
+plt.ylabel('loss')
+plt.show()
