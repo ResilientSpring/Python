@@ -57,3 +57,7 @@ plt.plot(history)
 plt.xlabel('iterations')
 plt.ylabel('loss')
 plt.show()
+
+# Source: https://github.com/PacktPublishing/Machine-Learning-Using-TensorFlow-Cookbook/blob/master/ch2/2.%20The%20TensorFlow%20Way.ipynb
+# Reference: https://www.tensorflow.org/guide/autodiff
+
