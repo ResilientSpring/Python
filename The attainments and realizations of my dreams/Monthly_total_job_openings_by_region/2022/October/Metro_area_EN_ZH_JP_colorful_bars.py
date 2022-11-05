@@ -53,6 +53,9 @@ plt.show()
 # 1. https://matplotlib.org/stable/gallery/text_labels_and_annotations/watermark_text.html
 # 2. https://matplotlib.org/stable/tutorials/advanced/transforms_tutorial.html
 # 3. https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text
+# 4. https://www.google.com/search?q=matplotlib+bar+color
+# 5. https://www.python-graph-gallery.com/3-control-color-of-barplots
+# 6. https://matplotlib.org/stable/gallery/color/named_colors.html
 
 # Notes:
 # 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
