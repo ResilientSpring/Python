@@ -24,7 +24,7 @@ plot = ax.bar(region_num, position_vacancies, edgecolor='green', color=[colour.C
                                                                         colour.CSS4_COLORS.get('sandybrown'),
                                                                         colour.CSS4_COLORS.get('deepskyblue'),
                                                                         colour.CSS4_COLORS.get('olivedrab'),
-                                                                        colour.CSS4_COLORS.get('palegreen')])
+                                                                        colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
     height = rect.get_height()
