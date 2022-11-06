@@ -58,6 +58,8 @@ plt.show()
 # 4. https://www.google.com/search?q=matplotlib+bar+color
 # 5. https://www.python-graph-gallery.com/3-control-color-of-barplots
 # 6. https://matplotlib.org/stable/gallery/color/named_colors.html
+# 7. https://www.google.com/search?q=matplotlib+dark+theme
+# 8. https://matplotlib.org/stable/gallery/style_sheets/dark_background.html
 
 # Notes:
 # 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
