@@ -9,7 +9,7 @@ from matplotlib.transforms import IdentityTransform
 
 matplotlib.rc('font', family="MS Gothic")
 
-plt.style.use('dark_background')
+plt.style.use('dark_background')  # [7][8]
 
 region_num = [1, 2, 3, 4, 5]
 position_vacancies = [1973+109860+62930+4205, 45938+33983+6435, 57369+3550+10081, 4296+6530+27058, 36903+4374]
