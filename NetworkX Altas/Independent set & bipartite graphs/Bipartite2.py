@@ -28,3 +28,6 @@ pos = nx.bipartite_layout(G=Bipartite, nodes=top)
 nx.draw(Bipartite, pos=pos, node_color='lightgreen', node_size=2500, with_labels=True)
 
 plt.show()
+
+
+# Reference: https://stackoverflow.com/a/61125791/
