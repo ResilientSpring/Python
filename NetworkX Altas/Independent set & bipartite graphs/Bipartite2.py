@@ -2,15 +2,16 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-df = pd.DataFrame(index=["Bob", "Carl", "Diane", "Eve", "Frank", "George"],
-                  columns=["Bob1", "Carl1", "Diane1", "Eve1", "Frank1", "George1"],
+df = pd.DataFrame(index=["Alice", "Bob", "Carl", "Diane", "Eve", "Frank", "George"],
+                  columns=["Alice1", "Bob1", "Carl1", "Diane1", "Eve1", "Frank1", "George1"],
                   data=[
-                      [0, 1, 1, 1, 1, 1],
-                      [1, 0, 1, 1, 1, 1],
-                      [1, 1, 0, 1, 1, 1],
-                      [1, 1, 1, 0, 1, 1],
-                      [1, 1, 1, 1, 0, 1],
-                      [1, 1, 1, 1, 1, 0]
+                      [0, 1, 1, 1, 1, 1, 1],
+                      [1, 0, 1, 1, 1, 1, 1],
+                      [1, 1, 0, 1, 1, 1, 1],
+                      [1, 1, 1, 0, 1, 1, 1],
+                      [1, 1, 1, 1, 0, 1, 1],
+                      [1, 1, 1, 1, 1, 0, 1],
+                      [1, 1, 1, 1, 1, 1, 0]
                   ])
 
 print(df)
