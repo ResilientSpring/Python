@@ -7,7 +7,7 @@ import matplotlib.image as image
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug"]
+month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep"]
 
 deaths = [[13, 23, 29, 28, 24, 23],  # January
           [7, 16, 20, 24, 20, 30],   # February
@@ -70,17 +70,17 @@ plt.subplots_adjust(left=0.2, bottom=0.2)
 
 axes.set_ylabel("The number of deaths")
 axes.set_xticks([])
-axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2022/01-08)")
+axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2022/01-09)")
 
 axes.grid(True)  # pyplot.grid [1][2]
 
 # Count the grand total automatically
-sum_TPE = deaths[0][0] + deaths[1][0] + deaths[2][0] + deaths[3][0] + deaths[4][0] + deaths[5][0] + deaths[6][0] + deaths[7][0]
-sum_NTP = deaths[0][1] + deaths[1][1] + deaths[2][1] + deaths[3][1] + deaths[4][1] + deaths[5][1] + deaths[6][1] + deaths[7][1]
-sum_TAO = deaths[0][2] + deaths[1][2] + deaths[2][2] + deaths[3][2] + deaths[4][2] + deaths[5][2] + deaths[6][2] + deaths[7][2]
-sum_TCH = deaths[0][3] + deaths[1][3] + deaths[2][3] + deaths[3][3] + deaths[4][3] + deaths[5][3] + deaths[6][3] + deaths[7][3]
-sum_TNA = deaths[0][4] + deaths[1][4] + deaths[2][4] + deaths[3][4] + deaths[4][4] + deaths[5][4] + deaths[6][4] + deaths[7][4]
-sum_KAO = deaths[0][5] + deaths[1][5] + deaths[2][5] + deaths[3][5] + deaths[4][5] + deaths[5][5] + deaths[6][5] + deaths[7][5]
+sum_TPE = deaths[0][0] + deaths[1][0] + deaths[2][0] + deaths[3][0] + deaths[4][0] + deaths[5][0] + deaths[6][0] + deaths[7][0] + deaths[8][0]
+sum_NTP = deaths[0][1] + deaths[1][1] + deaths[2][1] + deaths[3][1] + deaths[4][1] + deaths[5][1] + deaths[6][1] + deaths[7][1] + deaths[8][1]
+sum_TAO = deaths[0][2] + deaths[1][2] + deaths[2][2] + deaths[3][2] + deaths[4][2] + deaths[5][2] + deaths[6][2] + deaths[7][2] + deaths[8][2]
+sum_TCH = deaths[0][3] + deaths[1][3] + deaths[2][3] + deaths[3][3] + deaths[4][3] + deaths[5][3] + deaths[6][3] + deaths[7][3] + deaths[8][3]
+sum_TNA = deaths[0][4] + deaths[1][4] + deaths[2][4] + deaths[3][4] + deaths[4][4] + deaths[5][4] + deaths[6][4] + deaths[7][4] + deaths[8][4]
+sum_KAO = deaths[0][5] + deaths[1][5] + deaths[2][5] + deaths[3][5] + deaths[4][5] + deaths[5][5] + deaths[6][5] + deaths[7][5] + deaths[8][5]
 
 
 axes2.bar(administrative_duty, [sum_TPE, sum_NTP, sum_TAO, sum_TCH, sum_TNA, sum_KAO])
