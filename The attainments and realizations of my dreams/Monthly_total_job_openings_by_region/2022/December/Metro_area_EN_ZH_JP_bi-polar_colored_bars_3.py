@@ -20,7 +20,7 @@ plt.xticks(region_num, labels=label, rotation=7, fontsize=12)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 plt.tick_params(axis='y', labelsize=12) # [2]
 
-plot = ax.bar(region_num, position_vacancies, edgecolor='red', color=[colour.CSS4_COLORS.get('deepskyblue'),
+plot = ax.bar(region_num, position_vacancies, edgecolor='cyan', color=[colour.CSS4_COLORS.get('deepskyblue'),
                                                                       colour.CSS4_COLORS.get('deepskyblue'),
                                                                       colour.CSS4_COLORS.get('deepskyblue'),
                                                                       colour.CSS4_COLORS.get('palegreen'),
