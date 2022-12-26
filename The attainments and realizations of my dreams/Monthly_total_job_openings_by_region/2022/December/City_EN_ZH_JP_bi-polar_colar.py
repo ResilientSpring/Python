@@ -9,11 +9,10 @@ from matplotlib.transforms import IdentityTransform
 
 matplotlib.rc('font', family="MS Gothic")
 
-region_num = [1, 2, 3, 4, 5]
+region_num = [1, 2, 3, 4, 5, 6]
 position_vacancies = [108202, 60340, 44310, 54606, 25545, 35594]
 
-label = ["台北市 Greater\nTaipei", "桃園 Taoyuan\n新竹 Hsinchu\n苗栗 Miaoli", "台中 Taichung\n彰化 Changhua\n南投 Nantou",
-         "雲林 Yunlin\n嘉義 Chiayi\n台南 Tainan", "高雄 Kaohsiung\n屏東 Pingtung"]
+label = ["台北市\nTaipei", "新北市\nNew Taipei", "台中\n Taichung", "台南\nTainan", "高雄\n Kaohsiung"]
 
 fig, ax = plt.subplots(figsize=(9, 9))
 plt.xticks(region_num, labels=label, rotation=7, fontsize=12)
@@ -21,6 +20,7 @@ plt.xticks(region_num, labels=label, rotation=7, fontsize=12)
 plt.tick_params(axis='y', labelsize=12) # [2]
 
 plot = ax.bar(region_num, position_vacancies, edgecolor='cyan', color=[colour.CSS4_COLORS.get('deepskyblue'),
+                                                                       colour.CSS4_COLORS.get('deepskyblue'),
                                                                        colour.CSS4_COLORS.get('deepskyblue'),
                                                                        colour.CSS4_COLORS.get('deepskyblue'),
                                                                        colour.CSS4_COLORS.get('palegreen'),
