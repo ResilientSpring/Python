@@ -1,5 +1,7 @@
 def T(seq, i=0):
-    if i == len(seq): return 1
+    if i == len(seq):
+        return 1
+
     return T(seq, i+1) + 1
 
 
