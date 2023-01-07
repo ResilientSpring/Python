@@ -8,3 +8,4 @@ sequence = "valiant"
 
 print(len(sequence))
 
+print(S(seq=sequence, i=7))
