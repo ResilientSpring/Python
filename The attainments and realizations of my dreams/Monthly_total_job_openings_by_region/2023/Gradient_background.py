@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import matplotlib
 import matplotlib.cbook as cbook
 import matplotlib.colors as colour
@@ -14,7 +15,9 @@ position_vacancies = [107229, 59148, 43509, 54374, 24843, 34872]
 
 label = ["台北市\nTaipei", "新北市\nNew Taipei", "桃園\nTaoyuan", "台中\nTaichung", "台南\nTainan", "高雄\n Kaohsiung"]
 
-fig, ax = plt.subplots(figsize=(9, 9))
+fig, ax = plt.subplots(figsize=(9, 9), facecolor=(.18, .31, .31))
+ax.set_facecolor('#eafff5')
+
 plt.xticks(region_num, labels=label, rotation=7, fontsize=12)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 plt.tick_params(axis='y', labelsize=12) # [2]
@@ -46,6 +49,7 @@ plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 plt.text(x=0.6, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30,
          transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
+
 
 plt.show()
 
