@@ -9,6 +9,7 @@ import matplotlib.image as image
 from matplotlib.transforms import IdentityTransform
 
 matplotlib.rc('font', family="MS Gothic")
+plt.style.use('grayscale') # [1]
 
 region_num = [1, 2, 3, 4, 5, 6]
 position_vacancies = [107229, 59148, 43509, 54374, 24843, 34872]
@@ -50,7 +51,6 @@ plt.text(x=0.6, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
          transform=ax.transAxes)
 
 
-plt.style.use('grayscale') # [1]
 plt.show()
 
 # Reference:
