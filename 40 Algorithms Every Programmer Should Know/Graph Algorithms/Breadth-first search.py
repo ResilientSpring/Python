@@ -19,6 +19,6 @@ def bfs(graph, start):
         node = queue.pop(0)
         if node not in visited:
             visited.append(node)
-            neighbours = graph[node]
+            neighbours = graph[node]  # Use neighbors to represent the node's directly connected nodes.
 
 
