@@ -17,5 +17,8 @@ def bfs(graph, start):
     while queue:
         # Pop the first node from the queue and chose that node as the current node of this iteration.
         node = queue.pop(0)
+        if node not in visited:
+            visited.append(node)
+            neighbours = graph[node]
 
 
