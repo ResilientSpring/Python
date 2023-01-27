@@ -21,4 +21,11 @@ def bfs(graph, start):
             visited.append(node)
             neighbours = graph[node]  # Use neighbors to represent the node's directly connected nodes.
 
+            # Now, add the node's neighbours one by one to the queue.
+            for neighbour in neighbours:
+                queue.append(neighbour)
+
+    return visited
+
+
 
