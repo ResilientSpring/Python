@@ -13,7 +13,7 @@ print(Graph["Amin"])
 
 def bfs(graph, start):
     visited = []  # This contains all the vertices that have been visited. Initially, it will be empty.
-    queue = graph[start]  # This contains all the vertices that we have want to visit in next iterations.
+    queue = [start]  # This contains all the vertices that we have want to visit in next iterations.
 
     # Check if there exists even a single element in the queue.
     while queue:
