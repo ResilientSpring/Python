@@ -9,6 +9,8 @@ Graph = {"Amin": ["Wasim", "Nick", "Mike"],
          "Faras": "Imran"
          }
 
+print(Graph["Amin"])
+
 def bfs(graph, start):
     visited = []  # This contains all the vertices that have been visited. Initially, it will be empty.
     queue = graph[start]  # This contains all the vertices that we have want to visit in next iterations.
