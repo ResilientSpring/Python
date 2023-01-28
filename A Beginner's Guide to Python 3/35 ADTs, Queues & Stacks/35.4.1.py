@@ -8,3 +8,6 @@ queue.append('task3')
 print("queue after additions: ", queue)
 
 element1 = queue.pop(0)
+print("element retrieved from queue: ", element1)
+
+print("queue after the pop: ", queue)
