@@ -28,4 +28,4 @@ def bfs(graph, start):
     return visited
 
 
-
+bfs(graph=Graph, start="Amin")
