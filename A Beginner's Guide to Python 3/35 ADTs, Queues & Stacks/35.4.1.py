@@ -7,3 +7,4 @@ queue.append('task2')
 queue.append('task3')
 print("queue after additions: ", queue)
 
+element1 = queue.pop(0)
