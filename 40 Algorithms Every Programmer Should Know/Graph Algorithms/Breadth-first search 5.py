@@ -1,13 +1,15 @@
 
 
 # Adjacency list
-Graph = {"Amin": ["Wasim", "Nick", "Mike"],
-         "Wasim": ["Imran", "Amin"],
-         "Nick": "Amin",
-         "Mike": "Amin",
-         "Imran": ["Wasim", "Faras"],
-         "Faras": "Imran"
+Graph = {'Amin': {'Wasim', 'Nick', 'Mike'},
+         'Wasim': {'Imran', 'Amin'},
+         'Nick': 'Amin',
+         'Mike': 'Amin',
+         'Imran': {'Wasim', 'Faras'},
+         'Faras': 'Imran'
          }
+
+print(Graph["Amin"])
 
 def bfs(graph, start):
     visited = []  # This contains all the vertices that have been visited. Initially, it will be empty.
@@ -28,4 +30,4 @@ def bfs(graph, start):
     return visited
 
 
-bfs(graph=Graph, start="Amin")
+bfs(graph=Graph, start='Amin')
