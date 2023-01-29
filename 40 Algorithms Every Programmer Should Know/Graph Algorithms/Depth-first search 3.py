@@ -1,4 +1,4 @@
-# Acclimatizing the breadth-first search to the depth-first search
+# Acclimatizing breadth-first search to depth-first search
 # by replacing queue with stack
 def dfs(graph, start):
     visited = []  # This contains all the vertices that have been visited. Initially, it will be empty.
