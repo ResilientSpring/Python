@@ -5,3 +5,11 @@ def dfs(graph, start, visited=None):
     visited.add(start)
     print(start)
 
+    for next in graph[start] - visited:
+        dfs(graph=graph, visited=next, visited=visited)
+
+
+    return visited
+
+
+
