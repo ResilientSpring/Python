@@ -19,3 +19,6 @@ graph = {"Amin": ['Wasim', 'Nick', "Mike"],
          'Imran': ['Wasim', 'Faras'],
          'Faras': ['Imran']
          }
+
+
+print(dfs(graph=graph, start='Amin', visited=None))
