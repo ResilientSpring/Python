@@ -9,3 +9,5 @@ print('stack: ', stack)
 top_element = stack.pop()
 
 print("Top element: ", top_element)
+
+print('stack: ', stack)
