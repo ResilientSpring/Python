@@ -32,4 +32,6 @@ graph = {"Amin": ['Wasim', 'Nick', "Mike"],
          }
 
 
-print()
+print(graph['Amin'])
+
+print(dfs(graph=graph, start='Amin'))
