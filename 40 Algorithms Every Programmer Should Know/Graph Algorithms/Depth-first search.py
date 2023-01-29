@@ -9,3 +9,6 @@ def dfs(graph, start, visited=None):
         dfs(graph=graph, start=next, visited=visited)
 
     return visited
+
+
+graph = {"Amin": ['Wasim', 'Nick', "Mike"]}
