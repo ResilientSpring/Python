@@ -2,7 +2,7 @@ def dfs(graph, start, visited=None):
     if visited is None:
         visited = []
 
-    visited.add(start)
+    visited.append(start)
     print(start)
 
     for next in graph[start] - visited:
