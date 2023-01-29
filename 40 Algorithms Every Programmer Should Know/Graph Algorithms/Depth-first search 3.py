@@ -9,7 +9,7 @@ def dfs(graph, start):
     # Check if there exists even a single element in the stack.
     while stack:
         # Pop the top node in the stack and chose that node as the current node of this iteration.
-        node = stack.pop(0)
+        node = stack.pop()
         if node not in visited:
             visited.append(node)
             neighbours = graph[node]  # Use neighbors to represent the node's directly connected nodes.
