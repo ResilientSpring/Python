@@ -34,3 +34,5 @@ def bfs(graph, start):
 
 
 bfs(graph=Graph, start="Amin")
+
+print(bfs(graph=Graph, start="Amin"))
