@@ -4,3 +4,4 @@ def dfs(graph, start, visited=None):
 
     visited.add(start)
     print(start)
+
