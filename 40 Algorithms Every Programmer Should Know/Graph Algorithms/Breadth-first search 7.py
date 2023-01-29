@@ -27,7 +27,8 @@ def bfs(graph, start):
 
             # Now, add the node's neighbours one by one to the queue.
             for neighbour in neighbours:
-                queue.append(neighbour)
+                if neighbour not in visited:  # To prevent graph[start] from being added again.
+                    queue.append(neighbour)
 
     return visited
 
