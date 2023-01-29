@@ -11,4 +11,10 @@ def dfs(graph, start, visited=None):
     return visited
 
 
-graph = {"Amin": ['Wasim', 'Nick', "Mike"]}
+graph = {"Amin": ['Wasim', 'Nick', "Mike"],
+         "Wasim": ['Amin', 'Imran'],
+         "Nick": ['Amin'],
+         "Mike": ['Amin'],
+         'Imran': ['Wasim', 'Faras'],
+         'Faras': ['Imran']
+         }
