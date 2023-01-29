@@ -5,3 +5,7 @@ stack.append('task2')
 stack.append('task3')
 
 print('stack: ', stack)
+
+top_element = stack.pop()
+
+print("Top element: ", top_element)
