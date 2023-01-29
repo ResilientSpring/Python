@@ -11,6 +11,7 @@ def dfs(graph, start, visited=None):
     return visited
 
 
+# Adjacency list
 graph = {"Amin": ['Wasim', 'Nick', "Mike"],
          "Wasim": ['Amin', 'Imran'],
          "Nick": ['Amin'],
