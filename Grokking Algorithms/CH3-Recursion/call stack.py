@@ -15,3 +15,5 @@ def bye():
     print("ok, bye!")
 
 
+# Suppose you call greet("maggie")  First, your computer allocates a box of memory for that function call.
+
