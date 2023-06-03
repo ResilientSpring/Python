@@ -34,7 +34,7 @@ for rect in plot:
 plt.title("2023/04 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
 
 # plt.ylabel("")
-plt.xlabel("參考資料 Reference https://web.archive.org/web/20230428143149/https://www.104.com.tw/jobs/main/category/?jobsource=category")
+plt.xlabel("參考資料 Reference https://web.archive.org/web/20230526102541/https://www.104.com.tw/jobs/main/category/?jobsource=category")
 
 plt.ylim(39000, 180000)
 
