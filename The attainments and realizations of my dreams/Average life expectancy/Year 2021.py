@@ -233,7 +233,7 @@ plt.setp(labels, rotation=45, horizontalalignment='right')
 
 # Add a vertical line, here we set the style in the function call
 ax.axvline(x=group_mean, ls='--', color='r')
-ax.text(group_mean, 0.5, "Nationwide average", rotation=90,
+ax.text(group_mean, 0.5, "Nationwide average",
         horizontalalignment='center', fontweight='bold', color='red')
 
 # Annotate new companies
@@ -244,7 +244,7 @@ ax.text(group_mean, 0.5, "Nationwide average", rotation=90,
 # Now we move our title up since it's getting a little cramped
 ax.title.set(y=1.05)
 
-ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
+ax.set(xlim=[-10, 100], xlabel='Age', ylabel='City',
        title='Average Life Expectancy in 2021')
 
 # ax.xaxis.set_major_formatter(currency)
