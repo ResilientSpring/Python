@@ -59,8 +59,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-data = {'Taipei': 84.14,
-        'Kaohsiung': 79.96,
+data = {'Kaohsiung': 79.96,
+        'Tainan': 80.55,
+        'Taichung': 81.13,
+        'Taoyuan': 81.35,
+        'New Taipei': 81.74,
+        'Taipei': 84.14,
         }
 
 group_data = list(data.values())
@@ -233,8 +237,8 @@ plt.setp(labels, rotation=45, horizontalalignment='right')
 
 # Add a vertical line, here we set the style in the function call
 ax.axvline(x=group_mean, ls='--', color='r')
-ax.text(group_mean, 0.5, "Nationwide average", rotation=90, # [1]
-             horizontalalignment='center', fontweight='bold', color='red')
+ax.text(group_mean, 2.45, "Nationwide average",
+        horizontalalignment='center', fontweight='bold', color='red')
 
 # Annotate new companies
 # for group in [3, 5, 8]:
@@ -244,7 +248,7 @@ ax.text(group_mean, 0.5, "Nationwide average", rotation=90, # [1]
 # Now we move our title up since it's getting a little cramped
 ax.title.set(y=1.05)
 
-ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
+ax.set(xlim=[-10, 100], xlabel='Age', ylabel='City',
        title='Average Life Expectancy in 2021')
 
 # ax.xaxis.set_major_formatter(currency)
@@ -276,4 +280,4 @@ print(fig.canvas.get_supported_filetypes())
 # fig.savefig('sales.png', transparent=False, dpi=80, bbox_inches="tight")
 
 # References:
-# 1. https://stackoverflow.com/a/70595101/
+#

@@ -59,13 +59,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-data = {'Taipei': 84.14,
-        'Kaohsiung': 79.96,
-        }
-
+data = {'Barton LLC': 109438.50,
+        'Frami, Hills and Schmidt': 103569.59,
+        'Fritsch, Russel and Anderson': 112214.71,
+        'Jerde-Hilpert': 112591.43,
+        'Keeling LLC': 100934.30,
+        'Koepp Ltd': 103660.54,
+        'Kulas Inc': 137351.96,
+        'Trantow-Barrows': 123381.38,
+        'White-Trantow': 135841.99,
+        'Will LLC': 104437.60}
 group_data = list(data.values())
 group_names = list(data.keys())
-group_mean = 80.86
+group_mean = np.mean(group_data)
 
 ###############################################################################
 # Getting started
@@ -162,8 +168,8 @@ fig, ax = plt.subplots()
 ax.barh(group_names, group_data)
 labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, horizontalalignment='right')
-ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
-       title='Average Life Expectancy in 2021')
+ax.set(xlim=[-10000, 140000], xlabel='Total Revenue', ylabel='Company',
+       title='Company Revenue')
 
 ###############################################################################
 # We can also adjust the size of this plot using the :func:`pyplot.subplots`
@@ -180,8 +186,8 @@ fig, ax = plt.subplots(figsize=(8, 4))
 ax.barh(group_names, group_data)
 labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, horizontalalignment='right')
-ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
-       title='Average Life Expectancy in 2021')
+ax.set(xlim=[-10000, 140000], xlabel='Total Revenue', ylabel='Company',
+       title='Company Revenue')
 
 ###############################################################################
 # For labels, we can specify custom formatting guidelines in the form of
@@ -195,13 +201,13 @@ ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
 # needed.
 
 
-# def currency(x, pos):
-#     """The two arguments are the value and tick position"""
-#    if x >= 1e6:
-#        s = '${:1.1f}M'.format(x*1e-6)
-#    else:
-#        s = '${:1.0f}K'.format(x*1e-3)
-#    return s
+def currency(x, pos):
+    """The two arguments are the value and tick position"""
+    if x >= 1e6:
+        s = '${:1.1f}M'.format(x*1e-6)
+    else:
+        s = '${:1.0f}K'.format(x*1e-3)
+    return s
 
 ###############################################################################
 # We can then apply this function to the labels on our plot. To do this,
@@ -213,10 +219,9 @@ ax.barh(group_names, group_data)
 labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, horizontalalignment='right')
 
-ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
-       title='Average Life Expectancy in 2021')
-
-# ax.xaxis.set_major_formatter(currency)
+ax.set(xlim=[-10000, 140000], xlabel='Total Revenue', ylabel='Company',
+       title='Company Revenue')
+ax.xaxis.set_major_formatter(currency)
 
 ###############################################################################
 # Combining multiple visualizations
@@ -226,30 +231,26 @@ ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
 # :class:`axes.Axes`. To do this we simply need to call another one of
 # the plot methods on that axes object.
 
-fig, ax = plt.subplots(figsize=(8, 8))
-ax.barh(group_names, group_data)
-labels = ax.get_xticklabels()
-plt.setp(labels, rotation=45, horizontalalignment='right')
+# fig, ax = plt.subplots(figsize=(8, 8))
+# ax.barh(group_names, group_data)
+# labels = ax.get_xticklabels()
+# plt.setp(labels, rotation=45, horizontalalignment='right')
 
 # Add a vertical line, here we set the style in the function call
-ax.axvline(x=group_mean, ls='--', color='r')
-ax.text(group_mean, 0.5, "Nationwide average", rotation=90, # [1]
-             horizontalalignment='center', fontweight='bold', color='red')
+# ax.axvline(group_mean, ls='--', color='r')
 
 # Annotate new companies
 # for group in [3, 5, 8]:
 #     ax.text(145000, group, "New Company", fontsize=10,
-#            verticalalignment="center")
+#             verticalalignment="center")
 
 # Now we move our title up since it's getting a little cramped
-ax.title.set(y=1.05)
+# ax.title.set(y=1.05)
 
-ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
-       title='Average Life Expectancy in 2021')
-
+# ax.set(xlim=[-10000, 140000], xlabel='Total Revenue', ylabel='Company', title='Company Revenue')
 # ax.xaxis.set_major_formatter(currency)
-ax.set_xticks([0, 20, 40, 60, 80, 100])
-fig.subplots_adjust(right=.1)
+# ax.set_xticks([0, 25e3, 50e3, 75e3, 100e3, 125e3])
+# fig.subplots_adjust(right=.1)
 
 plt.show()
 
@@ -274,6 +275,3 @@ print(fig.canvas.get_supported_filetypes())
 
 # Uncomment this line to save the figure.
 # fig.savefig('sales.png', transparent=False, dpi=80, bbox_inches="tight")
-
-# References:
-# 1. https://stackoverflow.com/a/70595101/
