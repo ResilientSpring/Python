@@ -233,7 +233,7 @@ plt.setp(labels, rotation=45, horizontalalignment='right')
 
 # Add a vertical line, here we set the style in the function call
 ax.axvline(x=group_mean, ls='--', color='r')
-ax.text(group_mean, 0.5, "Nationwide average",
+ax.text(group_mean, 0.5, "Nationwide average", rotation=90, # [1]
              horizontalalignment='center', fontweight='bold', color='red')
 
 # Annotate new companies
@@ -274,3 +274,6 @@ print(fig.canvas.get_supported_filetypes())
 
 # Uncomment this line to save the figure.
 # fig.savefig('sales.png', transparent=False, dpi=80, bbox_inches="tight")
+
+# References:
+# 1. https://stackoverflow.com/a/70595101/
