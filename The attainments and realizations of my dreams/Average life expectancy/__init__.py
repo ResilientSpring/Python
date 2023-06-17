@@ -232,7 +232,7 @@ labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, horizontalalignment='right')
 
 # Add a vertical line, here we set the style in the function call
-ax.axvline(x=group_mean, ls='--', color='r')
+ax.axvline(x=group_mean, ls='--', color='r', url="Average")
 
 # Annotate new companies
 # for group in [3, 5, 8]:
