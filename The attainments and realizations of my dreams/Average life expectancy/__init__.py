@@ -195,13 +195,13 @@ ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
 # needed.
 
 
-def currency(x, pos):
-    """The two arguments are the value and tick position"""
-    if x >= 1e6:
-        s = '${:1.1f}M'.format(x*1e-6)
-    else:
-        s = '${:1.0f}K'.format(x*1e-3)
-    return s
+# def currency(x, pos):
+#     """The two arguments are the value and tick position"""
+#    if x >= 1e6:
+#        s = '${:1.1f}M'.format(x*1e-6)
+#    else:
+#        s = '${:1.0f}K'.format(x*1e-3)
+#    return s
 
 ###############################################################################
 # We can then apply this function to the labels on our plot. To do this,
@@ -215,7 +215,8 @@ plt.setp(labels, rotation=45, horizontalalignment='right')
 
 ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
        title='Average Life Expectancy in 2021')
-ax.xaxis.set_major_formatter(currency)
+
+# ax.xaxis.set_major_formatter(currency)
 
 ###############################################################################
 # Combining multiple visualizations
