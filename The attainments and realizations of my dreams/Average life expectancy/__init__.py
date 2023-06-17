@@ -245,7 +245,7 @@ ax.title.set(y=1.05)
 ax.set(xlim=[-10, 100], xlabel='Average life expectancy', ylabel='City',
        title='Average Life Expectancy in 2021')
 
-ax.xaxis.set_major_formatter(currency)
+# ax.xaxis.set_major_formatter(currency)
 ax.set_xticks([0, 20, 40, 60, 80, 100])
 fig.subplots_adjust(right=.1)
 
