@@ -255,7 +255,7 @@ ax.set(xlim=[-10, 100], xlabel='Age', ylabel='City',
 ax.set_xticks([0, 20, 40, 60, 80, 100])
 fig.subplots_adjust(right=.1)
 
-plt.text(x=0.4, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
+plt.text(x=0.45, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30,
          transform=ax.transAxes)
 
