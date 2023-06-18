@@ -255,8 +255,9 @@ ax.set(xlim=[-10, 100], xlabel='Age', ylabel='City',
 ax.set_xticks([0, 20, 40, 60, 80, 100])
 fig.subplots_adjust(right=.1)
 
-plt.xlabel("參考資料 Reference https://dep.mohw.gov.tw/DOS/lp-5082-113.html")
-
+plt.text(x=0.4, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
+         ha='center', va='center', rotation=30,
+         transform=ax.transAxes)
 
 plt.show()
 
