@@ -237,7 +237,7 @@ plt.setp(labels, rotation=45, horizontalalignment='right')
 
 # Add a vertical line, here we set the style in the function call
 ax.axvline(x=group_mean, ls='--', color='r')
-ax.text(group_mean + 2.9, 1.45, "TW average = 80.86", rotation=90,
+ax.text(group_mean + 3.1, 1.45, "Taiwan average = 80.86", rotation=90,
         horizontalalignment='center', fontweight='light', color='red')
 
 # Annotate new companies
