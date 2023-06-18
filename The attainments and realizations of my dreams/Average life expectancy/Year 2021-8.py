@@ -259,7 +259,7 @@ plt.text(x=0.45, y=0.7, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30,
          transform=ax.transAxes)
 
-plt.text(x=0.45, y=0.01, s="Reference: https://dep.mohw.gov.tw/DOS/lp-5082-113.html", fontsize=10,
+plt.text(x=0.35, y=0.01, s="Reference: https://dep.mohw.gov.tw/DOS/lp-5082-113.html", fontsize=10,
          color='black', alpha=0.9, ha='center', va='center', rotation=0, transform=ax.transAxes)
 
 plt.show()
