@@ -24,7 +24,7 @@ public_research_centric_university = pd.DataFrame(data=[
     [11, "國立中正大學", "National Chung Cheng University", 138023217, "South",
      "Literally, National Chiang Chung-cheng University"],
     [12, "國立臺灣海洋大學", "National Taiwan Ocean University", 136547127, "North", ],
-    [13, "國立臺北大學", "National Taipei University", 8771, "North", ],
+    [13, "國立臺北大學", "National Taipei University", 98142220, "North", ],
     [14, "國立暨南國際大學", "National Chi Nan University", 8030, "North", ],
     [15, "國立彰化師範大學", "National Changhua University of Education", 7580, "North", ],
     [16, "國立東華大學", "National Dong Hwa University", 6965, "Hualien County", ],
