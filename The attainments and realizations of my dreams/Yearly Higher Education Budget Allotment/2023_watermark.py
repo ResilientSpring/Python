@@ -16,7 +16,7 @@ public_research_centric_university = pd.DataFrame(data=[
     [4, "國立陽明交通大學（交大校區）", "National Yang Ming Chiao Tung University (Hsinchu)", 1321464208, "North",
      "Derived from Shanghai, China's ChiaoTung University"],
     [5, "國立中興大學", "National Chung Hsing University", 450197237, "North", ],
-    [6, "國立中央大學", "National Central University", 42228, "North", ],
+    [6, "國立中央大學", "National Central University", 426576212, "North", ],
     [7, "國立陽明交通大學（陽明校區）", "National Yang Ming Chiao Tung University (Taipei)", 0, "North", ],
     [8, "國立政治大學", "National Chengchi University", 31579, "North", "Literally, 'National Politics University'"],
     [9, "國立中山大學", "National Sun Yat-sen University", 32068, "South", ],
