@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.image as image
 import matplotlib.pyplot as plt
+
 # Using the magic encoding
 # -*- coding: utf-8 -*-
 
@@ -10,15 +11,18 @@ import matplotlib.pyplot as plt
 public_research_centric_university = pd.DataFrame(data=[
     [1, "國立臺灣大學", "National Taiwan University", 2466494187, "North", ],
     [2, "國立成功大學", "National Cheng Kung University", 1421845095, "South", ],
-    [3, "國立清華大學", "National Tsing Hua University", 1227485103, "North", "Derived from Beijing, China's Tsing Hua University"],
-    [4, "國立陽明交通大學（交大校區）", "National Yang Ming Chiao Tung University (Hsinchu)", 1321464208, "North", "Derived from Shanghai, China's ChiaoTung University"],
+    [3, "國立清華大學", "National Tsing Hua University", 1227485103, "North",
+     "Derived from Beijing, China's Tsing Hua University"],
+    [4, "國立陽明交通大學（交大校區）", "National Yang Ming Chiao Tung University (Hsinchu)", 1321464208, "North",
+     "Derived from Shanghai, China's ChiaoTung University"],
     [5, "國立中興大學", "National Chung Hsing University", 450197237, "North", ],
     [6, "國立中央大學", "National Central University", 42228, "North", ],
     [7, "國立陽明交通大學（陽明校區）", "National Yang Ming Chiao Tung University (Taipei)", 0, "North", ],
     [8, "國立政治大學", "National Chengchi University", 31579, "North", "Literally, 'National Politics University'"],
     [9, "國立中山大學", "National Sun Yat-sen University", 32068, "South", ],
     [10, "國立臺灣師範大學", "National Taiwan Normal University", 14233, "North", ],
-    [11, "國立中正大學", "National Chung Cheng University", 15361, "South", "Literally, National Chiang Chung-cheng University"],
+    [11, "國立中正大學", "National Chung Cheng University", 15361, "South",
+     "Literally, National Chiang Chung-cheng University"],
     [12, "國立臺灣海洋大學", "National Taiwan Ocean University", 14233, "North", ],
     [13, "國立臺北大學", "National Taipei University", 8771, "North", ],
     [14, "國立暨南國際大學", "National Chi Nan University", 8030, "North", ],
