@@ -34,7 +34,7 @@ public_research_centric_university = pd.DataFrame(data=[
     [20, "國立臺東大學", "National Taitung University", 6178, "Taitung County", ],
     [21, "國立臺灣藝術大學", "National Taiwan University of Arts", 5974, "North", ],
     [22, "國立臺北教育大學", "National Taipei University of Education", 5234, "North", ],
-    [23, "國立高雄大學", "National University of Kaohsiung", 5502, "South", ],
+    [23, "國立高雄大學", "National University of Kaohsiung", 52383303, "South", ],
     [24, "國立臺北藝術大學", "The Taipei National University of the Arts", 5478, "North", ],
     [25, "國立臺中教育大學", "National Taichung University of Education", 5549, "North", ],
     [26, "國立臺南大學", "National University of Tainan", 5203, "South", ],
