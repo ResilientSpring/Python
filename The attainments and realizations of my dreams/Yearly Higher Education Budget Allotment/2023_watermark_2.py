@@ -83,7 +83,7 @@ plt.xlabel('Location (divided by Zhuoshui River)\n\n'
            'Dataset: https://sprout.moe.edu.tw/SproutWeb/Project/DocDownload',
            fontproperties="Arial", fontsize=9)
 
-plt.ylabel('Unit: 10 thousands of New Taiwan Dollar')
+plt.ylabel('Unit: 1 billion of New Taiwan Dollar')
 plt.title('Government budget support for public research universities (國立大學)\n'
           'in North vs South in 2023', fontproperties="MS Gothic")
 
