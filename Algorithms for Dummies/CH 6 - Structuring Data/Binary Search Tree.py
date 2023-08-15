@@ -25,3 +25,5 @@ BranchA.left = LeafC
 BranchA.right = LeafD
 BranchB.left = LeafE
 BranchB.right = LeafF
+
+def traverse(tree)
