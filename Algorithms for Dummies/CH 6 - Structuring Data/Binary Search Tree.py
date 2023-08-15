@@ -8,3 +8,6 @@ class binaryTree:
         """The method for printing the content of the node's data,
         so that you can see what data the node stores."""
         return str(self.data)
+
+
+tree = binaryTree("Root")
