@@ -34,3 +34,6 @@ BranchA.left = LeafC
 BranchA.right = LeafD
 BranchB.left = LeafE
 BranchB.right = LeafF
+
+
+binaryTree.traverse(tree=tree)
