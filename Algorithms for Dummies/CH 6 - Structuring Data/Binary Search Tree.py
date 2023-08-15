@@ -13,11 +13,10 @@ class binaryTree:
     def traverse(tree):
         if tree.left != None:
             binaryTree.traverse(tree.left)
-        if tree.right != None:
+        if tree.right is not None:
             binaryTree.traverse(tree.right)
 
         print(tree.data)
-
 
 
 tree = binaryTree("Root", None, None)
@@ -35,5 +34,3 @@ BranchA.left = LeafC
 BranchA.right = LeafD
 BranchB.left = LeafE
 BranchB.right = LeafF
-
-
