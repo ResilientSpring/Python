@@ -11,11 +11,17 @@ class binaryTree:
 
 
 root_node = binaryTree("Root")
-branch_A = binaryTree(nodeData="Branch A", left=leaf_C, right=leaf_D)
+
 leaf_C = binaryTree(nodeData="Leaf C", left=None, right=None)
 leaf_D = binaryTree(nodeData="Leaf D", left=None, right=None)
-branch_B = binaryTree(nodeData="Branch B", left=Leaf_E, right=Leaf_F)
+
+branch_A = binaryTree(nodeData="Branch A", left=leaf_C, right=leaf_D)
+
 leaf_E = binaryTree(nodeData="Leaf E", left=None, right=None)
+leaf_F = binaryTree(nodeData="Leaf F", left=None, right=None)
+
+branch_B = binaryTree(nodeData="Branch B", left=leaf_E, right=leaf_F)
+
 
 
 
