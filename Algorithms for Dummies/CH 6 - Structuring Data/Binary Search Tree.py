@@ -19,3 +19,9 @@ tree.right = BranchB
 LeafC = binaryTree("Leaf C", None, None)
 LeafD = binaryTree("Leaf D", None, None)
 LeafE = binaryTree("Leaf E", None, None)
+LeafF = binaryTree("Leaf F", None, None)
+
+BranchA.left = LeafC
+BranchA.right = LeafD
+BranchB.left = LeafE
+BranchB.right = LeafF
