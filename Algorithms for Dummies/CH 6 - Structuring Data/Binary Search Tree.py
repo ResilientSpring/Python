@@ -10,4 +10,4 @@ class binaryTree:
         return str(self.data)
 
 
-tree = binaryTree("Root")
+tree = binaryTree("Root", None, None)
