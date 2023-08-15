@@ -12,9 +12,9 @@ class binaryTree:
     @staticmethod
     def traverse(tree):
         if tree.left != None:
-            binaryTree.traverse(tree.left)
+            traverse(tree.left)
         if tree.right is not None:
-            binaryTree.traverse(tree.right)
+            traverse(tree.right)
 
         print(tree.data)
 
