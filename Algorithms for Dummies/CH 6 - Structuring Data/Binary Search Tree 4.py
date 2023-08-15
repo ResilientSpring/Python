@@ -10,7 +10,7 @@ class binaryTree:
         return str(self.nodeData)
 
 
-root_node = binaryTree("Root")
+# root_node = binaryTree("Root", left=branch_A, right=branch_B)
 
 leaf_C = binaryTree(nodeData="Leaf C", left=None, right=None)
 leaf_D = binaryTree(nodeData="Leaf D", left=None, right=None)
@@ -22,6 +22,7 @@ leaf_F = binaryTree(nodeData="Leaf F", left=None, right=None)
 
 branch_B = binaryTree(nodeData="Branch B", left=leaf_E, right=leaf_F)
 
+root_node = binaryTree("Root", left=branch_A, right=branch_B)
 
 def traverse(tree):
     if tree.left is not None:
@@ -32,4 +33,4 @@ def traverse(tree):
     print(tree.nodeData)
 
 
-
+traverse(root_node)
