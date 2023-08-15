@@ -8,3 +8,11 @@ class binaryTree:
 
     def __str__(self):
         return str(self.nodeData)
+
+
+root_node = binaryTree("Root")
+branch_A = binaryTree(nodeData="Branch A", left=leaf_C, right=leaf_D)
+leaf_C = binaryTree(nodeData="Leaf C", left=None, right=None)
+leaf_D = binaryTree(nodeData="Leaf D", left=None, right=None)
+
+
