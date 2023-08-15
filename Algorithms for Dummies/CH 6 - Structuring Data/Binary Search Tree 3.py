@@ -12,6 +12,7 @@ class binaryTree:
 
 root_node = binaryTree("Root")
 
+# Define leaf_C and leaf_D before branch_A
 leaf_C = binaryTree(nodeData="Leaf C", left=None, right=None)
 leaf_D = binaryTree(nodeData="Leaf D", left=None, right=None)
 
