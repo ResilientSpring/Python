@@ -9,6 +9,16 @@ class binaryTree:
         so that you can see what data the node stores."""
         return str(self.data)
 
+    @staticmethod
+    def traverse(tree):
+        if tree.left != None:
+            binaryTree.traverse(tree.left)
+        if tree.right != None:
+            binaryTree.traverse(tree.right)
+
+        print(tree.data)
+
+
 
 tree = binaryTree("Root", None, None)
 BranchA = binaryTree("Branch A", None, None)
@@ -26,4 +36,4 @@ BranchA.right = LeafD
 BranchB.left = LeafE
 BranchB.right = LeafF
 
-def traverse(tree)
+
