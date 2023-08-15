@@ -32,4 +32,4 @@ def traverse(tree):
     print(tree.nodeData)
 
 
-
+traverse(root_node)
