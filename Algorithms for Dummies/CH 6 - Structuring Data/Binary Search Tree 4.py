@@ -23,5 +23,13 @@ leaf_F = binaryTree(nodeData="Leaf F", left=None, right=None)
 branch_B = binaryTree(nodeData="Branch B", left=leaf_E, right=leaf_F)
 
 
+def traverse(tree):
+    if tree.left is not None:
+        traverse(tree.left)
+    if tree.right is not None:
+        traverse(tree.right)
+
+    print(tree.nodeData)
+
 
 
