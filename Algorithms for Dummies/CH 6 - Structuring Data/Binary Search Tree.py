@@ -11,3 +11,4 @@ class binaryTree:
 
 
 tree = binaryTree("Root", None, None)
+BranchA = binaryTree("Branch")
