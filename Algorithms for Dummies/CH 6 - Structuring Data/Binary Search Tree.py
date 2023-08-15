@@ -15,3 +15,7 @@ BranchA = binaryTree("Branch A", None, None)
 BranchB = binaryTree("Branch B", None, None)
 tree.left = BranchA
 tree.right = BranchB
+
+LeafC = binaryTree("Leaf C", None, None)
+LeafD = binaryTree("Leaf D", None, None)
+LeafE = binaryTree("Leaf E", None, None)
