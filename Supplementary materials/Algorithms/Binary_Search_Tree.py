@@ -1,4 +1,6 @@
 class binaryTree:
+
+    # Constructor
     def __init__(self, nodeData, left=None, right=None):
         self.nodeData = nodeData
         self.left = left
