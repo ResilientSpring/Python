@@ -4,4 +4,4 @@ class MyClass:
         self.value = value
 
     def get_value(self):
-        return value
+        return self.value
