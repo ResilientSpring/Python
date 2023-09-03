@@ -7,7 +7,7 @@ import matplotlib.image as image
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-month = ["Jan", "Feb", "Mar", "April"]
+month = ["Jan", "Feb", "Mar", "April", "May", "June"]
 
 deaths = [[8, 25, 26, 25, 30, 25],  # January
           [14, 18, 15, 17, 31, 27], # February
