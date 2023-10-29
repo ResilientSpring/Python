@@ -9,4 +9,5 @@ book["avocado"] = 1.49
 
 print(book)
 
-
+# Now, let's ask for the price of an avocado
+print(book["avocado"])
