@@ -10,7 +10,7 @@ from matplotlib.transforms import IdentityTransform
 matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5]
-position_vacancies = [2253+118394+68186+4594, 45794+31743+6269, 59514+3718+10102, 4517+6926+26601, 38377+4517]
+position_vacancies = [2245+115424+6623+4440, 44604+31263+6311, 57794+3654+9769, 4478+6632+25388, 38377+4517]
 
 label = ["大台北 Greater\nTaipei", "桃園 Taoyuan\n新竹 Hsinchu\n苗栗 Miaoli", "台中 Taichung\n彰化 Changhua\n南投 Nantou",
          "雲林 Yunlin\n嘉義 Chiayi\n台南 Tainan", "高雄 Kaohsiung\n屏東 Pingtung"]
@@ -31,7 +31,7 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-plt.title("2023/10 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
+plt.title("2023/12 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
 
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference https://web.archive.org/web/20231025065031/https://www.104.com.tw/jobs/main/category/?jobsource=category")
