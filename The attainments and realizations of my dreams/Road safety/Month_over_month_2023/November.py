@@ -17,9 +17,9 @@ deaths = [[8, 25, 26, 25, 30, 25],  # January
           [6, 13, 13, 34, 24, 21], # June
           [9, 21, 18, 23, 20, 25], # July
           [6, 19, 17, 13, 24, 21], # August
-          [],  # September
-          [],  # October
-          [],  # November
+          [5, 20, 19, 20, 27, 25],  # September
+          [10, 31, 25, 32, 31, 24],  # October
+          [7, 27, 27, 26, 17, 34],  # November
           ]
 
 df = pd.DataFrame(data=deaths,
