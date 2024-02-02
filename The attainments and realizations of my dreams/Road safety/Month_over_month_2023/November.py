@@ -20,7 +20,6 @@ deaths = [[8, 25, 26, 25, 30, 25],  # January
           [5, 20, 19, 20, 27, 25],  # September
           [10, 31, 25, 32, 31, 24],  # October
           [7, 27, 27, 26, 17, 34],  # November
-          [] # December
           ]
 
 df = pd.DataFrame(data=deaths,
