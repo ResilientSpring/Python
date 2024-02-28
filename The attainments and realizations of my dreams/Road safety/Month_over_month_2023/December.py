@@ -7,7 +7,7 @@ import matplotlib.image as image
 
 administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", "Kaohsiung"]
 
-month = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov"]
+month = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 deaths = [[8, 25, 26, 25, 30, 25],  # January
           [14, 18, 15, 17, 31, 27], # February
@@ -20,7 +20,7 @@ deaths = [[8, 25, 26, 25, 30, 25],  # January
           [5, 20, 19, 20, 27, 25],  # September
           [10, 31, 25, 32, 31, 24],  # October
           [7, 27, 27, 26, 17, 34],  # November
-          [8, 18, 25, 23, ]
+          [8, 18, 25, 23, 25, 29], # December
           ]
 
 df = pd.DataFrame(data=deaths,
@@ -73,7 +73,7 @@ plt.subplots_adjust(left=0.2, bottom=0.2)
 
 axes.set_ylabel("The number of deaths")
 axes.set_xticks([])
-axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2023/01-11)")
+axes.set_title("The Cumulative Number of Deaths in Road Accident\nin Taiwan by Region (2023/01-12)")
 
 axes.grid(True)  # pyplot.grid [1][2]
 
