@@ -44,7 +44,7 @@ summary = [df["Taipei"].sum(), df["New Taipei"].sum(), df["Taoyuan"].sum(), df["
 print(summary)
 
 cumulative_sum = pd.DataFrame(data=summary,
-                              columns=["Accumulative Deaths (2009-2022)"],
+                              columns=["Accumulative Deaths (2009-2023)"],
                               index=administrative_duty)
 
 print(cumulative_sum)
