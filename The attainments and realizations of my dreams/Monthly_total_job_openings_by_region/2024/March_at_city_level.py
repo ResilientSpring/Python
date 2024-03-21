@@ -36,7 +36,7 @@ plt.title("2024/03 台灣各城市職缺數\n the number of job openings in Taiw
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference: https://archive.ph/2tZVM")
 
-plt.ylim(25000, 110000)
+plt.ylim(27000, 120000)
 
 img = image.imread('CC-BY.png')
 
