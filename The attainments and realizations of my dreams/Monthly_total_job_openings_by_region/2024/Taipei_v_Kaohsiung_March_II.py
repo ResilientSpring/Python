@@ -31,7 +31,7 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-plt.title("2024/02 台灣南北二城市職缺數\n the number of job openings in Taipei & Kaohsiung of Taiwan", fontsize=20)
+plt.title("2024/03 台灣南北二城市職缺數\n the number of job openings in Taipei & Kaohsiung of Taiwan", fontsize=20)
 
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference https://archive.ph/2tZVM")
