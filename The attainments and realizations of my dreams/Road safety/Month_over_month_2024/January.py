@@ -9,7 +9,7 @@ administrative_duty = ["Taipei", "New Taipei", "Taoyuan", "Taichung", "Tainan", 
 
 month = ["Jan"]
 
-deaths = [[8, 25, 26, 25, 30, 25],  # January
+deaths = [[8, 22, 24, 28, 21, 38],  # January
           ]
 
 df = pd.DataFrame(data=deaths,
