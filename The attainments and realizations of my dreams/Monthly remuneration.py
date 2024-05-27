@@ -1,0 +1,1 @@
+# Average monthly salary by metro
