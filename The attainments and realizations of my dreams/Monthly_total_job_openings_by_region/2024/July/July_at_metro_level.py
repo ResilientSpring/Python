@@ -38,7 +38,7 @@ plt.xlabel("參考資料 Reference  https://archive.ph/5VB0A")
 
 plt.ylim(40000, 200000)
 
-img = image.imread('CC0.png')
+img = image.imread('CC0.png')  # CC0.png downloaded from [6].
 
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
@@ -56,6 +56,7 @@ plt.show()
 # 4. https://www.google.com/search?q=matplotlib+bar+color
 # 5. https://www.python-graph-gallery.com/3-control-color-of-barplots
 # 6. https://matplotlib.org/stable/gallery/color/named_colors.html
+# 7. https://creativecommons.org/public-domain/cc0/
 
 # Notes:
 # 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
