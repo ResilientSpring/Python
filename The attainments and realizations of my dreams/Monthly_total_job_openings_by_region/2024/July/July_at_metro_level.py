@@ -38,7 +38,7 @@ plt.xlabel("參考資料 Reference  https://archive.ph/5VB0A")
 
 plt.ylim(40000, 200000)
 
-img = image.imread('cc-zero.png')
+img = image.imread('CC0.png')
 
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
