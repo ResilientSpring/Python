@@ -24,7 +24,7 @@ for attribute, measurement in penguin_means.items():
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('Length (mm)')
-ax.set_title('Penguin attributes by species')
+ax.set_title('Annual Expenditure by Local Government')
 ax.set_xticks(x + width, Year)
 ax.legend(loc='upper left', ncols=3)
 ax.set_ylim(0, 250)
