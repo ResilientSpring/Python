@@ -28,7 +28,7 @@ ax.set_ylabel('New Taiwan Dollar (billion)')
 ax.set_title('Annual Expenditure by Local Government')
 ax.set_xticks(x + width, Year)
 ax.legend(loc='upper left', ncols=3)
-ax.set_ylim(50, 250)
+ax.set_ylim(80, 220)
 
 plt.xlabel("Reference  https://www.dgbas.gov.tw/News.aspx?n=1525&sms=10694")
 
