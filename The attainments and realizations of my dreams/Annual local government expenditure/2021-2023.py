@@ -22,7 +22,7 @@ for attribute, measurement in penguin_means.items():
 
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylabel('New Taiwan Dollar (billion)')
-ax.set_title('Annual Expenditure by Local Government')
+ax.set_title('Annual Expenditure by Local Government (Yearly distribution of taxpayer\'s money)')
 ax.set_xticks(x + width, Year)
 ax.legend(loc='upper left', ncols=3)
 ax.set_ylim(80, 220)
