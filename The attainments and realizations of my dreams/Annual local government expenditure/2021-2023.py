@@ -4,7 +4,7 @@ import numpy as np
 Year = ("2021", "2023", "2024")
 penguin_means = {
     'Taipei': (171.58, 177.48, 190.71),
-    'New Taipei': (38.79, 197.57, 212.48),
+    'New Taipei': (186.48, 197.57, 212.48),
     'Kaohsiung': (151.44, 160.85, 169.57),
 }
 
