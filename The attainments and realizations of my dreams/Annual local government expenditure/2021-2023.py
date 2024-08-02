@@ -30,4 +30,6 @@ ax.set_xticks(x + width, Year)
 ax.legend(loc='upper left', ncols=3)
 ax.set_ylim(0, 250)
 
+plt.xlabel("參考資料 Reference  https://archive.ph/OTLpz")
+
 plt.show()
