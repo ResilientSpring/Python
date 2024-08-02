@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-Year = ("2021", "2022", "2023")
+Year = ("2021", "2023", "2024")
 penguin_means = {
     'Taipei': (18.35, 177.48, 190.71),
     'New Taipei': (38.79, 197.57, 212.48),
