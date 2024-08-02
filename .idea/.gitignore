@@ -9,6 +9,7 @@
 # Computer-specific configurations
 .idea/misc.xml
 .idea/other.xml
+Python.iml
 
 # References:
 # https://gitbook.tw/chapters/using-git/ignore
