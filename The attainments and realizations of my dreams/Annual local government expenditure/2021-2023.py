@@ -1,6 +1,3 @@
-# data from https://allisonhorst.github.io/palmerpenguins/
-# source: https://matplotlib.org/stable/gallery/lines_bars_and_markers/barchart.html
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -33,3 +30,6 @@ ax.set_ylim(80, 220)
 plt.xlabel("Reference  https://www.dgbas.gov.tw/News.aspx?n=1525&sms=10694")
 
 plt.show()
+
+# References:
+# https://matplotlib.org/stable/gallery/lines_bars_and_markers/barchart.html
