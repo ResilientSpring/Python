@@ -6,9 +6,9 @@ import numpy as np
 
 Year = ("2021", "2022", "2023")
 penguin_means = {
-    'Taipei': (18.35, 18.43, 190.71),
-    'New Taipei': (38.79, 48.83, 212.48),
-    'Kaohsiung': (189.95, 195.82, 169.57),
+    'Taipei': (18.35, 177.48, 190.71),
+    'New Taipei': (38.79, 197.57, 212.48),
+    'Kaohsiung': (189.95, 160.85, 169.57),
 }
 
 x = np.arange(len(Year))  # the label locations
