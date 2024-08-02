@@ -1,4 +1,5 @@
 # data from https://allisonhorst.github.io/palmerpenguins/
+# source: https://matplotlib.org/stable/gallery/lines_bars_and_markers/barchart.html
 
 import matplotlib.pyplot as plt
 import numpy as np
