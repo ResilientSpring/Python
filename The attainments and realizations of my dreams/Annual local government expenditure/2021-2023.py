@@ -30,6 +30,6 @@ ax.set_xticks(x + width, Year)
 ax.legend(loc='upper left', ncols=3)
 ax.set_ylim(0, 250)
 
-plt.xlabel("Reference  https://archive.ph/OTLpz")
+plt.xlabel("Reference  https://www.dgbas.gov.tw/News.aspx?n=1525&sms=10694")
 
 plt.show()
