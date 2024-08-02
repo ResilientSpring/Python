@@ -6,10 +6,10 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-# Computer-specific configurations
+# Computer-specific configurations [1]
 .idea/misc.xml
 .idea/other.xml
 Python.iml
 
 # References:
-# https://gitbook.tw/chapters/using-git/ignore
+# 1. https://gitbook.tw/chapters/using-git/ignore
