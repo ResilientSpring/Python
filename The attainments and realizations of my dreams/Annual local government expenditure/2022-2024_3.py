@@ -12,7 +12,7 @@ penguin_means = {
 }
 
 x = np.arange(len(Year))  # the label locations
-width = 0.25  # the width of the bars
+width = 0.20  # the width of the bars
 multiplier = 0
 
 fig, ax = plt.subplots(layout='tight', figsize=(16, 9)) # [1]
