@@ -15,7 +15,7 @@ x = np.arange(len(Year))  # the label locations
 width = 0.25  # the width of the bars
 multiplier = 0
 
-fig, ax = plt.subplots(layout='tight')
+fig, ax = plt.subplots(layout='tight') # [1]
 
 for attribute, measurement in penguin_means.items():
     offset = width * multiplier
@@ -36,3 +36,4 @@ plt.show()
 
 # References:
 # https://matplotlib.org/stable/gallery/lines_bars_and_markers/barchart.html
+# 1. https://matplotlib.org/stable/users/explain/axes/tight_layout_guide.html#tight-layout-guide
