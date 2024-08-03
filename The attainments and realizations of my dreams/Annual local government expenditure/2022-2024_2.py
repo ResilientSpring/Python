@@ -15,7 +15,7 @@ x = np.arange(len(Year))  # the label locations
 width = 0.25  # the width of the bars
 multiplier = 0
 
-fig, ax = plt.subplots(layout='constrained')
+fig, ax = plt.subplots()
 
 for attribute, measurement in penguin_means.items():
     offset = width * multiplier
