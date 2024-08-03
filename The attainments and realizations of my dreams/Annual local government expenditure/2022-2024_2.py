@@ -1,10 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-Year = ("2021", "2023", "2024")
+Year = ("2022", "2023", "2024")
 penguin_means = {
     'Taipei': (171.58, 177.48, 190.71),
     'New Taipei': (186.48, 197.57, 212.48),
+    'Taoyuan': (141.05, ),
+    'Taichung': (151.20, ),
+    'Tainan': (102.06, ),
     'Kaohsiung': (151.44, 160.85, 169.57),
 }
 
@@ -12,7 +15,7 @@ x = np.arange(len(Year))  # the label locations
 width = 0.25  # the width of the bars
 multiplier = 0
 
-fig, ax = plt.subplots(layout='constrained')
+fig, ax = plt.subplots(layout='')
 
 for attribute, measurement in penguin_means.items():
     offset = width * multiplier
