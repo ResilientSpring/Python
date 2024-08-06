@@ -17,7 +17,7 @@ penguin_means = {
                              36.30+27.41+18.38+102.56,
                              40.43+33.22+19.35+116.94),
 
-    'Kaohsiung-Pingtung': (151.44, 160.85+50.33, 169.57+55.85),
+    'Kaohsiung-Pingtung': (151.44+47.11, 160.85+50.33, 169.57+55.85),
 }
 
 x = np.arange(len(Year))  # the label locations
