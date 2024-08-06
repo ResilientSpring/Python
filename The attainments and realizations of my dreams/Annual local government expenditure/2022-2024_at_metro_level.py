@@ -5,10 +5,11 @@ Year = ("2022", "2023", "2024")
 penguin_means = {
                      # Taipei + New Taipei + Keelung
     'Greater Taipei': (171.58, 177.48, 190.71),
+                     # Taoyuan + Hsinchu county + Hsinchu city + Miaoli
     'Taoyuan-Hsinchu_Miaoli': (141.05, 142.99, 156.80),
-    'Taichung-Changhua-Nantou': (151.20, 150.48, 177.22),
+    'Taichung-Changhua-Nantou': (151.20, 150.48, 177.22+64.45+33.72),
                      # Yunlin + Chiayi county + Chiayi city + Tainan
-    'Yunlin-Chiayi-Tainan': (102.06, 102.56, 40.43+116.94),
+    'Yunlin-Chiayi-Tainan': (102.06, 102.56, 40.43+33.22+19.35+116.94),
     'Kaohsiung-Pingtung': (151.44, 160.85, 169.57+55.85),
 }
 
