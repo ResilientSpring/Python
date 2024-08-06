@@ -10,7 +10,7 @@ penguin_means = {
     'Taichung-Changhua-Nantou': (151.20, 150.48+58.89+24.92, 177.22+64.45+33.72),
                      # Yunlin + Chiayi county + Chiayi city + Tainan
     'Yunlin-Chiayi-Tainan': (102.06, 36.30+27.41+18.38+102.56, 40.43+33.22+19.35+116.94),
-    'Kaohsiung-Pingtung': (151.44, 160.85, 169.57+55.85),
+    'Kaohsiung-Pingtung': (151.44, 160.85+50.33, 169.57+55.85),
 }
 
 x = np.arange(len(Year))  # the label locations
