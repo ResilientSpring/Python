@@ -3,11 +3,13 @@ import numpy as np
 
 Year = ("2022", "2023", "2024")
 penguin_means = {
+                     # Taipei + New Taipei + Keelung
     'Greater Taipei': (171.58, 177.48, 190.71),
     'Taoyuan-Hsinchu_Miaoli': (141.05, 142.99, 156.80),
     'Taichung-Changhua-Nantou': (151.20, 150.48, 177.22),
-    'Yunlin-Chiayi-Tainan': (102.06, 102.56, 116.94),
-    'Kaohsiung-Pingtung': (151.44, 160.85, 169.57),
+                     # Yunlin + Chiayi county + Chiayi city + Tainan
+    'Yunlin-Chiayi-Tainan': (102.06, 102.56, 40.43+116.94),
+    'Kaohsiung-Pingtung': (151.44, 160.85, 169.57+55.85),
 }
 
 x = np.arange(len(Year))  # the label locations
