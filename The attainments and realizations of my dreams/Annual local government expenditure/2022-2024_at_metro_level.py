@@ -13,7 +13,9 @@ penguin_means = {
     'Taichung-Changhua-Nantou': (151.20+56.60+28.90, 150.48+58.89+24.92, 177.22+64.45+33.72),
 
                      # Yunlin + Chiayi county + Chiayi city + Tainan
-    'Yunlin-Chiayi-Tainan': (102.06, 36.30+27.41+18.38+102.56, 40.43+33.22+19.35+116.94),
+    'Yunlin-Chiayi-Tainan': (37.30+28.35+16.62+102.06,
+                             36.30+27.41+18.38+102.56,
+                             40.43+33.22+19.35+116.94),
     'Kaohsiung-Pingtung': (151.44, 160.85+50.33, 169.57+55.85),
 }
 
