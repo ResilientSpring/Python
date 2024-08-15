@@ -51,11 +51,11 @@ text = fig.text(0.5, 0.7,
                 fontproperties='MS Gothic')
 
 
-img = image.imread('CC-BY.png')
+img = image.imread('CC0.png')
 
 plt.figimage(X=img, xo=2000, yo=900, alpha=0.9)
 
-plt.text(x=0.2, y=0.4, s="CC-BY 4.0", fontsize=40, color='grey', alpha=0.9,
+plt.text(x=0.2, y=0.4, s="CC0 No Copyright\n無版權圖片", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30, #rotation='30',
          transform=axe.transAxes)
 
