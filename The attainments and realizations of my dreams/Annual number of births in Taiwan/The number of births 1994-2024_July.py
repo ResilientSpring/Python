@@ -33,7 +33,7 @@ for rect in plot:
     axe.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
              '%d' % int(height), ha='center', va='bottom', fontsize=12, rotation=4)
 
-axe.set_title(label="1994-2024/07 台灣年度出生人數\n Annual number of births in Taiwan", fontsize=20)
+axe.set_title(label="1994-2024/07 台灣年度出生人數\n Annual number of new-born neonates in Taiwan", fontsize=20)
 
 axe.set_ylabel("The number of births (Unit: 1 baby)")
 axe.set_xlabel("Year")
