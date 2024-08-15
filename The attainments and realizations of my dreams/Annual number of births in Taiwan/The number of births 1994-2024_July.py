@@ -44,7 +44,7 @@ plt.margins(x=0, y=0, tight=False)  # [1][2]
 fig.tight_layout()  # [3]
 
 text = fig.text(0.5, 0.7,
-                'Reference:https://www.ris.gov.tw/app/en/3910\nhttps://ec.ltn.com.tw/article/paper/1656441',
+                'Reference:https://www.ris.gov.tw/app/en/3910\nhttps://ec.ltn.com.tw/article/paper/1656441\nhttps://www.ris.gov.tw/app/portal/2121?sn=24222733',
                 horizontalalignment='center',
                 verticalalignment='center',
                 size=13,
