@@ -70,7 +70,7 @@ def plot_student_results(student, scores_by_test, cohort_size):
     ax2.set_ylabel('Test Scores')
 
 
-student = Student(name='Johnny Doe', grade=2, gender='Boy')
+student = Student(name='', grade=2, gender='Boy')
 
 scores_by_test = {
     'Pacer Test': Score(7, 'laps', percentile=37),
