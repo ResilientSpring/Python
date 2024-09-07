@@ -71,6 +71,7 @@ def plot_student_results(student, scores_by_test, cohort_size):
 
 
 student = Student(name='Johnny Doe', grade=2, gender='Boy')
+
 scores_by_test = {
     'Pacer Test': Score(7, 'laps', percentile=37),
     'Flexed Arm\n Hang': Score(48, 'sec', percentile=95),
