@@ -39,7 +39,7 @@ plt.xlabel("Reference  https://www.dgbas.gov.tw/News.aspx?n=1525&sms=10694")
 
 img = image.imread('CC0.png')
 
-plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
+plt.figimage(X=img, xo=800, yo=600, alpha=0.2)
 
 # Insert text watermark
 plt.text(x=0.3, y=0.7, s="CC0 No Copyright\n無版權圖片", fontsize=30, color='grey', alpha=0.9,
