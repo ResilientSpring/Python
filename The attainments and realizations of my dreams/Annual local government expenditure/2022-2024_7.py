@@ -37,7 +37,7 @@ ax.set_ylim(100, 220)
 plt.xlabel("Reference  https://www.dgbas.gov.tw/News.aspx?n=1525&sms=10694")
 
 # Insert text watermark
-plt.text(x=0.2, y=0.4, s="CC0 No Copyright\n無版權圖片", fontsize=40, color='grey', alpha=0.9,
+plt.text(x=0.3, y=0.5, s="CC0 No Copyright\n無版權圖片", fontsize=30, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30, #rotation='30',
          transform=ax.transAxes)
 
