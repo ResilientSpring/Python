@@ -51,7 +51,7 @@ img = image.imread('CC0.png')
 plt.figimage(X=img, xo=1050, yo=650, alpha=0.9)
 
 # Insert text watermark
-plt.text(x=0.3, y=0.7, s="CC0 No Copyright\n無版權圖片", fontsize=30, color='grey', alpha=0.9,
+plt.text(x=0.2, y=0.7, s="CC0 No Copyright\n無版權圖片", fontsize=30, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30, #rotation='30',
          transform=ax.transAxes)
 
