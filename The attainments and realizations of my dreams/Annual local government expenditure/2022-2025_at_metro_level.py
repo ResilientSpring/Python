@@ -4,7 +4,7 @@ import numpy as np
 Year = ("2022", "2023", "2024", "2025")
 penguin_means = {
     # Taipei + New Taipei + Keelung
-    'Greater Taipei': (171.58+186.48+21.15, 177.48+197.57+19.63, 190.71+212.48+24.09),
+    'Greater Taipei': (171.58+186.48+21.15+ , 177.48+197.57+19.63+ , 190.71+212.48+24.09+),
     # Taoyuan + Hsinchu county + Hsinchu city + Miaoli
     'Taoyuan-Hsinchu_Miaoli': (141.05+32.36+25.61+21.56,
                                142.99+34.82+25.51+22.98,
