@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
+import matplotlib.image as image
+import matplotlib
 import numpy as np
+# -*- coding: utf-8 -*-
+
+matplotlib.rc('font', family="MS Gothic")
 
 Year = ("2022", "2023", "2024")
 penguin_means = {
