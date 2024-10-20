@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
+import matplotlib.image as image
+import matplotlib
 import numpy as np
+# -*- coding: utf-8 -*-
+
+matplotlib.rc('font', family="MS Gothic")
 
 Year = ("2022", "2023", "2024")
 penguin_means = {
@@ -40,6 +45,15 @@ ax.legend(loc='upper left', ncols=3)
 ax.set_ylim(150, 450)
 
 plt.xlabel("Reference  https://www.dgbas.gov.tw/News.aspx?n=1525&sms=10694")
+
+img = image.imread('CC0.png')
+
+plt.figimage(X=img, xo=1050, yo=650, alpha=0.9)
+
+# Insert text watermark
+plt.text(x=0.25, y=0.65, s="CC0 No Copyright\n無版權圖片", fontsize=30, color='grey', alpha=0.9,
+         ha='center', va='center', rotation=30, #rotation='30',
+         transform=ax.transAxes)
 
 plt.show()
 
