@@ -31,7 +31,7 @@ ax.legend(wedges, ingredients,
 
 plt.setp(autotexts, size=8, weight="bold")
 
-ax.set_title("2024 The distribution of Taiwan's Foreign Direct Investment by Region")
+ax.set_title("2024 Q2 The distribution of Taiwan's Foreign Direct Investment by Region")
 
 plt.xlabel("Reference:  https://taipeiecon.taipei/Econ/econ_obs?id=5")
 
