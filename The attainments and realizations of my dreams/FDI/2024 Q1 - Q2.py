@@ -3,17 +3,17 @@ import numpy as np
 
 fig, ax = plt.subplots(figsize=(6, 3), subplot_kw=dict(aspect="equal"))
 
-recipe = ["7.98 USD flour",
-          "75 g sugar",
-          "250 g butter",
-          "300 g berries"]
+# recipe = ["7.98 USD flour",
+#           "75 g sugar",
+#           "250 g butter",
+#           "300 g berries"]
 
 # data = [float(x.split()[0]) for x in recipe]
 # ingredients = [x.split()[-1] for x in recipe]
 
 data = [7.98, 15.39, 4.25, 5.87]
 
-ingredients = ["Taipei Q1", "Taipei Q2", "Rest of Taiwan Q1", "Rest of Taiwan Q2"]
+ingredients = ["Taipei Q1", "Taipei Q2", "Rest of TW Q1", "Rest of TW Q2"]
 
 
 def func(pct, allvals):
@@ -31,6 +31,6 @@ ax.legend(wedges, ingredients,
 
 plt.setp(autotexts, size=8, weight="bold")
 
-ax.set_title("2024 The distribution Taiwan's Foreign Direct Investment by Region")
+ax.set_title("2024 The distribution of Taiwan's Foreign Direct Investment by Region")
 
 plt.show()
