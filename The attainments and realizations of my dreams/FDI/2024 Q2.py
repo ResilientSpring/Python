@@ -13,7 +13,7 @@ fig, ax = plt.subplots(figsize=(7, 3), subplot_kw=dict(aspect="equal"))
 
 data = [15.39, 5.87]
 
-ingredients = ["Taipei Q2", "Rest of Taiwan"]
+ingredients = ["Taipei", "Rest of Taiwan"]
 
 
 def func(pct, allvals):
