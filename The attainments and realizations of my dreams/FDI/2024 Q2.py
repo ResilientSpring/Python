@@ -25,7 +25,7 @@ wedges, texts, autotexts = ax.pie(data, autopct=lambda pct: func(pct, data),
                                   textprops=dict(color="w"))
 
 ax.legend(wedges, ingredients,
-          title="TPE vs TW",
+          title="City",
           loc="center left",
           bbox_to_anchor=(1, 0, 0.5, 1))
 
