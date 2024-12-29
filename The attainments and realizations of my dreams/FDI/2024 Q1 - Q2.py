@@ -33,6 +33,6 @@ plt.setp(autotexts, size=8, weight="bold")
 
 ax.set_title("2024 The distribution of Taiwan's Foreign Direct Investment by Region")
 
-plt.xlabel("參考資料 Reference  https://taipeiecon.taipei/Econ/econ_obs?id=5")
+plt.xlabel("Reference  https://taipeiecon.taipei/Econ/econ_obs?id=5")
 
 plt.show()
