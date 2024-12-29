@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-fig, ax = plt.subplots(figsize=(6, 4), subplot_kw=dict(aspect="equal"))
+fig, ax = plt.subplots(figsize=(7, 3), subplot_kw=dict(aspect="equal"))
 
 # recipe = ["7.98 USD flour",
 #           "75 g sugar",
