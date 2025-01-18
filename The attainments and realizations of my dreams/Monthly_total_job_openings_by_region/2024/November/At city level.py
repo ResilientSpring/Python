@@ -31,10 +31,10 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-plt.title("2024/09 台灣各直轄市職缺數\n the number of job openings in Taiwan by city", fontsize=20)
+plt.title("2024/11 台灣各直轄市職缺數\n the number of job openings in Taiwan by city", fontsize=20)
 
 # plt.ylabel("")
-plt.xlabel("參考資料 Reference: https://archive.ph/QkgSJ")
+plt.xlabel("參考資料 Reference: https://archive.ph/RJysO")
 
 plt.ylim(29000, 120000)
 
