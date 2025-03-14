@@ -10,7 +10,7 @@ width = 0.6  # the width of the bars: can also be len(x) sequence
 
 
 fig, ax = plt.subplots()
-bottom = np.zeros(3)
+bottom = np.zeros(3) # 3 species
 
 for sex, sex_count in sex_counts.items():
     p = ax.bar(species, sex_count, width, label=sex, bottom=bottom)
