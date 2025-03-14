@@ -22,3 +22,5 @@ ax.set_title('Number of penguins by sex')
 ax.legend()
 
 plt.show()
+
+# Source: https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_label_demo.html
