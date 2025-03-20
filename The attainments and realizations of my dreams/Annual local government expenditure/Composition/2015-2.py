@@ -17,7 +17,7 @@ position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Federal discretio
                       ]
 
 fig, ax = plt.subplots()
-bottom = np.zeros(3)
+bottom = np.zeros(6)
 
 p = 0
 
