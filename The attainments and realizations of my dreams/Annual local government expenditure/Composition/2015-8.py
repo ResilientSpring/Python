@@ -15,7 +15,7 @@ sum = [allotted_money['Statutory'][0] + allotted_money["Federal discretionary su
        allotted_money["Statutory"][5] + allotted_money["Federal discretionary subsidy"][5]
        ]
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(7, 9))
 bottom = np.zeros(6)
 
 p = 0
