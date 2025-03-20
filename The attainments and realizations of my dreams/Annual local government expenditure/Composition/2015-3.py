@@ -31,7 +31,7 @@ for sex, sex_count in sex_counts.items():
     #     ax.text(rect.get_x() + rect.get_width() / 2., 2.001 * height,
     #             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-ax.bar_label(p, labels=position_vacancies, label_type="edge")
+ax.bar_label(p, labels=position_vacancies, label_type="edge", fmt=%.2f)
 
 # plot = ax.bar(region_num, position_vacancies, width=0.6)
 #
