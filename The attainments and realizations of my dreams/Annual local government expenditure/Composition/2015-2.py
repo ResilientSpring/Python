@@ -7,10 +7,14 @@ sex_counts = {
     'Federal discretionary subsidy': np.array([71, 39, 58]),
 }
 
-region_num = [1, 2, 3]
 position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Federal discretionary subsidy"][0],
                       sex_counts["Statutory"][1] + sex_counts["Federal discretionary subsidy"][1],
-                      sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2]]
+                      sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2],
+                      sex_counts["Statutory"][3] + sex_counts["Federal discretionary subsidy"][3],
+                      sex_counts["Statutory"][4] + sex_counts["Federal discretionary subsidy"][4],
+                      sex_counts["Statutory"][5] + sex_counts["Federal discretionary subsidy"][5],
+                      sex_counts["Statutory"][6] + sex_counts["Federal discretionary subsidy"][6]
+                      ]
 
 fig, ax = plt.subplots()
 bottom = np.zeros(3)
