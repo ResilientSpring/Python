@@ -8,9 +8,9 @@ sex_counts = {
 }
 
 region_num = [1, 2, 3]
-position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Federal discretionary subsidy"][0],
-                      sex_counts["Statutory"][1] + sex_counts["Federal discretionary subsidy"][1],
-                      sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2]]
+position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Basic subsidy"][0],
+                      sex_counts["Statutory"][1] + sex_counts["Basic subsidy"][1],
+                      sex_counts["Statutory"][2] + sex_counts["Basic subsidy"][2]]
 
 fig, ax = plt.subplots()
 bottom = np.zeros(3)
