@@ -47,7 +47,7 @@ plt.show()
 
 # References:
 # 1. https://ws.dgbas.gov.tw/public/attachment/5611134736t64w6mty.pdf
-# 2.
+# 2. https://matplotlib.org/3.8.4/api/_as_gen/matplotlib.axes.Axes.bar_label.html
 
 # Notes:
 # 1. when having duplicate values in categorical x data,
