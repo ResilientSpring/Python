@@ -40,7 +40,7 @@ ax.bar_label(p, labels=[f'{s:.2f}' for s in sum], label_type="edge")  #[3]
 #     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
 #             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-ax.set_title("2015's composition of local government's income")
+ax.set_title("2015's composition of local government's income \n (Unit: billion)")
 ax.legend()
 
 plt.show()
