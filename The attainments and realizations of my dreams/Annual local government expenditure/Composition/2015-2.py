@@ -4,7 +4,7 @@ import numpy as np
 species = ('Taipei', 'New Taipei', "Taoyuan", 'Taichung', "Tainan", 'Kaohsiung')
 sex_counts = {
     'Statutory': np.array([34.95, 26.52, 17.12, 20.63, 17.44, 26.47]),  #[1]:18
-    'Federal discretionary subsidy': np.array([71, 39, 58]),
+    'Federal discretionary subsidy': np.array([71, 39, 58]),            #[1]:25
 }
 
 position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Federal discretionary subsidy"][0],
