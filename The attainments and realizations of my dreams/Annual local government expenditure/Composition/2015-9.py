@@ -46,7 +46,7 @@ ax.bar_label(p, labels=[f'{s:.2f}' for s in sum], label_type="edge")  #[3]
 ax.set_title("2015's composition of local government's income \n (Unit: billion)")
 ax.legend()
 
-plt.xlabel("參考資料 Reference  https://archive.ph/oHkAG")
+plt.xlabel("參考資料 Reference https://ws.dgbas.gov.tw/public/attachment/5611134736t64w6mty.pdf")
 
 plt.show()
 
