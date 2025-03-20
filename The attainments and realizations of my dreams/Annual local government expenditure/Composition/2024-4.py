@@ -27,12 +27,12 @@ for sex, sex_count in sex_counts.items():
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
 
-plot = ax.bar(region_num, position_vacancies, width=0.6)
-
-for rect in plot:
-    height = rect.get_height()
-    ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
-            '%d' % int(height), ha='center', va='bottom', fontsize=12)
+# plot = ax.bar(region_num, position_vacancies, width=0.6)
+#
+# for rect in plot:
+#     height = rect.get_height()
+#     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
+#             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
 ax.set_title('Number of penguins by sex')
 ax.legend()
