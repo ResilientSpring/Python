@@ -15,19 +15,16 @@ position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Basic subsidy"][0
 fig, ax = plt.subplots()
 bottom = np.zeros(3)
 
-n = 0
-
 for sex, sex_count in sex_counts.items():
     p = ax.bar(species, sex_count, width=0.6, label=sex, bottom=bottom)
     bottom += sex_count
 
     ax.bar_label(p, label_type='center')
 
-    height = p[n].get_height()
-    ax.text(p[n].get_x() + p[n].get_width() / 2., 2.001 * height,
+    for rect in p:
+        height = rect.get_height()
+        ax.text(rect.get_x() + rect.get_width() / 2., 2.001 * height,
                 '%d' % int(height), ha='center', va='bottom', fontsize=12)
-
-    n = n + 1
 
 
 # plot = ax.bar(region_num, position_vacancies, width=0.6)
