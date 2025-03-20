@@ -31,7 +31,7 @@ for sex, sex_count in allotted_money.items():
     #     ax.text(rect.get_x() + rect.get_width() / 2., 2.001 * height,
     #             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-ax.bar_label(p, labels=sum, label_type="edge", fmt="%.2f")
+ax.bar_label(p, labels=sum, fmt="%.2f", label_type="edge")
 
 # plot = ax.bar(region_num, position_vacancies, width=0.6)
 #
