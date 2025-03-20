@@ -4,7 +4,7 @@ import numpy as np
 species = ('Taipei', 'Taichung', 'Kaohsiung')
 sex_counts = {
     'Statutory': np.array([73, 34, 61]),
-    'Basic subsidy': np.array([73, 34, 58]),
+    'Basic subsidy': np.array([71, 35, 58]),
 }
 
 region_num = [1, 2, 3]
