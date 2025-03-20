@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+region_num = [1, 2, 3]
+position_vacancies = [128075, 78000, 53560, 67473, 30503, 43279]
+
 species = ('Taipei', 'Chinstrap', 'Kaohsiung')
 sex_counts = {
     'Statutory': np.array([73, 34, 61]),
@@ -17,6 +20,9 @@ for sex, sex_count in sex_counts.items():
     bottom += sex_count
 
     ax.bar_label(p, label_type='center')
+
+
+plot = ax.bar(region_num, position_vacancies)
 
 for rect in plot:
     height = rect.get_height()
