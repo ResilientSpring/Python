@@ -1,9 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-region_num = [1, 2, 3]
-position_vacancies = [128075, 78000, 53560, 67473, 30503, 43279]
-
 species = ('Taipei', 'Chinstrap', 'Kaohsiung')
 sex_counts = {
     'Statutory': np.array([73, 34, 61]),
@@ -11,6 +8,9 @@ sex_counts = {
 }
 width = 0.6  # the width of the bars: can also be len(x) sequence
 
+region_num = [1, 2, 3]
+position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Basic subsidy"][0],
+                      78000, 53560, 67473, 30503, 43279]
 
 fig, ax = plt.subplots()
 bottom = np.zeros(3)
