@@ -2,17 +2,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 species = ('Taipei', 'New Taipei', "Taoyuan", 'Taichung', "Tainan", 'Kaohsiung')
-sex_counts = {
+allotted_money = {
     'Statutory': [34.95, 26.52, 17.12, 20.63, 17.44, 26.47],  #[1]:18
     'Federal discretionary subsidy': [17.12, 31.11, 15.21, 24.88, 22.85, 27.83], #[1]:25
 }
 
-sum = [sex_counts['Statutory'][0] + sex_counts["Federal discretionary subsidy"][0],
-       sex_counts["Statutory"][1] + sex_counts["Federal discretionary subsidy"][1],
-       sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2],
-       sex_counts["Statutory"][3] + sex_counts["Federal discretionary subsidy"][3],
-       sex_counts["Statutory"][4] + sex_counts["Federal discretionary subsidy"][4],
-       sex_counts["Statutory"][5] + sex_counts["Federal discretionary subsidy"][5]
+sum = [allotted_money['Statutory'][0] + allotted_money["Federal discretionary subsidy"][0],
+       allotted_money["Statutory"][1] + allotted_money["Federal discretionary subsidy"][1],
+       allotted_money["Statutory"][2] + allotted_money["Federal discretionary subsidy"][2],
+       allotted_money["Statutory"][3] + allotted_money["Federal discretionary subsidy"][3],
+       allotted_money["Statutory"][4] + allotted_money["Federal discretionary subsidy"][4],
+       allotted_money["Statutory"][5] + allotted_money["Federal discretionary subsidy"][5]
        ]
 
 fig, ax = plt.subplots()
@@ -20,7 +20,7 @@ bottom = np.zeros(6)
 
 p = 0
 
-for sex, sex_count in sex_counts.items():
+for sex, sex_count in allotted_money.items():
     p = ax.bar(species, sex_count, width=0.6, label=sex, bottom=bottom)
     bottom += sex_count
 
