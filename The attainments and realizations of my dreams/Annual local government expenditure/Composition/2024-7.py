@@ -12,7 +12,7 @@ position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Basic subsidy"][0
                       sex_counts["Statutory"][1] + sex_counts["Basic subsidy"][1],
                       sex_counts["Statutory"][2] + sex_counts["Basic subsidy"][2]]
 
-fig, ax = plt.subplots(figsize=(6, 5))
+fig, ax = plt.subplots(figsize=(6, 7))
 bottom = np.zeros(3)
 
 n = 0
