@@ -23,7 +23,7 @@ for sex, sex_count in sex_counts.items():
     ax.bar_label(p, label_type='center')
 
 
-plot = ax.bar(region_num, position_vacancies)
+plot = ax.bar(region_num, position_vacancies, width)
 
 for rect in plot:
     height = rect.get_height()
