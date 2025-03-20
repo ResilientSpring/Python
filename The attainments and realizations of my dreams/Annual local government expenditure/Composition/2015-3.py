@@ -7,13 +7,13 @@ sex_counts = {
     'Federal discretionary subsidy': [17.12, 31.11, 15.21, 24.88, 22.85, 27.83], #[1]:25
 }
 
-position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Federal discretionary subsidy"][0],
-                      sex_counts["Statutory"][1] + sex_counts["Federal discretionary subsidy"][1],
-                      sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2],
-                      sex_counts["Statutory"][3] + sex_counts["Federal discretionary subsidy"][3],
-                      sex_counts["Statutory"][4] + sex_counts["Federal discretionary subsidy"][4],
-                      sex_counts["Statutory"][5] + sex_counts["Federal discretionary subsidy"][5]
-                      ]
+sum = [sex_counts['Statutory'][0] + sex_counts["Federal discretionary subsidy"][0],
+       sex_counts["Statutory"][1] + sex_counts["Federal discretionary subsidy"][1],
+       sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2],
+       sex_counts["Statutory"][3] + sex_counts["Federal discretionary subsidy"][3],
+       sex_counts["Statutory"][4] + sex_counts["Federal discretionary subsidy"][4],
+       sex_counts["Statutory"][5] + sex_counts["Federal discretionary subsidy"][5]
+       ]
 
 fig, ax = plt.subplots()
 bottom = np.zeros(6)
@@ -31,7 +31,7 @@ for sex, sex_count in sex_counts.items():
     #     ax.text(rect.get_x() + rect.get_width() / 2., 2.001 * height,
     #             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-ax.bar_label(p, labels=position_vacancies, label_type="edge", fmt="%.2f")
+ax.bar_label(p, labels=sum, label_type="edge", fmt="%.2f")
 
 # plot = ax.bar(region_num, position_vacancies, width=0.6)
 #
