@@ -12,8 +12,7 @@ position_vacancies = [sex_counts['Statutory'][0] + sex_counts["Federal discretio
                       sex_counts["Statutory"][2] + sex_counts["Federal discretionary subsidy"][2],
                       sex_counts["Statutory"][3] + sex_counts["Federal discretionary subsidy"][3],
                       sex_counts["Statutory"][4] + sex_counts["Federal discretionary subsidy"][4],
-                      sex_counts["Statutory"][5] + sex_counts["Federal discretionary subsidy"][5],
-                      sex_counts["Statutory"][6] + sex_counts["Federal discretionary subsidy"][6]
+                      sex_counts["Statutory"][5] + sex_counts["Federal discretionary subsidy"][5]
                       ]
 
 fig, ax = plt.subplots()
