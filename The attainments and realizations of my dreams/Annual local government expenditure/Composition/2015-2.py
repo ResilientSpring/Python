@@ -3,7 +3,7 @@ import numpy as np
 
 species = ('Taipei', 'New Taipei', "Taoyuan", 'Taichung', "Tainan", 'Kaohsiung')
 sex_counts = {
-    'Statutory': np.array([73, 34, 61]),
+    'Statutory': np.array([73, 34, 61]),  #[1]:18
     'Federal discretionary subsidy': np.array([71, 39, 58]),
 }
 
@@ -41,3 +41,6 @@ ax.set_title("2015's composition of local government's income")
 ax.legend()
 
 plt.show()
+
+# References:
+# 1. https://ws.dgbas.gov.tw/public/attachment/5611134736t64w6mty.pdf
