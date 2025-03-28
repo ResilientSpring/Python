@@ -23,7 +23,7 @@ plt.tick_params(axis='y', labelsize=12) # [2]
 plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
                                                                         colour.CSS4_COLORS.get('mediumblue'),
                                                                         colour.CSS4_COLORS.get('blue'),
-                                                                        colour.CSS4_COLORS.get('darkcyan'),
+                                                                        colour.CSS4_COLORS.get('darkturquoise'),
                                                                         colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
