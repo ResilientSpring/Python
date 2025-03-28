@@ -10,7 +10,7 @@ from matplotlib.transforms import IdentityTransform
 matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5]
-position_vacancies = [2633+128075+78000+4404, 53560+35893+7092, 67473+12257+3859, 5151+7741+30503, 39792+4811]
+position_vacancies = [2633+128075+78000+4404, 53560+35893+7092, 67473+12257+3859, 5151+7741+30503, 43279+5105]
 
 label = ["大台北 Greater\nTaipei", "桃園 Taoyuan\n新竹 Hsinchu\n苗栗 Miaoli", "台中 Taichung\n彰化 Changhua\n南投 Nantou",
          "雲林 Yunlin\n嘉義 Chiayi\n台南 Tainan", "高雄 Kaohsiung\n屏東 Pingtung"]
