@@ -10,7 +10,7 @@ from matplotlib.transforms import IdentityTransform
 matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5]
-position_vacancies = [2633+128075+78000+4404, 48672+33781+6576, 61256+10843+3623, 4751+7051+27705, 39792+4811]
+position_vacancies = [2633+128075+78000+4404, 53560+35893+7092, 67473+12257+3859, 5151+7741+30503, 43279+5105]
 
 label = ["大台北 Greater\nTaipei", "桃園 Taoyuan\n新竹 Hsinchu\n苗栗 Miaoli", "台中 Taichung\n彰化 Changhua\n南投 Nantou",
          "雲林 Yunlin\n嘉義 Chiayi\n台南 Tainan", "高雄 Kaohsiung\n屏東 Pingtung"]
@@ -20,10 +20,10 @@ plt.xticks(region_num, labels=label, rotation=7, fontsize=12)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 plt.tick_params(axis='y', labelsize=12) # [2]
 
-plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('deepskyblue'),
-                                                                        colour.CSS4_COLORS.get('deepskyblue'),
-                                                                        colour.CSS4_COLORS.get('deepskyblue'),
-                                                                        colour.CSS4_COLORS.get('cyan'),
+plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
+                                                                        colour.CSS4_COLORS.get('mediumblue'),
+                                                                        colour.CSS4_COLORS.get('blue'),
+                                                                        colour.CSS4_COLORS.get('darkturquoise'),
                                                                         colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
@@ -36,7 +36,7 @@ plt.title("2025/02 台灣各生活圈職缺數\n the number of job openings in T
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference  https://archive.ph/ApRE7")
 
-plt.ylim(40000, 190000)
+plt.ylim(40000, 200000)
 
 img = image.imread('CC0.png')  # CC0.png downloaded from [7].
 
