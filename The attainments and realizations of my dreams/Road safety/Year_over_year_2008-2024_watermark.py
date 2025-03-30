@@ -110,7 +110,7 @@ text = figure.text(0.5, 0.04,
 
 text.set_path_effects([path_effects.Normal()])
 
-img = image.imread('CC-BY.png')
+img = image.imread('CC0.png')
 
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
