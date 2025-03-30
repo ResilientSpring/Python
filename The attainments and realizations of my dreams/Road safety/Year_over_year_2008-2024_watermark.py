@@ -61,7 +61,7 @@ axes1.plot(year, Taichung, label="Taichung")
 axes1.plot(year, Tainan, label="Tainan")
 axes1.plot(year, Kaohsiung, label="Kaohsiung")
 
-axes1.set_title("The Number of Deaths in Road Accident in Taiwan by Region")
+axes1.set_title("The Number of Deaths in Road Accident in Taiwan by City")
 axes1.set_xlabel("Year")
 axes1.set_ylabel("The number of deaths")
 
