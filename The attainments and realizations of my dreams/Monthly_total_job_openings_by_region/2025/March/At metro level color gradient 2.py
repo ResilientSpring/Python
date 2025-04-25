@@ -26,7 +26,7 @@ cmap = matplotlib.colormaps['winter']
 plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
                                                                         colour.CSS4_COLORS.get('mediumblue'),
                                                                         colour.CSS4_COLORS.get('blue'),
-                                                                        matplotlib.cm.get_cmap('winter'),
+                                                                        matplotlib.cm.ScalarMappable(norm=colour.Normalize(vmin=5, vmax=10), cmap=matplotlib.cm.winter),
                                                                         colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
