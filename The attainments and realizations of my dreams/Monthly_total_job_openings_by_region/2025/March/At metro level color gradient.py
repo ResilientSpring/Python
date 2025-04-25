@@ -21,10 +21,12 @@ plt.xticks(region_num, labels=label, rotation=7, fontsize=12)
 # plt.yticks([0, 250, 300, 350, 400, 450, 500, 550])
 plt.tick_params(axis='y', labelsize=12) # [2]
 
+cmap = matplotlib.colormaps['winter']
+
 plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
                                                                         colour.CSS4_COLORS.get('mediumblue'),
                                                                         colour.CSS4_COLORS.get('blue'),
-                                                                        colour.CSS4_COLORS.get('blue'),
+                                                                        matplotlib.cm.get_cmap('winter'),
                                                                         colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
