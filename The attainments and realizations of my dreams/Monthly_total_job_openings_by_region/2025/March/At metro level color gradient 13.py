@@ -61,9 +61,9 @@ for rect in plot:
         if counter == 4:
 
             # Bar position and size
-            x = bar.get_x()
-            width = bar.get_width()
-            height = bar.get_height()
+            x = rect.get_x()
+            width = rect.get_width()
+            height = rect.get_height()
 
             # Create a grid inside the bar
             nx = 100  # Number of divisions horizontally
