@@ -20,7 +20,7 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-plt.title("2024/02 the number of job openings in Taipei & Kaohsiung of Taiwan", fontsize=20)
+plt.title("2024/02 \n the number of job openings in Taipei & Kaohsiung of Taiwan", fontsize=20)
 
 # plt.ylabel("")
 plt.xlabel("Reference https://archive.ph/LPccQ")
