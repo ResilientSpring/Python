@@ -48,8 +48,7 @@ plt.text(x=0.6, y=0.7, s="Non-copyrighted image\n無版權圖片", fontsize=40, 
          ha='center', va='center', rotation=30,
          transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
 
-
-plt.show()
+cmap = matplotlib.cm.get_cmap('winter')
 
 counter = 0
 
