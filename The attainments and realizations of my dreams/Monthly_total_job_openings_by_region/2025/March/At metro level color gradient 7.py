@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import matplotlib.cbook as cbook
 import matplotlib.colors as colour
+import numpy as np
 import matplotlib.image as image
 # Using the magic encoding
 # -*- coding: utf-8 -*-
@@ -39,6 +40,15 @@ for rect in plot:
     if rect is not None:
 
         counter = counter + 1
+
+        if counter == 4:
+
+            bar_width = rect.get_width()
+            bar_height = rect.get_height()
+
+            gradient = np.linspace(start=0, stop=1, num=256).reshape(1, -1)
+
+            ax.imshow(X=gradient, cmap='winter', extent=(0 - bar_width/2, 0 + bar_width/2, 0, bar_height), aspect='auto' )
 
 
 
