@@ -23,7 +23,7 @@ plt.tick_params(axis='y', labelsize=12) # [2]
 
 cmap = matplotlib.colormaps['winter']
 
-clist = [(0, "blue"), (0.125, "light blue"), (0.25, "green"), (0.5, "green"),
+clist = [(0, "blue"), (0.125, "skyblue"), (0.25, "green"), (0.5, "green"),
          (0.7, "green"), (0.75, "green"), (1, "green")]
 
 rvb = colour.LinearSegmentedColormap.from_list("", clist)
