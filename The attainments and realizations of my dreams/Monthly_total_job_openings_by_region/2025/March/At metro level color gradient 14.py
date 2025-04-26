@@ -48,11 +48,11 @@ plt.text(x=0.6, y=0.7, s="Non-copyrighted image\n無版權圖片", fontsize=40, 
          ha='center', va='center', rotation=30,
          transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
 
-cmap = matplotlib.colormaps.get_cmap('winter')
+cmap = matplotlib.colormaps.get_cmap('winter')  # [8][9]
 
 counter = 0
 
-for rect in plot:
+for rect in plot: # [8][9]
 
     if rect is not None:
 
@@ -91,6 +91,8 @@ plt.show()
 # 5. https://www.python-graph-gallery.com/3-control-color-of-barplots
 # 6. https://matplotlib.org/stable/gallery/color/named_colors.html
 # 7. https://creativecommons.org/public-domain/cc0/
+# 8. https://chatgpt.com/c/680c6f49-95b4-8008-85f4-3941744f62e4
+# 9. Untitled5.ipynb @ my Google Colab.
 
 # Notes:
 # 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
