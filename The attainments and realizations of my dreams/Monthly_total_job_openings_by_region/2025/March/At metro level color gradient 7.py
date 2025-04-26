@@ -32,7 +32,7 @@ for rect in plot:
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
 
-counter = 1
+counter = 0
 
 for rect in plot:
 
