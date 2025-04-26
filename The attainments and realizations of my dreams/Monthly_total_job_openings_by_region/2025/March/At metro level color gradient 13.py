@@ -61,13 +61,23 @@ for rect in plot:
 
         if counter == 4:
 
-            bar_center = rect.get_x() + rect.get_width() / 2.
-            bar_height = rect.get_height()
+            # Bar position and size
+            x = bar.get_x()
+            width = bar.get_width()
+            height = bar.get_height()
 
-            # Create a gradient image using "winter" colormap
-            gradient = np.linspace(start=0, stop=1, num=256).reshape(1, -1) # 1 row, 256 columns
+            # Create a grid inside the bar
+            nx = 100  # Number of divisions horizontally
+            ny = 100  # Number of divisions vertically
+            X = np.linspace(x, x + width, nx)
+            Y = np.linspace(0, height, ny)
+            X, Y = np.meshgrid(X, Y)
 
-            ax.imshow(X=gradient, cmap='winter', extent=(bar_center - 0.01, bar_center + 0.01, 0, bar_height), aspect='auto' )
+            # Color based on horizontal position (left to right)
+            Z = (X - x) / width  # Normalize X inside the bar (0 to 1)
+
+            # Draw gradient
+            ax.pcolormesh(X, Y, Z, cmap=cmap, shading='auto')
 
 
 
