@@ -31,7 +31,7 @@ rvb = colour.LinearSegmentedColormap.from_list("", clist)
 plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
                                                                         colour.CSS4_COLORS.get('mediumblue'),
                                                                         colour.CSS4_COLORS.get('blue'),
-                                                                        matplotlib.cm.ScalarMappable(norm=colour.Normalize(vmin=0, vmax=1), cmap=cmap),
+                                                                        rvb,
                                                                         colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
