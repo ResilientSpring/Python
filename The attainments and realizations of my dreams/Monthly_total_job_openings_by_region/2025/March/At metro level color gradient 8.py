@@ -44,7 +44,7 @@ for rect in plot:
         if counter == 4:
 
             bar_width = rect.get_width()
-            bar_height = rect.get_height()
+            bar_height = position_vacancies[3]
 
             # Create a gradient image using "winter" colormap
             gradient = np.linspace(start=0, stop=1, num=256).reshape(1, -1) # 1 row, 256 columns
