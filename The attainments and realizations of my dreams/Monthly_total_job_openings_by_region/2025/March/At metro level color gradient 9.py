@@ -49,7 +49,7 @@ for rect in plot:
             # Create a gradient image using "winter" colormap
             gradient = np.linspace(start=0, stop=1, num=256).reshape(1, -1) # 1 row, 256 columns
 
-            ax.imshow(X=gradient, cmap='winter', extent=(bar_center - 0.1, bar_center + 0.1, 0, bar_height), aspect='auto' )
+            ax.imshow(X=gradient, cmap='winter', extent=(bar_center - 0.01, bar_center + 0.01, 0, bar_height), aspect='auto' )
 
 
 
