@@ -31,6 +31,17 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
+
+counter = 1
+
+for rect in plot:
+
+    if rect is not None:
+
+        counter = counter + 1
+
+
+
 plt.title("2025/03 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
 
 # plt.ylabel("")
