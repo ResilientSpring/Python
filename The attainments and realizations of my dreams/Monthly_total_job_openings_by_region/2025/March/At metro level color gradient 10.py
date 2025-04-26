@@ -32,6 +32,24 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
+plt.title("2025/03 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
+
+# plt.ylabel("")
+plt.xlabel("參考資料 Reference  https://archive.ph/iEfAC")
+
+plt.ylim(40000, 200000)
+
+img = image.imread('CC0.png')  # CC0.png downloaded from [7].
+
+plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
+
+# Insert text watermark [1]
+plt.text(x=0.6, y=0.7, s="Non-copyrighted image\n無版權圖片", fontsize=40, color='grey', alpha=0.9,
+         ha='center', va='center', rotation=30,
+         transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
+
+
+
 
 counter = 0
 
@@ -53,21 +71,6 @@ for rect in plot:
 
 
 
-plt.title("2025/03 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
-
-# plt.ylabel("")
-plt.xlabel("參考資料 Reference  https://archive.ph/iEfAC")
-
-plt.ylim(40000, 200000)
-
-img = image.imread('CC0.png')  # CC0.png downloaded from [7].
-
-plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
-
-# Insert text watermark [1]
-plt.text(x=0.6, y=0.7, s="Non-copyrighted image\n無版權圖片", fontsize=40, color='grey', alpha=0.9,
-         ha='center', va='center', rotation=30,
-         transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
 
 plt.show()
 

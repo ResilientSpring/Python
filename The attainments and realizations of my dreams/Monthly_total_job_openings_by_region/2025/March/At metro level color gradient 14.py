@@ -24,34 +24,13 @@ plt.tick_params(axis='y', labelsize=12) # [2]
 plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
                                                                         colour.CSS4_COLORS.get('mediumblue'),
                                                                         colour.CSS4_COLORS.get('blue'),
-                                                                        colour.CSS4_COLORS.get('darkturquoise'),
+                                                                        'none',
                                                                         colour.CSS4_COLORS.get('palegreen')]) #[4][5][6]
 
 for rect in plot:
     height = rect.get_height()
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
-
-
-counter = 0
-
-for rect in plot:
-
-    if rect is not None:
-
-        counter = counter + 1
-
-        if counter == 4:
-
-            bar_center = rect.get_x() + rect.get_width() / 2.
-            bar_height = rect.get_height()
-
-            # Create a gradient image using "winter" colormap
-            gradient = np.linspace(start=0, stop=1, num=256).reshape(1, -1) # 1 row, 256 columns
-
-            ax.imshow(X=gradient, cmap='winter', extent=(bar_center - 0.01, bar_center + 0.01, 0, bar_height), aspect='auto' )
-
-
 
 plt.title("2025/03 台灣各生活圈職缺數\n the number of job openings in Taiwan by metro", fontsize=20)
 
@@ -69,6 +48,39 @@ plt.text(x=0.6, y=0.7, s="Non-copyrighted image\n無版權圖片", fontsize=40, 
          ha='center', va='center', rotation=30,
          transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
 
+cmap = matplotlib.colormaps.get_cmap('winter')  # [8][9]
+
+counter = 0
+
+for rect in plot: # [8][9]
+
+    if rect is not None:
+
+        counter = counter + 1
+
+        if counter == 4:
+
+            # Bar position and size
+            x = rect.get_x()
+            width = rect.get_width()
+            height = rect.get_height()
+
+            # Create a grid inside the bar
+            nx = 100  # Number of divisions horizontally
+            ny = 100  # Number of divisions vertically
+            X = np.linspace(x, x + width, nx)
+            Y = np.linspace(0, height, ny)
+            X, Y = np.meshgrid(X, Y)
+
+            # Color based on horizontal position (left to right)
+            Z = (X - x) / width  # Normalize X inside the bar (0 to 1)
+
+            # Draw gradient
+            ax.pcolormesh(X, Y, Z, cmap=cmap, shading='auto')
+
+
+
+
 plt.show()
 
 # Reference:
@@ -79,6 +91,8 @@ plt.show()
 # 5. https://www.python-graph-gallery.com/3-control-color-of-barplots
 # 6. https://matplotlib.org/stable/gallery/color/named_colors.html
 # 7. https://creativecommons.org/public-domain/cc0/
+# 8. https://chatgpt.com/c/680c6f49-95b4-8008-85f4-3941744f62e4
+# 9. Untitled5.ipynb @ my Google Colab.
 
 # Notes:
 # 1. pixel coordinate system of the display window; (0, 0) is bottom left of the window,
