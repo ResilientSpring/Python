@@ -23,6 +23,11 @@ plt.tick_params(axis='y', labelsize=12) # [2]
 
 cmap = matplotlib.colormaps['winter']
 
+clist = [(0, "red"), (0.125, "red"), (0.25, "orange"), (0.5, "green"),
+         (0.7, "green"), (0.75, "blue"), (1, "blue")]
+
+rvb = colour.LinearSegmentedColormap.from_list("", clist)
+
 plot = ax.bar(region_num, position_vacancies, edgecolor='black', color=[colour.CSS4_COLORS.get('darkblue'),
                                                                         colour.CSS4_COLORS.get('mediumblue'),
                                                                         colour.CSS4_COLORS.get('blue'),
