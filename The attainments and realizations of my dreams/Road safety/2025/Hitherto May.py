@@ -34,7 +34,7 @@ for rect in plot:
 plt.title("2025/1 - 2025/5 台灣各直轄市車禍死亡數\n the number of deaths in road accidents in Taiwan by city", fontsize=20)
 
 # plt.ylabel("")
-plt.xlabel("參考資料 Reference: https://archive.ph/WHbv4")
+plt.xlabel("參考資料 Reference: https://roadsafety.tw/")
 
 plt.ylim(30000, 120000)
 
