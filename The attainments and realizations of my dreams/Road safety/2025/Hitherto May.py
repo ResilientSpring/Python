@@ -31,7 +31,7 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-plt.title("2025/1~5 台灣各直轄市車禍死亡數\n the number of deaths in road accidents in Taiwan by city", fontsize=20)
+plt.title("2025/1~5 台灣各直轄市車禍死亡數\nDeath toll from road accidents in Taiwan by city", fontsize=20)
 
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference: https://roadsafety.tw/")
