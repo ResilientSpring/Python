@@ -10,7 +10,7 @@ from matplotlib.transforms import IdentityTransform
 matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5, 6]
-position_vacancies = [128675, 78059, 54148, 66678, 30806, 43275]
+position_vacancies = [128675, 107, 54148, 66678, 142, 125]
 
 label = ["台北市\nTaipei", "新北市\nNew Taipei", "桃園\nTaoyuan", "台中\nTaichung", "台南\nTainan", "高雄\n Kaohsiung"]
 
@@ -36,7 +36,7 @@ plt.title("2025/1 - 2025/5 台灣各直轄市車禍死亡數\n the number of dea
 # plt.ylabel("")
 plt.xlabel("參考資料 Reference: https://roadsafety.tw/")
 
-plt.ylim(30000, 120000)
+plt.ylim(0, 200)
 
 img = image.imread('CC0.png')
 
