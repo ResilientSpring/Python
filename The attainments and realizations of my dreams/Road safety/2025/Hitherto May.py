@@ -10,7 +10,7 @@ from matplotlib.transforms import IdentityTransform
 matplotlib.rc('font', family="MS Gothic")
 
 region_num = [1, 2, 3, 4, 5, 6]
-position_vacancies = [128675, 78059, 54148, 66678, 30806, 43275]
+position_vacancies = [40, 107, 96, 104, 142, 125]
 
 label = ["台北市\nTaipei", "新北市\nNew Taipei", "桃園\nTaoyuan", "台中\nTaichung", "台南\nTainan", "高雄\n Kaohsiung"]
 
@@ -31,19 +31,19 @@ for rect in plot:
     ax.text(rect.get_x() + rect.get_width() / 2., 1.002 * height,
             '%d' % int(height), ha='center', va='bottom', fontsize=12)
 
-plt.title("2025/1 - 2025/5 台灣各直轄市車禍死亡數\n the number of deaths in road accidents in Taiwan by city", fontsize=20)
+plt.title("2025/1～5 台灣各直轄市車禍死亡數\nDeath toll from road accidents in Taiwan by city", fontsize=20, color='red')
 
 # plt.ylabel("")
-plt.xlabel("參考資料 Reference: https://archive.ph/WHbv4")
+plt.xlabel("參考資料 Reference: https://roadsafety.tw/")
 
-plt.ylim(30000, 120000)
+plt.ylim(0, 200)
 
 img = image.imread('CC0.png')
 
 plt.figimage(X=img, xo=800, yo=800, alpha=0.9)
 
 # Insert text watermark [1]
-plt.text(x=0.6, y=0.7, s="Free clip art\n無版權圖片", fontsize=40, color='grey', alpha=0.9,
+plt.text(x=0.5, y=0.8, s="Free clip art\n無版權圖片", fontsize=40, color='grey', alpha=0.9,
          ha='center', va='center', rotation=30,
          transform=ax.transAxes) # data coordinates [2] [Note1] [3] [Note2]
 
